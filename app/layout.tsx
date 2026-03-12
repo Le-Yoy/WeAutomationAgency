@@ -10,6 +10,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://weautomationagency.com'),
   title: 'WeAutomationAgency — AI Automation for Business Growth',
   description:
     'We build AI chatbots, automated lead generation, intelligent call centers, and multimedia solutions that drive revenue for your business.',
@@ -22,17 +23,38 @@ export const metadata: Metadata = {
     'AI chatbot for ecommerce',
     'marketing automation',
   ],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
-    title: 'WeAutomationAgency',
-    description: 'Transform your business with AI automation',
+    title: 'WeAutomationAgency — AI Automation for Business Growth',
+    description: 'Transform your business with AI automation solutions',
     url: 'https://weautomationagency.com',
     siteName: 'WeAutomationAgency',
     type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'WeAutomationAgency',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WeAutomationAgency',
+    title: 'WeAutomationAgency — AI Automation for Business Growth',
     description: 'AI automation solutions for business growth',
+    images: ['/opengraph-image.png'],
   },
   robots: { index: true, follow: true },
 };
