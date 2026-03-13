@@ -94,29 +94,29 @@ function Card({ card, index, totalCards, scrollYProgress }: {
         opacity,
         zIndex: totalCards - index,
       }}
-      className="absolute inset-0 bg-accent rounded-2xl p-6 sm:p-8 flex flex-col"
+      className="absolute inset-0 md:inset-0 top-auto md:top-0 h-auto md:h-auto max-h-[70vh] md:max-h-none bg-accent rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col overflow-hidden"
     >
       {/* Icon */}
-      <div className="mb-6">
+      <div className="mb-4 sm:mb-6 flex-shrink-0">
         {card.icon}
       </div>
 
       {/* Title */}
-      <h3 className="text-xl sm:text-2xl font-medium text-secondary mb-3 leading-tight">
+      <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-secondary mb-2 sm:mb-3 leading-tight flex-shrink-0">
         {card.title}
       </h3>
 
       {/* Description */}
-      <p className="text-secondary/80 text-sm sm:text-base leading-relaxed mb-6">
+      <p className="text-secondary/80 text-xs sm:text-sm md:text-base leading-relaxed mb-4 sm:mb-6 flex-shrink-0 line-clamp-3 md:line-clamp-none">
         {card.description}
       </p>
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-2 mt-auto">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto overflow-hidden">
         {card.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1.5 text-xs sm:text-sm bg-primary/80 text-secondary border border-secondary/20 rounded-lg"
+            className="px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs md:text-sm bg-primary/80 text-secondary border border-secondary/20 rounded-lg whitespace-nowrap flex-shrink-0"
           >
             {tag}
           </span>
@@ -135,9 +135,9 @@ export default function ScrollingCards() {
 
   return (
     <section ref={sectionRef} className="relative bg-primary" style={{ height: `${(cards.length + 1) * 100}vh` }}>
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex items-center md:items-center overflow-hidden">
         <div className="max-w-wide mx-auto w-full px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-start md:items-center gap-8 lg:gap-16">
             {/* Left — Text */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -149,12 +149,12 @@ export default function ScrollingCards() {
               <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
                 What We Build
               </span>
-              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-medium leading-tight text-secondary mb-6">
+              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-medium leading-tight text-secondary mb-4 md:mb-6">
                 Get Smart
                 <br />
                 Automation
               </h2>
-              <p className="text-grey text-base sm:text-lg leading-relaxed max-w-md">
+              <p className="text-grey text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
                 We deliver end-to-end AI automation solutions tailored to your
                 business. Each system is built from scratch — no templates, no
                 cookie-cutter approaches.
@@ -162,7 +162,7 @@ export default function ScrollingCards() {
             </motion.div>
 
             {/* Right — Stacked Cards */}
-            <div className="w-full lg:w-[55%] relative h-[350px] sm:h-[400px]">
+            <div className="w-full lg:w-[55%] relative h-[500px] sm:h-[500px] md:h-[400px]">
               {cards.map((card, i) => (
                 <Card
                   key={card.title}
