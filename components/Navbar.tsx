@@ -113,11 +113,19 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
             transition={{ duration: 0.4 }}
             className="fixed top-20 bottom-0 left-0 right-0 z-40 bg-accent"
           >
-            <div className="h-full flex flex-col justify-center px-8 sm:px-16 lg:px-24">
+            <div className="h-full flex flex-col justify-center px-8 sm:px-16 lg:px-24 max-w-6xl mx-auto w-full">
               {/* Two-column nav links */}
-              <div className="flex flex-col sm:flex-row gap-12 sm:gap-24 lg:gap-40">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 lg:gap-32">
                 {/* Left column — Services */}
-                <nav className="flex flex-col gap-4 sm:gap-6">
+                <nav className="flex flex-col gap-2">
+                  <motion.h3
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.05 }}
+                    className="text-secondary/50 text-xs font-medium tracking-widest uppercase mb-4"
+                  >
+                    Services
+                  </motion.h3>
                   {servicesLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
@@ -128,7 +136,7 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
                       <Link
                         href={link.href}
                         onClick={handleLinkClick}
-                        className="text-secondary text-2xl sm:text-3xl lg:text-4xl font-light hover:font-medium transition-all duration-200"
+                        className="text-secondary text-xl sm:text-2xl lg:text-3xl font-light hover:text-primary hover:translate-x-2 transition-all duration-200 block py-2"
                       >
                         {link.name}
                       </Link>
@@ -137,7 +145,15 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
                 </nav>
 
                 {/* Right column — Actions */}
-                <nav className="flex flex-col gap-4 sm:gap-6">
+                <nav className="flex flex-col gap-2">
+                  <motion.h3
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15 }}
+                    className="text-secondary/50 text-xs font-medium tracking-widest uppercase mb-4"
+                  >
+                    Get Started
+                  </motion.h3>
                   {actionLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
@@ -148,7 +164,7 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
                       <Link
                         href={link.href}
                         onClick={handleLinkClick}
-                        className="text-secondary text-2xl sm:text-3xl lg:text-4xl font-light hover:font-medium transition-all duration-200"
+                        className="text-secondary text-xl sm:text-2xl lg:text-3xl font-light hover:text-primary hover:translate-x-2 transition-all duration-200 block py-2"
                       >
                         {link.name}
                       </Link>

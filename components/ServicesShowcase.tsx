@@ -59,8 +59,13 @@ export default function ServicesShowcase() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
+              animate={{ y: [0, -15, 0] }}
               viewport={viewportOnce}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{
+                opacity: { duration: 0.8, delay: 0.2 },
+                scale: { duration: 0.8, delay: 0.2 },
+                y: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
+              }}
               className="relative w-full aspect-square max-w-[400px] mx-auto"
             >
               {/* Cross/Plus shaped clip */}

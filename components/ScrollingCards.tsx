@@ -7,6 +7,7 @@ import { viewportOnce } from '@/lib/animations';
 const cards = [
   {
     title: 'Enterprise-Grade AI Chatbot Solutions',
+    description: 'Custom conversational AI that handles customer support, qualifies leads, and drives sales 24/7 across your website, WhatsApp, and social channels. Built for ecommerce and banking with multilingual support.',
     tags: ['Ecommerce', 'Multilingual', 'WhatsApp', 'Lead Gen', 'Banking'],
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,6 +20,7 @@ const cards = [
   },
   {
     title: 'Automated Lead Generation',
+    description: 'AI-powered systems that find, qualify, and nurture your ideal customers through automated outreach, smart funnels, and data-driven targeting. Includes email automation and custom CRM integration.',
     tags: ['Marketing Automation', 'Sales', 'Email', 'Funnel', 'Custom Dev'],
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,6 +33,7 @@ const cards = [
   },
   {
     title: 'Intelligent Call Center',
+    description: 'Voice AI that answers calls, schedules appointments, and handles customer inquiries with human-like quality. Includes voice analytics, sales reports, and seamless integration with your existing systems.',
     tags: ['AI Call Center', 'Voice Analytics', 'Customer Service', 'Sales Reports', 'Support'],
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,6 +46,7 @@ const cards = [
   },
   {
     title: 'Advanced Multimedia Solutions',
+    description: 'AI-generated product videos, voice synthesis, brand content, and training materials. Create professional multimedia content at scale with visual AI technology that saves time and budget.',
     tags: ['Product Videos', 'Voice Gen', 'Brand Videos', 'Training', 'Visual AI'],
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +60,7 @@ const cards = [
 ];
 
 function Card({ card, index, totalCards, scrollYProgress }: {
-  card: typeof cards[0];
+  card: { title: string; description: string; tags: string[]; icon: React.ReactNode };
   index: number;
   totalCards: number;
   scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'];
@@ -98,9 +102,14 @@ function Card({ card, index, totalCards, scrollYProgress }: {
       </div>
 
       {/* Title */}
-      <h3 className="text-xl sm:text-2xl font-medium text-secondary mb-6 leading-tight">
+      <h3 className="text-xl sm:text-2xl font-medium text-secondary mb-3 leading-tight">
         {card.title}
       </h3>
+
+      {/* Description */}
+      <p className="text-secondary/80 text-sm sm:text-base leading-relaxed mb-6">
+        {card.description}
+      </p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mt-auto">
