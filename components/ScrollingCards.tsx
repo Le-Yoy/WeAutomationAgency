@@ -137,7 +137,7 @@ export default function ScrollingCards() {
   });
 
   return (
-    <section ref={sectionRef} className="relative bg-primary" style={{ height: `${(cards.length + 2) * 100}vh` }}>
+    <section ref={sectionRef} className="relative bg-primary" style={{ height: `${(cards.length + 3) * 150}vh` }}>
       <div className="sticky top-0 h-screen flex items-start pt-[15vh] md:items-center md:pt-0 overflow-hidden">
         <div className="max-w-wide mx-auto w-full px-5 sm:px-8 lg:px-12">
           <div className="flex flex-col lg:flex-row items-start md:items-center gap-8 lg:gap-16">
