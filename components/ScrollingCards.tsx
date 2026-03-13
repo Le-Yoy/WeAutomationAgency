@@ -67,14 +67,14 @@ function Card({ card, index, totalCards, scrollYProgress }: {
 }) {
   const cardStart = index / totalCards;
   const cardEnd = (index + 1) / totalCards;
-  const holdDuration = 0.35; // Card stays visible for 35% of its scroll range
+  const holdDuration = 0.5; // Card stays visible for 50% of its scroll range
   const flyStart = cardStart + (holdDuration * (1 / totalCards));
 
-  // Cards stay in place, then fly off
+  // Cards stay in place, then fly off smoothly
   const x = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd], [0, 0, -600]);
   const y = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd], [0, 0, -400]);
   const rotate = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd], [0, 0, -15]);
-  const opacity = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd - 0.1 / totalCards, cardEnd], [1, 1, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [cardStart, flyStart, flyStart + 0.1, cardEnd], [1, 1, 1, 0]);
 
   // Stacking offset for cards behind
   const stackOffset = useTransform(
@@ -133,12 +133,12 @@ export default function ScrollingCards() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end end'],
+    offset: ['start center', 'end start'],
   });
 
   return (
-    <section ref={sectionRef} className="relative bg-primary" style={{ height: `${(cards.length + 1) * 100}vh` }}>
-      <div className="sticky top-0 h-screen flex items-center md:items-center overflow-hidden">
+    <section ref={sectionRef} className="relative bg-primary" style={{ height: `${(cards.length + 2) * 100}vh` }}>
+      <div className="sticky top-0 h-screen flex items-start pt-[15vh] md:items-center md:pt-0 overflow-hidden">
         <div className="max-w-wide mx-auto w-full px-5 sm:px-8 lg:px-12">
           <div className="flex flex-col lg:flex-row items-start md:items-center gap-8 lg:gap-16">
             {/* Left — Text */}
