@@ -67,11 +67,14 @@ function Card({ card, index, totalCards, scrollYProgress }: {
 }) {
   const cardStart = index / totalCards;
   const cardEnd = (index + 1) / totalCards;
+  const holdDuration = 0.35; // Card stays visible for 35% of its scroll range
+  const flyStart = cardStart + (holdDuration * (1 / totalCards));
 
-  const x = useTransform(scrollYProgress, [cardStart, cardEnd], [0, -600]);
-  const y = useTransform(scrollYProgress, [cardStart, cardEnd], [0, -400]);
-  const rotate = useTransform(scrollYProgress, [cardStart, cardEnd], [0, -15]);
-  const opacity = useTransform(scrollYProgress, [cardStart, cardStart + 0.5 / totalCards, cardEnd], [1, 1, 0]);
+  // Cards stay in place, then fly off
+  const x = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd], [0, 0, -600]);
+  const y = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd], [0, 0, -400]);
+  const rotate = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd], [0, 0, -15]);
+  const opacity = useTransform(scrollYProgress, [cardStart, flyStart, cardEnd - 0.1 / totalCards, cardEnd], [1, 1, 1, 0]);
 
   // Stacking offset for cards behind
   const stackOffset = useTransform(
