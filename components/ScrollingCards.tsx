@@ -107,7 +107,7 @@ function Card({ card, index, totalCards, scrollYProgress }: {
         {card.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1.5 text-xs sm:text-sm bg-secondary/15 text-secondary rounded-lg"
+            className="px-3 py-1.5 text-xs sm:text-sm bg-primary/80 text-secondary border border-secondary/20 rounded-lg"
           >
             {tag}
           </span>

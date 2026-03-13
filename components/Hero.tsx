@@ -110,7 +110,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
           </div>
 
           {/* Right Column — Auto-Scrolling Images */}
-          <div className="w-full lg:w-[45%] h-[400px] sm:h-[500px] lg:h-[600px] relative overflow-hidden rounded-2xl">
+          <div className="w-full lg:w-[45%] h-[480px] sm:h-[600px] lg:h-[720px] relative overflow-hidden rounded-2xl">
             <div className="flex gap-3 h-full">
               {/* Left image column — scrolls down */}
               <div className="w-1/2 overflow-hidden rounded-xl">

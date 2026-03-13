@@ -73,8 +73,8 @@ export default function Newsletter() {
             className="text-grey/50 text-xs mt-4"
           >
             By submitting, you agree to our{' '}
-            <a href="#" className="underline hover:text-grey transition-colors">Terms</a> and{' '}
-            <a href="#" className="underline hover:text-grey transition-colors">Privacy Policy</a>.
+            <a href="/terms" className="underline hover:text-grey transition-colors">Terms</a> and{' '}
+            <a href="/privacy" className="underline hover:text-grey transition-colors">Privacy Policy</a>.
           </motion.p>
         </motion.div>
       </div>

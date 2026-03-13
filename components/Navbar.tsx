@@ -103,7 +103,7 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
         </div>
       </motion.header>
 
-      {/* Full-screen menu overlay */}
+      {/* Full-screen menu overlay (starts below header) */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -111,9 +111,9 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-accent"
+            className="fixed top-20 bottom-0 left-0 right-0 z-40 bg-accent"
           >
-            <div className="h-full flex flex-col justify-center px-8 sm:px-16 lg:px-24 pt-20">
+            <div className="h-full flex flex-col justify-center px-8 sm:px-16 lg:px-24">
               {/* Two-column nav links */}
               <div className="flex flex-col sm:flex-row gap-12 sm:gap-24 lg:gap-40">
                 {/* Left column — Services */}

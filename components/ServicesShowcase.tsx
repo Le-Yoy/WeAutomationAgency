@@ -80,7 +80,7 @@ export default function ServicesShowcase() {
         </div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-grey/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -88,9 +88,9 @@ export default function ServicesShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOnce}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-primary p-8 sm:p-12 group"
+              className="bg-darker-grey border border-grey/20 p-8 sm:p-12 rounded-xl group hover:border-accent/40 transition-colors"
             >
-              <span className="text-grey/40 text-sm font-mono mb-4 block">
+              <span className="text-accent text-sm font-mono font-medium mb-4 block">
                 0{i + 1}
               </span>
               <h3 className="text-2xl sm:text-3xl font-medium text-secondary mb-4 group-hover:text-accent transition-colors duration-300">
