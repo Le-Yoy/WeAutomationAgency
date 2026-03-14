@@ -130,12 +130,9 @@ export default function ScrollingCards() {
   });
 
   // Total section height:
-  // 1 screen of "lead-in" (user sees cards, no animation yet) +
-  // 1 screen per card (hold + fly) +
-  // 0.5 screen of tail.
-  // But because scrollYProgress maps 0–1 over total height, the lead-in
-  // eats the first ~fraction of progress before cards start moving.
-  const totalScreens = cards.length * 2 + 1;
+  // Reduced for mobile UX - users should scroll less to see cards fly.
+  // 1.25 screens per card = faster progression.
+  const totalScreens = cards.length + 1;
 
   return (
     <section
