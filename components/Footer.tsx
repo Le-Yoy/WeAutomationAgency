@@ -5,11 +5,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const quickLinks = [
-  { name: 'AI Chatbot', href: '#services' },
-  { name: 'Lead Generation', href: '#services' },
-  { name: 'Call Center', href: '#services' },
-  { name: 'Email Automation', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
+  { name: 'AI Chatbot', href: '/services/ai-chatbot' },
+  { name: 'Lead Generation', href: '/services/lead-generation' },
+  { name: 'Call Center', href: '/services/call-center' },
+  { name: 'Email Automation', href: '/services/email-automation' },
+  { name: 'Portfolio', href: '/portfolio' },
 ];
 
 const legalLinks = [
@@ -75,12 +75,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-grey text-sm hover:text-secondary transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
