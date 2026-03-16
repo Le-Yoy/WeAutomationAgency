@@ -19,17 +19,16 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
   }, [menuOpen]);
 
   const servicesLinks = [
-    { name: 'AI Call Center', href: '#call-center' },
-    { name: 'AI Leads Generation', href: '#leads' },
-    { name: 'AI E-mail Automation', href: '#automation' },
-    { name: 'AI Chatbot', href: '#chatbot' },
+    { name: 'AI Call Center', href: '/services/call-center' },
+    { name: 'AI Leads Generation', href: '/services/lead-generation' },
+    { name: 'AI E-mail Automation', href: '/services/email-automation' },
+    { name: 'AI Chatbot', href: '/services/ai-chatbot' },
   ];
 
   const actionLinks = [
-    { name: 'Get A Demo Video', href: '#demo' },
-    { name: 'Consult Us', href: '#consult' },
-    { name: 'Hire Us', href: '#hire' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Get A Demo', href: '/#contact' },
+    { name: 'Contact Us', href: '/#contact' },
   ];
 
   const handleLinkClick = () => {
