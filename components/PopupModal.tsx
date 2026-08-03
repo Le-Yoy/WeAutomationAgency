@@ -39,7 +39,7 @@ export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, formType: 'popup' }),
       });
 
       if (res.ok) {
