@@ -87,7 +87,8 @@ weautomationagency/
 │   ├── page.tsx                      # Homepage (imports all sections)
 │   ├── globals.css                   # Tailwind + CSS animations
 │   ├── api/
-│   │   └── contact/route.ts          # Form submission endpoint
+│   │   └── contact/route.ts          # Lead endpoint → emails each lead via Resend
+│   ├── start/page.tsx                # Standalone lead-capture landing page ("short link")
 │   ├── services/
 │   │   ├── ai-chatbot/page.tsx       # AI Chatbot service page
 │   │   ├── lead-generation/page.tsx  # Lead Gen service page
@@ -113,7 +114,8 @@ weautomationagency/
 │   ├── ScrollingCards.tsx            # Stacked card fly-off animation (signature feature)
 │   ├── ImageSlides.tsx               # CSS marquee portfolio showcase
 │   ├── Newsletter.tsx                # Email signup CTA
-│   ├── PopupModal.tsx                # Contact form modal
+│   ├── PopupModal.tsx                # Contact form modal ("Get Your Demo")
+│   ├── StartForm.tsx                 # Client form used by /start (name, email, phone, source)
 │   ├── Footer.tsx                    # 4-column footer
 │   └── hooks/
 │       └── useCountUp.ts             # Counter animation hook
@@ -466,6 +468,50 @@ const quickLinks = [
 
 **Social Links:**
 - Instagram, LinkedIn, Twitter (generic URLs, can be updated)
+
+---
+
+## Lead Capture & Form Delivery
+
+Two forms capture leads, and **both deliver to the same place**: an email to the owner's
+inbox, sent via **Resend** (REST API called with `fetch` — no npm dependency added).
+
+### Entry points
+1. **`/start`** — a standalone lead-capture landing page (the "short link" for ads, QR codes,
+   DMs). Minimal top bar (logo only, no nav) to reduce exits. Fields: **Name\***, **Email\***,
+   **Phone\***, **"Where did you find us?"\*** dropdown, optional message. `robots: noindex`
+   (dedicated conversion page, not for search). Built as a server component (`app/start/page.tsx`,
+   owns metadata) + client form (`components/StartForm.tsx`).
+2. **"Get Your Demo" popup** (`components/PopupModal.tsx`) — the existing modal, now actually
+   delivering (previously its data was dropped).
+
+Both `POST` to `/api/contact` with a `formType` tag (`start-page` vs `popup`) so you can tell
+where a lead came from in the email subject/body.
+
+### `/api/contact/route.ts` behavior
+- Normalizes + validates email (trims/​lowercases **before** regex — handles pasted spaces/caps).
+- Sanitizes + length-caps every field.
+- If `RESEND_API_KEY` is set → sends a formatted "New Lead" HTML email. `reply_to` is the lead's
+  own email, so hitting **Reply** writes straight to them. Returns **502** if Resend rejects.
+- If the key is **not** set → `console.warn`s the lead and still returns 200 (dev-safe fallback;
+  leads are NOT delivered until the key exists).
+
+### Environment variables
+| Var | Required | Default | Notes |
+|-----|----------|---------|-------|
+| `RESEND_API_KEY` | ✅ | — | From resend.com. Set in `.env.local` **and** in Vercel env vars. |
+| `LEAD_NOTIFY_EMAIL` | — | `ceo@weautomationagency.com` | Inbox that receives leads. Must equal the Resend account email until a domain is verified. Currently `leboutaleb@gmail.com`. |
+| `LEAD_FROM_EMAIL` | — | `WeAutomationAgency Leads <onboarding@resend.dev>` | `onboarding@resend.dev` works with zero domain setup. Swap to your domain after verifying it in Resend. |
+
+> `.env.local` is gitignored — the key is never committed. Production reads the key from Vercel
+> env vars (Settings → Environment Variables), which must be added separately, then redeploy.
+
+Full setup walkthrough: **`EMAIL-SETUP.md`** (repo root).
+
+### To upgrade to your own sending domain later
+Verify `weautomationagency.com` in Resend → set `LEAD_FROM_EMAIL=... <leads@weautomationagency.com>`
+and `LEAD_NOTIFY_EMAIL=ceo@weautomationagency.com` → redeploy. This also improves deliverability
+and removes the `resend.dev` sender.
 
 ---
 
@@ -1192,9 +1238,10 @@ wip
 - **2026-02-13:** Added policy pages documentation
 - **2026-02-13:** Added troubleshooting guide
 - **2026-02-13:** Added performance optimization notes
+- **2026-08-04:** Added `/start` lead-capture page + Resend email lead pipeline (see "Lead Capture & Form Delivery"); fixed contact route that was silently dropping every submission
 
 ---
 
-**Last Updated:** February 13, 2026
+**Last Updated:** August 4, 2026
 **Maintained By:** Claude Code + Sam (almostaphasmart)
 **Project Status:** ✅ Production (Live at weautomationagency.com)
