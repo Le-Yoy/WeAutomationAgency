@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/services/call-center', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services/email-automation', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/portfolio', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
+    { path: '/blog/claude-ai-watermark-google-rankings', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/cookies', priority: 0.3, changeFrequency: 'yearly' },
