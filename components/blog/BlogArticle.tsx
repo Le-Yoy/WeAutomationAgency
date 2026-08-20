@@ -13,7 +13,6 @@ const UI: Record<
   {
     back: string;
     langLabel: string;
-    reviewNotice: string;
     auditH: string;
     auditP: string;
     auditCta: string;
@@ -22,7 +21,6 @@ const UI: Record<
   en: {
     back: 'Back to Blog',
     langLabel: 'Read in',
-    reviewNotice: 'This article was translated with AI and is pending human review.',
     auditH: 'Not sure if your content is helping or hurting you?',
     auditP: "Get a free content & SEO audit. We'll tell you exactly where you stand — no jargon, no fear-mongering.",
     auditCta: 'Get my free audit',
@@ -30,7 +28,6 @@ const UI: Record<
   fr: {
     back: 'Retour au blog',
     langLabel: 'Lire en',
-    reviewNotice: "Cet article a été traduit avec l'IA et est en attente de relecture humaine.",
     auditH: 'Vous ne savez pas si votre contenu vous aide ou vous dessert ?',
     auditP: 'Obtenez un audit de contenu et SEO gratuit. Nous vous dirons exactement où vous en êtes — sans jargon, sans alarmisme.',
     auditCta: 'Obtenir mon audit gratuit',
@@ -38,7 +35,6 @@ const UI: Record<
   es: {
     back: 'Volver al blog',
     langLabel: 'Leer en',
-    reviewNotice: 'Este artículo fue traducido con IA y está pendiente de revisión humana.',
     auditH: '¿No sabes si tu contenido te ayuda o te perjudica?',
     auditP: 'Consigue una auditoría de contenido y SEO gratuita. Te diremos exactamente en qué punto estás — sin tecnicismos ni alarmismo.',
     auditCta: 'Consigue mi auditoría gratis',
@@ -117,12 +113,6 @@ export default function BlogArticle({
               </div>
             </div>
           </div>
-
-          {meta.translationStatus === 'ai-translated-pending-review' && (
-            <p className="mt-5 text-xs text-neutral-500 bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2">
-              {t.reviewNotice}
-            </p>
-          )}
         </header>
 
         {/* Body */}
