@@ -312,6 +312,17 @@ export default function AIChatbotPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </Link>
+          <p className="text-grey/60 text-sm mt-10">
+            New to chatbots? Read our{' '}
+            <Link href="/blog/ai-chatbots-for-business" className="text-accent hover:underline">
+              complete guide to AI chatbots
+            </Link>{' '}
+            or see{' '}
+            <Link href="/blog/ai-chatbot-cost" className="text-accent hover:underline">
+              how much an AI chatbot costs
+            </Link>
+            .
+          </p>
         </motion.div>
       </section>
     </main>
