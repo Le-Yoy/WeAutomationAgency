@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 /**
  * Light-theme MDX renderer for blog articles.
@@ -86,5 +86,25 @@ export const mdxComponents = {
   ),
   td: (props: ComponentPropsWithoutRef<'td'>) => (
     <td className="border-b border-neutral-200 py-2 px-3 text-neutral-700 align-top" {...props} />
+  ),
+  // --- Reusable content blocks (usable inside .mdx) ---
+  Callout: ({ children }: { children?: ReactNode }) => (
+    <div className="bg-accent/5 border-l-4 border-accent rounded-r-xl p-5 my-8 text-neutral-800 text-[1.02rem] [&>p]:mb-0 [&>p:not(:last-child)]:mb-3">
+      {children}
+    </div>
+  ),
+  KeyTakeaways: ({
+    title = 'Key takeaways',
+    children,
+  }: {
+    title?: string;
+    children?: ReactNode;
+  }) => (
+    <aside className="bg-neutral-900 rounded-2xl p-6 my-10">
+      <p className="text-sm font-semibold uppercase tracking-wide text-accent mb-3">{title}</p>
+      <div className="[&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_li]:text-neutral-200 [&_p]:text-neutral-200 [&_strong]:text-white">
+        {children}
+      </div>
+    </aside>
   ),
 };

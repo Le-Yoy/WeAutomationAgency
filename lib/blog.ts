@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import GithubSlugger from 'github-slugger';
 import type { Metadata } from 'next';
 
 export const BASE_URL = 'https://weautomationagency.com';
@@ -16,6 +17,10 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   es: 'Español',
 };
 
+/** The 4 post archetypes the Blog Bible rotates between. */
+export type PostType = 'guide' | 'howto' | 'comparison' | 'opinion';
+export const POST_TYPES: PostType[] = ['guide', 'howto', 'comparison', 'opinion'];
+
 export interface PostMeta {
   slug: string;
   locale: Locale;
@@ -29,6 +34,35 @@ export interface PostMeta {
   authorRole: string;
   keywords: string[];
   translationStatus?: string;
+  // --- Blog Bible variant fields (all optional; sensible defaults) ---
+  type?: PostType; // archetype → drives eyebrow + module defaults
+  toc?: boolean; // render auto table of contents from H2s
+  heroImage?: string; // /images/blog/<slug>.webp (Unsplash, optimized)
+  heroAlt?: string; // descriptive alt text (SEO + a11y)
+  heroCredit?: string; // "Photo by <name> on Unsplash"
+  heroCreditUrl?: string; // link to photographer / source
+}
+
+export interface Heading {
+  id: string;
+  text: string;
+}
+
+/** Extract H2 headings (with github-slugger ids that match rehype-slug) for the TOC. */
+export function getHeadings(content: string): Heading[] {
+  const slugger = new GithubSlugger();
+  const headings: Heading[] = [];
+  for (const line of content.split('\n')) {
+    const m = /^##\s+(.+?)\s*$/.exec(line);
+    if (!m) continue;
+    // strip inline markdown (links, bold, italic, code) for clean TOC text
+    const text = m[1]
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/[*_`]/g, '')
+      .trim();
+    headings.push({ id: slugger.slug(text), text });
+  }
+  return headings;
 }
 
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
@@ -69,6 +103,12 @@ export function getPost(
     authorRole: data.authorRole ?? '',
     keywords: Array.isArray(data.keywords) ? data.keywords : [],
     translationStatus: data.translationStatus,
+    type: data.type,
+    toc: data.toc === true,
+    heroImage: data.heroImage,
+    heroAlt: data.heroAlt,
+    heroCredit: data.heroCredit,
+    heroCreditUrl: data.heroCreditUrl,
   };
   return { meta, content };
 }

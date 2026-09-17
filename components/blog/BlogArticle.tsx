@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import {
   type Locale,
   type PostMeta,
+  type Heading,
   LOCALE_LABELS,
   postPath,
   blogIndexPath,
@@ -13,6 +15,7 @@ const UI: Record<
   {
     back: string;
     langLabel: string;
+    tocLabel: string;
     auditH: string;
     auditP: string;
     auditCta: string;
@@ -21,6 +24,7 @@ const UI: Record<
   en: {
     back: 'Back to Blog',
     langLabel: 'Read in',
+    tocLabel: 'On this page',
     auditH: 'Not sure if your content is helping or hurting you?',
     auditP: "Get a free content & SEO audit. We'll tell you exactly where you stand — no jargon, no fear-mongering.",
     auditCta: 'Get my free audit',
@@ -28,6 +32,7 @@ const UI: Record<
   fr: {
     back: 'Retour au blog',
     langLabel: 'Lire en',
+    tocLabel: 'Au sommaire',
     auditH: 'Vous ne savez pas si votre contenu vous aide ou vous dessert ?',
     auditP: 'Obtenez un audit de contenu et SEO gratuit. Nous vous dirons exactement où vous en êtes — sans jargon, sans alarmisme.',
     auditCta: 'Obtenir mon audit gratuit',
@@ -35,6 +40,7 @@ const UI: Record<
   es: {
     back: 'Volver al blog',
     langLabel: 'Leer en',
+    tocLabel: 'En esta página',
     auditH: '¿No sabes si tu contenido te ayuda o te perjudica?',
     auditP: 'Consigue una auditoría de contenido y SEO gratuita. Te diremos exactamente en qué punto estás — sin tecnicismos ni alarmismo.',
     auditCta: 'Consigue mi auditoría gratis',
@@ -44,10 +50,12 @@ const UI: Record<
 export default function BlogArticle({
   meta,
   availableLocales,
+  headings = [],
   children,
 }: {
   meta: PostMeta;
   availableLocales: Locale[];
+  headings?: Heading[];
   children: React.ReactNode;
 }) {
   const t = UI[meta.locale];
@@ -114,6 +122,53 @@ export default function BlogArticle({
             </div>
           </div>
         </header>
+
+        {/* Hero image (optional) */}
+        {meta.heroImage && (
+          <figure className="max-w-3xl mx-auto mb-10">
+            <div className="relative overflow-hidden rounded-2xl aspect-[16/9] bg-neutral-100">
+              <Image
+                src={meta.heroImage}
+                alt={meta.heroAlt || meta.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            {meta.heroCredit && (
+              <figcaption className="mt-2 text-xs text-neutral-400 text-center">
+                {meta.heroCreditUrl ? (
+                  <a href={meta.heroCreditUrl} target="_blank" rel="noopener noreferrer" className="hover:text-neutral-600 underline">
+                    {meta.heroCredit}
+                  </a>
+                ) : (
+                  meta.heroCredit
+                )}
+              </figcaption>
+            )}
+          </figure>
+        )}
+
+        {/* Table of contents (optional) */}
+        {headings.length > 1 && (
+          <nav aria-label={t.tocLabel} className="max-w-2xl mx-auto mb-10">
+            <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500 mb-3">
+                {t.tocLabel}
+              </p>
+              <ul className="space-y-2">
+                {headings.map((h) => (
+                  <li key={h.id}>
+                    <a href={`#${h.id}`} className="text-neutral-700 hover:text-accent text-sm leading-snug">
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+        )}
 
         {/* Body */}
         <div className="max-w-2xl mx-auto">{children}</div>
