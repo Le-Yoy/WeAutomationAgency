@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
+import ReadingProgress from './ReadingProgress';
 import {
   type Locale,
   type PostMeta,
@@ -67,6 +68,7 @@ export default function BlogArticle({
 
   return (
     <div className="min-h-screen bg-white text-neutral-900">
+      <ReadingProgress />
       <article className="px-5 sm:px-8">
         {/* Top bar */}
         <div className="max-w-2xl mx-auto pt-28 pb-6 flex items-center justify-between gap-4">
