@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/services/lead-generation', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services/call-center', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services/email-automation', priority: 0.9, changeFrequency: 'monthly' },
+    { path: '/services/ai-search-visibility', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/portfolio', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' },
