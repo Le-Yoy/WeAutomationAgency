@@ -12,7 +12,15 @@ export const metadata: Metadata = {
     'appointment scheduling automation',
     'voice analytics',
   ],
-  alternates: { canonical: '/services/call-center' },
+  alternates: {
+    canonical: '/services/call-center',
+    languages: {
+      en: '/services/call-center',
+      fr: '/fr/services/call-center',
+      es: '/es/services/call-center',
+      'x-default': '/services/call-center',
+    },
+  },
   openGraph: {
     title: 'AI Call Center & Voice Automation — 24/7 Human-Like Support',
     description:

@@ -12,7 +12,15 @@ export const metadata: Metadata = {
     'lead nurture sequences',
     'email personalization',
   ],
-  alternates: { canonical: '/services/email-automation' },
+  alternates: {
+    canonical: '/services/email-automation',
+    languages: {
+      en: '/services/email-automation',
+      fr: '/fr/services/email-automation',
+      es: '/es/services/email-automation',
+      'x-default': '/services/email-automation',
+    },
+  },
   openGraph: {
     title: 'Email Automation & Behavioral Sequences That Convert',
     description:

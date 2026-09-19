@@ -12,7 +12,15 @@ export const metadata: Metadata = {
     'lead qualification',
     'marketing automation',
   ],
-  alternates: { canonical: '/services/lead-generation' },
+  alternates: {
+    canonical: '/services/lead-generation',
+    languages: {
+      en: '/services/lead-generation',
+      fr: '/fr/services/lead-generation',
+      es: '/es/services/lead-generation',
+      'x-default': '/services/lead-generation',
+    },
+  },
   openGraph: {
     title: 'Automated Lead Generation Services That Fill Your Pipeline',
     description:
