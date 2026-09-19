@@ -2,9 +2,8 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-
-const text = 'We create custom AI chatbots for ecommerce and banking, enhance lead generation through marketing automation, and deliver intelligent call center solutions for seamless customer service.';
-const words = text.split(' ');
+import { HOME } from '@/lib/content/home';
+import type { SiteLocale } from '@/lib/i18n';
 
 function Word({ word, index, total, scrollYProgress }: {
   word: string;
@@ -23,7 +22,8 @@ function Word({ word, index, total, scrollYProgress }: {
   );
 }
 
-export default function ScrollingText() {
+export default function ScrollingText({ locale = 'en' }: { locale?: SiteLocale }) {
+  const words = HOME[locale].scrollingText.split(' ');
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,

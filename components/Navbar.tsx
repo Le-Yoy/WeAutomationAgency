@@ -4,8 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HOME } from '@/lib/content/home';
+import { localizedPath, type SiteLocale } from '@/lib/i18n';
 
-export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
+export default function Navbar({ onOpenModal, locale = 'en' }: { onOpenModal?: () => void; locale?: SiteLocale }) {
+  const t = HOME[locale].nav;
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Lock body scroll when menu is open
@@ -17,19 +20,6 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
     }
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
-
-  const servicesLinks = [
-    { name: 'AI Call Center', href: '/services/call-center' },
-    { name: 'AI Leads Generation', href: '/services/lead-generation' },
-    { name: 'AI E-mail Automation', href: '/services/email-automation' },
-    { name: 'AI Chatbot', href: '/services/ai-chatbot' },
-  ];
-
-  const actionLinks = [
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Get A Demo', href: '/#contact' },
-    { name: 'Contact Us', href: '/#contact' },
-  ];
 
   const handleLinkClick = () => {
     setMenuOpen(false);
@@ -45,7 +35,7 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
       >
         <div className="max-w-wide mx-auto flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="relative z-50">
+          <Link href={localizedPath(locale, '/')} className="relative z-50">
             <Image
               src="/images/logos/WeAutomationAgency-Logo.svg"
               alt="WeAutomationAgency"
@@ -64,7 +54,7 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
               className="group flex items-center gap-3 text-secondary"
             >
               <span className="text-sm sm:text-base font-light tracking-wide hidden sm:inline">
-                get demo
+                {t.getDemo}
               </span>
               <span className="w-10 h-10 rounded-full border border-secondary/40 flex items-center justify-center overflow-hidden relative hover:border-secondary/80 transition-colors">
                 <span className="transition-transform duration-300 group-hover:translate-x-8 group-hover:opacity-0">
@@ -123,9 +113,9 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
                     transition={{ delay: 0.05 }}
                     className="text-secondary/50 text-xs font-medium tracking-widest uppercase mb-4"
                   >
-                    Services
+                    {t.services}
                   </motion.h3>
-                  {servicesLinks.map((link, i) => (
+                  {t.serviceLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
                       initial={{ opacity: 0, x: -30 }}
@@ -133,7 +123,7 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
                       transition={{ delay: 0.1 + i * 0.05 }}
                     >
                       <Link
-                        href={link.href}
+                        href={localizedPath(locale, link.href)}
                         onClick={handleLinkClick}
                         className="text-secondary text-xl sm:text-2xl lg:text-3xl font-light hover:text-primary hover:translate-x-2 transition-all duration-200 block py-2"
                       >
@@ -151,9 +141,9 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
                     transition={{ delay: 0.15 }}
                     className="text-secondary/50 text-xs font-medium tracking-widest uppercase mb-4"
                   >
-                    Get Started
+                    {t.getStarted}
                   </motion.h3>
-                  {actionLinks.map((link, i) => (
+                  {t.actionLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
                       initial={{ opacity: 0, x: -30 }}
@@ -161,7 +151,7 @@ export default function Navbar({ onOpenModal }: { onOpenModal?: () => void }) {
                       transition={{ delay: 0.2 + i * 0.05 }}
                     >
                       <Link
-                        href={link.href}
+                        href={localizedPath(locale, link.href)}
                         onClick={handleLinkClick}
                         className="text-secondary text-xl sm:text-2xl lg:text-3xl font-light hover:text-primary hover:translate-x-2 transition-all duration-200 block py-2"
                       >

@@ -2,13 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HOME } from '@/lib/content/home';
+import type { SiteLocale } from '@/lib/i18n';
 
 interface PopupModalProps {
   isOpen: boolean;
   onClose: () => void;
+  locale?: SiteLocale;
 }
 
-export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
+export default function PopupModal({ isOpen, onClose, locale = 'en' }: PopupModalProps) {
+  const t = HOME[locale].modal;
   const [formData, setFormData] = useState({
     email: '',
     phone: '',
@@ -94,10 +98,10 @@ export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
 
             {/* Title */}
             <h2 className="text-2xl sm:text-3xl font-medium text-secondary mb-2">
-              Get Your Demo
+              {t.title}
             </h2>
             <p className="text-grey text-sm mb-8">
-              Tell us about your project and we&apos;ll get back to you within 24 hours.
+              {t.description}
             </p>
 
             {status === 'sent' ? (
@@ -107,15 +111,15 @@ export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
                     <polyline points="8,17 14,23 24,10" />
                   </svg>
                 </div>
-                <p className="text-secondary text-lg font-medium">Message Sent!</p>
-                <p className="text-grey text-sm mt-1">We&apos;ll be in touch soon.</p>
+                <p className="text-secondary text-lg font-medium">{t.sentTitle}</p>
+                <p className="text-grey text-sm mt-1">{t.sentSub}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-sm text-grey mb-2">
-                    Email <span className="text-accent">*</span>
+                    {t.email} <span className="text-accent">*</span>
                   </label>
                   <input
                     id="email"
@@ -124,14 +128,14 @@ export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full bg-primary border border-grey/20 rounded-lg px-4 py-3 text-secondary text-sm placeholder:text-grey/50 focus:outline-none focus:border-accent transition-colors"
-                    placeholder="your@email.com"
+                    placeholder={t.emailPh}
                   />
                 </div>
 
                 {/* Phone */}
                 <div>
                   <label htmlFor="phone" className="block text-sm text-grey mb-2">
-                    Phone <span className="text-grey/50">(optional)</span>
+                    {t.phone} <span className="text-grey/50">{t.optional}</span>
                   </label>
                   <input
                     id="phone"
@@ -139,14 +143,14 @@ export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full bg-primary border border-grey/20 rounded-lg px-4 py-3 text-secondary text-sm placeholder:text-grey/50 focus:outline-none focus:border-accent transition-colors"
-                    placeholder="+1 (646) 980-2446"
+                    placeholder={t.phonePh}
                   />
                 </div>
 
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className="block text-sm text-grey mb-2">
-                    Tell us about your project
+                    {t.message}
                   </label>
                   <textarea
                     id="message"
@@ -154,7 +158,7 @@ export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full bg-primary border border-grey/20 rounded-lg px-4 py-3 text-secondary text-sm placeholder:text-grey/50 focus:outline-none focus:border-accent transition-colors resize-none"
-                    placeholder="I need help with..."
+                    placeholder={t.messagePh}
                   />
                 </div>
 
@@ -164,12 +168,12 @@ export default function PopupModal({ isOpen, onClose }: PopupModalProps) {
                   disabled={status === 'sending'}
                   className="w-full bg-accent hover:bg-darker-orange text-secondary font-medium py-3.5 rounded-lg transition-colors duration-200 disabled:opacity-50"
                 >
-                  {status === 'sending' ? 'Sending...' : 'Send Message'}
+                  {status === 'sending' ? t.sending : t.send}
                 </button>
 
                 {status === 'error' && (
                   <p className="text-accent text-sm text-center">
-                    Something went wrong. Please try again.
+                    {t.error}
                   </p>
                 )}
               </form>

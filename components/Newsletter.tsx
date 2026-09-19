@@ -3,8 +3,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer, viewportOnce } from '@/lib/animations';
+import { HOME } from '@/lib/content/home';
+import { localizedPath, type SiteLocale } from '@/lib/i18n';
 
-export default function Newsletter() {
+export default function Newsletter({ locale = 'en' }: { locale?: SiteLocale }) {
+  const t = HOME[locale].newsletter;
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
@@ -34,16 +37,16 @@ export default function Newsletter() {
             variants={fadeInUp}
             className="text-[clamp(1.75rem,4vw,2.75rem)] font-medium leading-tight text-secondary mb-4"
           >
-            Ready to Take Your Project
+            {t.line1}
             <br />
-            to the Next Level?
+            {t.line2}
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
             className="text-grey text-base sm:text-lg leading-relaxed mb-10"
           >
-            Schedule a free consultation and discover solutions tailored to your needs.
+            {t.description}
           </motion.p>
 
           <motion.form
@@ -56,7 +59,7 @@ export default function Newsletter() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder={t.placeholder}
               className="flex-1 bg-darker-grey border border-grey/20 rounded-pill px-5 py-3.5 text-secondary text-sm placeholder:text-grey/50 focus:outline-none focus:border-accent transition-colors"
             />
             <button
@@ -64,7 +67,7 @@ export default function Newsletter() {
               disabled={status === 'sending'}
               className="bg-accent hover:bg-darker-orange text-secondary font-medium px-8 py-3.5 rounded-pill transition-colors duration-200 whitespace-nowrap disabled:opacity-50"
             >
-              {status === 'sent' ? 'Sent!' : status === 'sending' ? 'Sending...' : 'Book A Call'}
+              {status === 'sent' ? t.sent : status === 'sending' ? t.sending : t.book}
             </button>
           </motion.form>
 
@@ -72,9 +75,9 @@ export default function Newsletter() {
             variants={fadeInUp}
             className="text-grey/50 text-xs mt-4"
           >
-            By submitting, you agree to our{' '}
-            <a href="/terms" className="underline hover:text-grey transition-colors">Terms</a> and{' '}
-            <a href="/privacy" className="underline hover:text-grey transition-colors">Privacy Policy</a>.
+            {t.termsPre}{' '}
+            <a href={localizedPath(locale, '/terms')} className="underline hover:text-grey transition-colors">{t.terms}</a> {t.and}{' '}
+            <a href={localizedPath(locale, '/privacy')} className="underline hover:text-grey transition-colors">{t.privacy}</a>.
           </motion.p>
         </motion.div>
       </div>

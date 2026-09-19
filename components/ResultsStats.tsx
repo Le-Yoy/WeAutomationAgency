@@ -3,11 +3,13 @@
 import { motion } from 'framer-motion';
 import { useCountUp } from './hooks/useCountUp';
 import { fadeInUp, staggerContainer, viewportOnce } from '@/lib/animations';
+import { HOME } from '@/lib/content/home';
+import type { SiteLocale } from '@/lib/i18n';
 
 const stats = [
-  { end: 95, suffix: '%', label: 'Client Satisfaction' },
-  { end: 500, suffix: '+', label: 'Projects Completed' },
-  { end: 10, prefix: '$', suffix: 'M+', label: 'Revenue Generated' },
+  { end: 95, suffix: '%' },
+  { end: 500, suffix: '+' },
+  { end: 10, prefix: '$', suffix: 'M+' },
 ];
 
 function StatCard({ end, suffix, prefix, label, delay }: {
@@ -38,7 +40,8 @@ function StatCard({ end, suffix, prefix, label, delay }: {
   );
 }
 
-export default function ResultsStats() {
+export default function ResultsStats({ locale = 'en' }: { locale?: SiteLocale }) {
+  const t = HOME[locale].results;
   return (
     <section className="py-20 sm:py-28 bg-primary">
       <div className="max-w-wide mx-auto px-5 sm:px-8 lg:px-12">
@@ -53,21 +56,19 @@ export default function ResultsStats() {
           {/* Left — Tagline + Heading */}
           <motion.div variants={fadeInUp} className="lg:w-1/2">
             <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
-              Results
+              {t.eyebrow}
             </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-medium leading-tight text-secondary">
-              We Drive Real Results
+              {t.line1}
               <br />
-              For Real Businesses
+              {t.line2}
             </h2>
           </motion.div>
 
           {/* Right — Description + CTAs */}
           <motion.div variants={fadeInUp} className="lg:w-1/2 flex flex-col justify-center">
             <p className="text-grey text-base sm:text-lg leading-relaxed mb-8">
-              Our AI automation solutions have helped hundreds of businesses
-              streamline operations, boost customer engagement, and significantly
-              increase their revenue. Here&apos;s what our track record looks like.
+              {t.description}
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -75,7 +76,7 @@ export default function ResultsStats() {
                 className="group flex items-center gap-3 text-secondary"
               >
                 <span className="text-sm sm:text-base font-light tracking-wide">
-                  Learn More
+                  {t.learnMore}
                 </span>
                 <span className="w-10 h-10 rounded-full border border-secondary/40 flex items-center justify-center overflow-hidden relative hover:border-accent hover:bg-accent transition-all duration-300">
                   <span className="transition-transform duration-300 group-hover:translate-x-8 group-hover:opacity-0">
@@ -91,7 +92,7 @@ export default function ResultsStats() {
                 className="group flex items-center gap-3 text-secondary"
               >
                 <span className="text-sm sm:text-base font-light tracking-wide">
-                  Contact Us
+                  {t.contactUs}
                 </span>
                 <span className="w-10 h-10 rounded-full border border-secondary/40 flex items-center justify-center overflow-hidden relative hover:border-accent hover:bg-accent transition-all duration-300">
                   <span className="transition-transform duration-300 group-hover:translate-x-8 group-hover:opacity-0">
@@ -110,7 +111,7 @@ export default function ResultsStats() {
         <div className="border-t border-grey/20 pt-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x sm:divide-grey/20">
             {stats.map((stat, i) => (
-              <StatCard key={stat.label} {...stat} delay={i * 0.2} />
+              <StatCard key={i} {...stat} label={t.statLabels[i]} delay={i * 0.2} />
             ))}
           </div>
         </div>

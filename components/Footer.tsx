@@ -3,28 +3,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { HOME } from '@/lib/content/home';
+import { localizedPath, type SiteLocale } from '@/lib/i18n';
 
-const quickLinks = [
-  { name: 'AI Chatbot', href: '/services/ai-chatbot' },
-  { name: 'Lead Generation', href: '/services/lead-generation' },
-  { name: 'Call Center', href: '/services/call-center' },
-  { name: 'Email Automation', href: '/services/email-automation' },
-  { name: 'Portfolio', href: '/portfolio' },
-];
-
-const legalLinks = [
-  { name: 'Privacy Policy', href: '/privacy' },
-  { name: 'Terms of Service', href: '/terms' },
-  { name: 'Cookie Policy', href: '/cookies' },
-];
-
-const contactInfo = [
-  { label: 'Email', value: 'ceo@weautomationagency.com', href: 'mailto:ceo@weautomationagency.com' },
-  { label: 'Phone', value: '+1 (646) 980-2446', href: 'tel:+16469802446' },
-  { label: 'Hours', value: 'Mon-Fri 9AM - 5PM EST', href: null },
-];
-
-export default function Footer() {
+export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
+  const t = HOME[locale].footer;
+  const contactInfo: { label: string; value: string; href: string | null }[] = [
+    { label: t.labels.email, value: 'ceo@weautomationagency.com', href: 'mailto:ceo@weautomationagency.com' },
+    { label: t.labels.phone, value: '+1 (646) 980-2446', href: 'tel:+16469802446' },
+    { label: t.labels.hours, value: t.hoursValue, href: null },
+  ];
   const [email, setEmail] = useState('');
 
   return (
@@ -34,7 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           {/* Logo + Newsletter */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-block mb-6">
+            <Link href={localizedPath(locale, '/')} className="inline-block mb-6">
               <Image
                 src="/images/logos/Mini-Logo-Orangee.webp"
                 alt="WeAutomationAgency"
@@ -44,8 +32,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-grey text-sm leading-relaxed mb-6 max-w-xs">
-              Empowering businesses with intelligent AI automation solutions
-              that drive efficiency and growth.
+              {t.tagline}
             </p>
             <form
               onSubmit={(e) => { e.preventDefault(); setEmail(''); }}
@@ -55,14 +42,14 @@ export default function Footer() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
+                placeholder={t.placeholder}
                 className="flex-1 bg-darker-grey border border-grey/20 rounded-lg px-4 py-2.5 text-secondary text-sm placeholder:text-grey/50 focus:outline-none focus:border-accent transition-colors"
               />
               <button
                 type="submit"
                 className="bg-accent hover:bg-darker-orange text-secondary text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
               >
-                Subscribe
+                {t.subscribe}
               </button>
             </form>
           </div>
@@ -70,13 +57,13 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="lg:col-span-2 lg:col-start-6">
             <h4 className="text-secondary text-sm font-medium mb-4 tracking-wide uppercase">
-              Services
+              {t.services}
             </h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
+              {t.serviceLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={link.href}
+                    href={localizedPath(locale, link.href)}
                     className="text-grey text-sm hover:text-secondary transition-colors"
                   >
                     {link.name}
@@ -89,13 +76,13 @@ export default function Footer() {
           {/* Legal */}
           <div className="lg:col-span-2">
             <h4 className="text-secondary text-sm font-medium mb-4 tracking-wide uppercase">
-              Legal
+              {t.legal}
             </h4>
             <ul className="space-y-3">
-              {legalLinks.map((link) => (
+              {t.legalLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href}
+                    href={localizedPath(locale, link.href)}
                     className="text-grey text-sm hover:text-secondary transition-colors"
                   >
                     {link.name}
@@ -108,7 +95,7 @@ export default function Footer() {
           {/* Contact */}
           <div className="lg:col-span-3">
             <h4 className="text-secondary text-sm font-medium mb-4 tracking-wide uppercase">
-              Contact
+              {t.contact}
             </h4>
             <ul className="space-y-3">
               {contactInfo.map((item) => (
@@ -139,7 +126,7 @@ export default function Footer() {
         <div className="border-t border-grey/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Copyright */}
           <p className="text-grey/40 text-xs">
-            &copy; 2026 Boutaleb LLC. All rights reserved.
+            &copy; 2026 Boutaleb LLC. {t.rights}
           </p>
 
           {/* Social Icons */}

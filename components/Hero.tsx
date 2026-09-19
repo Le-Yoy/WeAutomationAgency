@@ -3,13 +3,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { HOME } from '@/lib/content/home';
+import type { SiteLocale } from '@/lib/i18n';
 
-const headlines = [
-  { text: 'Automation Solutions', color: '#F94239' },
-  { text: 'Leads Generation', color: '#3b35ac' },
-  { text: 'Chat Bot', color: '#da0f85' },
-  { text: 'Call Center', color: '#856075' },
-];
+const rotatingColors = ['#F94239', '#3b35ac', '#da0f85', '#856075'];
 
 const leftImages = [
   '/images/services/AI automation agency.webp',
@@ -23,16 +20,17 @@ const rightImages = [
   '/images/hero/Seo ExpertWAA.webp',
 ];
 
-export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
+export default function Hero({ onOpenModal, locale = 'en' }: { onOpenModal?: () => void; locale?: SiteLocale }) {
+  const t = HOME[locale].hero;
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % headlines.length);
+      setCurrentIndex((prev) => (prev + 1) % t.rotating.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [t.rotating.length]);
 
   return (
     <section
@@ -50,9 +48,9 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
             >
               {/* Heading */}
               <h1 className="text-[clamp(2.5rem,6vw,4.25rem)] font-medium leading-[1.05] tracking-wide mb-6">
-                Transform Your
+                {t.line1}
                 <br />
-                Business with AI
+                {t.line2}
               </h1>
 
               {/* Rotating subtitle */}
@@ -64,10 +62,10 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -30 }}
                     transition={{ duration: 0.4 }}
-                    style={{ color: headlines[currentIndex].color }}
+                    style={{ color: rotatingColors[currentIndex] }}
                     className="block text-[clamp(2.5rem,6vw,4.25rem)] font-medium leading-[1.05] tracking-wide"
                   >
-                    {headlines[currentIndex].text}
+                    {t.rotating[currentIndex]}
                   </motion.span>
                 </AnimatePresence>
               </div>
@@ -79,11 +77,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                 transition={{ delay: 0.6 }}
                 className="text-grey text-base sm:text-lg leading-relaxed max-w-xl mb-10"
               >
-                At We Automation Agency, we empower businesses of all sizes
-                with innovative AI automation services that drive efficiency
-                and growth. Discover how our intelligent automation solutions
-                can streamline your operations, enhance customer engagement,
-                and unlock new levels of productivity.
+                {t.description}
               </motion.p>
 
               {/* CTA Button — Original dual-arrow style */}
@@ -95,7 +89,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                 className="group flex items-center gap-4 text-secondary"
               >
                 <span className="text-lg sm:text-xl font-light tracking-wide capitalize">
-                  get demo
+                  {t.cta}
                 </span>
                 <span className="w-12 h-12 rounded-full border border-secondary/40 flex items-center justify-center overflow-hidden relative hover:border-accent hover:bg-accent transition-all duration-300">
                   <span className="transition-transform duration-300 group-hover:translate-x-10 group-hover:opacity-0 text-lg">

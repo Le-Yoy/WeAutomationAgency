@@ -4,8 +4,11 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { fadeInUp, staggerContainer, viewportOnce } from '@/lib/animations';
+import { HOME } from '@/lib/content/home';
+import type { SiteLocale } from '@/lib/i18n';
 
-export default function CTASection({ onOpenModal }: { onOpenModal?: () => void }) {
+export default function CTASection({ onOpenModal, locale = 'en' }: { onOpenModal?: () => void; locale?: SiteLocale }) {
+  const t = HOME[locale].cta;
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -40,16 +43,14 @@ export default function CTASection({ onOpenModal }: { onOpenModal?: () => void }
           variants={fadeInUp}
           className="text-[clamp(2rem,5vw,3.5rem)] font-medium leading-tight text-secondary max-w-3xl mx-auto mb-6"
         >
-          Ready to Automate Your Business?
+          {t.heading}
         </motion.h2>
 
         <motion.p
           variants={fadeInUp}
           className="text-grey text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          Join hundreds of businesses that have transformed their operations with
-          our AI-powered solutions. From chatbots to lead generation, we build
-          the systems that work while you sleep.
+          {t.description}
         </motion.p>
 
         <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-6">
@@ -59,7 +60,7 @@ export default function CTASection({ onOpenModal }: { onOpenModal?: () => void }
             className="group flex items-center gap-3 bg-accent hover:bg-darker-orange text-secondary px-6 py-3 rounded-pill transition-colors duration-200"
           >
             <span className="text-sm sm:text-base font-medium tracking-wide">
-              Start Now
+              {t.startNow}
             </span>
             <span className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center overflow-hidden relative">
               <span className="transition-transform duration-300 group-hover:translate-x-8 group-hover:opacity-0 text-sm">
@@ -77,7 +78,7 @@ export default function CTASection({ onOpenModal }: { onOpenModal?: () => void }
             className="group flex items-center gap-3 border border-secondary/40 text-secondary px-6 py-3 rounded-pill hover:border-secondary transition-colors duration-200"
           >
             <span className="text-sm sm:text-base font-light tracking-wide">
-              Learn More
+              {t.learnMore}
             </span>
             <span className="w-8 h-8 rounded-full border border-secondary/20 flex items-center justify-center overflow-hidden relative">
               <span className="transition-transform duration-300 group-hover:translate-x-8 group-hover:opacity-0 text-sm">

@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
   }[] = [
     { path: '', priority: 1.0, changeFrequency: 'weekly' },
+    { path: '/fr', priority: 0.9, changeFrequency: 'weekly' },
+    { path: '/es', priority: 0.9, changeFrequency: 'weekly' },
     { path: '/services/ai-chatbot', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services/lead-generation', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services/call-center', priority: 0.9, changeFrequency: 'monthly' },

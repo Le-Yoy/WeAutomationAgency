@@ -4,27 +4,11 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { viewportOnce } from '@/lib/animations';
+import { HOME } from '@/lib/content/home';
+import type { SiteLocale } from '@/lib/i18n';
 
-const services = [
-  {
-    title: 'AI Chatbot',
-    description: 'Custom-built conversational AI that handles customer support, qualifies leads, and drives sales 24/7 on your website, WhatsApp, and social channels.',
-  },
-  {
-    title: 'Lead Generation',
-    description: 'AI-powered systems that find, qualify, and nurture your ideal customers through automated outreach, smart funnels, and data-driven targeting.',
-  },
-  {
-    title: 'Call Center',
-    description: 'Intelligent voice AI that answers calls, schedules appointments, and handles customer inquiries — with the quality of a human agent.',
-  },
-  {
-    title: 'Email Automation',
-    description: 'Smart email sequences that adapt to user behavior, delivering the right message at the right time to maximize conversions.',
-  },
-];
-
-export default function ServicesShowcase() {
+export default function ServicesShowcase({ locale = 'en' }: { locale?: SiteLocale }) {
+  const t = HOME[locale].services;
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -47,7 +31,7 @@ export default function ServicesShowcase() {
             className="lg:w-1/2"
           >
             <h2 className="text-[clamp(4rem,12vw,11rem)] font-bold leading-[0.9] text-accent">
-              Services<span className="text-secondary">.</span>
+              {t.title}<span className="text-secondary">.</span>
             </h2>
           </motion.div>
 
@@ -86,9 +70,9 @@ export default function ServicesShowcase() {
 
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {services.map((service, i) => (
+          {t.items.map((service, i) => (
             <motion.div
-              key={service.title}
+              key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOnce}
