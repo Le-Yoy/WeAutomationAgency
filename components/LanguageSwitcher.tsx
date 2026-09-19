@@ -27,6 +27,7 @@ export default function LanguageSwitcher({
           {i > 0 && <span className={theme === 'dark' ? 'text-grey/40 mx-1' : 'text-neutral-300 mx-1'}>·</span>}
           <Link
             href={localizedPath(loc, basePath)}
+            onClick={() => { document.cookie = `NEXT_LOCALE=${loc}; path=/; max-age=31536000`; }}
             aria-current={loc === current ? 'true' : undefined}
             className={loc === current ? `${active} font-semibold` : muted}
           >

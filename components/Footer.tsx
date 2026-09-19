@@ -63,7 +63,7 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
               {t.serviceLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={localizedPath(locale, link.href)}
+                    href={link.href === '/portfolio' ? link.href : localizedPath(locale, link.href)}
                     className="text-grey text-sm hover:text-secondary transition-colors"
                   >
                     {link.name}
@@ -82,7 +82,7 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
               {t.legalLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={localizedPath(locale, link.href)}
+                    href={link.href}
                     className="text-grey text-sm hover:text-secondary transition-colors"
                   >
                     {link.name}

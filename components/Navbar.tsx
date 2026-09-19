@@ -153,7 +153,7 @@ export default function Navbar({ onOpenModal, locale = 'en' }: { onOpenModal?: (
                       transition={{ delay: 0.2 + i * 0.05 }}
                     >
                       <Link
-                        href={localizedPath(locale, link.href)}
+                        href={link.href.startsWith('/#') ? localizedPath(locale, link.href) : link.href}
                         onClick={handleLinkClick}
                         className="text-secondary text-xl sm:text-2xl lg:text-3xl font-light hover:text-primary hover:translate-x-2 transition-all duration-200 block py-2"
                       >
