@@ -12,7 +12,15 @@ export const metadata: Metadata = {
     'multilingual chatbot',
     'conversational AI agency',
   ],
-  alternates: { canonical: '/services/ai-chatbot' },
+  alternates: {
+    canonical: '/services/ai-chatbot',
+    languages: {
+      en: '/services/ai-chatbot',
+      fr: '/fr/services/ai-chatbot',
+      es: '/es/services/ai-chatbot',
+      'x-default': '/services/ai-chatbot',
+    },
+  },
   openGraph: {
     title: 'AI Chatbot Development for Ecommerce, Banking & Support',
     description:

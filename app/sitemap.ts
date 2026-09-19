@@ -21,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/fr', priority: 0.9, changeFrequency: 'weekly' },
     { path: '/es', priority: 0.9, changeFrequency: 'weekly' },
     { path: '/services/ai-chatbot', priority: 0.9, changeFrequency: 'monthly' },
+    { path: '/fr/services/ai-chatbot', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/es/services/ai-chatbot', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/services/lead-generation', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services/call-center', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services/email-automation', priority: 0.9, changeFrequency: 'monthly' },
