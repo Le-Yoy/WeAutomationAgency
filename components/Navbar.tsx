@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HOME } from '@/lib/content/home';
 import { localizedPath, type SiteLocale } from '@/lib/i18n';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Navbar({ onOpenModal, locale = 'en' }: { onOpenModal?: () => void; locale?: SiteLocale }) {
   const t = HOME[locale].nav;
@@ -46,8 +47,9 @@ export default function Navbar({ onOpenModal, locale = 'en' }: { onOpenModal?: (
             />
           </Link>
 
-          {/* Right side: CTA + Hamburger */}
+          {/* Right side: Language + CTA + Hamburger */}
           <div className="flex items-center gap-4 sm:gap-6 relative z-50">
+            <LanguageSwitcher theme="dark" />
             {/* Get Demo CTA */}
             <button
               onClick={onOpenModal}
