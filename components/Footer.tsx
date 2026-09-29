@@ -114,11 +114,6 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
                 </li>
               ))}
             </ul>
-            <p className="text-grey/30 text-xs mt-4 leading-relaxed">
-              BOUTALEB LLC<br />
-              30 N GOULD ST STE N<br />
-              SHERIDAN, WY 82801
-            </p>
           </div>
         </div>
 

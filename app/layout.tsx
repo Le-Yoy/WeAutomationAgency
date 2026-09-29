@@ -74,7 +74,6 @@ const jsonLd = {
       '@type': 'Organization',
       '@id': 'https://weautomationagency.com/#organization',
       name: 'WeAutomationAgency',
-      legalName: 'BOUTALEB LLC',
       url: 'https://weautomationagency.com',
       logo: 'https://weautomationagency.com/icon-512.png',
       image: 'https://weautomationagency.com/opengraph-image.png',
@@ -82,14 +81,6 @@ const jsonLd = {
         'We build AI chatbots, automated lead generation, intelligent call centers, and email automation that drive revenue for your business.',
       email: 'ceo@weautomationagency.com',
       telephone: '+1-646-980-2446',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '30 N Gould St Ste N',
-        addressLocality: 'Sheridan',
-        addressRegion: 'WY',
-        postalCode: '82801',
-        addressCountry: 'US',
-      },
       sameAs: [
         'https://www.linkedin.com/company/weautomationagency',
         'https://www.instagram.com/weautomationagency',
