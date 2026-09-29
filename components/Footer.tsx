@@ -121,7 +121,7 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
         <div className="border-t border-grey/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Copyright */}
           <p className="text-grey/40 text-xs">
-            &copy; 2026 Boutaleb LLC. {t.rights}
+            &copy; 2026 WeAutomationAgency. {t.rights}
           </p>
 
           {/* Social Icons */}
