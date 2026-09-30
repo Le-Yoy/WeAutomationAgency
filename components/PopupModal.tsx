@@ -43,7 +43,7 @@ export default function PopupModal({ isOpen, onClose, locale = 'en' }: PopupModa
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, formType: 'popup' }),
+        body: JSON.stringify({ ...formData, formType: 'popup', locale }),
       });
 
       if (res.ok) {

@@ -17,7 +17,7 @@ export default function StartForm({ locale = 'en' }: { locale?: SiteLocale }) {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, formType: 'start-page' }),
+        body: JSON.stringify({ ...formData, formType: 'start-page', locale }),
       });
       if (res.ok) {
         setStatus('sent');

@@ -11,10 +11,35 @@ const FROM_EMAIL = process.env.LEAD_FROM_EMAIL || 'WeAutomationAgency Leads <onb
 const escapeHtml = (s: string) =>
   s.replace(/[<>&]/g, (c) => (c === '<' ? '&lt;' : c === '>' ? '&gt;' : '&amp;'));
 
+// Auto-confirmation sent to the person who submitted the form (localized).
+type ConfLocale = 'en' | 'fr' | 'es';
+const CONFIRM: Record<ConfLocale, { subject: string; heading: string; body: (n: string) => string; signoff: string }> = {
+  en: {
+    subject: 'Thanks — we got your request',
+    heading: 'Thanks for reaching out',
+    body: (n) => `Hi${n ? ' ' + n : ''}, we've received your request and our team will get back to you within 24 hours.`,
+    signoff: '— The WeAutomationAgency team',
+  },
+  fr: {
+    subject: 'Merci — votre demande est bien reçue',
+    heading: 'Merci de nous avoir contactés',
+    body: (n) => `Bonjour${n ? ' ' + n : ''}, nous avons bien reçu votre demande et notre équipe vous répondra sous 24 heures.`,
+    signoff: '— L’équipe WeAutomationAgency',
+  },
+  es: {
+    subject: 'Gracias — hemos recibido tu solicitud',
+    heading: 'Gracias por escribirnos',
+    body: (n) => `Hola${n ? ' ' + n : ''}, hemos recibido tu solicitud y nuestro equipo te responderá en 24 horas.`,
+    signoff: '— El equipo de WeAutomationAgency',
+  },
+};
+const confirmHtml = (c: { heading: string; body: (n: string) => string; signoff: string }, name: string) =>
+  `<div style="background:#f5f5f5;padding:24px;"><div style="max-width:520px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #eee;font-family:Arial,sans-serif;"><div style="background:#000;padding:18px 24px;"><span style="color:#F94239;font-size:18px;font-weight:700;">WeAutomationAgency</span></div><div style="padding:24px;"><h1 style="color:#111;font-size:20px;margin:0 0 12px;">${c.heading}</h1><p style="color:#444;font-size:14px;line-height:1.6;margin:0 0 16px;">${escapeHtml(c.body(name))}</p><p style="color:#888;font-size:13px;margin:0;">${c.signoff}</p></div></div></div>`;
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, message, source, formType } = body;
+    const { name, email, phone, message, source, formType, locale } = body;
 
     // Normalize email first, then validate (handles pasted trailing spaces / casing)
     const cleanEmail = (email || '').trim().toLowerCase();
@@ -33,6 +58,7 @@ export async function POST(request: Request) {
       source: (source || '').trim().slice(0, 100),
       message: (message || '').trim().slice(0, 5000),
       formType: (formType || 'unknown').trim().slice(0, 50),
+      locale: (['en', 'fr', 'es'].includes(locale) ? locale : 'en') as ConfLocale,
       timestamp: new Date().toISOString(),
     };
 
@@ -82,6 +108,27 @@ export async function POST(request: Request) {
           { error: 'Could not send your submission. Please try again.' },
           { status: 502 }
         );
+      }
+
+      // Auto-confirmation to the lead (best-effort — never blocks the response).
+      const conf = CONFIRM[lead.locale];
+      try {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: FROM_EMAIL,
+            to: [lead.email],
+            reply_to: NOTIFY_EMAIL,
+            subject: conf.subject,
+            html: confirmHtml(conf, lead.name),
+          }),
+        });
+      } catch (err) {
+        console.error('Confirmation email failed (non-fatal):', err);
       }
     } else {
       // No email key configured yet — log so nothing is silently lost.
