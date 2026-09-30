@@ -9,7 +9,7 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n';
 export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
   const t = HOME[locale].footer;
   const contactInfo: { label: string; value: string; href: string | null }[] = [
-    { label: t.labels.email, value: 'ceo@weautomationagency.com', href: 'mailto:ceo@weautomationagency.com' },
+    { label: t.labels.email, value: 'support@weautomationagency.com', href: 'mailto:support@weautomationagency.com' },
     { label: t.labels.phone, value: '+1 (646) 980-2446', href: 'tel:+16469802446' },
     { label: t.labels.hours, value: t.hoursValue, href: null },
   ];

@@ -63,7 +63,7 @@ export default function StartPage() {
       <footer className="px-5 sm:px-8 lg:px-12 py-6 border-t border-grey/10">
         <div className="max-w-container mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-grey/60 text-xs">© 2026 WeAutomationAgency. {HOME[locale].footer.rights}</p>
-          <a href="mailto:ceo@weautomationagency.com" className="text-grey/60 hover:text-secondary text-xs transition-colors">ceo@weautomationagency.com</a>
+          <a href="mailto:support@weautomationagency.com" className="text-grey/60 hover:text-secondary text-xs transition-colors">support@weautomationagency.com</a>
         </div>
       </footer>
     </main>

@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 // Address that receives the lead emails (must match your Resend account email until you
 // verify your own domain).
-const NOTIFY_EMAIL = process.env.LEAD_NOTIFY_EMAIL || 'ceo@weautomationagency.com';
+const NOTIFY_EMAIL = process.env.LEAD_NOTIFY_EMAIL || 'support@weautomationagency.com';
 // From address. onboarding@resend.dev works with no domain setup; swap for your domain later.
 const FROM_EMAIL = process.env.LEAD_FROM_EMAIL || 'WeAutomationAgency Leads <onboarding@resend.dev>';
 

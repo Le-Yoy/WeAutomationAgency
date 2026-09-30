@@ -79,7 +79,7 @@ const jsonLd = {
       image: 'https://weautomationagency.com/opengraph-image.png',
       description:
         'We build AI chatbots, automated lead generation, intelligent call centers, and email automation that drive revenue for your business.',
-      email: 'ceo@weautomationagency.com',
+      email: 'support@weautomationagency.com',
       telephone: '+1-646-980-2446',
       sameAs: [
         'https://www.linkedin.com/company/weautomationagency',

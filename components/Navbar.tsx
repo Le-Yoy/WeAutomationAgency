@@ -172,10 +172,10 @@ export default function Navbar({ onOpenModal, locale = 'en' }: { onOpenModal?: (
                 className="mt-auto pb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-secondary/20 pt-6"
               >
                 <a
-                  href="mailto:ceo@weautomationagency.com"
+                  href="mailto:support@weautomationagency.com"
                   className="text-secondary/80 text-sm hover:text-secondary transition-colors"
                 >
-                  ceo@weautomationagency.com
+                  support@weautomationagency.com
                 </a>
                 <a
                   href="https://linkedin.com"

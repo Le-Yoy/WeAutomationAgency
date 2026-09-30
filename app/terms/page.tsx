@@ -335,7 +335,7 @@ export default function TermsOfService() {
             do not hesitate to reach out.
           </p>
           <a
-            href="mailto:ceo@weautomationagency.com"
+            href="mailto:support@weautomationagency.com"
             className="inline-flex items-center gap-2 bg-accent hover:bg-darker-orange text-secondary font-medium px-8 py-4 rounded-pill transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
