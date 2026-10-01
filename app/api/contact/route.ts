@@ -13,28 +13,45 @@ const escapeHtml = (s: string) =>
 
 // Auto-confirmation sent to the person who submitted the form (localized).
 type ConfLocale = 'en' | 'fr' | 'es';
-const CONFIRM: Record<ConfLocale, { subject: string; heading: string; body: (n: string) => string; signoff: string }> = {
+const CONFIRM: Record<ConfLocale, { subject: string; heading: string; body: (n: string) => string; signoff: string; cta: string }> = {
   en: {
     subject: 'Thanks — we got your request',
     heading: 'Thanks for reaching out',
-    body: (n) => `Hi${n ? ' ' + n : ''}, we've received your request and our team will get back to you within 24 hours.`,
-    signoff: '— The WeAutomationAgency team',
+    body: (n) => `Hi${n ? ' ' + n : ''}, we've received your request. Our team will review it and get back to you within 24 hours.`,
+    signoff: 'The WeAutomationAgency team',
+    cta: 'Visit our website',
   },
   fr: {
     subject: 'Merci — votre demande est bien reçue',
     heading: 'Merci de nous avoir contactés',
-    body: (n) => `Bonjour${n ? ' ' + n : ''}, nous avons bien reçu votre demande et notre équipe vous répondra sous 24 heures.`,
-    signoff: '— L’équipe WeAutomationAgency',
+    body: (n) => `Bonjour${n ? ' ' + n : ''}, nous avons bien reçu votre demande. Notre équipe l'examine et vous répondra sous 24 heures.`,
+    signoff: 'L’équipe WeAutomationAgency',
+    cta: 'Visiter notre site',
   },
   es: {
     subject: 'Gracias — hemos recibido tu solicitud',
     heading: 'Gracias por escribirnos',
-    body: (n) => `Hola${n ? ' ' + n : ''}, hemos recibido tu solicitud y nuestro equipo te responderá en 24 horas.`,
-    signoff: '— El equipo de WeAutomationAgency',
+    body: (n) => `Hola${n ? ' ' + n : ''}, hemos recibido tu solicitud. Nuestro equipo la revisará y te responderá en 24 horas.`,
+    signoff: 'El equipo de WeAutomationAgency',
+    cta: 'Visitar nuestra web',
   },
 };
-const confirmHtml = (c: { heading: string; body: (n: string) => string; signoff: string }, name: string) =>
-  `<div style="background:#f5f5f5;padding:24px;"><div style="max-width:520px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #eee;font-family:Arial,sans-serif;"><div style="background:#000;padding:18px 24px;"><span style="color:#F94239;font-size:18px;font-weight:700;">WeAutomationAgency</span></div><div style="padding:24px;"><h1 style="color:#111;font-size:20px;margin:0 0 12px;">${c.heading}</h1><p style="color:#444;font-size:14px;line-height:1.6;margin:0 0 16px;">${escapeHtml(c.body(name))}</p><p style="color:#888;font-size:13px;margin:0;">${c.signoff}</p></div></div></div>`;
+const confirmHtml = (c: { heading: string; body: (n: string) => string; signoff: string; cta: string }, name: string) =>
+  `<div style="background:#f6f7f9;padding:32px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
+    <div style="max-width:480px;margin:0 auto;background:#ffffff;border:1px solid #ececec;border-radius:14px;overflow:hidden;">
+      <div style="padding:26px 32px 22px;border-bottom:1px solid #f1f1f1;">
+        <span style="font-size:16px;font-weight:700;color:#111111;letter-spacing:-0.2px;">WeAutomationAgency<span style="color:#F94239;">.</span></span>
+      </div>
+      <div style="padding:30px 32px;">
+        <h1 style="font-size:20px;line-height:1.35;color:#111111;margin:0 0 14px;font-weight:700;">${c.heading}</h1>
+        <p style="font-size:15px;line-height:1.7;color:#4b5563;margin:0 0 24px;">${escapeHtml(c.body(name))}</p>
+        <a href="https://weautomationagency.com" style="display:inline-block;background:#F94239;color:#ffffff;text-decoration:none;font-size:14px;font-weight:600;padding:12px 24px;border-radius:999px;">${c.cta}</a>
+      </div>
+      <div style="padding:20px 32px 26px;border-top:1px solid #f1f1f1;">
+        <p style="font-size:13px;color:#9aa0a6;margin:0;line-height:1.6;">${escapeHtml(c.signoff)}<br/><a href="https://weautomationagency.com" style="color:#9aa0a6;text-decoration:underline;">weautomationagency.com</a></p>
+      </div>
+    </div>
+  </div>`;
 
 export async function POST(request: Request) {
   try {
