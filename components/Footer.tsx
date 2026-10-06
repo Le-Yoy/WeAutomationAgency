@@ -14,6 +14,28 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
     { label: t.labels.hours, value: t.hoursValue, href: null },
   ];
   const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === 'sending') return;
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, locale }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
 
   return (
     <footer className="bg-primary border-t border-grey/10">
@@ -31,27 +53,36 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
                 className="w-10 h-10"
               />
             </Link>
-            <p className="text-grey text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-grey text-sm leading-relaxed mb-4 max-w-xs">
               {t.tagline}
             </p>
-            <form
-              onSubmit={(e) => { e.preventDefault(); setEmail(''); }}
-              className="flex gap-2"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t.placeholder}
-                className="flex-1 bg-darker-grey border border-grey/20 rounded-lg px-4 py-2.5 text-secondary text-sm placeholder:text-grey/50 focus:outline-none focus:border-accent transition-colors"
-              />
-              <button
-                type="submit"
-                className="bg-accent hover:bg-darker-orange text-secondary text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
-              >
-                {t.subscribe}
-              </button>
-            </form>
+            <p className="text-secondary text-sm font-medium mb-3 max-w-xs">
+              {t.newsletterPitch}
+            </p>
+            {status === 'success' ? (
+              <p className="text-accent text-sm max-w-xs">{t.subscribed}</p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={t.placeholder}
+                  className="flex-1 bg-darker-grey border border-grey/20 rounded-lg px-4 py-2.5 text-secondary text-sm placeholder:text-grey/50 focus:outline-none focus:border-accent transition-colors"
+                />
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="bg-accent hover:bg-darker-orange text-secondary text-sm font-medium px-4 py-2.5 rounded-lg transition-colors disabled:opacity-50 whitespace-nowrap"
+                >
+                  {status === 'sending' ? t.subscribing : t.subscribe}
+                </button>
+              </form>
+            )}
+            {status === 'error' && (
+              <p className="text-accent text-xs mt-2 max-w-xs">{t.subError}</p>
+            )}
           </div>
 
           {/* Quick Links */}

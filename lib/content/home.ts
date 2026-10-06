@@ -13,7 +13,7 @@ export interface HomeDict {
   scrollingText: string;
   build: { eyebrow: string; line1: string; line2: string; description: string; cards: { title: string; description: string; tags: string[] }[] };
   newsletter: { line1: string; line2: string; description: string; placeholder: string; book: string; sending: string; sent: string; termsPre: string; terms: string; and: string; privacy: string };
-  footer: { tagline: string; services: string; legal: string; contact: string; subscribe: string; placeholder: string; serviceLinks: LinkItem[]; legalLinks: LinkItem[]; labels: { email: string; phone: string; hours: string }; hoursValue: string; rights: string };
+  footer: { tagline: string; services: string; legal: string; contact: string; subscribe: string; placeholder: string; newsletterPitch: string; subscribing: string; subscribed: string; subError: string; serviceLinks: LinkItem[]; legalLinks: LinkItem[]; labels: { email: string; phone: string; hours: string }; hoursValue: string; rights: string };
   modal: { title: string; description: string; email: string; phone: string; optional: string; message: string; emailPh: string; phonePh: string; messagePh: string; send: string; sending: string; sentTitle: string; sentSub: string; error: string };
 }
 
@@ -79,6 +79,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
     footer: {
       tagline: 'Empowering businesses with intelligent AI automation solutions that drive efficiency and growth.',
       services: 'Services', legal: 'Legal', contact: 'Contact', subscribe: 'Subscribe', placeholder: 'Your email',
+      newsletterPitch: 'Get found inside AI — one practical insight a week.', subscribing: 'Joining…', subscribed: 'You’re in! Check your inbox ✅', subError: 'Something went wrong — try again.',
       serviceLinks: [
         { name: 'AI Chatbot', href: '/services/ai-chatbot' },
         { name: 'Lead Generation', href: '/services/lead-generation' },
@@ -165,6 +166,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
     footer: {
       tagline: 'Nous aidons les entreprises avec des solutions d’automatisation IA intelligentes qui font gagner en efficacité et en croissance.',
       services: 'Services', legal: 'Légal', contact: 'Contact', subscribe: 'S’abonner', placeholder: 'Votre e-mail',
+      newsletterPitch: 'Soyez trouvé par l’IA : 1 conseil concret par semaine.', subscribing: 'Inscription…', subscribed: 'C’est fait ! Vérifiez votre boîte ✅', subError: 'Une erreur est survenue — réessayez.',
       serviceLinks: [
         { name: 'Chatbot IA', href: '/services/ai-chatbot' },
         { name: 'Génération de leads', href: '/services/lead-generation' },
@@ -251,6 +253,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
     footer: {
       tagline: 'Ayudamos a las empresas con soluciones de automatización con IA inteligentes que impulsan la eficiencia y el crecimiento.',
       services: 'Servicios', legal: 'Legal', contact: 'Contacto', subscribe: 'Suscribirse', placeholder: 'Tu e-mail',
+      newsletterPitch: 'Haz que la IA te encuentre: una idea práctica por semana.', subscribing: 'Enviando…', subscribed: '¡Listo! Revisa tu bandeja ✅', subError: 'Algo salió mal — inténtalo de nuevo.',
       serviceLinks: [
         { name: 'Chatbot IA', href: '/services/ai-chatbot' },
         { name: 'Generación de leads', href: '/services/lead-generation' },
