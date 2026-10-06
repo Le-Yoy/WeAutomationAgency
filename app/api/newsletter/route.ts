@@ -23,6 +23,34 @@ const audienceForLocale = (locale: NlLocale): string | undefined => {
   return perLocale || process.env.RESEND_AUDIENCE_ID;
 };
 
+// If no audience is pinned via env, discover the account's default audience once
+// (Resend's newer UI uses a single default audience, so the ID isn't shown in the dashboard).
+let cachedAudienceId: string | null = null;
+async function resolveAudienceId(
+  headers: Record<string, string>,
+  locale: NlLocale
+): Promise<string | undefined> {
+  const envId = audienceForLocale(locale);
+  if (envId) return envId;
+  if (cachedAudienceId) return cachedAudienceId;
+  try {
+    const r = await fetch('https://api.resend.com/audiences', { headers });
+    if (r.ok) {
+      const j = await r.json();
+      const id = j?.data?.[0]?.id;
+      if (id) {
+        cachedAudienceId = id;
+        return id;
+      }
+    } else {
+      console.error('Resend list audiences failed:', r.status, await r.text());
+    }
+  } catch (err) {
+    console.error('Resend list audiences error:', err);
+  }
+  return undefined;
+}
+
 // The newsletter's public name — change here if the brand name changes.
 const NL_NAME = { fr: 'Cité par l’IA', en: 'The AI Visibility Brief', es: 'Citado por la IA' };
 
@@ -92,7 +120,7 @@ export async function POST(request: Request) {
     const headers = { Authorization: `Bearer ${NL_API_KEY}`, 'Content-Type': 'application/json' };
 
     // 1) Add the contact to the Audience (idempotent — re-subscribing is fine).
-    const audienceId = audienceForLocale(locale);
+    const audienceId = await resolveAudienceId(headers, locale);
     if (audienceId) {
       try {
         await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
