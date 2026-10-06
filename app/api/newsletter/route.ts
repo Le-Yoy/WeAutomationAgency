@@ -159,31 +159,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   }
 }
-
-// TEMP diagnostic — reports config presence + live Resend reachability (no secret values).
-export async function GET() {
-  const diag: Record<string, unknown> = {
-    hasApiKey: !!NL_API_KEY,
-    fromEmail: FROM_EMAIL,
-    replyTo: REPLY_TO,
-    audienceEnvSet: !!process.env.RESEND_AUDIENCE_ID,
-  };
-  if (NL_API_KEY) {
-    try {
-      const r = await fetch('https://api.resend.com/audiences', {
-        headers: { Authorization: `Bearer ${NL_API_KEY}` },
-      });
-      diag.audiencesStatus = r.status;
-      if (r.ok) {
-        const j = await r.json();
-        diag.audienceCount = Array.isArray(j?.data) ? j.data.length : 0;
-        diag.firstAudienceId = j?.data?.[0]?.id ?? null;
-      } else {
-        diag.audiencesError = (await r.text()).slice(0, 200);
-      }
-    } catch (e) {
-      diag.audiencesException = String(e).slice(0, 200);
-    }
-  }
-  return NextResponse.json(diag);
-}
