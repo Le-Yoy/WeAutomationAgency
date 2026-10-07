@@ -79,7 +79,16 @@ const jsonLd = {
       logo: 'https://weautomationagency.com/icon-512.png',
       image: 'https://weautomationagency.com/opengraph-image.png',
       description:
-        'WeAutomationAgency helps businesses get found and cited inside ChatGPT, Perplexity, Google AI Overviews and other AI search engines. We specialize in AI Search Visibility (GEO/AEO), and also build AI automation: chatbots, lead generation and email automation.',
+        'WeAutomationAgency helps businesses get found and recommended in AI search: ChatGPT, Perplexity, Google AI Overviews and Gemini. We specialize in AI Search Visibility, combining Generative Engine Optimization (GEO), Answer Engine Optimization (AEO) and SEO. We also build the automation behind growth: AI chatbots, lead generation, call centers and email automation.',
+      knowsAbout: [
+        'AI Search Visibility',
+        'Generative Engine Optimization (GEO)',
+        'Answer Engine Optimization (AEO)',
+        'SEO',
+        'AI Chatbots',
+        'Lead Generation',
+        'Email Automation',
+      ],
       email: 'support@weautomationagency.com',
       sameAs: [
         'https://www.linkedin.com/company/weautomationagency',
