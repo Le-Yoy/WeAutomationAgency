@@ -99,7 +99,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
     modal: {
       title: 'Get Your Demo', description: 'Tell us about your project and we’ll get back to you within 24 hours.',
       email: 'Email', phone: 'Phone', optional: '(optional)', message: 'Tell us about your project',
-      emailPh: 'your@email.com', phonePh: '+1 (555) 123-4567', messagePh: 'I need help with...',
+      emailPh: 'your@email.com', phonePh: '', messagePh: 'I need help with...',
       send: 'Send Message', sending: 'Sending...', sentTitle: 'Message Sent!', sentSub: 'We’ll be in touch soon.',
       error: 'Something went wrong. Please try again.',
     },
