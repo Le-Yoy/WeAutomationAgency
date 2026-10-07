@@ -451,7 +451,7 @@ const [modalOpen, setModalOpen] = useState(false);
 - **Company:** BOUTALEB LLC
 - **Address:** 30 N GOULD ST STE N, SHERIDAN, WY 82801
 - **Email:** ceo@weautomationagency.com
-- **Phone:** +1 (646) 980-2446
+- **Phone:** none — removed 2026-10-07, contact is email-only for now (site + schema + LinkedIn page)
 - **Hours:** Mon-Fri 9:00AM - 5:00PM EST
 - **Copyright:** © 2026 Boutaleb LLC
 

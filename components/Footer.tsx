@@ -10,7 +10,6 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
   const t = HOME[locale].footer;
   const contactInfo: { label: string; value: string; href: string | null }[] = [
     { label: t.labels.email, value: 'support@weautomationagency.com', href: 'mailto:support@weautomationagency.com' },
-    { label: t.labels.phone, value: '+1 (646) 980-2446', href: 'tel:+16469802446' },
     { label: t.labels.hours, value: t.hoursValue, href: null },
   ];
   const [email, setEmail] = useState('');
@@ -174,7 +173,7 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/weautomationagency"
               target="_blank"
               rel="noopener noreferrer"
               className="text-grey/40 hover:text-secondary transition-colors"

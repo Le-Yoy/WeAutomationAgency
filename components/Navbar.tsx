@@ -178,7 +178,7 @@ export default function Navbar({ onOpenModal, locale = 'en' }: { onOpenModal?: (
                   support@weautomationagency.com
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/weautomationagency"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary/80 text-sm hover:text-secondary transition-colors mt-2 sm:mt-0"

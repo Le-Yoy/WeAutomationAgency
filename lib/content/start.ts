@@ -26,7 +26,7 @@ export const START: Record<SiteLocale, StartDict> = {
     form: {
       name: 'Full name', namePh: 'Jane Doe',
       email: 'Email', emailPh: 'your@email.com',
-      phone: 'Phone number', phonePh: '+1 (646) 980-2446',
+      phone: 'Phone number', phonePh: '+1 (555) 123-4567',
       source: 'Where did you find us?', sourceSelect: 'Select an option',
       sourceOptions: ['Google Search', 'Instagram', 'TikTok', 'LinkedIn', 'Facebook', 'YouTube', 'WhatsApp', 'Referral / Word of mouth', 'Other'],
       message: 'Anything we should know?', optional: '(optional)', messagePh: 'Tell us a bit about your business or what you need...',

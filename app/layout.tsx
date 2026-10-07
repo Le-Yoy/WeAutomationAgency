@@ -74,13 +74,13 @@ const jsonLd = {
       '@type': 'Organization',
       '@id': 'https://weautomationagency.com/#organization',
       name: 'WeAutomationAgency',
+      alternateName: 'We Automation Agency',
       url: 'https://weautomationagency.com',
       logo: 'https://weautomationagency.com/icon-512.png',
       image: 'https://weautomationagency.com/opengraph-image.png',
       description:
-        'We build AI chatbots, automated lead generation, intelligent call centers, and email automation that drive revenue for your business.',
+        'WeAutomationAgency helps businesses get found and cited inside ChatGPT, Perplexity, Google AI Overviews and other AI search engines. We specialize in AI Search Visibility (GEO/AEO), and also build AI automation: chatbots, lead generation and email automation.',
       email: 'support@weautomationagency.com',
-      telephone: '+1-646-980-2446',
       sameAs: [
         'https://www.linkedin.com/company/weautomationagency',
         'https://www.instagram.com/weautomationagency',
