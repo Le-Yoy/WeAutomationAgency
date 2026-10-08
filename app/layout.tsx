@@ -93,6 +93,8 @@ const jsonLd = {
       sameAs: [
         'https://www.linkedin.com/company/weautomationagency',
         'https://www.youtube.com/@weautomationagency',
+        'https://www.facebook.com/WeAutomationAgency',
+        'https://www.instagram.com/weautomationagency',
       ],
     },
     {
