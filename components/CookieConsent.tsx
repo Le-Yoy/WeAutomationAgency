@@ -15,19 +15,19 @@ import {
 
 const COPY: Record<SiteLocale, { text: string; accept: string; reject: string; policy: string }> = {
   en: {
-    text: "We use Meta's tracking pixel to measure our ads and show them to the right people. It only runs if you accept. Essential cookies (like your language choice) are always on.",
+    text: "We use Meta's tracking pixel to measure our ads and show them to the right people (using a scrambled version of the email or phone you give us). It only runs if you accept. Essential cookies (like your language choice) are always on.",
     accept: 'Accept',
     reject: 'Reject',
     policy: 'Cookie policy',
   },
   fr: {
-    text: "Nous utilisons le pixel de Meta pour mesurer nos publicités et les montrer aux bonnes personnes. Il ne s'active que si vous l'acceptez. Les cookies essentiels (comme votre choix de langue) restent toujours actifs.",
+    text: "Nous utilisons le pixel de Meta pour mesurer nos publicités et les montrer aux bonnes personnes (à partir d'une version chiffrée de l'e-mail ou du téléphone que vous nous donnez). Il ne s'active que si vous l'acceptez. Les cookies essentiels (comme votre choix de langue) restent toujours actifs.",
     accept: 'Accepter',
     reject: 'Refuser',
     policy: 'Politique de cookies',
   },
   es: {
-    text: 'Usamos el píxel de Meta para medir nuestros anuncios y mostrarlos a las personas adecuadas. Solo se activa si lo aceptas. Las cookies esenciales (como tu idioma) siempre están activas.',
+    text: 'Usamos el píxel de Meta para medir nuestros anuncios y mostrarlos a las personas adecuadas (con una versión cifrada del email o teléfono que nos das). Solo se activa si lo aceptas. Las cookies esenciales (como tu idioma) siempre están activas.',
     accept: 'Aceptar',
     reject: 'Rechazar',
     policy: 'Política de cookies',

@@ -180,7 +180,7 @@ export default function PrivacyPolicy() {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-accent mt-1">•</span>
-              <span><strong className="text-secondary">Advertising (only with your consent):</strong> the Meta Pixel, which measures our Facebook and Instagram ads (page views, contact-form and newsletter sign-ups). It loads only after you click “Accept”, and you can change your choice any time via “Cookie settings” in the footer.</span>
+              <span><strong className="text-secondary">Advertising (only with your consent):</strong> the Meta Pixel, which measures our Facebook and Instagram ads (page views, contact-form and newsletter sign-ups), including a hashed version of the name, email and phone you submit so Meta can match it to an ad. It loads only after you click “Accept”, and you can change your choice any time via “Cookie settings” in the footer.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-accent mt-1">•</span>
