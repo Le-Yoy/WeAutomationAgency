@@ -100,6 +100,7 @@ const jsonLd = {
         'https://www.youtube.com/@weautomationagency',
         'https://www.facebook.com/WeAutomationAgency',
         'https://www.instagram.com/weautomationagency',
+        'https://x.com/WeAutomationAG',
       ],
     },
     {
