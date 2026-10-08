@@ -3,7 +3,7 @@
 // (EU/FR visitors require opt-in). Both IDs below are public values, not secrets.
 
 /** Meta "dataset" (Pixel) ID from Events Manager. Empty = Pixel and banner stay off. */
-export const META_PIXEL_ID = '';
+export const META_PIXEL_ID = '1728226728248071';
 
 /** Content of the facebook-domain-verification meta tag (Business settings → Brand safety → Domains). */
 export const META_DOMAIN_VERIFICATION = '';
