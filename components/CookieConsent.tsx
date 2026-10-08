@@ -15,22 +15,22 @@ import {
 
 const COPY: Record<SiteLocale, { text: string; accept: string; reject: string; policy: string }> = {
   en: {
-    text: "We use Meta's tracking pixel to measure our ads and show them to the right people (using a scrambled version of the email or phone you give us). It only runs if you accept. Essential cookies (like your language choice) are always on.",
+    text: 'We use cookies (Meta Pixel) to measure our ads.',
     accept: 'Accept',
     reject: 'Reject',
-    policy: 'Cookie policy',
+    policy: 'Details',
   },
   fr: {
-    text: "Nous utilisons le pixel de Meta pour mesurer nos publicités et les montrer aux bonnes personnes (à partir d'une version chiffrée de l'e-mail ou du téléphone que vous nous donnez). Il ne s'active que si vous l'acceptez. Les cookies essentiels (comme votre choix de langue) restent toujours actifs.",
+    text: 'Nous utilisons des cookies (pixel Meta) pour mesurer nos publicités.',
     accept: 'Accepter',
     reject: 'Refuser',
-    policy: 'Politique de cookies',
+    policy: 'En savoir plus',
   },
   es: {
-    text: 'Usamos el píxel de Meta para medir nuestros anuncios y mostrarlos a las personas adecuadas (con una versión cifrada del email o teléfono que nos das). Solo se activa si lo aceptas. Las cookies esenciales (como tu idioma) siempre están activas.',
+    text: 'Usamos cookies (píxel de Meta) para medir nuestros anuncios.',
     accept: 'Aceptar',
     reject: 'Rechazar',
-    policy: 'Política de cookies',
+    policy: 'Más info',
   },
 };
 
@@ -75,27 +75,27 @@ export default function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label={t.policy}
-      className="fixed inset-x-0 bottom-0 z-[100] px-4 pb-[calc(1rem+env(safe-area-inset-bottom,0px))] sm:px-6"
+      className="fixed bottom-4 left-4 right-4 z-[100] mb-[env(safe-area-inset-bottom,0px)] sm:right-auto sm:max-w-sm"
     >
-      <div className="mx-auto max-w-3xl rounded-2xl border border-grey/15 bg-darker-grey p-5 shadow-2xl sm:flex sm:items-center sm:gap-6 sm:p-6">
-        <p className="text-sm leading-relaxed text-grey">
+      <div className="rounded-xl border border-grey/15 bg-darker-grey/95 p-3 shadow-xl backdrop-blur">
+        <p className="text-xs leading-snug text-grey">
           {t.text}{' '}
           <a href="/cookies" className="text-accent hover:underline">
             {t.policy}
           </a>
         </p>
-        <div className="mt-4 flex shrink-0 gap-3 sm:mt-0">
+        <div className="mt-2.5 flex gap-2">
           <button
             type="button"
             onClick={() => choose('denied')}
-            className="flex-1 rounded-pill border border-grey/30 px-5 py-2.5 text-sm font-medium text-secondary transition-colors hover:border-secondary sm:flex-none"
+            className="flex-1 rounded-pill border border-grey/30 px-3 py-1.5 text-xs font-medium text-secondary transition-colors hover:border-secondary"
           >
             {t.reject}
           </button>
           <button
             type="button"
             onClick={() => choose('granted')}
-            className="flex-1 rounded-pill bg-accent px-5 py-2.5 text-sm font-medium text-secondary transition-colors hover:bg-darker-orange sm:flex-none"
+            className="flex-1 rounded-pill bg-accent px-3 py-1.5 text-xs font-medium text-secondary transition-colors hover:bg-darker-orange"
           >
             {t.accept}
           </button>
