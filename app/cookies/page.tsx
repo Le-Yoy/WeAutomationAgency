@@ -19,35 +19,10 @@ export default function CookiePolicy() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      description: 'These cookies are strictly necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions you take, such as setting your privacy preferences, logging in, or filling in forms.',
-      examples: ['Session management', 'Security tokens', 'Load balancing'],
-      duration: 'Session or up to 1 year',
+      description: 'These are strictly necessary for the website to work and cannot be switched off. We use only two: one remembers your language, the other remembers your cookie choice so we do not ask again.',
+      examples: ['NEXT_LOCALE — your language (EN / FR / ES)', 'waa-consent — your cookie choice (stored in your browser)'],
+      duration: 'Language: 1 year · Cookie choice: until you clear your browser data',
       canDisable: false,
-    },
-    {
-      name: 'Analytics Cookies',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
-      description: 'These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website design and content.',
-      examples: ['Page views', 'Session duration', 'Traffic sources', 'User behavior patterns'],
-      duration: 'Up to 2 years',
-      canDisable: true,
-    },
-    {
-      name: 'Functional Cookies',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      description: 'These cookies enable the website to provide enhanced functionality and personalization. They remember your choices (like language or region) to provide a more personalized experience.',
-      examples: ['Language preferences', 'Font size', 'Theme settings', 'Region selection'],
-      duration: 'Up to 1 year',
-      canDisable: true,
     },
     {
       name: 'Marketing Cookies',
@@ -56,9 +31,9 @@ export default function CookiePolicy() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
         </svg>
       ),
-      description: 'These cookies track your browsing habits to deliver advertisements more relevant to you and your interests. They also limit the number of times you see an advertisement and help measure the effectiveness of campaigns.',
-      examples: ['Ad personalization', 'Retargeting campaigns', 'Conversion tracking'],
-      duration: 'Up to 1 year',
+      description: 'We use the Meta Pixel (by Meta Platforms) to measure our Facebook and Instagram ads and show them to people likely to be interested. It only loads if you click “Accept” in our cookie banner. It records page views and when you send our contact form or join our newsletter — never the content of your messages.',
+      examples: ['Meta Pixel — _fbp and related cookies set by Meta', 'Events: page views, contact form sent (Lead), newsletter sign-up'],
+      duration: 'Up to 90 days (set by Meta)',
       canDisable: true,
     },
   ];
@@ -83,11 +58,11 @@ export default function CookiePolicy() {
           </h1>
 
           <p className="text-grey text-lg sm:text-xl leading-relaxed mb-4 max-w-2xl">
-            We use cookies to make your experience better. Here is exactly what we collect and why.
+            We keep cookies to a minimum. Here is exactly what we use and why — and nothing for advertising runs unless you accept it.
           </p>
 
           <p className="text-grey/50 text-sm">
-            Last updated: <span className="text-accent">February 13, 2026</span>
+            Last updated: <span className="text-accent">October 8, 2026</span>
           </p>
         </div>
       </section>
@@ -183,8 +158,9 @@ export default function CookiePolicy() {
 
           <div className="space-y-4 text-grey leading-relaxed">
             <p>
-              You have full control over cookies. Most web browsers automatically accept cookies, but you can modify
-              your browser settings to decline cookies if you prefer.
+              You choose whether the Meta Pixel runs: use the banner on your first visit, or change your choice any
+              time with the <strong className="text-secondary">Cookie settings</strong> link at the bottom of every page.
+              You can also block or delete cookies in your browser settings.
             </p>
 
             <div className="bg-primary/50 border border-grey/10 rounded-xl p-6 mt-6">
@@ -227,12 +203,12 @@ export default function CookiePolicy() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-semibold mb-4">Third-Party Cookies</h2>
           <p className="text-grey leading-relaxed mb-4">
-            We may use third-party services (like Google Analytics) that set their own cookies to track website
-            performance and user behavior. These third parties have their own privacy policies independent of ours.
+            The only third-party cookies on this site come from Meta Platforms (the Meta Pixel), and only after you
+            accept them. Meta processes this data under its own{' '}
+            <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">privacy policy</a>.
           </p>
           <p className="text-grey leading-relaxed">
-            We carefully select our third-party partners and only work with services that respect user privacy.
-            You can opt out of third-party tracking through browser settings or privacy tools.
+            We do not use Google Analytics or any other analytics or advertising tracker.
           </p>
         </div>
       </section>

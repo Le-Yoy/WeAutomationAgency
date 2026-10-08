@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { START } from '@/lib/content/start';
 import { localizedPath, type SiteLocale } from '@/lib/i18n';
+import { trackEvent } from '@/lib/tracking';
 
 export default function StartForm({ locale = 'en' }: { locale?: SiteLocale }) {
   const t = START[locale].form;
@@ -20,6 +21,7 @@ export default function StartForm({ locale = 'en' }: { locale?: SiteLocale }) {
         body: JSON.stringify({ ...formData, formType: 'start-page', locale }),
       });
       if (res.ok) {
+        trackEvent('Lead', { content_name: 'start-page' });
         setStatus('sent');
         setFormData({ name: '', email: '', phone: '', source: '', message: '' });
       } else {

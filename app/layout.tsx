@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
+import CookieConsent from '@/components/CookieConsent';
+import { META_DOMAIN_VERIFICATION } from '@/lib/tracking';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -63,6 +65,9 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   robots: { index: true, follow: true },
+  ...(META_DOMAIN_VERIFICATION
+    ? { other: { 'facebook-domain-verification': META_DOMAIN_VERIFICATION } }
+    : {}),
 };
 
 // Structured data (JSON-LD) — helps Google understand the business as an entity
@@ -173,6 +178,7 @@ export default function RootLayout({
       </head>
       <body className="bg-primary text-secondary font-sans antialiased">
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

@@ -13,7 +13,7 @@ export interface HomeDict {
   scrollingText: string;
   build: { eyebrow: string; line1: string; line2: string; description: string; cards: { title: string; description: string; tags: string[] }[] };
   newsletter: { line1: string; line2: string; description: string; placeholder: string; book: string; sending: string; sent: string; termsPre: string; terms: string; and: string; privacy: string };
-  footer: { tagline: string; services: string; legal: string; contact: string; subscribe: string; placeholder: string; newsletterPitch: string; subscribing: string; subscribed: string; subError: string; serviceLinks: LinkItem[]; legalLinks: LinkItem[]; labels: { email: string; phone: string; hours: string }; hoursValue: string; rights: string };
+  footer: { tagline: string; services: string; legal: string; contact: string; subscribe: string; placeholder: string; newsletterPitch: string; subscribing: string; subscribed: string; subError: string; serviceLinks: LinkItem[]; legalLinks: LinkItem[]; cookieSettings: string; labels: { email: string; phone: string; hours: string }; hoursValue: string; rights: string };
   modal: { title: string; description: string; email: string; phone: string; optional: string; message: string; emailPh: string; phonePh: string; messagePh: string; send: string; sending: string; sentTitle: string; sentSub: string; error: string };
 }
 
@@ -92,6 +92,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
         { name: 'Terms of Service', href: '/terms' },
         { name: 'Cookie Policy', href: '/cookies' },
       ],
+      cookieSettings: 'Cookie settings',
       labels: { email: 'Email', phone: 'Phone', hours: 'Hours' },
       hoursValue: 'Mon-Fri 9AM - 5PM EST',
       rights: 'All rights reserved.',
@@ -179,6 +180,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
         { name: 'Conditions d’utilisation', href: '/terms' },
         { name: 'Politique de cookies', href: '/cookies' },
       ],
+      cookieSettings: 'Paramètres des cookies',
       labels: { email: 'E-mail', phone: 'Téléphone', hours: 'Horaires' },
       hoursValue: 'Lun-Ven 9h - 17h (EST)',
       rights: 'Tous droits réservés.',
@@ -266,6 +268,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
         { name: 'Términos del servicio', href: '/terms' },
         { name: 'Política de cookies', href: '/cookies' },
       ],
+      cookieSettings: 'Configuración de cookies',
       labels: { email: 'E-mail', phone: 'Teléfono', hours: 'Horario' },
       hoursValue: 'Lun-Vie 9:00 - 17:00 (EST)',
       rights: 'Todos los derechos reservados.',

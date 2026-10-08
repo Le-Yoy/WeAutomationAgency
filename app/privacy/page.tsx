@@ -171,8 +171,7 @@ export default function PrivacyPolicy() {
       content: (
         <>
           <p className="mb-4">
-            We use cookies and similar technologies to enhance your experience and analyze website performance.
-            Types of cookies we use:
+            We keep cookies to a minimum. What we use:
           </p>
           <ul className="space-y-2">
             <li className="flex items-start gap-3">
@@ -181,11 +180,11 @@ export default function PrivacyPolicy() {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-accent mt-1">•</span>
-              <span><strong className="text-secondary">Analytics:</strong> Help us understand usage patterns</span>
+              <span><strong className="text-secondary">Advertising (only with your consent):</strong> the Meta Pixel, which measures our Facebook and Instagram ads (page views, contact-form and newsletter sign-ups). It loads only after you click “Accept”, and you can change your choice any time via “Cookie settings” in the footer.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-accent mt-1">•</span>
-              <span><strong className="text-secondary">Preferences:</strong> Remember your settings and choices</span>
+              <span><strong className="text-secondary">Preferences:</strong> your language and your cookie choice</span>
             </li>
           </ul>
           <p className="mt-4">
@@ -221,7 +220,7 @@ export default function PrivacyPolicy() {
           </p>
 
           <p className="text-grey/50 text-sm">
-            Last updated: <span className="text-accent">February 13, 2026</span>
+            Last updated: <span className="text-accent">October 8, 2026</span>
           </p>
         </div>
       </section>

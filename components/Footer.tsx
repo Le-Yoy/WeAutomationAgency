@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { HOME } from '@/lib/content/home';
 import { localizedPath, type SiteLocale } from '@/lib/i18n';
+import { openCookieSettings, trackEvent } from '@/lib/tracking';
 
 export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
   const t = HOME[locale].footer;
@@ -26,6 +27,7 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
         body: JSON.stringify({ email, locale }),
       });
       if (res.ok) {
+        trackEvent('CompleteRegistration', { content_name: 'newsletter' });
         setStatus('success');
         setEmail('');
       } else {
@@ -119,6 +121,15 @@ export default function Footer({ locale = 'en' }: { locale?: SiteLocale }) {
                   </a>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={openCookieSettings}
+                  className="text-grey text-sm hover:text-secondary transition-colors"
+                >
+                  {t.cookieSettings}
+                </button>
+              </li>
             </ul>
           </div>
 

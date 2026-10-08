@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HOME } from '@/lib/content/home';
 import type { SiteLocale } from '@/lib/i18n';
+import { trackEvent } from '@/lib/tracking';
 
 interface PopupModalProps {
   isOpen: boolean;
@@ -47,6 +48,7 @@ export default function PopupModal({ isOpen, onClose, locale = 'en' }: PopupModa
       });
 
       if (res.ok) {
+        trackEvent('Lead', { content_name: 'popup' });
         setStatus('sent');
         setFormData({ email: '', phone: '', message: '' });
         setTimeout(() => {
