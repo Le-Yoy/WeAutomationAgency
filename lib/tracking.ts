@@ -6,7 +6,7 @@
 export const META_PIXEL_ID = '1728226728248071';
 
 /** Content of the facebook-domain-verification meta tag (Business settings → Brand safety → Domains). */
-export const META_DOMAIN_VERIFICATION = '';
+export const META_DOMAIN_VERIFICATION = 'nlpxnn498be1bx63a3fnu3w526svrw';
 
 export const CONSENT_KEY = 'waa-consent';
 export const OPEN_CONSENT_EVENT = 'waa:open-cookie-settings';
