@@ -11,6 +11,12 @@ import {
   blogIndexPath,
 } from '@/lib/blog';
 
+const UPDATED_LABEL: Record<Locale, string> = {
+  en: 'Updated',
+  fr: 'Mis à jour le',
+  es: 'Actualizado el',
+};
+
 const UI: Record<
   Locale,
   {
@@ -121,6 +127,12 @@ export default function BlogArticle({
                 {meta.authorRole ? ' · ' : ''}
                 <time dateTime={meta.date}>{meta.dateLabel}</time>
               </div>
+              {meta.updated && (
+                <div className="text-neutral-500">
+                  {UPDATED_LABEL[meta.locale]}{' '}
+                  <time dateTime={meta.updated}>{meta.updatedLabel}</time>
+                </div>
+              )}
             </div>
           </div>
         </header>

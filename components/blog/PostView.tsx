@@ -31,7 +31,7 @@ export default function PostView({
     headline: meta.title,
     description: meta.description,
     datePublished: meta.date,
-    dateModified: meta.date,
+    dateModified: meta.updated ?? meta.date,
     inLanguage: locale,
     mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl(locale, slug) },
     image: meta.heroImage

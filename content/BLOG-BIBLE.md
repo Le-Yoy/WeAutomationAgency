@@ -156,3 +156,5 @@ Write EN first, then **rewrite** (don't translate) into FR (professional "vous")
 
 ### The engine's variant fields, in one line
 `type` (archetype) · `toc` (auto table of contents) · `heroImage/heroAlt/heroCredit/heroCreditUrl` (Unsplash hero) · MDX blocks `<Callout>` and `<KeyTakeaways title="…">`. Everything else (design, speed, hreflang, schema, sitemap) is automatic.
+
+`seoTitle` (≤60-char `<title>` when the H1 is longer) · `updated` + `updatedLabel` (only after a **real** content update → shows "Updated …" under the byline and sets `dateModified`).

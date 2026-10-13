@@ -29,6 +29,9 @@ export interface PostMeta {
   excerpt: string;
   date: string;
   dateLabel: string;
+  updated?: string; // ISO date of the last real content update
+  updatedLabel?: string; // localized label for `updated`
+  seoTitle?: string; // <title> override (≤60 chars) when the H1 is longer
   category: string;
   author: string;
   authorRole: string;
@@ -98,6 +101,9 @@ export function getPost(
     excerpt: data.excerpt ?? data.description ?? '',
     date: data.date ?? '',
     dateLabel: data.dateLabel ?? data.date ?? '',
+    updated: data.updated,
+    updatedLabel: data.updatedLabel ?? data.updated,
+    seoTitle: data.seoTitle,
     category: data.category ?? '',
     author: data.author ?? 'WeAutomationAgency',
     authorRole: data.authorRole ?? '',
@@ -169,8 +175,9 @@ export function buildPostMetadata(locale: Locale, slug: string): Metadata {
   const post = getPost(locale, slug);
   if (!post) return {};
   const { meta } = post;
+  const title = meta.seoTitle ?? meta.title;
   return {
-    title: meta.title,
+    title,
     description: meta.description,
     keywords: meta.keywords,
     alternates: {
@@ -178,17 +185,18 @@ export function buildPostMetadata(locale: Locale, slug: string): Metadata {
       languages: hreflangAlternates(slug),
     },
     openGraph: {
-      title: meta.title,
+      title,
       description: meta.description,
       url: postUrl(locale, slug),
       type: 'article',
       publishedTime: meta.date,
+      modifiedTime: meta.updated ?? meta.date,
       authors: [meta.author],
       locale: OG_LOCALE[locale],
     },
     twitter: {
       card: 'summary_large_image',
-      title: meta.title,
+      title,
       description: meta.description,
     },
     robots: { index: true, follow: true },
