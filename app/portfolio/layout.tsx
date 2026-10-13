@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Portfolio — AI Automation Case Studies & Results',
   description:
-    '150+ AI automation projects delivered across 45 industries, generating $50M+ in revenue. See real case studies: ecommerce chatbots, banking lead qualification, healthcare scheduling, and more.',
+    'AI automation case studies: ecommerce chatbots, banking lead qualification, healthcare scheduling and more. See what we built and how it works.',
   keywords: [
     'AI automation case studies',
     'automation portfolio',

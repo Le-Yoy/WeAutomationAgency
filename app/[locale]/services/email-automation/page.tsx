@@ -13,11 +13,11 @@ function isNonDefault(l: string): l is SiteLocale {
 const META: Record<'fr' | 'es', { title: string; description: string }> = {
   fr: {
     title: 'Automatisation d’e-mails qui convertit — WeAutomationAgency',
-    description: 'Des séquences d’e-mails intelligentes qui s’adaptent au comportement et délivrent le bon message au bon moment. Personnalisation à grande échelle, tests A/B, optimisation continue.',
+    description: 'Des séquences d’e-mails qui s’adaptent au comportement de chaque contact : le bon message au bon moment. Personnalisation à grande échelle et tests A/B.',
   },
   es: {
     title: 'Automatización de e-mails que convierte — WeAutomationAgency',
-    description: 'Secuencias de e-mail inteligentes que se adaptan al comportamiento y envían el mensaje correcto en el momento justo. Personalización a escala, tests A/B y optimización continua.',
+    description: 'Secuencias de e-mail que se adaptan al comportamiento de cada contacto: el mensaje correcto en el momento justo. Personalización a escala y tests A/B.',
   },
 };
 

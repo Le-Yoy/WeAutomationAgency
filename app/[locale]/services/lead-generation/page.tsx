@@ -12,12 +12,12 @@ function isNonDefault(l: string): l is SiteLocale {
 
 const META: Record<'fr' | 'es', { title: string; description: string }> = {
   fr: {
-    title: 'Génération de leads automatisée qui remplit votre pipeline — WeAutomationAgency',
-    description: 'Une génération de leads par IA qui trouve, qualifie et nourrit automatiquement vos clients idéaux. Prospection, qualification intelligente et séquences de nurturing qui convertissent.',
+    title: 'Génération de leads automatisée | WeAutomationAgency',
+    description: 'Une génération de leads par IA qui trouve, qualifie et relance automatiquement vos clients idéaux : prospection, qualification et séquences de suivi.',
   },
   es: {
-    title: 'Generación de leads automatizada que llena tu pipeline — WeAutomationAgency',
-    description: 'Generación de leads con IA que encuentra, califica y nutre automáticamente a tus clientes ideales. Prospección, cualificación inteligente y secuencias de nurturing que convierten.',
+    title: 'Generación de leads automatizada | WeAutomationAgency',
+    description: 'Generación de leads con IA que encuentra, califica y nutre a tus clientes ideales de forma automática: prospección, cualificación y seguimiento.',
   },
 };
 

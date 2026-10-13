@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer, viewportOnce } from '@/lib/animations';
 import { HOME } from '@/lib/content/home';
-import { localizedPath, type SiteLocale } from '@/lib/i18n';
+import { type SiteLocale } from '@/lib/i18n';
 
 export default function Newsletter({ locale = 'en' }: { locale?: SiteLocale }) {
   const t = HOME[locale].newsletter;
@@ -76,8 +76,8 @@ export default function Newsletter({ locale = 'en' }: { locale?: SiteLocale }) {
             className="text-grey/50 text-xs mt-4"
           >
             {t.termsPre}{' '}
-            <a href={localizedPath(locale, '/terms')} className="underline hover:text-grey transition-colors">{t.terms}</a> {t.and}{' '}
-            <a href={localizedPath(locale, '/privacy')} className="underline hover:text-grey transition-colors">{t.privacy}</a>.
+            <a href={'/terms'} className="underline hover:text-grey transition-colors">{t.terms}</a> {t.and}{' '}
+            <a href={'/privacy'} className="underline hover:text-grey transition-colors">{t.privacy}</a>.
           </motion.p>
         </motion.div>
       </div>

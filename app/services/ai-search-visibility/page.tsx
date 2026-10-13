@@ -4,9 +4,9 @@ import AiSearchVisibilityView from '@/components/services/AiSearchVisibilityView
 import { currencyForCountry } from '@/lib/pricing';
 
 export const metadata: Metadata = {
-  title: 'AI Search Visibility (GEO) Services — Get Cited in ChatGPT & Google AI',
+  title: 'AI Search Visibility (GEO): Get Cited by ChatGPT',
   description:
-    'Get your business cited inside ChatGPT, Perplexity, and Google AI Overviews. GEO/AEO audits, setup, and monitoring — with a dashboard that proves when AI cites you. Free AI visibility audit.',
+    'Get your business cited in ChatGPT, Perplexity and Google AI Overviews. GEO audits, setup and monitoring, with a dashboard that proves it. Free audit.',
   keywords: [
     'AI search visibility',
     'GEO services',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'AI Search Visibility (GEO) Services — Get Cited in ChatGPT & Google AI',
+    title: 'AI Search Visibility (GEO): Get Cited by ChatGPT',
     description:
       'Get cited inside ChatGPT, Perplexity, and Google AI Overviews. Audits, setup, and monitoring. Free AI visibility audit.',
     url: 'https://weautomationagency.com/services/ai-search-visibility',

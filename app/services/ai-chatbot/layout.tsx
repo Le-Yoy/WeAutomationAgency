@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'AI Chatbot Development for Ecommerce, Banking & Support',
   description:
-    'Custom AI chatbots that handle support, qualify leads, and drive sales 24/7. Multilingual, WhatsApp-ready, deployed in 24-48 hours. Built for ecommerce, banking, and service businesses.',
+    'Custom AI chatbots that handle support, qualify leads and drive sales 24/7. Multilingual, WhatsApp-ready, live in 24-48 hours.',
   keywords: [
     'AI chatbot development',
     'AI chatbot for ecommerce',

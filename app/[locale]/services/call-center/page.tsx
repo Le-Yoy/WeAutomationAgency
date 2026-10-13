@@ -16,7 +16,7 @@ const META: Record<'fr' | 'es', { title: string; description: string }> = {
     description: 'Une IA vocale qui répond aux appels, prend des rendez-vous et gère les demandes clients 24h/24, avec analyses et reporting en temps réel. Lancé en 2-3 semaines.',
   },
   es: {
-    title: 'Centro de llamadas con IA de calidad humana — WeAutomationAgency',
+    title: 'Centro de llamadas con IA 24/7 | WeAutomationAgency',
     description: 'IA de voz que contesta llamadas, agenda citas y gestiona consultas 24/7, con analítica e informes en tiempo real. En marcha en 2-3 semanas.',
   },
 };

@@ -3,6 +3,7 @@ import {
   LOCALES,
   getSlugs,
   getAvailableLocales,
+  getPost,
   postPath,
   blogIndexPath,
 } from '@/lib/blog';
@@ -64,9 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const languages: Record<string, string> = {};
     for (const l of available) languages[l] = `${BASE_URL}${postPath(l, slug)}`;
     for (const l of available) {
+      // real dates only: last content update, else publish date
+      const meta = getPost(l, slug)?.meta;
+      const lastMod = meta?.updated ?? meta?.date;
       entries.push({
         url: `${BASE_URL}${postPath(l, slug)}`,
-        lastModified: now,
+        lastModified: lastMod ? new Date(lastMod) : now,
         changeFrequency: 'monthly',
         priority: 0.7,
         alternates: { languages },

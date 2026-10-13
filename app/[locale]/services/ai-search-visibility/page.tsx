@@ -13,14 +13,14 @@ function isNonDefault(l: string): l is SiteLocale {
 
 const META: Record<'fr' | 'es', { title: string; description: string }> = {
   fr: {
-    title: 'Services de visibilité IA (GEO) — être cité dans ChatGPT & l’IA de Google',
+    title: 'Agence GEO : être cité par ChatGPT et l’IA de Google',
     description:
-      'Faites citer votre entreprise dans ChatGPT, Perplexity et les AI Overviews de Google. Audits, mise en place et suivi GEO/AEO — avec un tableau de bord qui le prouve. Audit de visibilité IA gratuit.',
+      'Faites citer votre entreprise dans ChatGPT, Perplexity et les AI Overviews de Google. Audit, mise en place et suivi GEO. Audit de visibilité IA gratuit.',
   },
   es: {
-    title: 'Servicios de visibilidad en IA (GEO) — que te citen en ChatGPT y la IA de Google',
+    title: 'Agencia GEO: que ChatGPT y la IA de Google te citen',
     description:
-      'Haz que citen a tu negocio en ChatGPT, Perplexity y las AI Overviews de Google. Auditorías, implementación y seguimiento GEO/AEO — con un panel que lo demuestra. Auditoría de visibilidad en IA gratis.',
+      'Haz que citen a tu negocio en ChatGPT, Perplexity y las AI Overviews de Google. Auditoría, implementación y seguimiento GEO. Auditoría gratis.',
   },
 };
 

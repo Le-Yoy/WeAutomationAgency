@@ -78,6 +78,28 @@ colors: {
 
 ---
 
+## SEO & GEO Rules (MANDATORY on every change)
+
+Goal: rank on Google **and** get cited by AI assistants (ChatGPT, Perplexity, Gemini, Google AI Overviews). Full playbook: `~/marketing-agency-workspace/content/knowledge/seo-geo-brief-for-claude.md`.
+
+**Before every push that touches pages, metadata or blog content:**
+1. `npm run build` then `npm run seo:check` → must print **"✅ all pages pass"**. It crawls every sitemap URL and checks: `<title>` ≤60 chars, meta description 70–160, exactly one `<h1>`, canonical present, no duplicate titles, no broken internal links.
+2. New page? Add it to `app/sitemap.ts` (blog posts are added automatically) with FR/ES versions + hreflang.
+
+**Always:**
+- Titles use the words people actually search (look at GSC queries). Brand suffix `| WeAutomationAgency` only if it still fits in 60 chars.
+- Blog: long H1 is fine, put the short version in `seoTitle`. Visible dates: `date` (publish) + `updated`/`updatedLabel` **only after a real content change** (feeds `dateModified` and sitemap lastmod).
+- Main answer in the first 2–3 sentences of every page/section (AI extracts it).
+- Every blog post links to ≥2 other posts + its matching service page (locale-correct paths).
+- **Real info only:** no invented stats, clients, results or reviews in metadata or content.
+- Keep AI crawlers allowed in `app/robots.ts` (`User-Agent: *` allow). Content must stay server-rendered.
+- `/llms.txt` (`app/llms.txt/route.ts`) is generated from posts automatically; add new services to its `SERVICES` list.
+- Organization schema + `sameAs` live in `app/layout.tsx`: add every new official profile there and in the footer.
+
+**After deploy:** GSC → URL inspection → "Request indexing" for changed URLs. Monthly: GSC review (queries at positions 8–20 = priority) + AI visibility check (fixed list of customer questions in ChatGPT/Perplexity/Gemini/AI Mode).
+
+---
+
 ## Project Structure
 
 ```

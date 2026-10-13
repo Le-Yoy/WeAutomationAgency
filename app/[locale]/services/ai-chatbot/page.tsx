@@ -13,12 +13,12 @@ function isNonDefault(l: string): l is SiteLocale {
 
 const META: Record<'fr' | 'es', { title: string; description: string }> = {
   fr: {
-    title: 'Chatbot IA pour ecommerce, banque & support — WeAutomationAgency',
+    title: 'Chatbot IA sur mesure pour entreprise | WeAutomationAgency',
     description:
-      'Des chatbots IA sur mesure qui gèrent le support, qualifient les prospects et génèrent des ventes 24h/24. Multilingues, prêts pour WhatsApp, déployés en 24-48 h.',
+      'Des chatbots IA sur mesure qui gèrent le support, qualifient les prospects et vendent 24h/24. Multilingues, prêts pour WhatsApp, en ligne en 24-48 h.',
   },
   es: {
-    title: 'Chatbot con IA para e-commerce, banca y soporte — WeAutomationAgency',
+    title: 'Chatbot con IA a medida para empresas | WeAutomationAgency',
     description:
       'Chatbots con IA a medida que gestionan el soporte, califican leads y generan ventas 24/7. Multilingües, listos para WhatsApp, desplegados en 24-48 h.',
   },

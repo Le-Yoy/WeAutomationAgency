@@ -11,9 +11,9 @@ function isNonDefault(l: string): l is SiteLocale {
 
 const META: Record<'fr' | 'es', { title: string; description: string }> = {
   fr: {
-    title: 'WeAutomationAgency — l’IA pour la croissance de votre entreprise',
+    title: 'Agence IA & automatisation | WeAutomationAgency',
     description:
-      'Nous créons des chatbots IA, de la génération de leads automatisée, des centres d’appels intelligents et des solutions sur mesure qui font croître votre chiffre d’affaires.',
+      'Chatbots IA, génération de leads automatisée, centres d’appels intelligents et visibilité dans ChatGPT : nous automatisons votre croissance.',
   },
   es: {
     title: 'WeAutomationAgency — IA para el crecimiento de tu negocio',

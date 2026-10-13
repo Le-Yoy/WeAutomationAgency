@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Email Automation & Behavioral Sequences That Convert',
   description:
-    'Behavioral email automation with dynamic personalization and A/B testing. 42% open rates, $2.14 revenue per email. Welcome series, cart recovery, re-engagement, and lead nurture.',
+    'Behavioral email automation with dynamic personalization and A/B testing: welcome series, cart recovery, re-engagement and lead nurture.',
   keywords: [
     'email automation',
     'email marketing automation',

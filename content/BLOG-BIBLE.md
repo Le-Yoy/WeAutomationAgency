@@ -111,13 +111,14 @@ Each = a *recipe* of type + modules + copy shape. Don't make every post a "guide
 ---
 
 ## 7. Per-post technical SEO checklist
-- [ ] **Title:** primary keyword front-loaded, ≤~60 chars, compelling.
-- [ ] **Description:** 140–160 chars, keyword + click reason.
+- [ ] **Title:** primary keyword front-loaded, ≤60 chars, compelling. If the H1 needs to be longer, keep `title` as the H1 and add `seoTitle` (≤60) for the `<title>` tag. Use the words people actually search (check GSC queries).
+- [ ] **Description:** 70–160 chars (aim 140–160), keyword + click reason. Never longer than 160.
 - [ ] **Slug:** short, hyphenated, keyword, English, **identical across all 3 languages**.
 - [ ] **One H1** (the title — auto). H2s = real questions containing secondary keywords.
 - [ ] **Primary keyword** in: title, description, first 100 words, one H2, naturally in body. **Secondary keywords** in other H2s. Do **not** keyword-stuff — write for humans.
 - [ ] **Short-answer blockquote** under H1 (snippet/AEO bait).
-- [ ] Internal + external links present (§6); 1–3 authoritative external sources, no competitors.
+- [ ] Internal + external links present (§6): **at least 2 links to other posts + 1 link to the matching service page** (e.g. chatbot posts → `/services/ai-chatbot`, GEO posts → `/services/ai-search-visibility`), locale-correct. 1–3 authoritative external sources, no competitors.
+- [ ] **Dates:** `date` = publish date. After a **real** content update, set `updated` + `updatedLabel` (shows "Updated …", feeds `dateModified` + sitemap lastmod). Never bump the date without a real change.
 - [ ] `heroAlt` + all image alts descriptive.
 - [ ] JSON-LD `BlogPosting` (auto) — make sure author/date/heroImage are set so it's rich.
 
@@ -142,6 +143,7 @@ Keep the *brand* constant (colors, type, layout, voice); vary the *recipe*. Cons
 
 ## 10. Build, deploy & index
 1. `cd` into the site repo. `npm run build` — must pass with the new slugs listed.
+1b. `npm run seo:check` — **must print "✅ all pages pass"** (titles ≤60, descriptions 70–160, one H1, canonical, no duplicate titles, no broken internal links). Fix every warning before pushing.
 2. Spot-check the built HTML for the new post (title, hreflang, TOC if enabled).
 3. `git add -A && git commit && git push origin main` → auto-deploys.
 4. Poll the 3 live URLs (EN/FR/ES) until 200.

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'AI Call Center & Voice Automation — 24/7 Human-Like Support',
   description:
-    'Intelligent voice AI that answers calls, schedules appointments, and resolves 85% of inquiries automatically. Under 3s response, $0.08 per call vs $6 for human agents.',
+    'Voice AI that answers calls, books appointments and handles customer requests 24/7, with real-time analytics and reporting. Live in 2-3 weeks.',
   keywords: [
     'AI call center',
     'voice AI',

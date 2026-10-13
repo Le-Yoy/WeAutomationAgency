@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Automated Lead Generation Services That Fill Your Pipeline',
   description:
-    'AI-powered lead generation that finds, qualifies, and nurtures your ideal customers automatically. Outreach, smart qualification, and nurture sequences that convert 5x better.',
+    'AI lead generation that finds, qualifies and nurtures your ideal customers automatically: outreach, smart qualification and follow-up sequences.',
   keywords: [
     'automated lead generation',
     'lead generation services',
