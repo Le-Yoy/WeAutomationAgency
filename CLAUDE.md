@@ -96,7 +96,7 @@ Goal: rank on Google **and** get cited by AI assistants (ChatGPT, Perplexity, Ge
 - `/llms.txt` (`app/llms.txt/route.ts`) is generated from posts automatically; add new services to its `SERVICES` list.
 - Organization schema + `sameAs` live in `app/layout.tsx`: add every new official profile there and in the footer.
 
-**After deploy:** GSC → URL inspection → "Request indexing" for changed URLs. Monthly: GSC review (queries at positions 8–20 = priority) + AI visibility check (fixed list of customer questions in ChatGPT/Perplexity/Gemini/AI Mode).
+**After deploy:** run `npm run indexnow` (submits every sitemap URL to Bing/IndexNow; key file in `public/`), then GSC → URL inspection → "Request indexing" for changed URLs. Bing Webmaster Tools is set up (imported from GSC, 2026-10-14). Monthly: GSC review (queries at positions 8–20 = priority) + AI visibility check (fixed list of customer questions in ChatGPT/Perplexity/Gemini/AI Mode).
 
 ---
 
