@@ -92,9 +92,14 @@ Goal: rank on Google **and** get cited by AI assistants (ChatGPT, Perplexity, Ge
 - Main answer in the first 2–3 sentences of every page/section (AI extracts it).
 - Every blog post links to ≥2 other posts + its matching service page (locale-correct paths).
 - **Real info only:** no invented stats, clients, results or reviews in metadata or content.
+- **Google guidelines (Oct 1, 2026 update):** every AI-assisted page/metadata (titles, descriptions, schema, alt text) is fact-checked by a human before publishing. Quality signals = effort (no mass AI pages), originality (our own data/opinion/screenshots), skill, accuracy, and a real named author (never AI headshots or made-up names). Interactive tools count as "main content".
 - Keep AI crawlers allowed in `app/robots.ts` (`User-Agent: *` allow). Content must stay server-rendered.
 - `/llms.txt` (`app/llms.txt/route.ts`) is generated from posts automatically; add new services to its `SERVICES` list.
 - Organization schema + `sameAs` live in `app/layout.tsx`: add every new official profile there and in the footer.
+
+**AI traffic tracking (2026-10-14):**
+- `middleware.ts` logs every AI bot hit (ChatGPT-User, GPTBot, PerplexityBot, ClaudeBot, Bingbot, Googlebot…) to Vercel runtime logs and, when `KV_REST_API_URL`/`KV_REST_API_TOKEN` are set (Upstash Redis via Vercel Marketplace), to Redis (`ai-bots:YYYY-MM-DD`, kept 400 days). `npm run ai-bots [days]` prints the report. "-User" bots = a live fetch for a real person's question. Keep bots out of the homepage locale redirect. When adding middleware logic, keep the matcher excluding `_next`, `api`, and static files.
+- ChatGPT's in-answer links carry no referrer/UTM, so clicks show as **direct** traffic and 54% land on the homepage (Tomek Rudzki/Peec AI, Oct 2026). So the homepage hero must say plainly what we do, for whom, and the next step; and the lead form's "Where did you find us?" keeps a "ChatGPT / AI" option (`lib/content/start.ts`), our only real click attribution.
 
 **After deploy:** run `npm run indexnow` (submits every sitemap URL to Bing/IndexNow; key file in `public/`), then GSC → URL inspection → "Request indexing" for changed URLs. Bing Webmaster Tools is set up (imported from GSC, 2026-10-14). Monthly: GSC review (queries at positions 8–20 = priority) + AI visibility check (fixed list of customer questions in ChatGPT/Perplexity/Gemini/AI Mode).
 

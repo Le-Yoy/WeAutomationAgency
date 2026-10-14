@@ -36,7 +36,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
     hero: {
       line1: 'Transform Your', line2: 'Business with AI',
       rotating: ['Automation Solutions', 'Leads Generation', 'Chat Bot', 'Call Center'],
-      description: 'At We Automation Agency, we empower businesses of all sizes with innovative AI automation services that drive efficiency and growth. Discover how our intelligent automation solutions can streamline your operations, enhance customer engagement, and unlock new levels of productivity.',
+      description: 'We build custom AI automation for businesses: AI chatbots for your website and WhatsApp, AI voice agents that answer your calls, automated lead generation and email automation. In English, French and Spanish. Tell us what you want to automate and get a free demo.',
       cta: 'get demo',
     },
     results: {
@@ -124,7 +124,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
     hero: {
       line1: 'Transformez votre', line2: 'entreprise avec l’IA',
       rotating: ['Solutions d’automatisation', 'Génération de leads', 'Chatbot', 'Centre d’appels'],
-      description: 'Chez We Automation Agency, nous aidons les entreprises de toutes tailles avec des services d’automatisation par IA qui font gagner en efficacité et en croissance. Découvrez comment nos solutions intelligentes peuvent fluidifier vos opérations, renforcer l’engagement client et débloquer de nouveaux niveaux de productivité.',
+      description: 'Nous créons des automatisations IA sur mesure pour les entreprises : chatbots IA pour votre site et WhatsApp, agents vocaux IA qui répondent à vos appels, génération de leads et automatisation des e-mails. En français, anglais et espagnol. Dites-nous ce que vous voulez automatiser et recevez une démo gratuite.',
       cta: 'demander une démo',
     },
     results: {
@@ -212,7 +212,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
     hero: {
       line1: 'Transforma tu', line2: 'negocio con IA',
       rotating: ['Soluciones de automatización', 'Generación de leads', 'Chatbot', 'Centro de llamadas'],
-      description: 'En We Automation Agency ayudamos a empresas de todos los tamaños con servicios de automatización con IA que impulsan la eficiencia y el crecimiento. Descubre cómo nuestras soluciones inteligentes pueden agilizar tus operaciones, mejorar la relación con tus clientes y desbloquear nuevos niveles de productividad.',
+      description: 'Creamos automatizaciones con IA a medida para empresas: chatbots con IA para tu web y WhatsApp, agentes de voz con IA que atienden tus llamadas, generación de leads y automatización de e-mails. En español, inglés y francés. Cuéntanos qué quieres automatizar y recibe una demo gratis.',
       cta: 'pedir una demo',
     },
     results: {

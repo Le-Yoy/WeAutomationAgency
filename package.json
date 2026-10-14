@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "seo:check": "node scripts/seo-check.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "ai-bots": "node scripts/ai-bots.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
