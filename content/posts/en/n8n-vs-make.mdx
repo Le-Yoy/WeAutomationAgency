@@ -46,11 +46,12 @@ This is the part most comparisons skip.
 
 Simple consequence: **the longer your workflows, the better n8n looks**. For short workflows, Make stays very competitive.
 
-## Our real case: a lead generation machine on Make (then on n8n)
+## Our real case: a lead generation machine on Make, then on n8n
 
 We first built it for ourselves, to find our own clients. Then we built it again for clients, including a company selling digital products. The idea: find the right people, get their work email, send them a personalized message, and track what happens.
 
-The Make scenario:
+### The Make version
+
 1. **Targeting in LinkedIn Sales Navigator**: a precise search (job title, industry, company size, country).
 2. **Pulling the profiles** from that search into Make.
 3. **Enrichment**: a technical step to find each contact's work email and keep only valid addresses.
@@ -58,9 +59,21 @@ The Make scenario:
 5. **Sending** the emails and follow-ups, straight from Make.
 6. **Tracking**: a few key numbers watched at every step, to see where the pipeline loses contacts and what gets replies.
 
-What this project shows about choosing a tool: **every contact goes through 6 steps or more**. On Make, each contact therefore uses several credits, and the bill grows with the number of contacts. That's exactly the kind of long workflow where n8n, which counts one execution per run, gets interesting as volume grows. It's also why we built the same pipeline on n8n for another project.
+**The results:** up to **2,000 people contacted per day**, a **reply rate above the market average** (2026 studies put B2B cold email around 2–3.5%, per [lemlist](https://lemlist.com/blog/cold-email-response-rate) and [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)), and more clients signed than classic prospecting usually brings.
 
-*One important point: this kind of prospecting has to respect GDPR (a message relevant to the person's job, an easy way to opt out) and LinkedIn's terms of use. We set that up from day one with every client. Our approach is detailed on our [automated lead generation](/services/lead-generation) page.*
+### The n8n version
+
+For another project we built the same pipeline on n8n, with differences that show what each tool is good at:
+
+- **Hosted on our own server**: prospect data stays with us, and cost no longer depends on the number of steps.
+- **An AI screening step before sending**: the AI scores each profile on fit with the offer, and only the best get an email. On Make, that extra step would have cost credits on every contact. On n8n, it doesn't change the bill.
+- **Automatic reply sorting**: the AI tags each reply (interested, later, not interested, unsubscribe). Hot replies go into the CRM with an alert; the rest are handled automatically.
+
+### What this shows about choosing a tool
+
+**Every contact goes through 6 steps or more.** On Make, the bill follows the number of contacts times the number of steps. On n8n, one contact = one execution, however long the workflow. At 2,000 contacts a day, that difference really matters. Below that, Make's simplicity wins.
+
+This is the kind of pipeline we build for clients: our [automated lead generation](/services/lead-generation) service, with the [email automation](/services/email-automation) sequences that go with it.
 
 ## Worked example: confirming store orders on WhatsApp
 

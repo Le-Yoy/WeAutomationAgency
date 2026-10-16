@@ -6,7 +6,7 @@ export interface LeadGenDict {
   funnel: { title: string; sub: string; stages: string[]; counts: string[]; note: string };
   strategies: { title: string; items: { title: string; description: string; metric: string; label: string }[] };
   channels: { title: string; sub: string; items: { name: string; icon: string; effectiveness: number }[] };
-  finalCta: { h1a: string; h1b: string; sub: string; cta: string };
+  finalCta: { h1a: string; h1b: string; sub: string; cta: string; casePre: string; caseLink: string };
 }
 
 const COUNTS = ['10,000', '3,500', '850', '170'];
@@ -25,7 +25,7 @@ export const LEADGEN: Record<SiteLocale, LeadGenDict> = {
     strategies: {
       title: 'How We Generate Leads',
       items: [
-        { title: 'Automated Outreach', description: 'Multi-channel campaigns across email, LinkedIn, and social media. Personalized at scale.', metric: '3x', label: 'More Leads' },
+        { title: 'Automated Outreach', description: 'Multi-channel campaigns across email, LinkedIn, and social media. Personalized at scale.', metric: '2,000', label: 'Contacts per day' },
         { title: 'Smart Qualification', description: 'AI scores and prioritizes leads based on behavior, engagement, and fit.', metric: '70%', label: 'Higher Quality' },
         { title: 'Nurture Sequences', description: 'Automated workflows that adapt to each lead’s journey and engagement level.', metric: '5x', label: 'Better Conversion' },
         { title: 'Data Enrichment', description: 'Automatically find and fill missing contact info, company data, and firmographics.', metric: '90%', label: 'Data Accuracy' },
@@ -42,7 +42,7 @@ export const LEADGEN: Record<SiteLocale, LeadGenDict> = {
         { name: 'Webinars', icon: ICONS[5], effectiveness: EFF[5] },
       ],
     },
-    finalCta: { h1a: 'Ready to Scale', h1b: 'Your Lead Flow', sub: 'Let us build a custom lead generation system that runs 24/7 and fills your pipeline with qualified prospects.', cta: 'Get Started Today' },
+    finalCta: { h1a: 'Ready to Scale', h1b: 'Your Lead Flow', sub: 'Let us build a custom lead generation system that runs 24/7 and fills your pipeline with qualified prospects.', cta: 'Get Started Today', casePre: 'See how we built our own lead machine (up to 2,000 contacts a day) on Make and n8n:', caseLink: 'our real case, step by step' },
   },
   fr: {
     back: 'Retour à l’accueil',
@@ -55,7 +55,7 @@ export const LEADGEN: Record<SiteLocale, LeadGenDict> = {
     strategies: {
       title: 'Comment nous générons des leads',
       items: [
-        { title: 'Prospection automatisée', description: 'Des campagnes multicanales par e-mail, LinkedIn et réseaux sociaux. Personnalisées à grande échelle.', metric: '3x', label: 'Plus de leads' },
+        { title: 'Prospection automatisée', description: 'Des campagnes multicanales par e-mail, LinkedIn et réseaux sociaux. Personnalisées à grande échelle.', metric: '2 000', label: 'Contacts par jour' },
         { title: 'Qualification intelligente', description: 'L’IA note et priorise les leads selon leur comportement, leur engagement et leur adéquation.', metric: '70%', label: 'Meilleure qualité' },
         { title: 'Séquences de nurturing', description: 'Des workflows automatisés qui s’adaptent au parcours et au niveau d’engagement de chaque lead.', metric: '5x', label: 'Meilleure conversion' },
         { title: 'Enrichissement des données', description: 'Trouvez et complétez automatiquement les coordonnées, données d’entreprise et firmographies manquantes.', metric: '90%', label: 'Exactitude des données' },
@@ -72,7 +72,7 @@ export const LEADGEN: Record<SiteLocale, LeadGenDict> = {
         { name: 'Webinaires', icon: ICONS[5], effectiveness: EFF[5] },
       ],
     },
-    finalCta: { h1a: 'Prêt à faire passer', h1b: 'vos leads à l’échelle', sub: 'Laissez-nous construire un système de génération de leads sur mesure qui tourne 24h/24 et remplit votre pipeline de prospects qualifiés.', cta: 'Commencer aujourd’hui' },
+    finalCta: { h1a: 'Prêt à faire passer', h1b: 'vos leads à l’échelle', sub: 'Laissez-nous construire un système de génération de leads sur mesure qui tourne 24h/24 et remplit votre pipeline de prospects qualifiés.', cta: 'Commencer aujourd’hui', casePre: 'Découvrez comment on a construit notre propre machine à prospects (jusqu’à 2 000 contacts par jour) sur Make et n8n :', caseLink: 'notre cas réel, étape par étape' },
   },
   es: {
     back: 'Volver al inicio',
@@ -85,7 +85,7 @@ export const LEADGEN: Record<SiteLocale, LeadGenDict> = {
     strategies: {
       title: 'Cómo generamos leads',
       items: [
-        { title: 'Prospección automatizada', description: 'Campañas multicanal por e-mail, LinkedIn y redes sociales. Personalizadas a escala.', metric: '3x', label: 'Más leads' },
+        { title: 'Prospección automatizada', description: 'Campañas multicanal por e-mail, LinkedIn y redes sociales. Personalizadas a escala.', metric: '2.000', label: 'Contactos al día' },
         { title: 'Cualificación inteligente', description: 'La IA puntúa y prioriza los leads según su comportamiento, interacción y encaje.', metric: '70%', label: 'Mayor calidad' },
         { title: 'Secuencias de nurturing', description: 'Flujos automatizados que se adaptan al recorrido y al nivel de interacción de cada lead.', metric: '5x', label: 'Mejor conversión' },
         { title: 'Enriquecimiento de datos', description: 'Encuentra y completa automáticamente los contactos, datos de empresa y firmografía que faltan.', metric: '90%', label: 'Precisión de datos' },
@@ -102,6 +102,6 @@ export const LEADGEN: Record<SiteLocale, LeadGenDict> = {
         { name: 'Webinars', icon: ICONS[5], effectiveness: EFF[5] },
       ],
     },
-    finalCta: { h1a: '¿Listo para escalar', h1b: 'tu flujo de leads?', sub: 'Déjanos construir un sistema de generación de leads a medida que funciona 24/7 y llena tu pipeline de prospectos cualificados.', cta: 'Empezar hoy' },
+    finalCta: { h1a: '¿Listo para escalar', h1b: 'tu flujo de leads?', sub: 'Déjanos construir un sistema de generación de leads a medida que funciona 24/7 y llena tu pipeline de prospectos cualificados.', cta: 'Empezar hoy', casePre: 'Mira cómo construimos nuestra propia máquina de captación (hasta 2.000 contactos al día) en Make y n8n:', caseLink: 'nuestro caso real, paso a paso' },
   },
 };

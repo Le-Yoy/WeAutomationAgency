@@ -46,11 +46,12 @@ Es la parte que casi todas las comparativas se saltan.
 
 Consecuencia sencilla: **cuanto más largos son tus flujos, más interesante es n8n**. Con flujos cortos, Make sigue siendo muy competitivo.
 
-## Nuestro caso real: una máquina de captación de leads en Make (y luego en n8n)
+## Nuestro caso real: una máquina de captación de leads en Make, y luego en n8n
 
 Primero la construimos para nosotros, para encontrar a nuestros propios clientes. Después la volvimos a construir para clientes, entre ellos una empresa que vende productos digitales. La idea: encontrar a las personas adecuadas, conseguir su e-mail profesional, escribirles un mensaje personalizado y medir lo que pasa.
 
-El escenario en Make:
+### La versión en Make
+
 1. **La segmentación en LinkedIn Sales Navigator**: una búsqueda precisa (cargo, sector, tamaño de empresa, país).
 2. **La recuperación de los perfiles** de esa búsqueda en Make.
 3. **El enriquecimiento**: un paso técnico para encontrar el e-mail profesional de cada contacto y quedarnos solo con las direcciones válidas.
@@ -58,9 +59,21 @@ El escenario en Make:
 5. **El envío** de los e-mails y los recordatorios, directamente desde Make.
 6. **El seguimiento**: unas pocas cifras clave vigiladas en cada paso, para ver dónde se pierden contactos y qué consigue respuestas.
 
-Lo que este proyecto enseña sobre la elección de herramienta: **cada contacto pasa por 6 pasos o más**. En Make, cada contacto consume varios créditos y la factura crece con el número de contactos. Es justo el tipo de flujo largo en el que n8n, que cuenta una ejecución por pasada, se vuelve interesante cuando sube el volumen. Por eso también construimos el mismo flujo en n8n para otro proyecto.
+**Los resultados:** hasta **2.000 personas contactadas al día**, una **tasa de respuesta por encima de la media del mercado** (los estudios de 2026 la sitúan en torno al 2–3,5 % en B2B, según [lemlist](https://lemlist.com/blog/cold-email-response-rate) y [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)) y más clientes firmados de lo que suele dar la prospección clásica.
 
-*Un punto importante: este tipo de prospección debe respetar el RGPD (un mensaje relacionado con el puesto de la persona y una forma fácil de darse de baja) y las condiciones de uso de LinkedIn. Lo dejamos claro desde el principio con cada cliente. Nuestro enfoque está en la página de [generación de leads automatizada](/es/services/lead-generation).*
+### La versión en n8n
+
+Para otro proyecto construimos el mismo flujo en n8n, con diferencias que muestran para qué sirve cada herramienta:
+
+- **Alojado en nuestro propio servidor**: los datos de los prospectos se quedan con nosotros y el coste ya no depende del número de pasos.
+- **Un filtro con IA antes del envío**: la IA puntúa cada perfil según su encaje con la oferta y solo los mejores reciben un e-mail. En Make, ese paso extra habría costado créditos en cada contacto. En n8n, no cambia la factura.
+- **Clasificación automática de las respuestas**: la IA etiqueta cada respuesta (interesado, más adelante, no interesado, baja). Las respuestas calientes van al CRM con una alerta; el resto se gestiona solo.
+
+### Lo que esto enseña sobre la elección de herramienta
+
+**Cada contacto pasa por 6 pasos o más.** En Make, la factura sigue al número de contactos por el número de pasos. En n8n, un contacto = una ejecución, sea cual sea la longitud del flujo. Con 2.000 contactos al día, esa diferencia pesa de verdad. Por debajo, gana la sencillez de Make.
+
+Este es el tipo de flujo que construimos para nuestros clientes: nuestro servicio de [generación de leads automatizada](/es/services/lead-generation), con las secuencias de [automatización de e-mails](/es/services/email-automation) que lo acompañan.
 
 ## Ejemplo con números: confirmar los pedidos de una tienda por WhatsApp
 

@@ -46,11 +46,12 @@ C'est le point que la plupart des comparatifs survolent.
 
 Conséquence simple : **plus vos scénarios sont longs, plus n8n devient intéressant**. Pour des scénarios courts, Make reste très compétitif.
 
-## Notre cas réel : une machine à prospects sur Make (puis sur n8n)
+## Notre cas réel : une machine à prospects sur Make, puis sur n8n
 
 On l'a d'abord construite pour nous, pour trouver nos propres clients. Puis on l'a refaite pour des clients, dont une entreprise qui vend des produits numériques. Le principe : trouver les bonnes personnes, récupérer leur e-mail professionnel, leur écrire un message personnalisé, et suivre ce qui se passe.
 
-Le scénario sur Make :
+### La version Make
+
 1. **Le ciblage dans LinkedIn Sales Navigator** : une recherche précise (poste, secteur, taille d'entreprise, pays).
 2. **La récupération des profils** de cette recherche dans Make.
 3. **L'enrichissement** : une étape technique pour trouver l'adresse e-mail professionnelle de chaque contact et ne garder que les adresses valides.
@@ -58,9 +59,21 @@ Le scénario sur Make :
 5. **L'envoi** des e-mails et des relances, directement depuis Make.
 6. **Le suivi** : quelques chiffres clés surveillés à chaque étape, pour voir où le pipeline perd des contacts et ce qui fait répondre.
 
-Ce que ce projet montre bien pour le choix de l'outil : **chaque contact traverse 6 étapes ou plus**. Sur Make, chaque contact consomme donc plusieurs crédits, et la facture suit le nombre de contacts. C'est exactement le type de scénario long où n8n, qui compte une exécution par passage, devient intéressant quand le volume monte. C'est d'ailleurs pour ça qu'on a construit le même pipeline sur n8n pour un autre projet.
+**Les résultats :** jusqu'à **2 000 personnes contactées par jour**, un **taux de réponse au-dessus de la moyenne du marché** (les études 2026 la situent autour de 2 à 3,5 % en B2B, selon [lemlist](https://lemlist.com/blog/cold-email-response-rate) et [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)), et plus de clients signés que ce qu'on obtient en moyenne avec de la prospection classique.
 
-*Un point important : ce type de prospection doit respecter le RGPD (message en lien avec le poste de la personne, désinscription facile) et les conditions d'utilisation de LinkedIn. On le cadre dès le départ avec chaque client. Le détail de notre approche est sur notre page [génération de leads automatisée](/fr/services/lead-generation).*
+### La version n8n
+
+Pour un autre projet, on a construit le même pipeline sur n8n, avec des différences qui montrent bien l'intérêt de chaque outil :
+
+- **Hébergé sur notre propre serveur** : les données des prospects restent chez nous, et le coût ne dépend plus du nombre d'étapes.
+- **Une étape de tri par l'IA avant l'envoi** : l'IA note chaque profil selon son adéquation avec l'offre, et seuls les meilleurs reçoivent un e-mail. Sur Make, cette étape en plus aurait coûté des crédits sur chaque contact. Sur n8n, ça ne change rien à la facture.
+- **Le tri automatique des réponses** : l'IA classe chaque réponse (intéressé, plus tard, pas intéressé, désinscription). Les réponses chaudes partent dans le CRM avec une alerte, les autres sont gérées automatiquement.
+
+### Ce que ça montre pour le choix de l'outil
+
+**Chaque contact traverse 6 étapes ou plus.** Sur Make, la facture suit le nombre de contacts et le nombre d'étapes. Sur n8n, un contact = une exécution, quelle que soit la longueur du workflow. À 2 000 contacts par jour, cette différence compte vraiment. En dessous, la simplicité de Make l'emporte.
+
+Ce type de pipeline, on le construit pour nos clients : c'est notre service de [génération de leads automatisée](/fr/services/lead-generation), avec les séquences d'[automatisation des e-mails](/fr/services/email-automation) qui vont avec.
 
 ## Exemple chiffré : confirmer les commandes d'une boutique sur WhatsApp
 

@@ -149,7 +149,9 @@ export default function Page({ params }: { params: { locale: string } }) {
             On l&apos;a d&apos;abord construite pour nous, puis pour des clients, dont une entreprise qui vend des produits
             numériques : ciblage dans LinkedIn Sales Navigator, récupération des profils dans Make, recherche de l&apos;e-mail
             professionnel, accroche de chaque e-mail rédigée par ChatGPT, envoi et relances automatiques, et suivi des
-            chiffres à chaque étape. On a aussi construit le même pipeline sur n8n pour un autre projet.{' '}
+            chiffres à chaque étape. Résultat : jusqu&apos;à 2 000 personnes contactées par jour et un taux de réponse
+            au-dessus de la moyenne du marché. On a aussi construit une version sur n8n pour un autre projet, avec un tri des
+            profils et des réponses par l&apos;IA.{' '}
             <Link className={A} href="/fr/services/lead-generation">Voir la génération de leads automatisée</Link>.
           </p>
 
