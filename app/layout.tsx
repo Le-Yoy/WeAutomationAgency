@@ -101,6 +101,7 @@ const jsonLd = {
         'https://www.facebook.com/WeAutomationAgency',
         'https://www.instagram.com/weautomationagency',
         'https://x.com/WeAutomationAG',
+        'https://www.sortlist.com/fr/agency/weautomationagency',
       ],
     },
     {
