@@ -39,7 +39,7 @@ for (const route of urls) {
   const title = decode((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
   const desc = decode((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '');
   const h1 = (html.match(/<h1[\s>]/g) || []).length;
-  const canonical = /<link rel="canonical"/.test(html);
+  const canonical = (html.match(/<link rel="canonical" href="([^"]*)"/) || [])[1];
   const p = [];
   if (!title) p.push('missing <title>');
   else if (title.length > TITLE_MAX) p.push(`title ${title.length} chars (max ${TITLE_MAX}): "${title}"`);
@@ -48,6 +48,8 @@ for (const route of urls) {
     p.push(`description ${desc.length} chars (${DESC_MIN}-${DESC_MAX})`);
   if (h1 !== 1) p.push(`${h1} <h1> tags (need exactly 1)`);
   if (!canonical) p.push('no canonical');
+  else if ((new URL(canonical).pathname.replace(/\/$/, '') || '/') !== (route.replace(/\/$/, '') || '/'))
+    p.push(`canonical points elsewhere: ${canonical}`);
   for (const m of html.matchAll(/href="(\/[^"#?]*)/g)) {
     const href = m[1];
     if (!/^\/(_next|fonts|images)\//.test(href) && !links.has(href)) links.set(href, route);

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/terms' },
   title: 'Terms of Service — WeAutomationAgency',
   description: 'Terms and conditions for using WeAutomationAgency AI automation services. Clear, transparent guidelines for our business relationship.',
   openGraph: {

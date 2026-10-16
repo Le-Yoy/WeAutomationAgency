@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/cookies' },
   title: 'Cookie Policy — WeAutomationAgency',
   description: 'Learn about how WeAutomationAgency uses cookies to enhance your experience. Transparent cookie usage for AI automation services.',
   openGraph: {

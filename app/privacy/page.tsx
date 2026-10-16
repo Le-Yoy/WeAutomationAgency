@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacy' },
   title: 'Privacy Policy — WeAutomationAgency',
   description: 'Learn how WeAutomationAgency protects your privacy and handles your personal information. Transparent data practices for AI automation services.',
   openGraph: {

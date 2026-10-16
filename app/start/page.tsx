@@ -8,6 +8,7 @@ import { HOME } from '@/lib/content/home';
 import { isSiteLocale, localizedPath, type SiteLocale } from '@/lib/i18n';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/start' },
   title: 'Get Your Free Demo — WeAutomationAgency',
   description:
     'Book your free AI automation demo. Tell us where to reach you and our team will get back to you within 24 hours.',
