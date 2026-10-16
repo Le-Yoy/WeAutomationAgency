@@ -15,7 +15,7 @@ toc: true
 
 > **The short answer:** pick **Make** if you want automations live fast, with no server and no code, at a reasonable volume. Pick **n8n** if your workflows have many steps or run very often, if you want to host your data yourself, or if you have someone technical on the team. The real difference isn't quality, it's how they **count**: Make bills every action, n8n bills every complete run.
 
-Full transparency first: at WeAutomationAgency our automations run on **Make**. We haven't put n8n into production for a client yet. So this isn't "I've used both for five years." It's the view of someone who uses Make every day, asked "should we switch to n8n?", and did the math. No affiliate links.
+Full transparency first: at WeAutomationAgency most of our automations run on **Make**, starting with our own lead generation machine, which we then built for clients. We've also built the same kind of pipeline on **n8n** for another project. So this comparison comes from what we actually built, not from a product page. No affiliate links.
 
 ## What's the difference between n8n and Make?
 
@@ -45,6 +45,22 @@ This is the part most comparisons skip.
 - On **n8n**, one execution = **one full run of the workflow**, whether it has 3 steps or 30. Step count doesn't change the price.
 
 Simple consequence: **the longer your workflows, the better n8n looks**. For short workflows, Make stays very competitive.
+
+## Our real case: a lead generation machine on Make (then on n8n)
+
+We first built it for ourselves, to find our own clients. Then we built it again for clients, including a company selling digital products. The idea: find the right people, get their work email, send them a personalized message, and track what happens.
+
+The Make scenario:
+1. **Targeting in LinkedIn Sales Navigator**: a precise search (job title, industry, company size, country).
+2. **Pulling the profiles** from that search into Make.
+3. **Enrichment**: a technical step to find each contact's work email and keep only valid addresses.
+4. **Personalization with ChatGPT**: the OpenAI API writes the opening line of each email from the profile (role, company, industry).
+5. **Sending** the emails and follow-ups, straight from Make.
+6. **Tracking**: a few key numbers watched at every step, to see where the pipeline loses contacts and what gets replies.
+
+What this project shows about choosing a tool: **every contact goes through 6 steps or more**. On Make, each contact therefore uses several credits, and the bill grows with the number of contacts. That's exactly the kind of long workflow where n8n, which counts one execution per run, gets interesting as volume grows. It's also why we built the same pipeline on n8n for another project.
+
+*One important point: this kind of prospecting has to respect GDPR (a message relevant to the person's job, an easy way to opt out) and LinkedIn's terms of use. We set that up from day one with every client. Our approach is detailed on our [automated lead generation](/services/lead-generation) page.*
 
 ## Worked example: confirming store orders on WhatsApp
 
@@ -93,7 +109,7 @@ Mind the license: the Community edition is free as long as **you and your team**
 
 </KeyTakeaways>
 
-For us, Make is still the right call today for most of the small businesses we work with: fast to ship, easy to maintain, easy to explain. The day a client has very long workflows or data that must stay on their own servers, n8n is the first thing we'll test, and I'll update this post with what we learn.
+For us, Make is still the default for most of the small businesses we work with: fast to ship, easy to maintain, easy to explain. We've already used n8n for a prospecting pipeline, and it's the option we look at as soon as workflows get long, volume grows, or the data has to stay with the client.
 
 ## Want help choosing (or building it)?
 

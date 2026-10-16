@@ -42,7 +42,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'Vous utilisez Make ou n8n ?',
-    a: "Nous construisons nos automatisations sur Make : rapide à livrer, facile à maintenir et facile à vous expliquer. n8n peut être plus intéressant pour des scénarios très longs ou des données qui doivent rester sur vos serveurs. On en parle en détail dans notre comparatif n8n vs Make.",
+    a: "Les deux. Make est notre choix par défaut : rapide à livrer, facile à maintenir et facile à vous expliquer. On a aussi construit des pipelines sur n8n, plus intéressant pour des scénarios très longs, de gros volumes ou des données qui doivent rester sur vos serveurs. On en parle en détail dans notre comparatif n8n vs Make.",
   },
   {
     q: 'Faut-il des compétences techniques de mon côté ?',
@@ -144,6 +144,15 @@ export default function Page({ params }: { params: { locale: string } }) {
             <Link className={A} href="/fr/blog/n8n-vs-make">comparatif n8n vs Make</Link>.
           </p>
 
+          <h2 className={H2}>Un cas réel : notre machine à prospects</h2>
+          <p className={P}>
+            On l&apos;a d&apos;abord construite pour nous, puis pour des clients, dont une entreprise qui vend des produits
+            numériques : ciblage dans LinkedIn Sales Navigator, récupération des profils dans Make, recherche de l&apos;e-mail
+            professionnel, accroche de chaque e-mail rédigée par ChatGPT, envoi et relances automatiques, et suivi des
+            chiffres à chaque étape. On a aussi construit le même pipeline sur n8n pour un autre projet.{' '}
+            <Link className={A} href="/fr/services/lead-generation">Voir la génération de leads automatisée</Link>.
+          </p>
+
           <h2 className={H2}>Comment se passe un projet avec nous ?</h2>
           <ol className="space-y-3 mb-5 text-neutral-700 text-lg leading-relaxed list-decimal pl-6">
             <li><strong>Un premier échange</strong> : vous nous expliquez ce qui vous fait perdre du temps.</li>
@@ -155,7 +164,7 @@ export default function Page({ params }: { params: { locale: string } }) {
 
           <h2 className={H2}>Avec quels outils travaillez-vous ?</h2>
           <p className={P}>
-            Nos automatisations tournent sur <strong>Make</strong>, connecté à vos outils : WhatsApp Business (API
+            Nos automatisations tournent surtout sur <strong>Make</strong> (et sur <strong>n8n</strong> quand c&apos;est plus adapté), connectés à vos outils : WhatsApp Business (API
             officielle de Meta), Google Sheets, CRM, boutiques en ligne, agendas, e-mail, et des modèles d&apos;IA pour
             comprendre et rédiger les réponses. On choisit l&apos;outil selon votre cas, pas l&apos;inverse. Si vous voulez
             comparer les solutions vous-même, voici notre sélection des{' '}

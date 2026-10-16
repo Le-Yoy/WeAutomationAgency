@@ -15,7 +15,7 @@ toc: true
 
 > **La respuesta corta:** elige **Make** si quieres tener automatizaciones funcionando rápido, sin servidor ni código, con un volumen razonable. Elige **n8n** si tus flujos tienen muchos pasos o se ejecutan muy a menudo, si quieres alojar tus datos tú mismo o si tienes a alguien técnico en el equipo. La diferencia real no es la calidad: es cómo **cuentan**. Make cobra cada acción, n8n cobra cada ejecución completa.
 
-Primero, transparencia: en WeAutomationAgency nuestras automatizaciones funcionan con **Make**. Todavía no hemos llevado n8n a producción para un cliente. Así que esto no es «los he usado durante cinco años». Es la mirada de alguien que usa Make a diario, que se preguntó «¿deberíamos pasarnos a n8n?» e hizo las cuentas. Sin enlaces de afiliado.
+Primero, transparencia: en WeAutomationAgency la mayoría de nuestras automatizaciones funcionan con **Make**, empezando por nuestra propia máquina de captación de clientes, que después construimos para clientes. También montamos el mismo tipo de flujo en **n8n** para otro proyecto. Así que esta comparativa sale de lo que hemos construido de verdad, no de una ficha de producto. Sin enlaces de afiliado.
 
 ## ¿Qué diferencia hay entre n8n y Make?
 
@@ -45,6 +45,22 @@ Es la parte que casi todas las comparativas se saltan.
 - En **n8n**, una ejecución = **una pasada completa del flujo**, tenga 3 pasos o 30. El número de pasos no cambia el precio.
 
 Consecuencia sencilla: **cuanto más largos son tus flujos, más interesante es n8n**. Con flujos cortos, Make sigue siendo muy competitivo.
+
+## Nuestro caso real: una máquina de captación de leads en Make (y luego en n8n)
+
+Primero la construimos para nosotros, para encontrar a nuestros propios clientes. Después la volvimos a construir para clientes, entre ellos una empresa que vende productos digitales. La idea: encontrar a las personas adecuadas, conseguir su e-mail profesional, escribirles un mensaje personalizado y medir lo que pasa.
+
+El escenario en Make:
+1. **La segmentación en LinkedIn Sales Navigator**: una búsqueda precisa (cargo, sector, tamaño de empresa, país).
+2. **La recuperación de los perfiles** de esa búsqueda en Make.
+3. **El enriquecimiento**: un paso técnico para encontrar el e-mail profesional de cada contacto y quedarnos solo con las direcciones válidas.
+4. **La personalización con ChatGPT**: la API de OpenAI redacta la frase de apertura de cada e-mail a partir del perfil (cargo, empresa, sector).
+5. **El envío** de los e-mails y los recordatorios, directamente desde Make.
+6. **El seguimiento**: unas pocas cifras clave vigiladas en cada paso, para ver dónde se pierden contactos y qué consigue respuestas.
+
+Lo que este proyecto enseña sobre la elección de herramienta: **cada contacto pasa por 6 pasos o más**. En Make, cada contacto consume varios créditos y la factura crece con el número de contactos. Es justo el tipo de flujo largo en el que n8n, que cuenta una ejecución por pasada, se vuelve interesante cuando sube el volumen. Por eso también construimos el mismo flujo en n8n para otro proyecto.
+
+*Un punto importante: este tipo de prospección debe respetar el RGPD (un mensaje relacionado con el puesto de la persona y una forma fácil de darse de baja) y las condiciones de uso de LinkedIn. Lo dejamos claro desde el principio con cada cliente. Nuestro enfoque está en la página de [generación de leads automatizada](/es/services/lead-generation).*
 
 ## Ejemplo con números: confirmar los pedidos de una tienda por WhatsApp
 
@@ -93,7 +109,7 @@ Ojo con la licencia: la edición Community es gratuita mientras **tú y tu equip
 
 </KeyTakeaways>
 
-Para nosotros, Make sigue siendo la buena elección hoy para la mayoría de pymes con las que trabajamos: rápido de entregar, fácil de mantener, fácil de explicar. El día que un cliente tenga flujos muy largos o datos que no deban salir de sus servidores, n8n será lo primero que probemos, y actualizaré este artículo con lo que aprendamos.
+Para nosotros, Make sigue siendo la opción por defecto para la mayoría de pymes con las que trabajamos: rápido de entregar, fácil de mantener, fácil de explicar. n8n ya lo hemos usado para un flujo de prospección, y es la opción que miramos en cuanto los flujos se alargan, sube el volumen o los datos tienen que quedarse en casa del cliente.
 
 ## ¿Necesitas ayuda para elegir (o para construirlo)?
 

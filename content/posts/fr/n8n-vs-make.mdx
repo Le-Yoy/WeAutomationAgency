@@ -15,7 +15,7 @@ toc: true
 
 > **La réponse courte :** choisissez **Make** si vous voulez lancer des automatisations vite, sans serveur ni code, avec un volume raisonnable. Choisissez **n8n** si vos scénarios ont beaucoup d'étapes ou tournent très souvent, si vous voulez héberger vos données vous-même, ou si vous avez quelqu'un de technique dans l'équipe. La vraie différence n'est pas la qualité : c'est la façon de **compter**. Make facture chaque action, n8n facture chaque exécution complète.
 
-Je vais être transparent dès le départ : chez WeAutomationAgency, nos automatisations tournent sur **Make**. n8n, nous ne l'avons pas encore mis en production pour un client. Ce comparatif n'est donc pas « j'ai testé les deux pendant 5 ans ». C'est le regard de quelqu'un qui utilise Make tous les jours, qui s'est posé la question « est-ce qu'on devrait passer à n8n ? », et qui a fait le calcul. Aucun lien d'affiliation.
+Je vais être transparent dès le départ : chez WeAutomationAgency, la plupart de nos automatisations tournent sur **Make**, à commencer par notre propre machine à prospects, qu'on a ensuite construite pour des clients. On a aussi monté le même type de pipeline sur **n8n** pour un autre projet. Ce comparatif part donc de ce qu'on a vraiment construit, pas d'une fiche produit. Aucun lien d'affiliation.
 
 ## Quelle est la différence entre n8n et Make ?
 
@@ -45,6 +45,22 @@ C'est le point que la plupart des comparatifs survolent.
 - Chez **n8n**, une exécution = **un passage complet du workflow**, qu'il ait 3 étapes ou 30. Le nombre d'étapes ne change pas le prix.
 
 Conséquence simple : **plus vos scénarios sont longs, plus n8n devient intéressant**. Pour des scénarios courts, Make reste très compétitif.
+
+## Notre cas réel : une machine à prospects sur Make (puis sur n8n)
+
+On l'a d'abord construite pour nous, pour trouver nos propres clients. Puis on l'a refaite pour des clients, dont une entreprise qui vend des produits numériques. Le principe : trouver les bonnes personnes, récupérer leur e-mail professionnel, leur écrire un message personnalisé, et suivre ce qui se passe.
+
+Le scénario sur Make :
+1. **Le ciblage dans LinkedIn Sales Navigator** : une recherche précise (poste, secteur, taille d'entreprise, pays).
+2. **La récupération des profils** de cette recherche dans Make.
+3. **L'enrichissement** : une étape technique pour trouver l'adresse e-mail professionnelle de chaque contact et ne garder que les adresses valides.
+4. **La personnalisation avec ChatGPT** : l'API d'OpenAI rédige l'accroche de chaque e-mail à partir du profil (poste, entreprise, secteur).
+5. **L'envoi** des e-mails et des relances, directement depuis Make.
+6. **Le suivi** : quelques chiffres clés surveillés à chaque étape, pour voir où le pipeline perd des contacts et ce qui fait répondre.
+
+Ce que ce projet montre bien pour le choix de l'outil : **chaque contact traverse 6 étapes ou plus**. Sur Make, chaque contact consomme donc plusieurs crédits, et la facture suit le nombre de contacts. C'est exactement le type de scénario long où n8n, qui compte une exécution par passage, devient intéressant quand le volume monte. C'est d'ailleurs pour ça qu'on a construit le même pipeline sur n8n pour un autre projet.
+
+*Un point important : ce type de prospection doit respecter le RGPD (message en lien avec le poste de la personne, désinscription facile) et les conditions d'utilisation de LinkedIn. On le cadre dès le départ avec chaque client. Le détail de notre approche est sur notre page [génération de leads automatisée](/fr/services/lead-generation).*
 
 ## Exemple chiffré : confirmer les commandes d'une boutique sur WhatsApp
 
@@ -93,7 +109,7 @@ Attention à la licence : l'édition Community est gratuite tant que ce sont **v
 
 </KeyTakeaways>
 
-Pour nous, Make reste le bon choix aujourd'hui pour la plupart des PME qu'on accompagne : rapide à livrer, facile à maintenir, facile à expliquer. Le jour où un client aura des scénarios très longs ou des données qui ne doivent pas quitter ses serveurs, n8n sera la première option qu'on testera, et je mettrai cet article à jour avec ce retour.
+Pour nous, Make reste le choix par défaut pour la plupart des PME qu'on accompagne : rapide à livrer, facile à maintenir, facile à expliquer. n8n, on l'a déjà utilisé pour un pipeline de prospection, et c'est l'option qu'on regarde dès que les scénarios deviennent longs, que le volume monte, ou que les données doivent rester chez le client.
 
 ## Besoin d'aide pour choisir (ou pour construire) ?
 
