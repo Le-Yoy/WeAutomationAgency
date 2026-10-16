@@ -1,0 +1,106 @@
+---
+title: "n8n vs Make en 2026: ¿cuál elegir? La comparativa de un usuario de Make"
+description: "¿n8n o Make en 2026? Precios reales (créditos vs ejecuciones), facilidad, alojamiento y datos: la comparativa honesta de una agencia que automatiza con Make."
+excerpt: "¿n8n o Make? La diferencia real está en cómo cobran: Make cobra cada acción, n8n cada ejecución. Comparativa honesta con un ejemplo con números."
+date: "2026-10-16"
+dateLabel: "16 de octubre de 2026"
+seoTitle: "n8n vs Make en 2026: ¿cuál elegir? Comparativa honesta"
+category: "Automatización"
+author: "Houssam Boutaleb"
+authorRole: "Fundador y CEO, WeAutomationAgency"
+keywords: ["n8n vs make", "make vs n8n", "n8n o make", "precio make.com", "precio n8n", "comparativa n8n make"]
+type: comparison
+toc: true
+---
+
+> **La respuesta corta:** elige **Make** si quieres tener automatizaciones funcionando rápido, sin servidor ni código, con un volumen razonable. Elige **n8n** si tus flujos tienen muchos pasos o se ejecutan muy a menudo, si quieres alojar tus datos tú mismo o si tienes a alguien técnico en el equipo. La diferencia real no es la calidad: es cómo **cuentan**. Make cobra cada acción, n8n cobra cada ejecución completa.
+
+Primero, transparencia: en WeAutomationAgency nuestras automatizaciones funcionan con **Make**. Todavía no hemos llevado n8n a producción para un cliente. Así que esto no es «los he usado durante cinco años». Es la mirada de alguien que usa Make a diario, que se preguntó «¿deberíamos pasarnos a n8n?» e hizo las cuentas. Sin enlaces de afiliado.
+
+## ¿Qué diferencia hay entre n8n y Make?
+
+Sobre el papel hacen lo mismo: conectar tus herramientas (tienda, CRM, Google Sheets, WhatsApp, e-mail, IA…) para que las tareas se hagan solas. La diferencia está en otra parte.
+
+- **Make** funciona 100 % en línea. Construyes «escenarios» arrastrando módulos en una pantalla visual. No hay nada que instalar.
+- **n8n** es de código abierto. Puedes usarlo en línea (n8n Cloud) o **instalarlo en tu propio servidor** gratis (edición Community).
+
+## Comparativa rápida
+
+| | Make | n8n |
+|---|---|---|
+| **Qué pagas** | Cada acción de un módulo (créditos) | Cada ejecución completa del flujo |
+| **Gratis** | 1.000 créditos/mes | Autoalojado (Community): gratis, sin límite de ejecuciones. Cloud: prueba de 14 días |
+| **Primer plan de pago** | Core, unos 9–11 $/mes por 10.000 créditos | Starter cloud: 20 €/mes (anual) por 2.500 ejecuciones |
+| **Curva de aprendizaje** | Muy visual, el más fácil de los dos | También visual, pero más técnico |
+| **Dónde están los datos** | En Make | En n8n o **en tu servidor** |
+| **Ideal para** | Pymes, lanzamiento rápido, volumen medio | Flujos largos, mucho volumen, equipos técnicos |
+
+*Precios comprobados el 16 de octubre de 2026 en las páginas oficiales ([Make](https://www.make.com/en/pricing), [n8n](https://n8n.io/pricing/)). Make no muestra todos sus importes en texto: compruébalos antes de comprometerte, cambian a menudo.*
+
+## ¿Cómo cuentan el uso Make y n8n (y por qué importa)?
+
+Es la parte que casi todas las comparativas se saltan.
+
+- En **Make**, cada módulo que hace algo suele costar **1 crédito**: leer un pedido, añadir una fila, enviar un mensaje… Un escenario de 6 pasos cuesta unos 6 créditos cada vez que se ejecuta. Los créditos no usados caducan al final del periodo.
+- En **n8n**, una ejecución = **una pasada completa del flujo**, tenga 3 pasos o 30. El número de pasos no cambia el precio.
+
+Consecuencia sencilla: **cuanto más largos son tus flujos, más interesante es n8n**. Con flujos cortos, Make sigue siendo muy competitivo.
+
+## Ejemplo con números: confirmar los pedidos de una tienda por WhatsApp
+
+Un caso que vemos todo el tiempo: una tienda online que quiere **confirmar cada pedido por WhatsApp** antes de enviarlo (sobre todo con pago contra reembolso).
+
+El flujo:
+1. Nuevo pedido en la tienda (disparador)
+2. Dar formato al número de teléfono
+3. Enviar la confirmación por WhatsApp
+4. Guardar el pedido en Google Sheets
+5. Avisar al equipo si el cliente no responde
+
+Con **1.000 pedidos al mes**:
+
+| | Make | n8n Cloud |
+|---|---|---|
+| Consumo | ~5 créditos × 1.000 = **~5.000 créditos** | **1.000 ejecuciones** |
+| Plan suficiente | Core (10.000 créditos) | Starter (2.500 ejecuciones) |
+| Precio aproximado | ~9–11 $/mes | ~20 €/mes |
+
+Con ese volumen, **Make sale más barato**. Ahora imagina que el flujo crece a 15 pasos (recordatorio automático, actualización del CRM, respuesta escrita por IA, estadísticas…) y a 3.000 pedidos al mes: Make sube a ~45.000 créditos, mientras que n8n se queda en 3.000 ejecuciones. Las cuentas se invierten.
+
+*Son estimaciones hechas con las tarifas públicas. Las tarifas de WhatsApp de Meta se suman en ambos casos (mira [cuánto cuesta un chatbot de WhatsApp](/es/blog/whatsapp-chatbot-cost)).*
+
+## ¿Cuál es más fácil, Make o n8n?
+
+**Make**, sin duda. Todo se hace con el ratón, los errores se ven fácilmente y puedes enseñarle un escenario a un cliente que lo entiende en dos minutos. Es la razón principal por la que lo usamos.
+
+**n8n** también es visual, pero llegas antes a conceptos técnicos: expresiones, JavaScript en algunos nodos y, sobre todo, el **alojamiento** si eliges la versión gratuita. Un servidor hay que actualizarlo, vigilarlo y hacerle copias de seguridad.
+
+## ¿Y los datos y la privacidad?
+
+Es el gran punto fuerte de n8n. Autoalojado, **tus datos no salen de tu servidor**. Para un banco, una clínica o cualquier empresa con datos sensibles, eso puede decidirlo todo.
+
+Ojo con la licencia: la edición Community es gratuita mientras **tú y tu equipo** construyáis los flujos. Si quieres revender n8n como un servicio en el que tus clientes crean sus propios flujos, necesitas una licencia comercial ([FAQ de la licencia de n8n](https://docs.n8n.io/n8n-community-license/community-license/license-faq)).
+
+## Entonces, ¿n8n o Make?
+
+<KeyTakeaways title="Lo que yo recomendaría">
+
+- **Empiezas y no hay desarrollador en el equipo:** Make.
+- **Flujos cortos, unos pocos miles de acciones al mes:** Make, a menudo el más barato.
+- **Flujos largos (10+ pasos) o mucho volumen:** haz las cuentas, n8n puede costar mucho menos.
+- **Datos sensibles que deben quedarse en casa:** n8n autoalojado.
+- **Si dudas:** empieza con Make y pásate a n8n el día que la factura de créditos sea el tema.
+
+</KeyTakeaways>
+
+Para nosotros, Make sigue siendo la buena elección hoy para la mayoría de pymes con las que trabajamos: rápido de entregar, fácil de mantener, fácil de explicar. El día que un cliente tenga flujos muy largos o datos que no deban salir de sus servidores, n8n será lo primero que probemos, y actualizaré este artículo con lo que aprendamos.
+
+## ¿Necesitas ayuda para elegir (o para construirlo)?
+
+Podemos revisar tus procesos, decirte con honestidad qué herramienta te conviene y construir la automatización: confirmación de pedidos, respuestas por WhatsApp, recordatorios, CRM. **[Cuéntanos qué quieres automatizar](https://weautomationagency.com/start)**, gratis y sin compromiso. Y si lo que necesitas es un chatbot, aquí está [nuestro servicio de chatbot con IA](/es/services/ai-chatbot).
+
+## Sigue leyendo
+- [Las mejores herramientas para crear un chatbot con IA en 2026](/es/blog/best-ai-chatbot-tools)
+- [Cómo crear un chatbot con IA](/es/blog/how-to-build-ai-chatbot)
+- [Chatbot de WhatsApp para empresas: precio y puesta en marcha](/es/blog/whatsapp-chatbot-cost)
+- [Nuestro servicio de chatbot con IA](/es/services/ai-chatbot)

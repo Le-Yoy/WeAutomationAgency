@@ -1,0 +1,106 @@
+---
+title: "n8n vs Make in 2026: Which One Should You Use? (From a Make User)"
+description: "n8n or Make in 2026? Real pricing (credits vs executions), ease of use, hosting and data: an honest comparison from an agency that builds on Make."
+excerpt: "n8n or Make? The real difference is how they count: Make bills every action, n8n bills every run. Honest comparison with a worked example."
+date: "2026-10-16"
+dateLabel: "October 16, 2026"
+seoTitle: "n8n vs Make (2026): Which Should You Use? Honest Comparison"
+category: "Automation"
+author: "Houssam Boutaleb"
+authorRole: "Founder & CEO, WeAutomationAgency"
+keywords: ["n8n vs make", "make vs n8n", "n8n or make", "make.com pricing", "n8n pricing", "make vs n8n comparison"]
+type: comparison
+toc: true
+---
+
+> **The short answer:** pick **Make** if you want automations live fast, with no server and no code, at a reasonable volume. Pick **n8n** if your workflows have many steps or run very often, if you want to host your data yourself, or if you have someone technical on the team. The real difference isn't quality, it's how they **count**: Make bills every action, n8n bills every complete run.
+
+Full transparency first: at WeAutomationAgency our automations run on **Make**. We haven't put n8n into production for a client yet. So this isn't "I've used both for five years." It's the view of someone who uses Make every day, asked "should we switch to n8n?", and did the math. No affiliate links.
+
+## What's the difference between n8n and Make?
+
+On paper they do the same job: connect your tools (store, CRM, Google Sheets, WhatsApp, email, AI…) so tasks run by themselves. The difference is elsewhere.
+
+- **Make** is fully online. You build "scenarios" by dragging modules onto a visual canvas. Nothing to install.
+- **n8n** is open source. You can use it online (n8n Cloud) or **install it on your own server** for free (Community edition).
+
+## Quick comparison
+
+| | Make | n8n |
+|---|---|---|
+| **What you pay for** | Every module action (credits) | Every complete workflow run (execution) |
+| **Free** | 1,000 credits/month | Self-hosted Community: free, no execution cap. Cloud: 14-day trial |
+| **First paid plan** | Core, about $9–11/month for 10,000 credits | Cloud Starter: €20/month (annual) for 2,500 executions |
+| **Learning curve** | Very visual, the easier of the two | Visual too, but more technical |
+| **Where data lives** | With Make | With n8n or **on your server** |
+| **Best for** | Small businesses, fast launch, medium volume | Long workflows, high volume, technical teams |
+
+*Prices checked October 16, 2026 on the official pages ([Make](https://www.make.com/en/pricing), [n8n](https://n8n.io/pricing/)). Make doesn't show every amount in plain text, so check before you commit; prices change often.*
+
+## How do Make and n8n count usage (and why it matters)?
+
+This is the part most comparisons skip.
+
+- On **Make**, each module that does something usually costs **1 credit**: reading an order, adding a row, sending a message… A 6-step scenario costs about 6 credits per run. Unused credits expire at the end of the period.
+- On **n8n**, one execution = **one full run of the workflow**, whether it has 3 steps or 30. Step count doesn't change the price.
+
+Simple consequence: **the longer your workflows, the better n8n looks**. For short workflows, Make stays very competitive.
+
+## Worked example: confirming store orders on WhatsApp
+
+A case we see all the time: an online store that wants to **confirm every order on WhatsApp** before shipping (especially with cash on delivery).
+
+The workflow:
+1. New order in the store (trigger)
+2. Format the phone number
+3. Send the WhatsApp confirmation
+4. Log the order in Google Sheets
+5. Alert the team if the customer doesn't reply
+
+For **1,000 orders a month**:
+
+| | Make | n8n Cloud |
+|---|---|---|
+| Usage | ~5 credits × 1,000 = **~5,000 credits** | **1,000 executions** |
+| Plan that fits | Core (10,000 credits) | Starter (2,500 executions) |
+| Rough price | ~$9–11/month | ~€20/month |
+
+At that volume, **Make is cheaper**. Now grow the workflow to 15 steps (auto follow-up, CRM update, AI-written reply, reporting…) and 3,000 orders a month: Make climbs to ~45,000 credits, while n8n stays at 3,000 executions. The math flips.
+
+*These are estimates from the public price lists. Meta's WhatsApp fees come on top either way (see [what a WhatsApp chatbot costs](/blog/whatsapp-chatbot-cost)).*
+
+## Which is easier, Make or n8n?
+
+**Make**, easily. Everything is point-and-click, errors are easy to spot, and you can show a scenario to a client who gets it in two minutes. That's the main reason we use it.
+
+**n8n** is visual too, but you hit technical concepts sooner: expressions, JavaScript in some nodes, and above all **hosting** if you go for the free version. A server needs updates, monitoring and backups.
+
+## What about data and privacy?
+
+This is n8n's real strength. Self-hosted, **your data never leaves your server**. For a bank, a clinic, or any business handling sensitive data, that alone can decide it.
+
+Mind the license: the Community edition is free as long as **you and your team** build the workflows. If you want to resell n8n as a service where your customers build their own workflows, you need a commercial license ([n8n license FAQ](https://docs.n8n.io/n8n-community-license/community-license/license-faq)).
+
+## So, n8n or Make?
+
+<KeyTakeaways title="What I'd recommend">
+
+- **Just starting, no developer on the team:** Make.
+- **Short workflows, a few thousand actions a month:** Make, often the cheapest.
+- **Long workflows (10+ steps) or high volume:** do the math, n8n can cost far less.
+- **Sensitive data, everything must stay in-house:** self-hosted n8n.
+- **Not sure:** start on Make, move to n8n the day the credit bill becomes the topic.
+
+</KeyTakeaways>
+
+For us, Make is still the right call today for most of the small businesses we work with: fast to ship, easy to maintain, easy to explain. The day a client has very long workflows or data that must stay on their own servers, n8n is the first thing we'll test, and I'll update this post with what we learn.
+
+## Want help choosing (or building it)?
+
+We can look at your processes, tell you honestly which tool fits, then build the automation: order confirmations, WhatsApp replies, follow-ups, CRM. **[Tell us what you want to automate](https://weautomationagency.com/start)**, free and no pressure. If it's a chatbot you need, here's [our AI chatbot service](/services/ai-chatbot).
+
+## Keep reading
+- [Best Tools to Build an AI Chatbot in 2026](/blog/best-ai-chatbot-tools)
+- [How to Build an AI Chatbot](/blog/how-to-build-ai-chatbot)
+- [WhatsApp Chatbot for Business: Costs & Setup](/blog/whatsapp-chatbot-cost)
+- [Our AI chatbot service](/services/ai-chatbot)

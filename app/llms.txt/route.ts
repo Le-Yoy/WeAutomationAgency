@@ -20,6 +20,7 @@ export function GET() {
     '',
     '## Services',
     ...SERVICES.map(([name, path, desc]) => `- [${name}](${BASE_URL}${path}): ${desc} (also in French: ${BASE_URL}/fr${path}, Spanish: ${BASE_URL}/es${path})`),
+    `- [Agence d'automatisation IA (French)](${BASE_URL}/fr/agence-automatisation-ia): what we automate for businesses in French-speaking markets, how a project runs, FAQ.`,
     '',
   ];
   for (const locale of LOCALES) {

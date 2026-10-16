@@ -1,0 +1,107 @@
+---
+title: "n8n vs Make : lequel choisir en 2026 ? Le comparatif d'un utilisateur de Make"
+description: "n8n ou Make en 2026 ? Prix réels (crédits vs exécutions), facilité, hébergement et données : le comparatif honnête d'une agence qui automatise sur Make."
+excerpt: "n8n ou Make ? La vraie différence est dans la façon de compter : Make facture chaque action, n8n chaque exécution. Comparatif honnête et exemple chiffré."
+date: "2026-10-16"
+dateLabel: "16 octobre 2026"
+seoTitle: "n8n vs Make en 2026 : lequel choisir ? (comparatif honnête)"
+category: "Automatisation"
+author: "Houssam Boutaleb"
+authorRole: "Fondateur & CEO, WeAutomationAgency"
+keywords: ["n8n vs make", "make vs n8n", "n8n ou make", "comparatif n8n make", "make.com prix", "n8n prix"]
+type: comparison
+toc: true
+---
+
+> **La réponse courte :** choisissez **Make** si vous voulez lancer des automatisations vite, sans serveur ni code, avec un volume raisonnable. Choisissez **n8n** si vos scénarios ont beaucoup d'étapes ou tournent très souvent, si vous voulez héberger vos données vous-même, ou si vous avez quelqu'un de technique dans l'équipe. La vraie différence n'est pas la qualité : c'est la façon de **compter**. Make facture chaque action, n8n facture chaque exécution complète.
+
+Je vais être transparent dès le départ : chez WeAutomationAgency, nos automatisations tournent sur **Make**. n8n, nous ne l'avons pas encore mis en production pour un client. Ce comparatif n'est donc pas « j'ai testé les deux pendant 5 ans ». C'est le regard de quelqu'un qui utilise Make tous les jours, qui s'est posé la question « est-ce qu'on devrait passer à n8n ? », et qui a fait le calcul. Aucun lien d'affiliation.
+
+## Quelle est la différence entre n8n et Make ?
+
+Les deux font la même chose sur le papier : relier vos outils entre eux (boutique, CRM, Google Sheets, WhatsApp, e-mail, IA…) pour que les tâches se fassent toutes seules. La différence est ailleurs.
+
+- **Make** est un outil 100 % en ligne. Vous construisez des « scénarios » en glissant des modules sur un écran visuel. Rien à installer.
+- **n8n** est un outil open-source. Vous pouvez l'utiliser en ligne (n8n Cloud) ou **l'installer sur votre propre serveur**, gratuitement (édition Community).
+
+## Comparatif rapide
+
+| Critère | Make | n8n |
+|---|---|---|
+| **Ce qui est facturé** | Chaque action d'un module (crédits) | Chaque exécution complète du workflow |
+| **Gratuit** | 1 000 crédits/mois | Auto-hébergé (Community) : gratuit, sans limite d'exécutions. Cloud : essai de 14 jours |
+| **Premier plan payant** | Core, environ 9 à 11 $/mois pour 10 000 crédits | Starter cloud : 20 €/mois (annuel) pour 2 500 exécutions |
+| **Prise en main** | Très visuelle, la plus simple des deux | Visuelle aussi, mais plus technique |
+| **Hébergement des données** | Chez Make | Chez n8n ou **chez vous** |
+| **Idéal pour** | PME, lancement rapide, volume moyen | Scénarios longs, gros volumes, équipe technique |
+
+*Prix vérifiés le 16 octobre 2026 sur les pages officielles ([Make](https://www.make.com/en/pricing), [n8n](https://n8n.io/pricing/)). Make n'affiche pas tous ses montants en clair : vérifiez avant de vous engager, ils changent souvent.*
+
+## Comment Make et n8n comptent-ils (et pourquoi ça change tout) ?
+
+C'est le point que la plupart des comparatifs survolent.
+
+- Chez **Make**, chaque module qui fait quelque chose consomme en général **1 crédit** : lire une commande, l'ajouter dans une feuille, envoyer un message… Un scénario de 6 étapes coûte donc environ 6 crédits à chaque passage. Les crédits non utilisés expirent à la fin de la période.
+- Chez **n8n**, une exécution = **un passage complet du workflow**, qu'il ait 3 étapes ou 30. Le nombre d'étapes ne change pas le prix.
+
+Conséquence simple : **plus vos scénarios sont longs, plus n8n devient intéressant**. Pour des scénarios courts, Make reste très compétitif.
+
+## Exemple chiffré : confirmer les commandes d'une boutique sur WhatsApp
+
+Prenons un cas qu'on voit tout le temps : une boutique en ligne qui veut **confirmer chaque commande par WhatsApp** avant l'expédition (surtout quand il y a du paiement à la livraison).
+
+Le scénario :
+1. Nouvelle commande dans la boutique (déclencheur)
+2. Formater le numéro de téléphone
+3. Envoyer le message de confirmation WhatsApp
+4. Enregistrer la commande dans Google Sheets
+5. Prévenir l'équipe si le client ne répond pas
+
+Pour **1 000 commandes par mois** :
+
+| | Make | n8n Cloud |
+|---|---|---|
+| Consommation | ~5 crédits × 1 000 = **~5 000 crédits** | **1 000 exécutions** |
+| Plan suffisant | Core (10 000 crédits) | Starter (2 500 exécutions) |
+| Ordre de prix | ~9–11 $/mois | ~20 €/mois |
+
+À ce volume, **Make est moins cher**. Maintenant, imaginons que le scénario passe à 15 étapes (relance automatique, mise à jour du CRM, réponse générée par IA, statistiques…) et à 3 000 commandes par mois : Make monte à ~45 000 crédits, alors que n8n reste à 3 000 exécutions. Là, le calcul s'inverse.
+
+*Ce sont des estimations faites avec les grilles publiques. Les frais WhatsApp de Meta s'ajoutent dans les deux cas (voir [combien coûte un chatbot WhatsApp](/fr/blog/whatsapp-chatbot-cost)).*
+
+## Make ou n8n : lequel est le plus simple ?
+
+**Make**, sans hésiter. Tout se fait à la souris, les erreurs sont faciles à repérer et on peut montrer un scénario à un client qui comprend en 2 minutes ce qui se passe. C'est la raison principale pour laquelle on l'utilise.
+
+**n8n** est visuel aussi, mais on touche plus vite à des notions techniques : expressions, code JavaScript dans certains nœuds, et surtout l'**hébergement** si vous choisissez la version gratuite. Un serveur, ça se met à jour, ça se surveille, ça se sauvegarde.
+
+## Et pour les données et la confidentialité ?
+
+C'est le vrai point fort de n8n. En version auto-hébergée, **vos données ne sortent pas de votre serveur**. Pour une banque, une clinique ou une entreprise qui traite beaucoup de données sensibles, ça peut suffire à trancher.
+
+Attention à la licence : l'édition Community est gratuite tant que ce sont **vous et votre équipe** qui créez les workflows. Si vous voulez revendre n8n comme un service où vos clients construisent leurs propres workflows, il faut une licence commerciale ([FAQ de la licence n8n](https://docs.n8n.io/n8n-community-license/community-license/license-faq)).
+
+## Alors, n8n ou Make ?
+
+<KeyTakeaways title="Ce que je recommanderais">
+
+- **Vous débutez, pas de développeur dans l'équipe :** Make.
+- **Scénarios courts, quelques milliers d'actions par mois :** Make, c'est souvent le moins cher.
+- **Scénarios longs (10+ étapes) ou gros volume :** faites le calcul, n8n peut coûter bien moins.
+- **Données sensibles, besoin de tout garder chez vous :** n8n auto-hébergé.
+- **Vous hésitez :** commencez sur Make, et passez à n8n le jour où la facture de crédits devient le sujet.
+
+</KeyTakeaways>
+
+Pour nous, Make reste le bon choix aujourd'hui pour la plupart des PME qu'on accompagne : rapide à livrer, facile à maintenir, facile à expliquer. Le jour où un client aura des scénarios très longs ou des données qui ne doivent pas quitter ses serveurs, n8n sera la première option qu'on testera, et je mettrai cet article à jour avec ce retour.
+
+## Besoin d'aide pour choisir (ou pour construire) ?
+
+En tant qu'[agence d'automatisation IA](/fr/agence-automatisation-ia), on peut regarder vos processus et vous dire honnêtement quel outil convient, puis construire l'automatisation pour vous : confirmation de commandes, réponses WhatsApp, relances, CRM. **[Dites-nous ce que vous voulez automatiser](https://weautomationagency.com/start)**, c'est gratuit et sans engagement. Et si c'est un chatbot qu'il vous faut, voici [notre service de chatbot IA](/fr/services/ai-chatbot).
+
+## À lire ensuite
+- [Les meilleurs outils pour créer un chatbot IA en 2026](/fr/blog/best-ai-chatbot-tools)
+- [Comment créer un chatbot IA](/fr/blog/how-to-build-ai-chatbot)
+- [Chatbot WhatsApp pour entreprise : prix et mise en place](/fr/blog/whatsapp-chatbot-cost)
+- [Notre service de chatbot IA](/fr/services/ai-chatbot)
+- [Notre agence d'automatisation IA](/fr/agence-automatisation-ia)
