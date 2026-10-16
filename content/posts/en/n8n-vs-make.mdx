@@ -59,15 +59,18 @@ We first built it for ourselves, to find our own clients. Then we built it again
 5. **Sending** the emails and follow-ups, straight from Make.
 6. **Tracking**: a few key numbers watched at every step, to see where the pipeline loses contacts and what gets replies.
 
-**The results:** up to **2,000 people contacted per day**, a **reply rate above the market average** (2026 studies put B2B cold email around 2–3.5%, per [lemlist](https://lemlist.com/blog/cold-email-response-rate) and [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)), and more clients signed than classic prospecting usually brings.
+**The results:** up to **2,000 people contacted per day** and a **reply rate of about 5.5%**, when 2026 studies put the B2B market average around 2–3.5% ([lemlist](https://lemlist.com/blog/cold-email-response-rate), [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)). Anyone who does outbound knows that's a very good rate. And behind it, more clients signed than classic prospecting brings.
 
 ### The n8n version
 
-For another project we built the same pipeline on n8n, with differences that show what each tool is good at:
+For another project we built the pipeline on n8n. And since n8n doesn't bill per step, we could go much further:
 
-- **Hosted on our own server**: prospect data stays with us, and cost no longer depends on the number of steps.
-- **An AI screening step before sending**: the AI scores each profile on fit with the offer, and only the best get an email. On Make, that extra step would have cost credits on every contact. On n8n, it doesn't change the bill.
-- **Automatic reply sorting**: the AI tags each reply (interested, later, not interested, unsubscribe). Hot replies go into the CRM with an alert; the rest are handled automatically.
+- **Hosted on our own server**: no credit bill, so as many steps as we want on every contact, and the data stays with us.
+- **Several sources instead of one**: Sales Navigator, plus company websites, Google Maps and directories, merged and deduplicated in a real database (not a Google Sheet that chokes at 50,000 rows).
+- **Deeper personalization**: before writing, the AI reads the company's website and the prospect's latest LinkedIn posts. The opening line talks about what they actually do, not just their job title.
+- **AI screening before sending**: each profile gets a fit score against the offer, and only the best are contacted.
+- **Multichannel**: email, then a LinkedIn message or WhatsApp in the same sequence, with several sending inboxes in rotation to hold the volume without landing in spam.
+- **Replies handled on their own**: the AI tags each reply (interested, later, not interested, unsubscribe). An "interested" gets a booking link straight away, the meeting lands in the calendar and the contact in the CRM.
 
 ### What this shows about choosing a tool
 

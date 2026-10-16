@@ -59,15 +59,18 @@ Primero la construimos para nosotros, para encontrar a nuestros propios clientes
 5. **El envío** de los e-mails y los recordatorios, directamente desde Make.
 6. **El seguimiento**: unas pocas cifras clave vigiladas en cada paso, para ver dónde se pierden contactos y qué consigue respuestas.
 
-**Los resultados:** hasta **2.000 personas contactadas al día**, una **tasa de respuesta por encima de la media del mercado** (los estudios de 2026 la sitúan en torno al 2–3,5 % en B2B, según [lemlist](https://lemlist.com/blog/cold-email-response-rate) y [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)) y más clientes firmados de lo que suele dar la prospección clásica.
+**Los resultados:** hasta **2.000 personas contactadas al día** y una **tasa de respuesta de alrededor del 5,5 %**, cuando los estudios de 2026 sitúan la media del mercado B2B en torno al 2–3,5 % ([lemlist](https://lemlist.com/blog/cold-email-response-rate), [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)). Quien hace prospección sabe que es una tasa muy buena. Y detrás, más clientes firmados de lo que da la prospección clásica.
 
 ### La versión en n8n
 
-Para otro proyecto construimos el mismo flujo en n8n, con diferencias que muestran para qué sirve cada herramienta:
+Para otro proyecto construimos el flujo en n8n. Y como n8n no cobra por cada paso, pudimos ir mucho más lejos:
 
-- **Alojado en nuestro propio servidor**: los datos de los prospectos se quedan con nosotros y el coste ya no depende del número de pasos.
-- **Un filtro con IA antes del envío**: la IA puntúa cada perfil según su encaje con la oferta y solo los mejores reciben un e-mail. En Make, ese paso extra habría costado créditos en cada contacto. En n8n, no cambia la factura.
-- **Clasificación automática de las respuestas**: la IA etiqueta cada respuesta (interesado, más adelante, no interesado, baja). Las respuestas calientes van al CRM con una alerta; el resto se gestiona solo.
+- **Alojado en nuestro propio servidor**: sin factura de créditos, así que todos los pasos que queramos en cada contacto, y los datos se quedan con nosotros.
+- **Varias fuentes en lugar de una**: Sales Navigator, pero también las webs de las empresas, Google Maps y directorios, fusionados y sin duplicados en una base de datos de verdad (no un Google Sheets que se atasca a las 50.000 filas).
+- **Una personalización más profunda**: antes de escribir, la IA lee la web de la empresa y las últimas publicaciones de LinkedIn del prospecto. La frase de apertura habla de lo que hace de verdad, no solo de su cargo.
+- **Un filtro con IA antes del envío**: cada perfil recibe una nota de encaje con la oferta y solo se contacta a los mejores.
+- **Multicanal**: e-mail, y después un mensaje de LinkedIn o WhatsApp en la misma secuencia, con varias bandejas de envío en rotación para aguantar el volumen sin acabar en spam.
+- **Las respuestas se gestionan solas**: la IA clasifica cada respuesta (interesado, más adelante, no interesado, baja). Un «interesado» recibe directamente un enlace para reservar cita, la reunión entra en la agenda y el contacto en el CRM.
 
 ### Lo que esto enseña sobre la elección de herramienta
 
