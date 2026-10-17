@@ -160,3 +160,31 @@ Write EN first, then **rewrite** (don't translate) into FR (professional "vous")
 `type` (archetype) · `toc` (auto table of contents) · `heroImage/heroAlt/heroCredit/heroCreditUrl` (Unsplash hero) · MDX blocks `<Callout>` and `<KeyTakeaways title="…">`. Everything else (design, speed, hreflang, schema, sitemap) is automatic.
 
 `seoTitle` (≤60-char `<title>` when the H1 is longer) · `updated` + `updatedLabel` (only after a **real** content update → shows "Updated …" under the byline and sets `dateModified`).
+
+---
+
+## 12. Pre-publish gate (answer every question before pushing)
+A post (or a page refresh) only ships when every answer is "yes". Write the answers in the commit message or the session summary.
+
+1. **Design & structure:** right archetype (§3), short-answer box, question H2s, at least one table / KeyTakeaways / Callout, rotation respected (§9)?
+2. **Words:** does it sound like Houssam talking to one reader (simple, specific, a real example), with no AI-tell words (§4)? Would a human expert sign it?
+3. **Title (Google + reader):** primary keyword in the first words, ≤60 chars, says the benefit or answer, and makes you want to click without lying. Would *you* click it among 10 results?
+4. **Description:** 140–160 chars, keyword + a concrete reason to click (number, year, "honest", "real example").
+5. **Hook (first 2 lines):** answers the query or creates a reason to keep reading in under 25 words?
+6. **Facts:** every number has a source or comes from our own work (real info only)? Metadata fact-checked too (Google Oct 2026 rule)?
+7. **Links:** ≥2 posts + 1 service page + /start, locale-correct; no link to a competitor?
+8. **Will it move our metrics?** Which query does it target, what impressions we expect, and which existing page it supports. No cannibalisation of an existing page.
+
+### Benchmarks we aim to beat (target ≈ 1.4× the market median, checked in GSC per page)
+Organic CTR by position, 2026 market reference (First Page Sage table; AI Overviews pull these down, so they're a ceiling on queries with an AIO):
+
+| Position | Market CTR | Our target |
+|---|---|---|
+| 1 | ~28–40% | 40%+ |
+| 2 | ~15–19% | 22%+ |
+| 3 | ~10% | 14%+ |
+| 4–5 | ~5–7% | 8%+ |
+| 6–10 | ~1.6–4.4% | 1.4× the row |
+
+If a page's CTR is below the market value for its average position for 28 days → rewrite title + description first (fastest win), then the hook.
+Sources: OuterBox / First Page Sage CTR table (2026), Ahrefs AI Overviews CTR study (Feb 2026).
