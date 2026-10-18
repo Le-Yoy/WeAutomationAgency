@@ -1272,3 +1272,9 @@ wip
 **Last Updated:** August 4, 2026
 **Maintained By:** Claude Code + Sam (almostaphasmart)
 **Project Status:** ✅ Production (Live at weautomationagency.com)
+
+## Dashboard + automation (2026-10-18)
+- `/dashboard`: private (Basic auth, `DASHBOARD_PASSWORD` Vercel env var; none set = closed), noindex + robots disallow. Reads Redis `dash:snapshot`, `dash:links`.
+- `npm run snapshot` (scripts/snapshot.mjs): GSC 28d vs previous, 90d daily, pages vs CTR benchmark (page 1 only, 28-day grace after a post changed in git), queries, Bing, AI bots 30d, sitemap health → Redis. GitHub Actions `.github/workflows/snapshot.yml` daily 05:30 UTC.
+- `npm run weekly-report` (`-- --dry` to print): Monday email via Resend to LEAD_NOTIFY_EMAIL (same workflow, Mondays; manual run with "report" checked).
+- GitHub secrets set with `bash scripts/push-secrets.sh` (reads .gsc-key.json + .env.local, prints nothing).
