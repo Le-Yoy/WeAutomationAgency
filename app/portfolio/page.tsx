@@ -273,7 +273,7 @@ export default function PortfolioPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(12)].map((_, i) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12].map((n, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -283,7 +283,7 @@ export default function PortfolioPage() {
                 className="group relative aspect-[4/3] bg-primary rounded-2xl overflow-hidden border border-grey/10 hover:border-accent/40 transition-colors"
               >
                 <Image
-                  src={`/images/portfolio/Website AAA${i + 1}.webp`}
+                  src={`/images/portfolio/Website AAA${n}.webp`}
                   alt={`Website project ${i + 1}`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
