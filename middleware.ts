@@ -92,7 +92,26 @@ function localeRedirect(req: NextRequest) {
   return res;
 }
 
+// Private dashboard: browser login prompt, password = DASHBOARD_PASSWORD (Vercel env var).
+// No env var set = dashboard closed for everyone.
+function dashboardAuth(req: NextRequest) {
+  const password = process.env.DASHBOARD_PASSWORD;
+  const header = req.headers.get('authorization') || '';
+  if (password && header.startsWith('Basic ')) {
+    const decoded = atob(header.slice(6));
+    if (decoded.slice(decoded.indexOf(':') + 1) === password) return null;
+  }
+  return new NextResponse('Login required', {
+    status: 401,
+    headers: { 'WWW-Authenticate': 'Basic realm="WAA dashboard"', 'X-Robots-Tag': 'noindex' },
+  });
+}
+
 export function middleware(req: NextRequest, event: NextFetchEvent) {
+  if (req.nextUrl.pathname.startsWith('/dashboard')) {
+    return dashboardAuth(req) || NextResponse.next({ headers: { 'X-Robots-Tag': 'noindex' } });
+  }
+
   const bot = detectAiBot(req.headers.get('user-agent') || '');
   if (bot) event.waitUntil(recordAiHit(bot, req.nextUrl.pathname));
 

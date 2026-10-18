@@ -1,0 +1,46 @@
+# Daily SEO/GEO snapshot for /dashboard + Monday email report (scripts/snapshot.mjs, scripts/weekly-report.mjs).
+# Secrets (repo Settings → Secrets → Actions): GSC_KEY_JSON, BING_WEBMASTER_API_KEY,
+# KV_REST_API_URL, KV_REST_API_TOKEN, RESEND_API_KEY, LEAD_NOTIFY_EMAIL.
+name: SEO snapshot
+
+on:
+  schedule:
+    - cron: '30 5 * * *' # every day 05:30 UTC (06:30 Morocco)
+  workflow_dispatch:
+    inputs:
+      report:
+        description: 'Also send the weekly email report'
+        type: boolean
+        default: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
+      BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+      KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
+      KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      LEAD_NOTIFY_EMAIL: ${{ secrets.LEAD_NOTIFY_EMAIL }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # git history = which posts changed recently (title tests)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: node scripts/snapshot.mjs
+      - name: Monday report
+        if: always()
+        env:
+          FORCE_REPORT: ${{ github.event.inputs.report }}
+        run: |
+          if [ "$(date -u +%u)" = "1" ] && [ "${{ github.event_name }}" = "schedule" ] || [ "$FORCE_REPORT" = "true" ]; then
+            node scripts/weekly-report.mjs
+          else
+            echo "Not Monday, no report."
+          fi

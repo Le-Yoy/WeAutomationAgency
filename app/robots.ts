@@ -7,8 +7,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      // /start is a paid-traffic landing page (noindex); /api has no crawlable content.
-      disallow: ['/start', '/api/'],
+      // /start is a paid-traffic landing page (noindex); /api has no crawlable content; /dashboard is private.
+      disallow: ['/start', '/api/', '/dashboard'],
     },
     sitemap: `${BASE_URL}/sitemap.xml`,
     host: BASE_URL,
