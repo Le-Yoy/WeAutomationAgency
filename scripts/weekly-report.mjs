@@ -57,7 +57,7 @@ const html = `
   <table>
     ${row('Clicks', num(sum(last7, 'clicks')) + delta(sum(last7, 'clicks'), sum(prev7, 'clicks')))}
     ${row('Impressions', num(sum(last7, 'impressions')) + delta(sum(last7, 'impressions'), sum(prev7, 'impressions')))}
-    ${s.gsc ? row('Average position (28 days)', s.gsc.totals.position.toFixed(1) + delta(s.gsc.totals.position, s.gsc.previous.position, true)) : ''}
+    ${s.gsc ? row('Average position (28 days, lower = better)', s.gsc.totals.position.toFixed(1) + delta(s.gsc.totals.position, s.gsc.previous.position, true)) : ''}
   </table>
 
   <h3>AI &amp; Bing</h3>

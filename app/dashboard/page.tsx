@@ -159,7 +159,7 @@ export default async function Dashboard() {
         <Card label="Google impressions (28 days)" value={gsc ? num(gsc.totals.impressions) : '–'}>
           {gsc && <Delta now={gsc.totals.impressions} before={gsc.previous.impressions} />}
         </Card>
-        <Card label="Average position" value={gsc ? gsc.totals.position.toFixed(1) : '–'}>
+        <Card label="Average position (lower = better)" value={gsc ? gsc.totals.position.toFixed(1) : '–'}>
           {gsc && <Delta now={gsc.totals.position} before={gsc.previous.position} invert />}
         </Card>
         <Card label="AI visits (30 days)" value={num(aiTotal)}>
