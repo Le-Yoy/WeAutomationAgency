@@ -68,12 +68,14 @@ async function searchConsole() {
     const r = rows[0] || { clicks: 0, impressions: 0, ctr: 0, position: 0 };
     return { clicks: r.clicks, impressions: r.impressions, ctr: r.ctr, position: r.position };
   };
-  const [cur, prev, daily, pages, queries] = await Promise.all([
+  const [cur, prev, daily, pages, queries, queryPages] = await Promise.all([
     q({ startDate: start, endDate: end }),
     q({ startDate: prevStart, endDate: prevEnd }),
     q({ startDate: day(92), endDate: end, dimensions: ['date'] }),
     q({ startDate: start, endDate: end, dimensions: ['page'], rowLimit: 50 }),
     q({ startDate: start, endDate: end, dimensions: ['query'], rowLimit: 30 }),
+    // For the weekly content engine: which query lands on which page (gaps, page-2 queries).
+    q({ startDate: start, endDate: end, dimensions: ['query', 'page'], rowLimit: 300 }),
   ]);
   return {
     range: { start, end },
@@ -98,6 +100,7 @@ async function searchConsole() {
       };
     }),
     queries: queries.map((r) => ({ query: r.keys[0], clicks: r.clicks, impressions: r.impressions, ctr: r.ctr, position: r.position })),
+    queryPages: queryPages.map((r) => ({ query: r.keys[0], page: r.keys[1].replace(SITE, '') || '/', clicks: r.clicks, impressions: r.impressions, position: r.position })),
   };
 }
 

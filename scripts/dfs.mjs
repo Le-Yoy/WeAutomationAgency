@@ -1,4 +1,5 @@
-// DataForSEO helper for the content planner. Credentials: DATAFORSEO_LOGIN / DATAFORSEO_PASSWORD (.env.local).
+// DataForSEO helper for the content planner. Credentials: DATAFORSEO_LOGIN / DATAFORSEO_PASSWORD (.env.local),
+// or none in the cloud routine (network secret injects the header for api.dataforseo.com).
 // Markets: us, uk, fr, es (+ ma later). Every call costs a little: keep limits small.
 //
 //   npm run dfs -- balance
@@ -16,7 +17,10 @@ if (existsSync('.env.local')) {
     if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
   }
 }
-const AUTH = 'Basic ' + Buffer.from(`${process.env.DATAFORSEO_LOGIN}:${process.env.DATAFORSEO_PASSWORD}`).toString('base64');
+// No credentials in env (cloud routine): the environment's network secret adds the Authorization header.
+const AUTH = process.env.DATAFORSEO_LOGIN
+  ? 'Basic ' + Buffer.from(`${process.env.DATAFORSEO_LOGIN}:${process.env.DATAFORSEO_PASSWORD}`).toString('base64')
+  : null;
 const OUR_DOMAIN = 'weautomationagency.com';
 const MARKETS = {
   us: { location_code: 2840, language_code: 'en' },
@@ -29,7 +33,7 @@ const MARKETS = {
 async function api(path, body) {
   const res = await fetch(`https://api.dataforseo.com/v3/${path}`, {
     method: body ? 'POST' : 'GET',
-    headers: { Authorization: AUTH, 'Content-Type': 'application/json' },
+    headers: { ...(AUTH ? { Authorization: AUTH } : {}), 'Content-Type': 'application/json' },
     body: body ? JSON.stringify([body]) : undefined,
   });
   const data = await res.json();
