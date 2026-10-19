@@ -33,7 +33,7 @@ type Snapshot = {
 type LinkTarget = { name: string; url: string; type: string; why?: string; steps?: string };
 type Links = {
   today?: LinkTarget & { date: string };
-  queue?: number;
+  queue?: LinkTarget[];
   done?: { date: string; name: string; status: string; linkType?: string }[];
 };
 
@@ -92,9 +92,9 @@ function Bars({ data, color = '#F94239', height = 90 }: { data: { label: string;
   );
 }
 
-function Section({ title, hint, children }: { title: string; hint?: string; children: React.ReactNode }) {
+function Section({ id, title, hint, children }: { id?: string; title: string; hint?: string; children: React.ReactNode }) {
   return (
-    <section className="mt-10">
+    <section id={id} className="mt-10 scroll-mt-6">
       <h2 className="text-xl font-bold">{title}</h2>
       {hint && <p className="mt-1 text-sm text-grey">{hint}</p>}
       <div className="mt-4">{children}</div>
@@ -177,11 +177,11 @@ export default async function Dashboard() {
           </span>
         </Card>
         <Card label="Links done" value={String(links?.done?.filter((d) => d.status === 'live').length ?? 0)}>
-          <span className="text-sm text-grey">{links?.queue ?? 0} targets in the queue</span>
+          <span className="text-sm text-grey">{links?.queue?.length ?? 0} targets in the queue</span>
         </Card>
       </div>
 
-      <Section title="🔗 Today's link mission" hint="One checked link a day. Every target passed the link gate (relevant, real, free, not spammy).">
+      <Section id="links" title="🔗 Today's link mission" hint="One checked link a day. Every target passed the link gate (relevant, real, free, not spammy).">
         {links?.today ? (
           <div className="rounded-2xl border border-darker-grey bg-[#0d0d0d] p-5">
             <div className="flex flex-wrap items-center gap-3">
@@ -192,6 +192,17 @@ export default async function Dashboard() {
             </div>
             {links.today.why && <p className="mt-2 text-grey">{links.today.why}</p>}
             {links.today.steps && <p className="mt-2 whitespace-pre-line text-sm">{links.today.steps}</p>}
+            <form method="post" action="/dashboard/links" className="mt-5 flex flex-wrap items-center gap-3">
+              <select name="linkType" defaultValue={links.today.type} className="rounded-lg border border-darker-grey bg-primary px-3 py-2 text-sm">
+                <option value="dofollow">dofollow</option>
+                <option value="nofollow">nofollow</option>
+                <option value="mention only">mention only</option>
+                {!['dofollow', 'nofollow', 'mention only'].includes(links.today.type) && <option value={links.today.type}>{links.today.type}</option>}
+              </select>
+              <input name="profileUrl" placeholder="Our profile / link URL (optional)" className="min-w-[220px] flex-1 rounded-lg border border-darker-grey bg-primary px-3 py-2 text-sm" />
+              <button name="action" value="done" className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold">✅ Done</button>
+              <button name="action" value="skip" className="rounded-lg border border-darker-grey px-4 py-2 text-sm">Skip</button>
+            </form>
           </div>
         ) : (
           <p className="text-grey">No mission set yet.</p>

@@ -1277,4 +1277,5 @@ wip
 - `/dashboard`: private (Basic auth, `DASHBOARD_PASSWORD` Vercel env var; none set = closed), noindex + robots disallow. Reads Redis `dash:snapshot`, `dash:links`.
 - `npm run snapshot` (scripts/snapshot.mjs): GSC 28d vs previous, 90d daily, pages vs CTR benchmark (page 1 only, 28-day grace after a post changed in git), queries, Bing, AI bots 30d, sitemap health → Redis. GitHub Actions `.github/workflows/snapshot.yml` daily 05:30 UTC.
 - `npm run weekly-report` (`-- --dry` to print): Monday email via Resend to LEAD_NOTIFY_EMAIL (same workflow, Mondays; manual run with "report" checked).
+- Link mission: `npm run links -- load <json>` (queue in Redis `dash:links`, source content/knowledge/link-queue.json in the workspace); Done/Skip buttons on /dashboard POST to /dashboard/links.
 - GitHub secrets set with `bash scripts/push-secrets.sh` (reads .gsc-key.json + .env.local, prints nothing).

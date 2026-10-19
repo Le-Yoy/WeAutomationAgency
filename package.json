@@ -12,7 +12,8 @@
     "ai-bots": "node scripts/ai-bots.mjs",
     "gsc": "node scripts/gsc.mjs",
     "snapshot": "node scripts/snapshot.mjs",
-    "weekly-report": "node scripts/weekly-report.mjs"
+    "weekly-report": "node scripts/weekly-report.mjs",
+    "links": "node scripts/links.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
