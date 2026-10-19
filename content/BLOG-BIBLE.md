@@ -188,3 +188,6 @@ Organic CTR by position, 2026 market reference (First Page Sage table; AI Overvi
 
 If a page's CTR is below the market value for its average position for 28 days → rewrite title + description first (fastest win), then the hook.
 Sources: OuterBox / First Page Sage CTR table (2026), Ahrefs AI Overviews CTR study (Feb 2026).
+
+### Keywords per language (added 2026-10-19)
+Each locale targets what people **in that market** actually type, checked with `npm run dfs -- volume fr|es ...`, not a translation of the EN keyword. Example: in France "lead generation" (English, 1,000/mo) beats "génération de leads IA" (0); in Spain "captación de leads" (210) and "captación de clientes" (170) beat "generación de leads con IA" (0). Put the best local term in the FR/ES seoTitle, description and first H2.
