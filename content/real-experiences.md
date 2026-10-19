@@ -1,0 +1,8 @@
+# Real experiences bank
+⚠️ This repo is PUBLIC: nothing confidential here (no client names unless allowed, no private numbers). Facts and stories Houssam gives in chat. Use them in articles/posts where they fit (E-E-A-T: real experience). Never invent or inflate. Note the date and any limit (e.g. "approximate", "don't name the client").
+
+| Date given | Fact / story | Usable for | Limits |
+|---|---|---|---|
+| 2026-10-16 | Make lead-gen pipeline (Sales Navigator → enrichment → ChatGPT hooks → email sequences), built for ourselves then for clients (incl. a digital-products seller). Up to 2,000 contacts/day, ~5.5% reply rate ("real ones will know that this is a very good percentage"), more clients signed than classic prospecting | lead gen, cold email, Make, n8n vs Make | reply rate approximate; no client names |
+| 2026-10-16 | Same pipeline rebuilt on n8n for another project: self-hosted, multi-source + database, deeper personalization (site + posts), AI scoring, multichannel + inbox rotation, AI reply sorting + booking link | n8n, lead gen | — |
+| 2026-10-16 | We mostly build on Make; n8n when workflows are long / high volume / data must stay in-house | tool choice posts | — |
