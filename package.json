@@ -13,7 +13,9 @@
     "gsc": "node scripts/gsc.mjs",
     "snapshot": "node scripts/snapshot.mjs",
     "weekly-report": "node scripts/weekly-report.mjs",
-    "links": "node scripts/links.mjs"
+    "links": "node scripts/links.mjs",
+    "links:internal": "node scripts/internal-links.mjs",
+    "dfs": "node scripts/dfs.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
