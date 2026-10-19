@@ -1,0 +1,88 @@
+---
+title: "ChatGPT met-il un watermark sur ses textes ? Oui, dans l'UE depuis octobre 2026"
+description: "Watermark ChatGPT : depuis octobre 2026, les textes des utilisateurs de l'UE sont marqués. Ce qu'est textGrain, qui peut le détecter, et ce que dit l'AI Act."
+excerpt: "OpenAI marque désormais les textes de ChatGPT pour les utilisateurs européens. Ce qu'est ce filigrane, qui peut le détecter, l'effet sur le SEO et quoi faire."
+date: "2026-10-19"
+dateLabel: "19 octobre 2026"
+seoTitle: "Watermark ChatGPT : vos textes sont-ils marqués ? (UE, 2026)"
+category: "IA & SEO"
+author: "Houssam Boutaleb"
+authorRole: "Fondateur & CEO, WeAutomationAgency"
+keywords: ["watermark chatgpt", "filigrane chatgpt", "détecteur chatgpt", "textGrain OpenAI", "AI Act article 50", "texte IA marqué"]
+type: opinion
+toc: false
+---
+
+> **La réponse courte :** oui, si vous êtes dans l'UE. Le 5 octobre 2026, OpenAI a annoncé un filigrane (watermark) invisible appelé **textGrain** pour les textes de ChatGPT et de Codex, déployé sur quelques semaines auprès des utilisateurs européens éligibles, tous forfaits confondus. Hors UE, rien ne change, sauf pour les clients de l'API qui peuvent l'activer. On ne le voit pas, on ne l'efface pas avec un rechercher-remplacer, et pour l'instant seuls des chercheurs agréés ont accès au détecteur.
+
+« Est-ce que ChatGPT marque ce que j'écris ? » Si vous vendez en France, en Belgique ou ailleurs dans l'UE, la question est devenue légitime. Voici ce qu'est ce watermark, ce qu'il n'est pas, et ce qu'il change pour une entreprise qui utilise ChatGPT pour ses contenus.
+
+## Qu'a annoncé OpenAI, exactement ?
+
+D'après [TechCrunch](https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/) et [le résumé de Nemko](https://digital.nemko.com/news/ai-text-watermarking-openai-sets-eu-rollout) :
+
+- **Qui :** les utilisateurs éligibles de ChatGPT et Codex **dans l'UE**, sur tous les forfaits. Ce n'est pas un réglage mondial par défaut.
+- **API :** les développeurs du monde entier peuvent l'activer sur certains modèles. Il est **désactivé par défaut**.
+- **Comment :** une clé secrète oriente légèrement le choix des mots du modèle. Un seul coup de pouce ne veut rien dire ; des centaines finissent par former un motif qu'un détecteur lit à partir du texte seul.
+- **Pourquoi maintenant :** les règles de transparence de l'AI Act (article 50) s'appliquent depuis le 2 août 2026 et imposent aux fournisseurs d'IA de marquer les textes générés de façon lisible par une machine, « dans la mesure où c'est techniquement possible ».
+
+Le filigrane résiste au copier-coller, et OpenAI indique qu'il n'identifie pas l'utilisateur. Anthropic marquait déjà les textes de Claude dans le monde entier depuis août ; j'ai expliqué l'effet sur le référencement dans [le watermark de Claude pénalise-t-il votre SEO](/fr/blog/claude-ai-watermark-google-rankings).
+
+## Est-ce les caractères cachés qu'on trouve dans Word ?
+
+Non. Beaucoup de recherches sur le « watermark ChatGPT » parlent en fait d'espaces bizarres dans le texte collé. En avril 2025, la startup Rumi a signalé que les modèles o3 et o4-mini d'OpenAI inséraient des espaces insécables fines (le caractère Unicode U+202F). OpenAI a répondu qu'il s'agissait d'un effet secondaire de l'entraînement, pas d'un filigrane ([Aragon Research](https://aragonresearch.com/navigating-openai-digital-watermarking-text/)).
+
+textGrain, c'est autre chose. Il n'y a aucun caractère spécial à chercher. Le signal est dans *le choix des mots*, donc un outil qui « nettoie les caractères cachés » ne lui fait rien.
+
+## Un détecteur ChatGPT peut-il repérer ce filigrane ?
+
+Pas les détecteurs que vous trouvez en ligne. L'accès au vrai détecteur est réservé, pour l'instant, à des chercheurs et organismes experts agréés. OpenAI dit vouloir publier la technologie en open source, sans date.
+
+Les propres tests d'OpenAI montrent sa fragilité :
+
+| Situation (tests d'OpenAI) | Filigrane détecté |
+|---|---|
+| Passage de 400 tokens, intact (1 % de faux positifs) | ~95 % |
+| Passage de 200 tokens, intact | ~80 % |
+| 10 % des mots remplacés par des synonymes | ~66 % (contre ~92 %) |
+| 25 % des mots remplacés | ~17 % |
+
+Les textes courts, les maths et les textes traduits sont plus difficiles à détecter. Et OpenAI est clair sur les limites : l'absence de filigrane ne prouve pas qu'un humain a écrit le texte, et sa présence ne dit pas quelle part de travail humain il contient.
+
+## Le watermark ChatGPT nuit-il à votre référencement ?
+
+Rien ne l'indique. Google n'a jamais dit qu'il lisait les filigranes d'OpenAI ou d'Anthropic dans ses systèmes de classement, et sa position n'a pas bougé : il classe les contenus utiles et originaux, et cible les contenus sans valeur produits à la chaîne, quelle que soit la façon dont ils sont faits.
+
+Ce que Google a changé, c'est le processus : ses consignes d'octobre 2026 demandent de vérifier à la main les contenus assistés par IA, métadonnées comprises. Je détaille notre méthode dans [comment vérifier un contenu IA avant publication](/fr/blog/google-fact-check-ai-content-before-publishing). Ça compte bien plus qu'un filigrane.
+
+## Que demande vraiment l'AI Act à votre entreprise ?
+
+Le filigrane, c'est l'affaire du **fournisseur** (OpenAI). Vos obligations en tant qu'entreprise qui utilise l'outil, un « déployeur » au sens de l'AI Act, sont plus étroites. L'article 50(4) prévoit qu'un texte généré par IA **publié pour informer le public sur des questions d'intérêt public** doit être signalé comme tel, **sauf** s'il a fait l'objet d'une relecture humaine ou d'un contrôle éditorial et qu'une personne physique ou morale en assume la responsabilité éditoriale ([AI Act, article 50](https://artificialintelligenceact.eu/article/50/)).
+
+<Callout>
+En clair : ce qui compte pour la loi, c'est un humain qui relit, corrige et assume le texte. Une fiche produit ou un article que vous avez réécrit et signé n'a rien à voir avec une sortie brute de ChatGPT publiée telle quelle. Ce n'est pas un conseil juridique ; si vous publiez des contenus d'actualité dans l'UE, faites valider votre cas par un avocat.
+</Callout>
+
+## Alors, que faire ?
+
+Mon avis : n'achetez pas de « suppresseur de watermark ». Ces outils paraphrasent surtout, ce qui baisse la détection mais vous laisse le vrai problème : un texte générique, identique à celui de tout le monde. Corrigez plutôt le processus :
+
+1. **Rédiger avec l'IA, finir à la main.** Une vraie réécriture avec vos exemples, vos chiffres et votre avis. C'est comme ça qu'est fait chaque article de ce site.
+2. **Vérifier chaque affirmation**, titre et description compris, avant de publier.
+3. **Signer.** Un vrai auteur avec une vraie expérience, et quelqu'un qui assume la responsabilité éditoriale.
+4. **Écrire aussi pour les réponses IA.** Questions claires, faits sourcés, réponse courte en tête : c'est ce qui vous fait citer par ChatGPT et l'IA de Google.
+
+<KeyTakeaways title="À retenir">
+- Depuis le 5 octobre 2026, OpenAI marque les textes de ChatGPT et Codex pour les utilisateurs éligibles de l'UE (textGrain). Ailleurs, l'API permet de l'activer.
+- C'est un filigrane statistique et invisible, sans lien avec les « caractères cachés » U+202F.
+- Seuls des chercheurs agréés peuvent le détecter pour l'instant, et la réécriture l'affaiblit vite.
+- Aucun signe d'effet sur le classement. Relecture humaine et responsabilité éditoriale : c'est ce qui compte, pour Google comme pour l'AI Act.
+</KeyTakeaways>
+
+Si vous voulez que vos contenus soient ceux que les assistants IA citent, et pas ceux qu'ils remplacent, c'est notre [service de visibilité dans la recherche IA (GEO)](/fr/services/ai-search-visibility). [Parlez-moi de votre site ici](/start) et je vous dirai où vous en êtes.
+
+## À lire ensuite
+- [Le watermark de Claude pénalise-t-il votre référencement ?](/fr/blog/claude-ai-watermark-google-rankings)
+- [Comment vérifier un contenu IA avant de le publier](/fr/blog/google-fact-check-ai-content-before-publishing)
+- [Visibilité ChatGPT (GEO) : comment être cité par l'IA](/fr/blog/ai-search-visibility-geo)
+- [SEO, GEO, AEO : quelle différence ?](/fr/blog/seo-vs-geo-vs-aeo-ai-visibility)

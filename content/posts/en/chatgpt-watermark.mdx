@@ -1,0 +1,88 @@
+---
+title: "Does ChatGPT Watermark Its Text? Yes, in the EU Since October 2026"
+description: "Does ChatGPT watermark text? Since Oct 2026, yes for EU users. What textGrain is, how detectable it is, what the AI Act asks of you, and what to do now."
+excerpt: "OpenAI now watermarks ChatGPT text for EU users. What the watermark is (and isn't), who can detect it, what it means for SEO, and what businesses should actually do."
+date: "2026-10-19"
+dateLabel: "October 19, 2026"
+seoTitle: "ChatGPT Watermark: Is Your Text Marked? (EU, 2026)"
+category: "AI & SEO"
+author: "Houssam Boutaleb"
+authorRole: "Founder & CEO, WeAutomationAgency"
+keywords: ["chatgpt watermark", "does chatgpt watermark text", "chatgpt watermark detector", "openai textgrain", "EU AI Act article 50", "AI text watermark"]
+type: opinion
+toc: false
+---
+
+> **The short answer:** yes, if you're in the EU. On October 5, 2026, OpenAI announced an invisible watermark called **textGrain** for ChatGPT and Codex text, rolling out to eligible EU users on all plans over the following weeks. Outside the EU nothing changes, except that API customers can switch it on. You can't see it, you can't delete it with find-and-replace, and for now only approved researchers can run the detector.
+
+"Is ChatGPT watermarking what I write?" If you sell into France, Spain or anywhere in the EU, that's now a fair question. Here's what the watermark is, what it isn't, and what it changes for a business that uses ChatGPT for its content.
+
+## What exactly did OpenAI announce?
+
+According to [TechCrunch](https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/) and [Nemko's summary](https://digital.nemko.com/news/ai-text-watermarking-openai-sets-eu-rollout) of OpenAI's announcement:
+
+- **Who:** eligible ChatGPT and Codex users **in the EU**, on all plans. It's not a global default at launch.
+- **API:** developers anywhere can turn it on for selected models. It's **off by default**.
+- **How:** a secret key slightly steers the model's word choices. One nudge means nothing; hundreds of them add up to a pattern a detector can read from the text alone.
+- **Why now:** the EU AI Act's transparency rules (Article 50) apply since August 2, 2026 and require AI providers to mark generated text in a machine-readable way, "where technically feasible".
+
+The watermark survives copy-paste, and OpenAI says it doesn't identify the user. Anthropic had already started watermarking Claude text worldwide in August; I covered what that means for rankings in [does Claude's AI watermark hurt your Google rankings](/blog/claude-ai-watermark-google-rankings).
+
+## Is it the hidden characters people find in Word?
+
+No. A lot of searches for "ChatGPT watermark" are really about odd spaces in pasted text. In April 2025, the startup Rumi reported that OpenAI's o3 and o4-mini models were inserting narrow no-break spaces (the Unicode character U+202F). OpenAI's explanation was that it was a side effect of training, not a watermark ([Aragon Research](https://aragonresearch.com/navigating-openai-digital-watermarking-text/)).
+
+textGrain is different. There's no special character to find. The signal lives in *which words* were chosen, so a "clean the hidden characters" tool does nothing to it.
+
+## Can anyone detect the ChatGPT watermark?
+
+Not yet, in practice. Detector access is limited to approved researchers and expert organizations for now. OpenAI says it plans to open-source the technology, without a date.
+
+OpenAI's own test numbers show how fragile it is:
+
+| Situation (OpenAI's tests) | Watermark detected |
+|---|---|
+| 400-token passage, untouched (1% false positives) | ~95% |
+| 200-token passage, untouched | ~80% |
+| 10% of words swapped for synonyms | ~66% (from ~92%) |
+| 25% of words swapped | ~17% |
+
+Short texts, math and translated text are harder to detect. And OpenAI is clear on the limits: a missing watermark doesn't prove a human wrote something, and a present one doesn't show how much human work went into the text.
+
+## Does the ChatGPT watermark hurt your SEO?
+
+There's no evidence it does. Google has never said it reads OpenAI's or Anthropic's watermarks in its ranking systems, and its line hasn't moved: it ranks helpful, original content and goes after low-value content made at scale, whatever made it.
+
+What Google *did* change is the process side. Its October 2026 guidance asks you to fact-check AI-assisted content by hand, metadata included. I explain how we do it in [how to fact-check AI content before publishing](/blog/google-fact-check-ai-content-before-publishing). That matters far more than any watermark.
+
+## What does the EU AI Act actually ask of your business?
+
+The watermark is the **provider's** job (OpenAI's). Your obligations as a business using the tool, a "deployer" in AI Act terms, are narrower. Article 50(4) says AI-generated text **published to inform the public on matters of public interest** must be disclosed as AI-generated, **unless** it went through human review or editorial control and a person or company holds editorial responsibility for it ([AI Act, Article 50](https://artificialintelligenceact.eu/article/50/)).
+
+<Callout>
+In plain words: a human who reviews, edits and stands behind the text is what the law cares about. A product page or a blog post you rewrote and signed is a very different thing from raw ChatGPT output published as is. This isn't legal advice; if you publish news-style content in the EU, check your case with a lawyer.
+</Callout>
+
+## So what should you do?
+
+My take: don't buy a "watermark remover". Those tools mostly paraphrase, which lowers detection but leaves you with the real problem, generic text that looks like everyone else's. Fix the process instead:
+
+1. **Draft with AI, finish with a human.** A real rewrite with your examples, your numbers and your opinion. That's how every post on this site is made.
+2. **Fact-check every claim**, title and description included, before you publish.
+3. **Sign it.** A real author with real experience, and a person who takes editorial responsibility.
+4. **Write for AI answers too.** Clear questions, sourced facts, a short answer at the top: that's what gets you cited by ChatGPT and Google's AI.
+
+<KeyTakeaways title="Key takeaways">
+- Since October 5, 2026, OpenAI watermarks ChatGPT and Codex text for eligible EU users (textGrain). API users elsewhere can opt in.
+- It's statistical, invisible, and not the U+202F "hidden characters" story.
+- Only approved researchers can detect it for now, and editing weakens it fast.
+- No evidence it affects rankings. Human review and editorial responsibility are what matter, for Google and for the AI Act.
+</KeyTakeaways>
+
+If you want your content to be the kind AI assistants quote rather than the kind they replace, that's our [AI search visibility (GEO) service](/services/ai-search-visibility). [Tell me about your site here](/start) and I'll tell you where you stand.
+
+## Keep reading
+- [Does Claude's AI watermark hurt your Google rankings?](/blog/claude-ai-watermark-google-rankings)
+- [How to fact-check AI content before publishing](/blog/google-fact-check-ai-content-before-publishing)
+- [AI search visibility (GEO): how to get cited by ChatGPT](/blog/ai-search-visibility-geo)
+- [SEO vs GEO vs AEO: what's the difference?](/blog/seo-vs-geo-vs-aeo-ai-visibility)

@@ -1,0 +1,104 @@
+---
+title: "AI Lead Generation in 2026: The Automated Pipeline We Actually Run"
+description: "AI lead generation explained by an agency that runs it: our 6-step pipeline, a ~5.5% reply rate vs a 3.43% average, the tools, and the email rules."
+excerpt: "What AI lead generation really looks like when you run it every day: the 6 steps, the reply rate we get, the tools, and the rules that keep you out of spam."
+date: "2026-10-19"
+dateLabel: "October 19, 2026"
+seoTitle: "AI Lead Generation: How We Automate B2B Prospecting"
+category: "Lead Generation"
+author: "Houssam Boutaleb"
+authorRole: "Founder & CEO, WeAutomationAgency"
+keywords: ["ai lead generation", "automated lead generation", "lead generation automation", "ai lead generation tools", "b2b prospecting automation", "automated lead generation system"]
+type: howto
+toc: false
+---
+
+> **The short answer:** AI lead generation is a pipeline, not a single tool. It finds the right companies, gets a valid work email for the right person, has AI write an opening line about *their* business, sends a short sequence, and sorts the replies. Ours contacts up to **2,000 people a day** with a reply rate of **about 5.5%**, when Instantly's 2026 benchmark puts the cold email average at **3.43%**. The AI is the easy part. Data quality and deliverability decide the result.
+
+Everyone sells AI lead generation as a tool you subscribe to. In my experience, the tool is the smallest part of it. We built our own prospecting machine to find our first clients, then rebuilt it for clients, including a company that sells digital products. Here is exactly how it works, step by step, and where it breaks.
+
+## What is AI lead generation, really?
+
+It's the same job a good sales rep does, split into steps a machine can repeat: pick targets, find contact details, write something relevant, follow up, and spot who is interested. AI helps at two points: **writing** (a personal first line for each contact) and **reading** (scoring profiles and sorting replies). Everything else is plain automation.
+
+That matters, because most "AI lead gen" disappointments come from the plain parts: a bad list, invalid emails, one inbox sending too much. The AI can't fix those.
+
+## How does an automated lead generation pipeline work?
+
+This is the version we run on Make. Six steps, every contact goes through all of them.
+
+1. **Target in LinkedIn Sales Navigator.** A tight search: job title, industry, company size, country. A narrow list beats a big one.
+2. **Pull the profiles into the automation.** The search results flow into Make, one contact at a time.
+3. **Enrich and verify.** A step finds each person's work email and keeps only valid addresses. Skipping verification is the fastest way to burn a sending domain.
+4. **Personalize with AI.** The OpenAI API writes the opening line of each email from the profile: role, company, industry. One sentence, about them, not about us.
+5. **Send the email and the follow-ups.** A short sequence, sent straight from the automation.
+6. **Track every step.** A few numbers at each stage show where contacts drop out and which messages get answers.
+
+**The result:** up to **2,000 people contacted per day**, a reply rate of **about 5.5%**, and more clients signed than classic manual prospecting brought us.
+
+For context, Instantly's benchmark report (cold email activity from January to December 2025) puts the platform average reply rate at **3.43%**, with the top quartile at **5.5% and above** ([Instantly, 2026](https://instantly.ai/blog/ai-sales-agent-benchmarks-2026-the-complete-performance-report/)). So ~5.5% puts a pipeline in the top quarter. Anyone who has run outbound knows that's a very good number.
+
+## What changes when you go further with AI?
+
+For another project we rebuilt the same pipeline on **n8n**, self-hosted. Because n8n bills per run and not per step, we could add much more work on every contact:
+
+| Step | Make version | n8n version |
+|---|---|---|
+| Sources | Sales Navigator | Sales Navigator + company websites, Google Maps, directories, merged in a real database |
+| Personalization | Opening line from the LinkedIn profile | AI reads the company site and the prospect's latest posts first |
+| Screening | Manual targeting only | AI fit score on every profile, only the best get contacted |
+| Channels | Email + follow-ups | Email, then LinkedIn or WhatsApp in the same sequence, several inboxes in rotation |
+| Replies | Read by a person | AI tags each reply (interested, later, no, unsubscribe); "interested" gets a booking link |
+
+The deeper version costs more to build but saves hours every week, because nobody reads "not interested" replies anymore. If you're deciding between the two tools, I wrote up the full trade-off in [n8n vs Make](/blog/n8n-vs-make).
+
+## Which AI lead generation tools do you need?
+
+Fewer than the "top 25 tools" lists suggest. A working stack has five parts:
+
+- **A data source:** LinkedIn Sales Navigator, plus directories or Google Maps for local businesses.
+- **An email finder and verifier:** to get valid work addresses before anything is sent.
+- **An automation platform:** Make or n8n to connect everything (we mostly build on Make, and use n8n for long, high-volume workflows or when data must stay in-house).
+- **An AI model through its API:** for the opening lines, the scoring and the reply sorting.
+- **A sending setup:** dedicated domains and inboxes, warmed up, with authentication set.
+
+All-in-one platforms bundle some of these. They're fine to start. You outgrow them when you want your own scoring rules, your own data, or channels they don't cover. If inbound matters as much as outbound for you, an [AI chatbot that qualifies visitors](/blog/ai-chatbots-for-business) is the other half of the funnel.
+
+## How do you stay out of spam (and on the right side of the law)?
+
+This is where pipelines die. Volume without deliverability is just a faster way to get blocked.
+
+<Callout>
+Since February 2024, Google requires anyone sending more than 5,000 messages a day to Gmail accounts to authenticate with SPF, DKIM and DMARC, offer one-click unsubscribe, and keep the spam rate reported in Postmaster Tools below 0.3% ([Google sender guidelines](https://support.google.com/a/answer/81126)). Treat those as the floor, even below 5,000.
+</Callout>
+
+What we do in practice: several sending inboxes in rotation instead of one, a steady daily volume, short emails, and an easy way to say no in every message.
+
+The legal rules depend on where your prospects are:
+
+- **France and the EU:** the CNIL allows B2B email prospecting without prior consent when the message relates to the person's job, as long as they were informed and can object easily in every email ([CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique)).
+- **UK:** under PECR you can email employees of companies (corporate subscribers) without consent, but you must say who you are and offer an opt-out; sole traders and some partnerships need consent ([ICO](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/)).
+- **US:** CAN-SPAM doesn't require consent, but every email needs an honest subject line, your physical address and a working opt-out, honored within 10 business days ([FTC](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)).
+
+This isn't legal advice. When in doubt, check with your lawyer for your market.
+
+## Is AI lead generation worth it for your business?
+
+It's worth it when three things are true: you can describe your ideal client precisely, one new client is worth real money, and you can handle the replies. If all three hold, a pipeline like ours replaces hours of manual searching and writing every day.
+
+It's not worth it if your offer isn't clear yet. Automation multiplies whatever you put in, including a vague pitch.
+
+<KeyTakeaways title="Key takeaways">
+- AI lead generation = targeting, enrichment, AI-written first line, sequence, reply sorting.
+- Our pipeline: up to 2,000 contacts a day, ~5.5% reply rate vs a 3.43% benchmark average.
+- AI helps with writing and sorting; data quality and deliverability decide the result.
+- Authenticate your domains, rotate inboxes, and respect the opt-out rules of each market.
+</KeyTakeaways>
+
+This is the kind of system we build for clients: our [automated lead generation service](/services/lead-generation), usually paired with [email automation](/services/email-automation) for the sequences. If you want one for your business, [tell me about your offer here](/start) and I'll tell you honestly if it fits.
+
+## Keep reading
+- [n8n vs Make: which one to choose for a pipeline like this](/blog/n8n-vs-make)
+- [AI chatbots for business: the complete guide](/blog/ai-chatbots-for-business)
+- [WhatsApp chatbot for business: costs and setup](/blog/whatsapp-chatbot-cost)
+- [Best tools to build an AI chatbot](/blog/best-ai-chatbot-tools)

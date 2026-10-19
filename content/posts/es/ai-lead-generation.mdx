@@ -1,0 +1,104 @@
+---
+title: "Generación de leads con IA: el sistema que usamos de verdad (2026)"
+description: "Generación de leads con IA contada por quien la usa: nuestro sistema B2B en 6 pasos, ~5,5 % de respuestas frente al 3,43 % medio, herramientas y reglas."
+excerpt: "Cómo es de verdad la generación de leads con IA cuando la usas cada día: los 6 pasos, nuestra tasa de respuesta, las herramientas y las reglas para no caer en spam."
+date: "2026-10-19"
+dateLabel: "19 de octubre de 2026"
+seoTitle: "Generación de leads con IA: nuestro sistema B2B (2026)"
+category: "Generación de leads"
+author: "Houssam Boutaleb"
+authorRole: "Fundador y CEO, WeAutomationAgency"
+keywords: ["generación de leads con IA", "generación de leads B2B", "prospección automatizada", "automatizar prospección", "lead generation IA", "captación de clientes B2B"]
+type: howto
+toc: false
+---
+
+> **La respuesta corta:** la generación de leads con IA no es una herramienta, es una cadena. Encuentra las empresas adecuadas, consigue un email profesional válido de la persona correcta, hace que la IA escriba una primera frase sobre *su* negocio, envía una secuencia corta y clasifica las respuestas. La nuestra contacta hasta **2.000 personas al día** con una tasa de respuesta de **alrededor del 5,5 %**, cuando el informe 2026 de Instantly sitúa la media del cold email en el **3,43 %**. La IA es la parte fácil. Los datos y la entregabilidad deciden el resultado.
+
+Te venden la generación de leads con IA como una suscripción a una herramienta. Por experiencia, la herramienta es lo de menos. Montamos nuestra propia máquina de prospección para conseguir nuestros primeros clientes y luego la rehicimos para clientes, entre ellos una empresa que vende productos digitales. Así funciona, paso a paso, y aquí es donde se rompe.
+
+## ¿Qué es de verdad la generación de leads con IA?
+
+Es el trabajo de un buen comercial dividido en pasos que una máquina puede repetir: elegir objetivos, encontrar datos de contacto, escribir algo relevante, hacer seguimiento y detectar quién tiene interés. La IA ayuda en dos puntos: **escribir** (una primera frase personalizada para cada contacto) y **leer** (puntuar perfiles y clasificar respuestas). Lo demás es automatización normal.
+
+Y eso importa, porque casi todas las decepciones vienen de las partes normales: una lista mala, emails inválidos, un solo buzón enviando demasiado. La IA no arregla nada de eso.
+
+## ¿Cómo funciona un sistema de prospección automatizada?
+
+Esta es la versión que tenemos en Make. Seis pasos, y cada contacto pasa por todos.
+
+1. **Segmentar en LinkedIn Sales Navigator.** Una búsqueda ajustada: cargo, sector, tamaño de empresa, país. Mejor una lista estrecha que una enorme.
+2. **Llevar los perfiles a la automatización.** Los resultados entran en Make, contacto a contacto.
+3. **Enriquecer y verificar.** Un paso busca el email profesional de cada persona y se queda solo con las direcciones válidas. Saltarte la verificación es la forma más rápida de quemar un dominio de envío.
+4. **Personalizar con IA.** La API de OpenAI escribe la primera frase de cada email a partir del perfil: cargo, empresa, sector. Una frase, sobre ellos, no sobre nosotros.
+5. **Enviar el email y los seguimientos.** Una secuencia corta, enviada directamente desde la automatización.
+6. **Medir cada paso.** Unos pocos números en cada etapa te dicen dónde se pierden contactos y qué mensajes reciben respuesta.
+
+**El resultado:** hasta **2.000 personas contactadas al día**, una tasa de respuesta de **alrededor del 5,5 %** y más clientes firmados que con la prospección manual.
+
+Para tener referencia: el informe de Instantly (actividad de cold email de enero a diciembre de 2025) da una tasa de respuesta media del **3,43 %**, y el cuartil superior empieza en el **5,5 %** ([Instantly, 2026](https://instantly.ai/blog/ai-sales-agent-benchmarks-2026-the-complete-performance-report/)). Con un 5,5 %, estás en el mejor cuarto. Quien hace outbound sabe que es una cifra muy buena.
+
+## ¿Qué cambia si llevas la IA más lejos?
+
+Para otro proyecto reconstruimos el mismo sistema en **n8n**, en nuestro propio servidor. Como n8n cobra por ejecución y no por paso, pudimos meter mucho más trabajo en cada contacto:
+
+| Paso | Versión Make | Versión n8n |
+|---|---|---|
+| Fuentes | Sales Navigator | Sales Navigator + webs de empresas, Google Maps, directorios, unidos en una base de datos de verdad |
+| Personalización | Frase sacada del perfil de LinkedIn | La IA lee antes la web de la empresa y las últimas publicaciones del contacto |
+| Filtro | Solo segmentación manual | Puntuación de encaje con IA en cada perfil; solo se contacta a los mejores |
+| Canales | Email + seguimientos | Email, luego LinkedIn o WhatsApp en la misma secuencia, varios buzones en rotación |
+| Respuestas | Las lee una persona | La IA etiqueta cada respuesta (interesado, más tarde, no, baja); al «interesado» le llega un enlace para agendar |
+
+La versión avanzada cuesta más de montar, pero ahorra horas cada semana: nadie vuelve a leer los «no me interesa». Si dudas entre las dos herramientas, lo explico a fondo en [n8n vs Make](/es/blog/n8n-vs-make).
+
+## ¿Qué herramientas de generación de leads con IA necesitas?
+
+Menos de las que dicen las listas de «las 25 mejores». Un sistema que funciona tiene cinco piezas:
+
+- **Una fuente de datos:** LinkedIn Sales Navigator, más directorios o Google Maps para negocios locales.
+- **Un buscador y verificador de emails:** para tener direcciones profesionales válidas antes de enviar nada.
+- **Una plataforma de automatización:** Make o n8n para conectarlo todo (nosotros construimos sobre todo en Make, y en n8n para flujos largos, mucho volumen o cuando los datos deben quedarse en casa).
+- **Un modelo de IA por API:** para las frases de apertura, la puntuación y la clasificación de respuestas.
+- **Una infraestructura de envío:** dominios y buzones dedicados, calentados y con la autenticación configurada.
+
+Las plataformas todo en uno juntan algunas de estas piezas. Para empezar, bien. Se te quedan cortas cuando quieres tus propias reglas de puntuación, tus propios datos o canales que no cubren. Y si para ti los leads entrantes pesan tanto como la prospección, un [chatbot con IA que cualifica a tus visitas](/es/blog/ai-chatbots-for-business) es la otra mitad del embudo.
+
+## ¿Cómo evitas el spam (y cumples la ley)?
+
+Aquí es donde mueren los sistemas. Volumen sin entregabilidad es solo una forma más rápida de que te bloqueen.
+
+<Callout>
+Desde febrero de 2024, Google exige a quien envía más de 5.000 mensajes al día a cuentas de Gmail autenticar con SPF, DKIM y DMARC, ofrecer baja con un clic y mantener la tasa de spam de Postmaster Tools por debajo del 0,3 % ([directrices de Google para remitentes](https://support.google.com/a/answer/81126?hl=es)). Tómalo como el mínimo, aunque envíes menos de 5.000.
+</Callout>
+
+Lo que hacemos en la práctica: varios buzones en rotación en lugar de uno, un volumen diario estable, emails cortos y una forma fácil de decir que no en cada mensaje.
+
+Las reglas legales dependen de dónde estén tus contactos:
+
+- **Francia:** la CNIL permite la prospección B2B por email sin consentimiento previo si el mensaje tiene relación con la profesión de la persona, siempre que se le haya informado y pueda oponerse fácilmente en cada email ([CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique)). En España, la LSSI exige por regla general consentimiento previo para comunicaciones comerciales por email, también entre empresas ([AEPD](https://www.aepd.es/areas-de-actuacion/publicidad-no-deseada)): revisa bien tu caso antes de prospectar en frío.
+- **Reino Unido:** con PECR puedes escribir a empleados de empresas sin consentimiento, identificándote y ofreciendo la baja; autónomos y algunas sociedades necesitan consentimiento ([ICO](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/)).
+- **Estados Unidos:** CAN-SPAM no exige consentimiento, pero cada email necesita un asunto honesto, tu dirección postal y una baja que funcione, aplicada en 10 días hábiles ([FTC](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)).
+
+Esto no es asesoramiento legal: si tienes dudas, consúltalo con tu abogado para tu mercado.
+
+## ¿Te compensa la generación de leads con IA?
+
+Sí, si se cumplen tres cosas: puedes describir a tu cliente ideal con precisión, un cliente nuevo vale dinero de verdad y puedes atender las respuestas. Entonces un sistema como el nuestro sustituye horas de búsqueda y redacción manual cada día.
+
+No, si tu oferta todavía no está clara. La automatización multiplica lo que le metes, también un mensaje confuso.
+
+<KeyTakeaways title="Lo esencial">
+- Generación de leads con IA = segmentación, enriquecimiento, frase escrita por IA, secuencia y clasificación de respuestas.
+- Nuestro sistema: hasta 2.000 contactos al día, ~5,5 % de respuestas frente a una media del 3,43 %.
+- La IA ayuda a escribir y a clasificar; los datos y la entregabilidad deciden el resultado.
+- Autentica tus dominios, rota buzones y respeta las reglas de cada país.
+</KeyTakeaways>
+
+Este es el tipo de sistema que montamos para clientes: nuestro [servicio de generación de leads automatizada](/es/services/lead-generation), normalmente junto a la [automatización de email](/es/services/email-automation) para las secuencias. Si quieres uno para tu negocio, [cuéntame tu oferta aquí](/start) y te diré con honestidad si encaja.
+
+## Sigue leyendo
+- [n8n vs Make: cuál elegir para un sistema como este](/es/blog/n8n-vs-make)
+- [Chatbots con IA para empresas: la guía completa](/es/blog/ai-chatbots-for-business)
+- [Chatbot de WhatsApp para empresas: precio e instalación](/es/blog/whatsapp-chatbot-cost)
+- [Las mejores herramientas para crear un chatbot con IA](/es/blog/best-ai-chatbot-tools)

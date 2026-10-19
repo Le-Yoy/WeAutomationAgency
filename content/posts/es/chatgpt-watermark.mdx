@@ -1,0 +1,88 @@
+---
+title: "¿ChatGPT pone marca de agua a sus textos? Sí, en la UE desde octubre de 2026"
+description: "Marca de agua de ChatGPT: desde octubre de 2026 marca los textos de usuarios de la UE. Qué es textGrain, quién puede detectarla y qué exige la Ley de IA."
+excerpt: "OpenAI ya marca los textos de ChatGPT para usuarios europeos. Qué es esa marca de agua, quién puede detectarla, si afecta al SEO y qué hacer de verdad."
+date: "2026-10-19"
+dateLabel: "19 de octubre de 2026"
+seoTitle: "Marca de agua de ChatGPT: ¿tu texto está marcado? (2026)"
+category: "IA y SEO"
+author: "Houssam Boutaleb"
+authorRole: "Fundador y CEO, WeAutomationAgency"
+keywords: ["marca de agua chatgpt", "chatgpt marca de agua", "watermark chatgpt", "textGrain OpenAI", "Ley de IA artículo 50", "detector de texto IA"]
+type: opinion
+toc: false
+---
+
+> **La respuesta corta:** sí, si estás en la UE. El 5 de octubre de 2026 OpenAI anunció una marca de agua invisible llamada **textGrain** para los textos de ChatGPT y Codex, que llega en unas semanas a los usuarios europeos elegibles de todos los planes. Fuera de la UE no cambia nada, salvo que los clientes de la API pueden activarla. No se ve, no se borra con buscar y reemplazar, y de momento solo investigadores aprobados tienen acceso al detector.
+
+«¿ChatGPT está marcando lo que escribo?». Si vendes en España, Francia o cualquier país de la UE, ahora es una pregunta razonable. Aquí tienes qué es la marca de agua, qué no es y qué cambia para un negocio que usa ChatGPT para sus contenidos.
+
+## ¿Qué anunció OpenAI exactamente?
+
+Según [TechCrunch](https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/) y [el resumen de Nemko](https://digital.nemko.com/news/ai-text-watermarking-openai-sets-eu-rollout):
+
+- **A quién:** a los usuarios elegibles de ChatGPT y Codex **en la UE**, en todos los planes. No es un ajuste global por defecto.
+- **API:** cualquier desarrollador del mundo puede activarla en algunos modelos. Viene **desactivada por defecto**.
+- **Cómo:** una clave secreta inclina un poco la elección de palabras del modelo. Un empujón no dice nada; cientos forman un patrón que un detector puede leer solo con el texto.
+- **Por qué ahora:** las normas de transparencia de la Ley de IA europea (artículo 50) se aplican desde el 2 de agosto de 2026 y obligan a los proveedores de IA a marcar el texto generado de forma legible por máquina, «en la medida en que sea técnicamente viable».
+
+La marca sobrevive al copiar y pegar, y OpenAI dice que no identifica al usuario. Anthropic ya marcaba los textos de Claude en todo el mundo desde agosto; expliqué qué supone para el posicionamiento en [¿la marca de agua de Claude afecta a tu SEO?](/es/blog/claude-ai-watermark-google-rankings).
+
+## ¿Son los caracteres ocultos que aparecen en Word?
+
+No. Muchas búsquedas de «marca de agua de ChatGPT» hablan en realidad de espacios raros en el texto pegado. En abril de 2025, la startup Rumi informó de que los modelos o3 y o4-mini de OpenAI metían espacios estrechos de no separación (el carácter Unicode U+202F). OpenAI respondió que era un efecto secundario del entrenamiento, no una marca de agua ([Aragon Research](https://aragonresearch.com/navigating-openai-digital-watermarking-text/)).
+
+textGrain es otra cosa. No hay ningún carácter especial que buscar. La señal está en *qué palabras* se eligieron, así que una herramienta que «limpia caracteres ocultos» no le hace nada.
+
+## ¿Alguien puede detectar la marca de agua de ChatGPT?
+
+En la práctica, todavía no. El acceso al detector está limitado a investigadores y organizaciones expertas aprobadas. OpenAI dice que quiere publicar la tecnología en código abierto, sin fecha.
+
+Las propias pruebas de OpenAI muestran lo frágil que es:
+
+| Situación (pruebas de OpenAI) | Marca detectada |
+|---|---|
+| Texto de 400 tokens, sin tocar (1 % de falsos positivos) | ~95 % |
+| Texto de 200 tokens, sin tocar | ~80 % |
+| 10 % de palabras cambiadas por sinónimos | ~66 % (desde ~92 %) |
+| 25 % de palabras cambiadas | ~17 % |
+
+Los textos cortos, las matemáticas y los textos traducidos son más difíciles de detectar. Y OpenAI deja claros los límites: que no haya marca no prueba que lo escribiera una persona, y que la haya no dice cuánto trabajo humano lleva el texto.
+
+## ¿La marca de agua de ChatGPT perjudica tu SEO?
+
+No hay pruebas de ello. Google nunca ha dicho que lea las marcas de OpenAI o de Anthropic en sus sistemas de ranking, y su postura no ha cambiado: posiciona el contenido útil y original, y va contra el contenido de poco valor hecho en masa, se haga como se haga.
+
+Lo que sí cambió Google es el proceso: sus pautas de octubre de 2026 piden verificar a mano el contenido hecho con ayuda de IA, metadatos incluidos. Te cuento cómo lo hacemos en [cómo verificar el contenido de IA antes de publicarlo](/es/blog/google-fact-check-ai-content-before-publishing). Eso importa mucho más que cualquier marca de agua.
+
+## ¿Qué le exige de verdad la Ley de IA a tu negocio?
+
+La marca de agua es cosa del **proveedor** (OpenAI). Tus obligaciones como empresa que usa la herramienta, un «responsable del despliegue» en la Ley de IA, son más limitadas. El artículo 50(4) dice que el texto generado por IA **publicado para informar al público sobre asuntos de interés público** debe indicar que es artificial, **salvo** que haya pasado por revisión humana o control editorial y una persona física o jurídica tenga la responsabilidad editorial ([Ley de IA, artículo 50](https://artificialintelligenceact.eu/article/50/)).
+
+<Callout>
+En pocas palabras: a la ley le importa que una persona revise, corrija y responda del texto. Una ficha de producto o un artículo que reescribiste y firmas no tiene nada que ver con la salida bruta de ChatGPT publicada tal cual. Esto no es asesoramiento legal; si publicas contenido informativo en la UE, consulta tu caso con un abogado.
+</Callout>
+
+## Entonces, ¿qué haces?
+
+Mi opinión: no compres un «quitador de marcas de agua». Esas herramientas sobre todo parafrasean, lo que baja la detección pero te deja el problema real, un texto genérico igual al de todos. Arregla el proceso:
+
+1. **Redacta con IA, termina a mano.** Una reescritura de verdad con tus ejemplos, tus cifras y tu opinión. Así se hace cada artículo de esta web.
+2. **Verifica cada dato**, título y descripción incluidos, antes de publicar.
+3. **Fírmalo.** Un autor real con experiencia real, y alguien que asuma la responsabilidad editorial.
+4. **Escribe también para las respuestas de IA.** Preguntas claras, datos con fuente, respuesta corta arriba: eso es lo que hace que ChatGPT y la IA de Google te citen.
+
+<KeyTakeaways title="Lo esencial">
+- Desde el 5 de octubre de 2026, OpenAI marca los textos de ChatGPT y Codex de los usuarios elegibles de la UE (textGrain). Fuera, la API permite activarla.
+- Es estadística e invisible, y no tiene que ver con los «caracteres ocultos» U+202F.
+- De momento solo investigadores aprobados pueden detectarla, y editar el texto la debilita rápido.
+- No hay señales de que afecte al ranking. Revisión humana y responsabilidad editorial: eso es lo que cuenta, para Google y para la Ley de IA.
+</KeyTakeaways>
+
+Si quieres que tu contenido sea el que los asistentes de IA citan, y no el que sustituyen, ese es nuestro [servicio de visibilidad en buscadores de IA (GEO)](/es/services/ai-search-visibility). [Cuéntame sobre tu web aquí](/start) y te diré en qué punto estás.
+
+## Sigue leyendo
+- [¿La marca de agua de Claude afecta a tu posicionamiento?](/es/blog/claude-ai-watermark-google-rankings)
+- [Cómo verificar el contenido de IA antes de publicarlo](/es/blog/google-fact-check-ai-content-before-publishing)
+- [Visibilidad en la IA (GEO): cómo aparecer en ChatGPT](/es/blog/ai-search-visibility-geo)
+- [SEO vs GEO vs AEO: ¿cuál es la diferencia?](/es/blog/seo-vs-geo-vs-aeo-ai-visibility)
