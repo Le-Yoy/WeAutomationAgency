@@ -13,11 +13,13 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://weautomationagency.com'),
-  title: 'WeAutomationAgency — AI Automation for Business Growth',
+  title: 'AI Automation Services & Agency | WeAutomationAgency',
   description:
-    'We build AI chatbots, automated lead generation, intelligent call centers, and multimedia solutions that drive revenue for your business.',
+    'AI automation services for businesses: WhatsApp and website chatbots, AI voice agents, automated lead generation and email. EN, FR, ES. Free demo.',
   keywords: [
-    'AI automation',
+    'AI automation services',
+    'AI automation agency',
+    'AI automation company',
     'chatbot',
     'lead generation',
     'call center',
@@ -43,8 +45,8 @@ export const metadata: Metadata = {
     google: 'google36103d0fc821d9cf',
   },
   openGraph: {
-    title: 'WeAutomationAgency — AI Automation for Business Growth',
-    description: 'Transform your business with AI automation solutions',
+    title: 'AI Automation Services & Agency | WeAutomationAgency',
+    description: 'AI automation services: chatbots, AI voice agents, lead generation and email automation.',
     url: 'https://weautomationagency.com',
     siteName: 'WeAutomationAgency',
     type: 'website',
@@ -60,8 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WeAutomationAgency — AI Automation for Business Growth',
-    description: 'AI automation solutions for business growth',
+    title: 'AI Automation Services & Agency | WeAutomationAgency',
+    description: 'AI automation services: chatbots, AI voice agents, lead generation and email automation.',
     images: ['/opengraph-image.png'],
   },
   robots: { index: true, follow: true },

@@ -34,7 +34,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
       ],
     },
     hero: {
-      line1: 'Transform Your', line2: 'Business with AI',
+      line1: 'AI Automation', line2: 'Services for Business',
       rotating: ['Automation Solutions', 'Leads Generation', 'Chat Bot', 'Call Center'],
       description: 'We build custom AI automation for businesses: AI chatbots for your website and WhatsApp, AI voice agents that answer your calls, automated lead generation and email automation. In English, French and Spanish. Tell us what you want to automate and get a free demo.',
       cta: 'get demo',

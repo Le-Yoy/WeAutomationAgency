@@ -1279,3 +1279,4 @@ wip
 - `npm run weekly-report` (`-- --dry` to print): Monday email via Resend to LEAD_NOTIFY_EMAIL (same workflow, Mondays; manual run with "report" checked).
 - Link mission: `npm run links -- load <json>` (queue in Redis `dash:links`, source content/knowledge/link-queue.json in the workspace); Done/Skip buttons on /dashboard POST to /dashboard/links.
 - GitHub secrets set with `bash scripts/push-secrets.sh` (reads .gsc-key.json + .env.local, prints nothing).
+- Keyword choice: `npm run score -- "<topic>" us,uk,fr,es --also "..."` (scripts/score.mjs, winnability score + verdict per market; rules in BLOG-BIBLE "Choosing keywords"). `npm run dfs` for raw DataForSEO calls, `npm run gsc:cached` for GSC from the Redis snapshot.

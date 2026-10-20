@@ -16,7 +16,8 @@
     "links": "node scripts/links.mjs",
     "links:internal": "node scripts/internal-links.mjs",
     "dfs": "NODE_USE_ENV_PROXY=1 node scripts/dfs.mjs",
-    "gsc:cached": "NODE_USE_ENV_PROXY=1 node scripts/gsc-cached.mjs"
+    "gsc:cached": "NODE_USE_ENV_PROXY=1 node scripts/gsc-cached.mjs",
+    "score": "NODE_USE_ENV_PROXY=1 node scripts/score.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

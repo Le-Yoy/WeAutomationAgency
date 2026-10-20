@@ -191,3 +191,10 @@ Sources: OuterBox / First Page Sage CTR table (2026), Ahrefs AI Overviews CTR st
 
 ### Keywords per language (added 2026-10-19)
 Each locale targets what people **in that market** actually type, checked with `npm run dfs -- volume fr|es ...`, not a translation of the EN keyword. Example: in France "lead generation" (English, 1,000/mo) beats "génération de leads IA" (0); in Spain "captación de leads" (210) and "captación de clientes" (170) beat "generación de leads con IA" (0). Put the best local term in the FR/ES seoTitle, description and first H2.
+
+### Choosing keywords: the winnability score (added 2026-10-20)
+Before writing or retargeting, run `npm run score -- "<topic>" us,uk,fr,es[,mx] --also "<local terms, English terms>"` (≈ $0.25 per market). Per market it lists candidates with volume, KD, CPC, intent, AI Overview, our GSC position, weak results in the top 10 and the strength of the top 10, then a score and a verdict:
+- **ATTACK NOW**: build/retarget the page this week.
+- **INVEST**: worth it but needs time or links — at most 1 of the 2 weekly articles, preferably where GSC already shows us (position ≤ 30).
+- **LATER**: skip for now (too strong, wrong intent, or no buyers). Navigational/tool-seeking keywords (people looking for a product, a course or "free bots") are LATER even with volume.
+Pick the best keyword **per market**, not one translated keyword. Note: the GSC position in the tool is global (not per country). Re-check results at 28 and 90 days (BLOG-BIBLE §12 CTR rule): rising → strengthen; stuck beyond 30 after 90 days → set aside or rewrite to match intent.
