@@ -204,3 +204,8 @@ The /es pages (hreflang `es`, not `es-ES`) serve Spain AND Latin America. Score 
 
 ### Other money opportunities (added 2026-10-20)
 A keyword with the "wrong" intent for our agency is not thrown away. Example: "ai automation agency" (US 4,400/mo) is mostly people who want to START an agency (courses, "how to start", Liam Ottley). Log each such cluster as an opportunity: who searches it, volume/KD, what we could sell (course, coaching/consultation, Make/n8n templates, YouTube video → channel @weautomationagency), and the page/video it would need. Don't build products or pages for these without Houssam's go: list them in the weekly report.
+
+### Score cost control (≈ $0.25 per market with --serp 4)
+1. Shortlist pass: every candidate with `us,fr,es --serp 2` (≈ $0.4/topic).
+2. Finalists only (the 2 picks): `us,uk,fr,es,mx --serp 4`.
+Stay under $3 per weekly run (≈ $12/month on the $50 DataForSEO balance → top up when the balance drops under $10; say so in the report).
