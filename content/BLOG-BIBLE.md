@@ -198,3 +198,9 @@ Before writing or retargeting, run `npm run score -- "<topic>" us,uk,fr,es[,mx] 
 - **INVEST**: worth it but needs time or links — at most 1 of the 2 weekly articles, preferably where GSC already shows us (position ≤ 30).
 - **LATER**: skip for now (too strong, wrong intent, or no buyers). Navigational/tool-seeking keywords (people looking for a product, a course or "free bots") are LATER even with volume.
 Pick the best keyword **per market**, not one translated keyword. Note: the GSC position in the tool is global (not per country). Re-check results at 28 and 90 days (BLOG-BIBLE §12 CTR rule): rising → strengthen; stuck beyond 30 after 90 days → set aside or rewrite to match intent.
+
+### Spanish = all Spanish-speaking markets (added 2026-10-20)
+The /es pages (hreflang `es`, not `es-ES`) serve Spain AND Latin America. Score `es,mx` (add `ar,co` when relevant). Write neutral Spanish (no "vosotros", "ordenador", Spain-only slang); when a law/price/example is country-specific, give Spain AND Mexico (e.g. LSSI/AEPD for Spain, LFPDPPP for Mexico; prices in EUR and USD/MXN). Use the term each market types (e.g. "bot whatsapp" in Mexico).
+
+### Other money opportunities (added 2026-10-20)
+A keyword with the "wrong" intent for our agency is not thrown away. Example: "ai automation agency" (US 4,400/mo) is mostly people who want to START an agency (courses, "how to start", Liam Ottley). Log each such cluster as an opportunity: who searches it, volume/KD, what we could sell (course, coaching/consultation, Make/n8n templates, YouTube video → channel @weautomationagency), and the page/video it would need. Don't build products or pages for these without Houssam's go: list them in the weekly report.
