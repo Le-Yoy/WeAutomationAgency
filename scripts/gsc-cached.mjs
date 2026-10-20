@@ -26,6 +26,8 @@ if (process.argv.includes('--json')) {
   const t = gsc.totals;
   console.log(`Snapshot ${snap.generatedAt} · GSC ${gsc.range.start} → ${gsc.range.end}`);
   console.log(`28d: ${t.clicks} clicks, ${t.impressions} impressions, CTR ${(t.ctr * 100).toFixed(1)}%, pos ${t.position.toFixed(1)}\n`);
+  console.log('Keyword targets (position in their country):');
+  console.table((gsc.targets || []).map((t) => ({ keyword: t.keyword, market: t.market, page: t.page, days: t.days, first: t.firstPosition, now: t.position, impr: t.impressions, trend: t.trend, checkpoint: t.checkpoint })));
   console.log('Pages:');
   console.table(gsc.pages.map((p) => ({ url: p.url, impr: p.impressions, clicks: p.clicks, pos: +p.position.toFixed(1), status: p.status })));
   console.log('Query → page (by impressions):');

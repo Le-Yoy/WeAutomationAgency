@@ -31,7 +31,7 @@ async function redis(commands) {
   return (await res.json()).map((r) => r.result);
 }
 
-// ---------- CTR benchmark (BLOG-BIBLE §12: market CTR by position, we target 1.4x) ----------
+// ---------- CTR benchmark (content/agent/5-publish.md: market CTR by position, we target 1.4x) ----------
 function marketCtr(pos) {
   if (pos <= 1.5) return 0.28;
   if (pos <= 2.5) return 0.15;
@@ -77,8 +77,36 @@ async function searchConsole() {
     // For the weekly content engine: which query lands on which page (gaps, page-2 queries).
     q({ startDate: start, endDate: end, dimensions: ['query', 'page'], rowLimit: 300 }),
   ]);
+  // Keyword targets (content/agent/memory/keyword-targets.json): position per target IN ITS COUNTRY.
+  const COUNTRY = { us: 'usa', uk: 'gbr', ca: 'can', au: 'aus', fr: 'fra', be: 'bel', ch: 'che', ma: 'mar', es: 'esp', mx: 'mex', ar: 'arg', co: 'col' };
+  const targetsFile = 'content/agent/memory/keyword-targets.json';
+  const targetList = existsSync(targetsFile) ? JSON.parse(readFileSync(targetsFile, 'utf8')) : [];
+  const targets = [];
+  for (const t of targetList) {
+    const rows = await q({
+      startDate: start, endDate: end, dimensions: ['page'],
+      dimensionFilterGroups: [{ filters: [
+        { dimension: 'query', operator: 'equals', expression: t.keyword },
+        ...(COUNTRY[t.market] ? [{ dimension: 'country', operator: 'equals', expression: COUNTRY[t.market] }] : []),
+      ] }],
+    });
+    const own = rows.find((r) => (r.keys[0].replace(SITE, '') || '/') === t.page);
+    const best = own || rows.sort((a, b) => a.position - b.position)[0];
+    const days = Math.floor((Date.now() - new Date(t.start).getTime()) / 864e5);
+    targets.push({
+      id: t.id, keyword: t.keyword, market: t.market, page: t.page, start: t.start, days, status: t.status,
+      startPosition: t.startPosition,
+      position: best ? Math.round(best.position * 10) / 10 : null,
+      impressions: rows.reduce((n, r) => n + r.impressions, 0),
+      clicks: rows.reduce((n, r) => n + r.clicks, 0),
+      rankingPage: best ? best.keys[0].replace(SITE, '') || '/' : null,
+      checkpoint: days >= 90 ? 'd90' : days >= 28 ? 'd28' : null,
+    });
+  }
+
   return {
     range: { start, end },
+    targets,
     totals: total(cur),
     previous: total(prev),
     daily: daily.map((r) => ({ date: r.keys[0], clicks: r.clicks, impressions: r.impressions, position: r.position })),
@@ -175,6 +203,20 @@ const snapshot = {
   health: await safe('health', health),
 };
 snapshot.errors = errors;
+
+// First position ever seen per target (baseline when startPosition is unknown).
+if (snapshot.gsc?.targets?.length) {
+  const seen = snapshot.gsc.targets.filter((t) => t.position !== null);
+  if (seen.length) await redis(seen.map((t) => ['HSETNX', 'dash:target-first', t.id, String(t.position)]));
+  const [flat] = await redis([['HGETALL', 'dash:target-first']]);
+  const first = {};
+  for (let i = 0; flat && i < flat.length; i += 2) first[flat[i]] = Number(flat[i + 1]);
+  for (const t of snapshot.gsc.targets) {
+    t.firstPosition = t.startPosition ?? first[t.id] ?? null;
+    t.trend = t.position === null || t.firstPosition === null ? null
+      : t.position < t.firstPosition - 2 ? 'rising' : t.position > t.firstPosition + 2 ? 'falling' : 'flat';
+  }
+}
 
 const today = day(0);
 const summary = {

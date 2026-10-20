@@ -5,7 +5,7 @@
 //   npm run links:internal -- --new <slug>     focus: links a NEW post must get / give
 //   npm run links:internal -- --json           machine-readable output
 //
-// Rules (keep in sync with BLOG-BIBLE):
+// Rules (keep in sync with content/agent/4-links.md):
 //  - relevance(A,B) = 0.55 * TF-IDF cosine of the EN text + 0.30 * keyword overlap + 0.15 * same category
 //  - only link when relevance >= MIN_SCORE (no off-topic links just to "balance")
 //  - every post: 3–6 links out to other posts, >= 3 links in, and >= 1 link to its service page

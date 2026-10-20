@@ -101,6 +101,8 @@ Goal: rank on Google **and** get cited by AI assistants (ChatGPT, Perplexity, Ge
 - `middleware.ts` logs every AI bot hit (ChatGPT-User, GPTBot, PerplexityBot, ClaudeBot, Bingbot, Googlebot…) to Vercel runtime logs and, when `KV_REST_API_URL`/`KV_REST_API_TOKEN` are set (Upstash Redis via Vercel Marketplace), to Redis (`ai-bots:YYYY-MM-DD`, kept 400 days). `npm run ai-bots [days]` prints the report. "-User" bots = a live fetch for a real person's question. Keep bots out of the homepage locale redirect. When adding middleware logic, keep the matcher excluding `_next`, `api`, and static files.
 - ChatGPT's in-answer links carry no referrer/UTM, so clicks show as **direct** traffic and 54% land on the homepage (Tomek Rudzki/Peec AI, Oct 2026). So the homepage hero must say plainly what we do, for whom, and the next step; and the lead form's "Where did you find us?" keeps a "ChatGPT / AI" option (`lib/content/start.ts`), our only real click attribution.
 
+**Content engine:** all blog rules + the weekly agent's process live in `content/agent/` (start at `RUNBOOK.md`; `content/BLOG-BIBLE.md` is now a pointer). Keyword targets: `content/agent/memory/keyword-targets.json` (tracked per country by the daily snapshot → dashboard 🎯 + Monday email). Opportunities: Notion database 💰 Opportunities (Intelligence Hub).
+
 **After deploy:** run `npm run indexnow` (submits every sitemap URL to Bing/IndexNow; key file in `public/`), then GSC → URL inspection → "Request indexing" for changed URLs. Bing Webmaster Tools is set up (imported from GSC, 2026-10-14). Monthly: GSC review (queries at positions 8–20 = priority) + AI visibility check (fixed list of customer questions in ChatGPT/Perplexity/Gemini/AI Mode).
 
 ---
@@ -1279,4 +1281,4 @@ wip
 - `npm run weekly-report` (`-- --dry` to print): Monday email via Resend to LEAD_NOTIFY_EMAIL (same workflow, Mondays; manual run with "report" checked).
 - Link mission: `npm run links -- load <json>` (queue in Redis `dash:links`, source content/knowledge/link-queue.json in the workspace); Done/Skip buttons on /dashboard POST to /dashboard/links.
 - GitHub secrets set with `bash scripts/push-secrets.sh` (reads .gsc-key.json + .env.local, prints nothing).
-- Keyword choice: `npm run score -- "<topic>" us,uk,fr,es --also "..."` (scripts/score.mjs, winnability score + verdict per market; rules in BLOG-BIBLE "Choosing keywords"). `npm run dfs` for raw DataForSEO calls, `npm run gsc:cached` for GSC from the Redis snapshot.
+- Keyword choice: `npm run score -- "<topic>" us,uk,fr,es --also "..."` (scripts/score.mjs, winnability score + verdict per market; rules in content/agent/1-keywords.md). `npm run dfs` for raw DataForSEO calls, `npm run gsc:cached` for GSC from the Redis snapshot.

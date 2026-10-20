@@ -21,6 +21,11 @@ type Snapshot = {
     daily: { date: string; clicks: number; impressions: number; position: number }[];
     pages: Page[];
     queries: (Row & { query: string })[];
+    targets?: {
+      id: string; keyword: string; market: string; page: string; days: number; status: string;
+      firstPosition: number | null; position: number | null; impressions: number; clicks: number;
+      rankingPage: string | null; checkpoint: 'd28' | 'd90' | null; trend: 'rising' | 'falling' | 'flat' | null;
+    }[];
   };
   bing: null | { totals: { clicks: number; impressions: number }; daily: { date: string; clicks: number; impressions: number }[] };
   aiBots: null | {
@@ -217,6 +222,45 @@ export default async function Dashboard() {
           </ul>
         )}
       </Section>
+
+      {gsc?.targets && gsc.targets.length > 0 && (
+        <Section
+          title="🎯 Keyword targets"
+          hint="Every keyword we attack, with its position in its own country (last 28 days). Decisions at 28 and 90 days: rising → strengthen, stuck beyond 30 at 90 days → rewrite or set aside."
+        >
+          <div className="overflow-x-auto rounded-2xl border border-darker-grey">
+            <table className="w-full min-w-[720px] text-sm">
+              <thead className="bg-[#111] text-left text-grey">
+                <tr>
+                  <th className="p-3">Keyword</th>
+                  <th className="p-3">Country</th>
+                  <th className="p-3">Page</th>
+                  <th className="p-3 text-right">Days</th>
+                  <th className="p-3 text-right">First → now</th>
+                  <th className="p-3 text-right">Impr.</th>
+                  <th className="p-3">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gsc.targets.map((t) => (
+                  <tr key={t.id} className="border-t border-darker-grey">
+                    <td className="p-3">{t.keyword}</td>
+                    <td className="p-3 uppercase">{t.market}</td>
+                    <td className="max-w-[220px] truncate p-3" title={t.page}>{t.page}</td>
+                    <td className="p-3 text-right">{t.days}</td>
+                    <td className="p-3 text-right">{t.firstPosition ?? '–'} → {t.position ?? 'not ranking yet'}</td>
+                    <td className="p-3 text-right">{num(t.impressions)}</td>
+                    <td className={`p-3 ${t.trend === 'rising' ? 'text-emerald-400' : t.trend === 'falling' ? 'text-accent' : 'text-grey'}`}>
+                      {t.trend === 'rising' ? '▲ rising' : t.trend === 'falling' ? '▼ falling' : t.trend === 'flat' ? '= flat' : '⏳ waiting'}
+                      {t.checkpoint === 'd90' ? ' · 90-day decision' : t.checkpoint === 'd28' ? ' · 28-day check' : ''}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+      )}
 
       {gsc && (
         <Section title="Google: last 90 days" hint="Impressions per day (red) and clicks per day (white). Hover a bar for the number.">

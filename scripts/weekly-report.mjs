@@ -47,6 +47,10 @@ if (s.errors?.length) todo.push(`Data errors to check: ${s.errors.join(' · ')}`
 const live = (s.aiBots?.byBot || []).filter((b) => b.group === 'live');
 const aiTotal = (s.aiBots?.byBot || []).filter((b) => b.group !== 'search').reduce((a, b) => a + b.visits, 0);
 
+const targets = s.gsc?.targets || [];
+const targetLine = (t) => `${t.keyword} (${t.market.toUpperCase()}): ${t.firstPosition ?? '–'} → ${t.position ?? 'not ranking yet'}${t.trend ? ` · ${t.trend}` : ''}${t.checkpoint ? ` · ${t.checkpoint === 'd90' ? '90-day decision' : '28-day check'}` : ''}`;
+for (const t of targets.filter((t) => t.checkpoint)) todo.push(`Keyword target at checkpoint: <b>${targetLine(t)}</b> (${t.page})`);
+
 const row = (label, value) => `<tr><td style="padding:6px 12px 6px 0;color:#555">${label}</td><td style="padding:6px 0"><b>${value}</b></td></tr>`;
 const html = `
 <div style="font-family:-apple-system,Segoe UI,Arial,sans-serif;max-width:600px;color:#111">
@@ -67,6 +71,8 @@ const html = `
     ${s.bing ? row('Bing impressions (28 days)', num(s.bing.totals.impressions)) : ''}
     ${s.health ? row('Pages working', `${s.health.pages - s.health.broken.length} / ${s.health.pages}`) : ''}
   </table>
+
+  ${targets.length ? `<h3>Keyword targets</h3><ul>${targets.map((t) => `<li style="margin-bottom:4px">${targetLine(t)}</li>`).join('')}</ul>` : ''}
 
   <h3>To do this week</h3>
   ${todo.length ? `<ol>${todo.map((t) => `<li style="margin-bottom:6px">${t}</li>`).join('')}</ol>` : '<p>Nothing urgent. Keep publishing and doing the daily link.</p>'}
