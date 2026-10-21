@@ -1,7 +1,50 @@
 {
   "note": "Mirror of the Notion 💰 Opportunities database for the dashboard. The agent rewrites it at step 7 (all rows, current status). Source of truth = Notion.",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "items": [
-    { "name": "People who want to start an AI automation agency", "status": "🆕 New", "volume": 4400, "kd": 19, "markets": ["US", "UK"], "sell": ["Course", "Coaching/Consultation", "Templates", "YouTube video"], "next": "Validate with 1 YouTube video + a waitlist / book-a-call page before building any course" }
+    {
+      "name": "People who want to start an AI automation agency",
+      "status": "🆕 New",
+      "volume": 4400,
+      "kd": 19,
+      "markets": [
+        "US",
+        "UK"
+      ],
+      "sell": [
+        "Course",
+        "Coaching/Consultation",
+        "Templates",
+        "YouTube video"
+      ],
+      "next": "Validate with 1 YouTube video + a waitlist / book-a-call page before building any course"
+    },
+    {
+      "name": "Fix / rescue websites built with AI",
+      "status": "🆕 New",
+      "markets": [
+        "US",
+        "UK",
+        "FR"
+      ],
+      "sell": [
+        "Service page",
+        "YouTube video"
+      ],
+      "next": "Score 'fix ai generated website' type keywords before deciding"
+    },
+    {
+      "name": "Leads: companies publicly asking for a GEO expert on LinkedIn",
+      "status": "🆕 New",
+      "markets": [
+        "FR",
+        "US",
+        "UK"
+      ],
+      "sell": [
+        "Service page"
+      ],
+      "next": "Daily 2-min LinkedIn post search (past 24h) → teaser comment + DM"
+    }
   ]
 }

@@ -10,3 +10,4 @@ Next time:
 - First 28-day checkpoints: 2026-11-16/17. Nothing to judge before.
 - Watch overlap chatgpt-watermark vs claude-ai-watermark-google-rankings (GSC query→page).
 - Candidate topics already seen: "n8n" FR (74,000/mo, KD 26 → INVEST, competitor nocodefactory ranks #12 with a basic page; we already have n8n-vs-make), "ai automation services" use-case articles, "geo ia" FR (880, KD 4).
+- From Houssam's LinkedIn round (2026-10-21), consider: (1) a money article on Black Friday automation for e-commerce (WhatsApp order confirmation + seasonal email sequences) published by early November (Black Friday = Nov 27); (2) verify the report that ChatGPT stopped adding UTM tags and, if confirmed, add it to /blog/ai-search-visibility-geo (measurement section) as a real update; (3) Google ads inside AI Mode: add to GEO posts if confirmed by Google.
