@@ -1,0 +1,7 @@
+{
+  "note": "Mirror of the Notion 💰 Opportunities database for the dashboard. The agent rewrites it at step 7 (all rows, current status). Source of truth = Notion.",
+  "updated": "2026-10-20",
+  "items": [
+    { "name": "People who want to start an AI automation agency", "status": "🆕 New", "volume": 4400, "kd": 19, "markets": ["US", "UK"], "sell": ["Course", "Coaching/Consultation", "Templates", "YouTube video"], "next": "Validate with 1 YouTube video + a waitlist / book-a-call page before building any course" }
+  ]
+}

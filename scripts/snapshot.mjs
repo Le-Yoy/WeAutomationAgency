@@ -204,6 +204,24 @@ const snapshot = {
 };
 snapshot.errors = errors;
 
+// Content engine memory (repo files written by the Monday agent / monthly competitor refresh).
+const readJson = (f) => (existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null);
+const comp = readJson('content/agent/memory/competitors.json');
+const ideas = readJson('content/agent/memory/link-ideas.json');
+const opps = readJson('content/agent/memory/opportunities.json');
+snapshot.engine = {
+  lastRun: existsSync('content/agent/memory/last-run.md') ? readFileSync('content/agent/memory/last-run.md', 'utf8').slice(0, 3000) : null,
+  competitors: comp ? {
+    updated: comp.updated,
+    markets: Object.fromEntries(Object.entries(comp.markets || {}).map(([m, d]) => [m, {
+      agencies: (d.agencies || []).slice(0, 5).map((a) => ({ domain: a.domain, keywords: a.keywords, avgPosition: a.avgPosition, strength: a.strength })),
+      directories: (d.directories || []).slice(0, 5).map((x) => x.domain),
+    }])),
+  } : null,
+  linkIdeas: ideas ? Object.fromEntries(Object.entries(ideas).map(([m, d]) => [m, { updated: d.updated, total: d.ideas.length, top: d.ideas.slice(0, 5).map((i) => ({ domain: i.domain, competitors: i.count, rank: i.rank })) }])) : null,
+  opportunities: opps,
+};
+
 // First position ever seen per target (baseline when startPosition is unknown).
 if (snapshot.gsc?.targets?.length) {
   const seen = snapshot.gsc.targets.filter((t) => t.position !== null);

@@ -34,6 +34,15 @@ type Snapshot = {
     daily: { date: string; visits: number }[];
   };
   health: null | { pages: number; broken: { url: string; status: number }[] };
+  engine?: {
+    lastRun: string | null;
+    competitors: null | {
+      updated: string;
+      markets: Record<string, { agencies: { domain: string; keywords: number; avgPosition: number; strength: number | null }[]; directories: string[] }>;
+    };
+    linkIdeas: null | Record<string, { updated: string; total: number; top: { domain: string; competitors: number; rank: number }[] }>;
+    opportunities: null | { updated: string; items: { name: string; status: string; volume?: number; kd?: number; markets?: string[]; sell?: string[]; next?: string }[] };
+  };
 };
 type LinkTarget = { name: string; url: string; type: string; why?: string; steps?: string };
 type Links = {
@@ -153,6 +162,12 @@ export default async function Dashboard() {
           {gsc && ` · Google data ${gsc.range.start} → ${gsc.range.end}`}
         </p>
       </div>
+      <nav className="mt-6 flex flex-wrap gap-2 text-sm">
+        {[['#links', '🔗 Link mission'], ['#targets', '🎯 Targets'], ['#engine', '🧠 This week'], ['#opportunities', '💰 Opportunities'], ['#competitors', '🥊 Competitors'], ['#google', '📈 Google'], ['#ai', '🤖 AI visits']].map(([href, label]) => (
+          <a key={href} href={href} className="rounded-full border border-darker-grey px-3 py-1 text-grey hover:border-accent hover:text-secondary">{label}</a>
+        ))}
+      </nav>
+
       {snap.errors.length > 0 && (
         <p className="mt-4 rounded-xl border border-accent/50 bg-accent/10 p-3 text-sm">⚠️ Some data failed to load: {snap.errors.join(' · ')}</p>
       )}
@@ -225,6 +240,7 @@ export default async function Dashboard() {
 
       {gsc?.targets && gsc.targets.length > 0 && (
         <Section
+          id="targets"
           title="🎯 Keyword targets"
           hint="Every keyword we attack, with its position in its own country (last 28 days). Decisions at 28 and 90 days: rising → strengthen, stuck beyond 30 at 90 days → rewrite or set aside."
         >
@@ -262,8 +278,61 @@ export default async function Dashboard() {
         </Section>
       )}
 
+
+      {snap.engine?.lastRun && (
+        <Section id="engine" title="🧠 This week: content engine" hint="What the Monday agent did (content/agent/memory/last-run.md). Full report in Notion → Intelligence Hub.">
+          <pre className="whitespace-pre-wrap rounded-2xl border border-darker-grey bg-[#0d0d0d] p-5 font-sans text-sm leading-relaxed text-grey">{snap.engine.lastRun}</pre>
+        </Section>
+      )}
+
+      {snap.engine?.opportunities && (
+        <Section id="opportunities" title="💰 Opportunities" hint="Other revenue found by the agent. You decide in Notion (💰 Opportunities): ✅ Go or ❌ No. Nothing is built without ✅ Go.">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {snap.engine.opportunities.items.map((o) => (
+              <div key={o.name} className="rounded-2xl border border-darker-grey bg-[#0d0d0d] p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="font-semibold">{o.name}</h3>
+                  <span className="shrink-0 rounded-full border border-darker-grey px-2 py-0.5 text-xs">{o.status}</span>
+                </div>
+                <p className="mt-2 text-sm text-grey">
+                  {o.volume ? `${num(o.volume)} searches/mo` : ''}{o.kd != null ? ` · KD ${o.kd}` : ''}{o.markets?.length ? ` · ${o.markets.join(', ')}` : ''}
+                </p>
+                {o.sell?.length ? <p className="mt-1 text-sm">Sell: {o.sell.join(', ')}</p> : null}
+                {o.next && <p className="mt-2 text-sm text-grey">Next: {o.next}</p>}
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {snap.engine?.competitors && (
+        <Section id="competitors" title="🥊 Competitors" hint={`Top 5 agencies per market on our keywords (refreshed monthly, last ${snap.engine.competitors.updated}). Strength 0–100 = their authority. Link ideas = sites linking to ≥2 of them but not to us (vetted before becoming missions).`}>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {Object.entries(snap.engine.competitors.markets).map(([m, d]) => (
+              <div key={m} className="rounded-2xl border border-darker-grey bg-[#0d0d0d] p-5">
+                <h3 className="font-semibold uppercase">{m}</h3>
+                <ul className="mt-3 space-y-1 text-sm">
+                  {d.agencies.map((a) => (
+                    <li key={a.domain} className="flex justify-between gap-3">
+                      <a href={`https://${a.domain}`} target="_blank" rel="noopener noreferrer" className="truncate hover:text-accent">{a.domain}</a>
+                      <span className="shrink-0 text-grey">strength {a.strength ?? '–'}</span>
+                    </li>
+                  ))}
+                </ul>
+                {d.directories.length > 0 && <p className="mt-3 text-xs text-grey">Directories ranking: {d.directories.join(', ')}</p>}
+                {snap.engine?.linkIdeas?.[m] && (
+                  <p className="mt-2 text-xs text-grey">
+                    💡 {snap.engine.linkIdeas[m].total} link ideas · top: {snap.engine.linkIdeas[m].top.slice(0, 3).map((i) => `${i.domain} (${i.competitors})`).join(', ')}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
       {gsc && (
-        <Section title="Google: last 90 days" hint="Impressions per day (red) and clicks per day (white). Hover a bar for the number.">
+        <Section id="google" title="Google: last 90 days" hint="Impressions per day (red) and clicks per day (white). Hover a bar for the number.">
           <div className="rounded-2xl border border-darker-grey bg-[#0d0d0d] p-5">
             <Bars data={gsc.daily.map((d) => ({ label: d.date, value: d.impressions }))} />
             <div className="mt-3" />
@@ -340,7 +409,7 @@ export default async function Dashboard() {
       )}
 
       {aiBots && (
-        <Section title="🤖 AI visits (30 days)" hint="Logged on every page view by an AI bot. 'Live answer' = someone asked that AI a question and it read our page to answer.">
+        <Section id="ai" title="🤖 AI visits (30 days)" hint="Logged on every page view by an AI bot. 'Live answer' = someone asked that AI a question and it read our page to answer.">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <div className="rounded-2xl border border-darker-grey bg-[#0d0d0d] p-5">
               <h3 className="font-semibold">Who visited</h3>

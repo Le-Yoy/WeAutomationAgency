@@ -51,9 +51,9 @@ Read, in this order:
 
 ## Step 7 — Update memory (never skip)
 - [ ] `keyword-targets.json`: add the 2 new targets (+ retargeted pages) with start position from GSC (null if not ranking), volume, KD, verdict, dates. Update statuses of followed-up targets.
-- [ ] `last-run.md`: overwrite with this run's summary + "next time" notes (max 25 lines).
+- [ ] `last-run.md`: overwrite with this run's summary + "next time" notes (max 25 lines). First lines: date, the Notion report link, new article URLs, DataForSEO balance. (It is shown on the dashboard.)
 - [ ] `decisions.md`: only Houssam adds decisions (via chat). Don't edit it.
-- [ ] Notion 💰 Opportunities database: add new opportunities (no duplicates) → `7-opportunities.md`.
+- [ ] Notion 💰 Opportunities database: add new opportunities (no duplicates) → `7-opportunities.md`. Then rewrite `memory/opportunities.json` with all rows and their current status (mirror for the dashboard).
 - [ ] Link missions (monthly, after a competitor refresh): vet the best `link-ideas.json` entries with the link gate and add max 5 missions → `8-competitors-backlinks.md`.
 - [ ] Rows Houssam set to **✅ Go**: do the first playbook step you can do alone (e.g. write the YouTube brief inside the row, draft the waitlist page), set 🔨 In progress, and write in "Next step" what needs Houssam (recording, price, approval).
 - [ ] Commit these memory files with the content (same push, or a second small commit).
@@ -68,7 +68,7 @@ Read, in this order:
 - Build/seo:check fails and you can't fix it → don't push; report what blocks.
 - Budget: DataForSEO max $3/run. If the balance is under $10, say "top up DataForSEO" at the top of the report.
 
-### Map of files
+### Map of files (the whole system: `SYSTEM-MAP.md`)
 | File | What it decides |
 |---|---|
 | `1-keywords.md` | where to attack: sources of gaps, winnability tool, verdicts, markets, cannibalization, follow-up rules |

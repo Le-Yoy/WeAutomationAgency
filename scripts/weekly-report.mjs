@@ -74,6 +74,9 @@ const html = `
 
   ${targets.length ? `<h3>Keyword targets</h3><ul>${targets.map((t) => `<li style="margin-bottom:4px">${targetLine(t)}</li>`).join('')}</ul>` : ''}
 
+  ${s.engine?.lastRun ? `<h3>Content engine this week</h3><pre style="white-space:pre-wrap;font-family:inherit;font-size:13px;color:#444">${s.engine.lastRun.split('\n').slice(0, 12).join('\n').replace(/</g, '&lt;')}</pre>` : ''}
+  ${(s.engine?.opportunities?.items || []).filter((o) => /New|discuss/.test(o.status)).length ? `<h3>💰 Opportunities waiting for your decision</h3><ul>${s.engine.opportunities.items.filter((o) => /New|discuss/.test(o.status)).map((o) => `<li>${o.name}${o.volume ? ` (${o.volume}/mo)` : ''}: ${o.next || ''}</li>`).join('')}</ul><p style="color:#666">Decide in Notion → 💰 Opportunities (✅ Go / ❌ No).</p>` : ''}
+
   <h3>To do this week</h3>
   ${todo.length ? `<ol>${todo.map((t) => `<li style="margin-bottom:6px">${t}</li>`).join('')}</ol>` : '<p>Nothing urgent. Keep publishing and doing the daily link.</p>'}
 
