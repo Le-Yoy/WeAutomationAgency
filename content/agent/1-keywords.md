@@ -26,7 +26,7 @@ Put the follow-up actions in the report (section "Targets follow-up").
    - the query has **no dedicated page** (a new article candidate), or
    - the ranking page is the wrong one (e.g. /fr homepage ranking for an English query → the right page is missing).
 2. **Notion briefing:** "Blog ideas" (each has market + query + service) and fresh news (first-mover: no competition yet, demand arriving).
-3. **Competitor gaps:** `npm run dfs -- gap <market> <domain> 100` → keywords a competitor ranks top 20 for and we don't. Rotate 1–2 per week: nocodefactory.fr, noxcod.com, drakkar.io (+ any competitor named in the briefing).
+3. **Competitor gaps:** `npm run dfs -- gap <market> <domain> 100` → keywords a competitor ranks top 20 for and we don't. Take the next 2 agencies from `memory/competitors.json` (rotation rule in `8-competitors-backlinks.md`), + any competitor named in the briefing.
 4. **Our services** × industries/use cases (money topics): AI chatbots (website, WhatsApp), AI voice agents/call center, lead generation, email automation, GEO/AI search visibility, Make/n8n automation. E.g. "whatsapp order confirmation shopify", "ai voice agent for dental clinic".
 5. **Ideas expansion:** `npm run dfs -- ideas <market> "<seed>" 50` for related queries with volume/KD/intent.
 

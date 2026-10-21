@@ -10,5 +10,6 @@ Create a Notion page under the Intelligence Hub (parent page id `3c1e8899-4627-8
 5. **Internal links** — count added + list (from → to).
 6. **💰 Other money opportunities** — new rows added to the Notion database this week (name, proof, what we could sell). "None new" if none.
 7. **Submit in Google Search Console** — one plain list, one full URL per line (https://weautomationagency.com/...), new pages first, then the most important updates. Max ~10 first, the rest after.
+7b. **Competitors & links** — competitors checked for gaps this week; if a monthly refresh ran: changes in the top 5 per market + link missions added (name, why).
 8. **Sitemap** — new URLs present in sitemap.xml: yes/no.
 9. **Unsure / skipped / next time** — anything Houssam should know or decide.

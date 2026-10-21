@@ -13,11 +13,12 @@
     "gsc": "node scripts/gsc.mjs",
     "snapshot": "node scripts/snapshot.mjs",
     "weekly-report": "node scripts/weekly-report.mjs",
-    "links": "node scripts/links.mjs",
+    "links": "NODE_USE_ENV_PROXY=1 node scripts/links.mjs",
     "links:internal": "node scripts/internal-links.mjs",
     "dfs": "NODE_USE_ENV_PROXY=1 node scripts/dfs.mjs",
     "gsc:cached": "NODE_USE_ENV_PROXY=1 node scripts/gsc-cached.mjs",
-    "score": "NODE_USE_ENV_PROXY=1 node scripts/score.mjs"
+    "score": "NODE_USE_ENV_PROXY=1 node scripts/score.mjs",
+    "competitors": "NODE_USE_ENV_PROXY=1 node scripts/competitors.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

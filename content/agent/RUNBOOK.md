@@ -22,12 +22,13 @@ Read, in this order:
 - [ ] `content/real-experiences.md` — the only experiences you may use.
 - [ ] The newest Notion page "Weekly Briefing — YYYY-MM-DD" (Intelligence Hub): opportunities, blog ideas, **Facts that changed**.
 - [ ] `npm run gsc:cached -- --json` — this morning's Search Console snapshot (pages, queries, query→page, **targets** with per-country positions).
+- [ ] `content/agent/memory/competitors.json` → if `updated` is older than 28 days, run the monthly competitor refresh + link ideas → read `8-competitors-backlinks.md` §Refresh.
 
 ## Step 1 — Follow up on existing targets FIRST → read `1-keywords.md` §A
 - [ ] For each target in `keyword-targets.json` at a checkpoint (28 / 90 days), apply the double-down / set-aside rule. Strengthening a page that is rising beats writing a new one.
 
 ## Step 2 — Choose this week's 2 keywords → read `1-keywords.md` §B–§F
-- [ ] Shortlist 4–6 topics from: briefing, GSC gaps, competitor gaps, our services.
+- [ ] Shortlist 4–6 topics from: briefing, GSC gaps, competitor gaps (next 2 agencies from `competitors.json`, see `8-competitors-backlinks.md`), our services.
 - [ ] Score every shortlisted topic with the winnability tool (cheap pass), then the 2 finalists in full.
 - [ ] Check cannibalization (no second page for a keyword we already cover).
 - [ ] Pick: **1 ATTACK NOW** (money article preferred) + **1 ATTACK NOW or INVEST**. Best keyword **per market**.
@@ -53,6 +54,7 @@ Read, in this order:
 - [ ] `last-run.md`: overwrite with this run's summary + "next time" notes (max 25 lines).
 - [ ] `decisions.md`: only Houssam adds decisions (via chat). Don't edit it.
 - [ ] Notion 💰 Opportunities database: add new opportunities (no duplicates) → `7-opportunities.md`.
+- [ ] Link missions (monthly, after a competitor refresh): vet the best `link-ideas.json` entries with the link gate and add max 5 missions → `8-competitors-backlinks.md`.
 - [ ] Rows Houssam set to **✅ Go**: do the first playbook step you can do alone (e.g. write the YouTube brief inside the row, draft the waitlist page), set 🔨 In progress, and write in "Next step" what needs Houssam (recording, price, approval).
 - [ ] Commit these memory files with the content (same push, or a second small commit).
 
@@ -76,4 +78,5 @@ Read, in this order:
 | `5-publish.md` | technical SEO checklist, pre-publish gate, benchmarks, build/deploy/index |
 | `6-report.md` | report template |
 | `7-opportunities.md` | other revenue: how to log, Notion database, playbooks |
+| `8-competitors-backlinks.md` | who our competitors are, monthly refresh, gaps rotation, link ideas → link gate → dashboard missions |
 | `memory/` | decisions, last run, keyword targets |

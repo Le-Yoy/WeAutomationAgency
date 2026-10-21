@@ -1,0 +1,1289 @@
+{
+  "markets": {
+    "us": {
+      "updated": "2026-10-21",
+      "keywordsUsed": 16,
+      "agencies": [
+        {
+          "domain": "automaly.io",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 4,
+          "visibility": 1.5,
+          "presence": 34.2,
+          "title": "AI &amp; Automation Consultants | Five ROI Opportunities, Guaranteed",
+          "strength": 21,
+          "referringDomains": 229
+        },
+        {
+          "domain": "theaiautomationagency.ai",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 15,
+          "visibility": 0.8,
+          "presence": 25,
+          "title": "The Ai Automation Agency",
+          "strength": 28,
+          "referringDomains": 82
+        },
+        {
+          "domain": "appinventiv.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 1,
+          "visibility": 1,
+          "presence": 19.8,
+          "title": "Appinventiv | Digital Product Engineering &amp; Consulting Company",
+          "strength": 58,
+          "referringDomains": 12419
+        },
+        {
+          "domain": "percepture.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 1,
+          "visibility": 1,
+          "presence": 19.8,
+          "title": "Global Digital Marketing &amp; PR Agency | Percepture",
+          "strength": 40,
+          "referringDomains": 2496
+        },
+        {
+          "domain": "leewayhertz.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 2,
+          "visibility": 0.9,
+          "presence": 18.6,
+          "title": "AI Development Company | LeewayHertz",
+          "strength": 51,
+          "referringDomains": 6991
+        },
+        {
+          "domain": "greenbananaseo.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 2,
+          "visibility": 0.9,
+          "presence": 18.6,
+          "title": "GreenBananaSEO — No Monkey Business, Just Results - A Boston Based Digital Advertising and SEO Agency",
+          "strength": 49,
+          "referringDomains": 3443
+        },
+        {
+          "domain": "sovyn.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 21,
+          "visibility": 0.2,
+          "presence": 17.8,
+          "title": "Sōvyn l healthcare tech marketing + PR agency",
+          "strength": 62,
+          "referringDomains": 3510
+        },
+        {
+          "domain": "axeautomation.co",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 17,
+          "visibility": 0.1,
+          "presence": 17.6,
+          "title": "Axe Automation - Build Operational Excellence",
+          "strength": 23,
+          "referringDomains": 227
+        },
+        {
+          "domain": "chetu.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 3,
+          "visibility": 0.8,
+          "presence": 17.4,
+          "title": "AI & Digital Transformation Solutions | Chetu",
+          "strength": 52,
+          "referringDomains": 6187
+        },
+        {
+          "domain": "ai.tekrevol.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 21,
+          "visibility": 0.05,
+          "presence": 16.3,
+          "title": "Artificial Intelligence Services - AI Consulting Company",
+          "strength": 34,
+          "referringDomains": 163
+        },
+        {
+          "domain": "bitsclan.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 28,
+          "visibility": 0,
+          "presence": 14.4,
+          "title": null,
+          "strength": 37,
+          "referringDomains": 2502
+        },
+        {
+          "domain": "uforocks.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 31,
+          "visibility": 0,
+          "presence": 13.8,
+          "title": "UFO Performance Marketing | Paid Media &amp; SEO Digital Agency",
+          "strength": 57,
+          "referringDomains": 3138
+        },
+        {
+          "domain": "thriveagency.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 6,
+          "visibility": 0.5,
+          "presence": 13.8,
+          "title": "Digital Marketing Agency | Thrive Internet Marketing Agency",
+          "strength": 68,
+          "referringDomains": 10347
+        },
+        {
+          "domain": "moxo.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 7,
+          "visibility": 0.4,
+          "presence": 12.6,
+          "title": "Moxo | Human-AI workflow automation for business operations",
+          "strength": 56,
+          "referringDomains": 3745
+        },
+        {
+          "domain": "saffronedge.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 39,
+          "visibility": 0,
+          "presence": 12.2,
+          "title": "Saffron Edge - Top B2B Marketing Agency",
+          "strength": 38,
+          "referringDomains": 2921
+        },
+        {
+          "domain": "forthea.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 8,
+          "visibility": 0.3,
+          "presence": 11.4,
+          "title": "Results-Driven Digital Marketing Agency in Houston | Forthea",
+          "strength": 34,
+          "referringDomains": 2565
+        },
+        {
+          "domain": "proximatesolutions.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 44,
+          "visibility": 0,
+          "presence": 11.2,
+          "title": "AI-Driven Digital Marketing Agency | Proximate Solutions",
+          "strength": 53,
+          "referringDomains": 2280
+        },
+        {
+          "domain": "systemapic.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 50,
+          "visibility": 0,
+          "presence": 10,
+          "title": "Workflow Automation Services USA | Business Automation",
+          "strength": 26,
+          "referringDomains": 2114
+        },
+        {
+          "domain": "m8l.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 51,
+          "visibility": 0,
+          "presence": 9.8,
+          "title": "Meaningful Agency: Full-Stack Growth Team | m8l",
+          "strength": 47,
+          "referringDomains": 2503
+        }
+      ],
+      "directories": [
+        {
+          "domain": "designrush.com",
+          "type": "directory",
+          "keywords": 4,
+          "avgPosition": 34,
+          "visibility": 0.3,
+          "presence": 36.2
+        },
+        {
+          "domain": "clutch.co",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 5,
+          "visibility": 1.3,
+          "presence": 32
+        },
+        {
+          "domain": "f6s.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 22,
+          "visibility": 0.05,
+          "presence": 16.1
+        },
+        {
+          "domain": "fiverr.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 23,
+          "visibility": 0,
+          "presence": 15.4
+        },
+        {
+          "domain": "mqlflow.com",
+          "type": "directory",
+          "keywords": 1,
+          "avgPosition": 7,
+          "visibility": 0.4,
+          "presence": 12.6,
+          "title": "Best AI Automation Agency UK | MQLFlow"
+        },
+        {
+          "domain": "upwork.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 42,
+          "visibility": 0,
+          "presence": 11.6
+        },
+        {
+          "domain": "digitalagencynetwork.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 51,
+          "visibility": 0,
+          "presence": 9.8
+        }
+      ],
+      "platforms": [
+        {
+          "domain": "reddit.com",
+          "type": "platform",
+          "keywords": 5,
+          "avgPosition": 1,
+          "visibility": 4.9,
+          "presence": 98.8
+        },
+        {
+          "domain": "youtube.com",
+          "type": "platform",
+          "keywords": 8,
+          "avgPosition": 17,
+          "visibility": 1.2,
+          "presence": 88.6
+        },
+        {
+          "domain": "linkedin.com",
+          "type": "platform",
+          "keywords": 6,
+          "avgPosition": 13,
+          "visibility": 1.15,
+          "presence": 68.9
+        },
+        {
+          "domain": "medium.com",
+          "type": "platform",
+          "keywords": 2,
+          "avgPosition": 12,
+          "visibility": 0.25,
+          "presence": 20.1
+        },
+        {
+          "domain": "quora.com",
+          "type": "platform",
+          "keywords": 2,
+          "avgPosition": 25,
+          "visibility": 0,
+          "presence": 15
+        }
+      ],
+      "tools": [
+        "salesforce.com",
+        "gumloop.com",
+        "zapier.com",
+        "make.com",
+        "monday.com",
+        "clay.com",
+        "latenode.com",
+        "prismetric.com",
+        "search-visibility.ai",
+        "getgpt.app"
+      ],
+      "media": []
+    },
+    "uk": {
+      "updated": "2026-10-21",
+      "keywordsUsed": 15,
+      "agencies": [
+        {
+          "domain": "elevateai.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 6,
+          "visibility": 1,
+          "presence": 28.8,
+          "title": "Elevate AI | AI Consulting &amp; Managed Outbound for UK Businesses",
+          "strength": 4,
+          "referringDomains": 59
+        },
+        {
+          "domain": "automaly.io",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 9,
+          "visibility": 1.05,
+          "presence": 28.7,
+          "title": "AI &amp; Automation Consultants | Five ROI Opportunities, Guaranteed",
+          "strength": 21,
+          "referringDomains": 229
+        },
+        {
+          "domain": "theaiautomationagency.ai",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 20,
+          "visibility": 0.9,
+          "presence": 25,
+          "title": "The Ai Automation Agency",
+          "strength": 28,
+          "referringDomains": 82
+        },
+        {
+          "domain": "ronins.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 14,
+          "visibility": 0.6,
+          "presence": 23.2,
+          "title": "Digital Growth Agency | London And Surrey | Ronins",
+          "strength": 44,
+          "referringDomains": 490
+        },
+        {
+          "domain": "found.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 16,
+          "visibility": 0.1,
+          "presence": 17.8,
+          "title": "Digital Marketing Agency London | Digital Agency UK | Found",
+          "strength": 43,
+          "referringDomains": 1330
+        },
+        {
+          "domain": "core.co.uk",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 3,
+          "visibility": 0.8,
+          "presence": 17.4,
+          "title": "IT Support Services - Reliable Solutions for Your Business",
+          "strength": 36,
+          "referringDomains": 775
+        },
+        {
+          "domain": "footprintdigital.co.uk",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 3,
+          "visibility": 0.8,
+          "presence": 17.4,
+          "title": "SEO, PPC &amp; Digital Marketing Agency in Essex &amp; London | Footprint Digital",
+          "strength": 29,
+          "referringDomains": 382
+        },
+        {
+          "domain": "opscaling.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 21,
+          "visibility": 0.05,
+          "presence": 16.3,
+          "title": "AI Automation Agency UK - Consultant Services Company",
+          "strength": 0,
+          "referringDomains": 43
+        },
+        {
+          "domain": "vayro.co.uk",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 4,
+          "visibility": 0.7,
+          "presence": 16.2,
+          "title": "AI Consulting for UK Business Leaders | VAYRO",
+          "strength": 7,
+          "referringDomains": 33
+        },
+        {
+          "domain": "moxo.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 5,
+          "visibility": 0.6,
+          "presence": 15,
+          "title": "Moxo | Human-AI workflow automation for business operations",
+          "strength": 56,
+          "referringDomains": 3745
+        },
+        {
+          "domain": "barsbank.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 35,
+          "visibility": 0,
+          "presence": 13,
+          "title": "Barsbank UK AI Consultancy | Barsbank: Website Development & Digital Marketing Agency offering UK wide Website Design, Website Development &",
+          "strength": 53,
+          "referringDomains": 2255
+        },
+        {
+          "domain": "aiautomationagencylondon.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 36,
+          "visibility": 0,
+          "presence": 12.8,
+          "title": null,
+          "strength": 0,
+          "referringDomains": 5
+        },
+        {
+          "domain": "aiagencyplus.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 37,
+          "visibility": 0,
+          "presence": 12.6,
+          "title": "AI Automation Agency UK For SMEs | AI Agency Plus",
+          "strength": 43,
+          "referringDomains": 2409
+        },
+        {
+          "domain": "rank4ai.co.uk",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 7,
+          "visibility": 0.4,
+          "presence": 12.6,
+          "title": "Rank4AI - UK AI Search Agency | AI Search Visibility",
+          "strength": 36,
+          "referringDomains": 55
+        },
+        {
+          "domain": "codingsprint.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 39,
+          "visibility": 0,
+          "presence": 12.2,
+          "title": null,
+          "strength": 33,
+          "referringDomains": 127
+        },
+        {
+          "domain": "ostracon.ai",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 8,
+          "visibility": 0.3,
+          "presence": 11.4,
+          "title": "AI Agency for Marketing &amp; Sales in Finland | OstraconAI",
+          "strength": 10,
+          "referringDomains": 44
+        },
+        {
+          "domain": "liquidict.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 45,
+          "visibility": 0,
+          "presence": 11,
+          "title": "Liquid ICT | Managed IT Services &amp; AI Automation UK",
+          "strength": 0,
+          "referringDomains": 56
+        },
+        {
+          "domain": "automationaiagency.co.uk",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 45,
+          "visibility": 0,
+          "presence": 11,
+          "title": "AI Automation Agency UK | 500+ Intelligent Workflows Built",
+          "strength": 0,
+          "referringDomains": 37
+        },
+        {
+          "domain": "n8nlab.io",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 49,
+          "visibility": 0,
+          "presence": 10.2,
+          "title": "AI Infrastructure, Agents &amp; Automations\nBuilt for Tomorrow’s Market Leaders",
+          "strength": 28,
+          "referringDomains": 93
+        },
+        {
+          "domain": "oryxaiautomations.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 53,
+          "visibility": 0.05,
+          "presence": 9.9,
+          "title": "AI Automation Agency for UK Businesses | ORYX",
+          "strength": 7,
+          "referringDomains": 2061
+        }
+      ],
+      "directories": [
+        {
+          "domain": "mqlflow.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 17,
+          "visibility": 0.8,
+          "presence": 24.6,
+          "title": "Best AI Automation Agency UK | MQLFlow"
+        },
+        {
+          "domain": "toptenaiagents.co.uk",
+          "type": "directory",
+          "keywords": 3,
+          "avgPosition": 36,
+          "visibility": 0.05,
+          "presence": 23.3,
+          "title": "Top AI Agents UK | Expert Reviews &amp; Business Guides"
+        },
+        {
+          "domain": "designrush.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 17,
+          "visibility": 0.1,
+          "presence": 17.6
+        },
+        {
+          "domain": "fiverr.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 23,
+          "visibility": 0.05,
+          "presence": 15.9
+        },
+        {
+          "domain": "lotusbrainsstudio.com",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 34,
+          "visibility": 0.05,
+          "presence": 13.7,
+          "title": "Best AI Automation Agency - LotusBrains Studio"
+        }
+      ],
+      "platforms": [
+        {
+          "domain": "youtube.com",
+          "type": "platform",
+          "keywords": 5,
+          "avgPosition": 10,
+          "visibility": 1.4,
+          "presence": 62
+        },
+        {
+          "domain": "reddit.com",
+          "type": "platform",
+          "keywords": 2,
+          "avgPosition": 1,
+          "visibility": 2,
+          "presence": 39.8
+        },
+        {
+          "domain": "medium.com",
+          "type": "platform",
+          "keywords": 1,
+          "avgPosition": 15,
+          "visibility": 0.05,
+          "presence": 7.5
+        }
+      ],
+      "tools": [
+        "salesforce.com",
+        "zapier.com",
+        "voiceflow.com",
+        "seranking.com",
+        "chatbot.com",
+        "search-visibility.ai",
+        "nice.com",
+        "amplemarket.com",
+        "pipeline.zoominfo.com",
+        "indexly.ai"
+      ],
+      "media": [
+        "searchengineland.com"
+      ]
+    },
+    "fr": {
+      "updated": "2026-10-21",
+      "keywordsUsed": 14,
+      "agencies": [
+        {
+          "domain": "ia.agency",
+          "type": "agency",
+          "keywords": 6,
+          "avgPosition": 18,
+          "visibility": 1.85,
+          "presence": 74.9,
+          "title": "L'Agence IA Française Experte en Intelligence Artificielle | IA Agency",
+          "strength": 35,
+          "referringDomains": 246
+        },
+        {
+          "domain": "sparkyflow.com",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 3,
+          "visibility": 2.5,
+          "presence": 54.4,
+          "title": "Agence automatisation IA - No-code &amp; workflows | Sparky Flow",
+          "strength": 27,
+          "referringDomains": 2136
+        },
+        {
+          "domain": "noxcod.com",
+          "type": "agency",
+          "keywords": 4,
+          "avgPosition": 12,
+          "visibility": 0.95,
+          "presence": 47.1,
+          "title": "Noxcod | Agence développement web, mobile et IA",
+          "strength": 34,
+          "referringDomains": 2226
+        },
+        {
+          "domain": "sequance.fr",
+          "type": "agency",
+          "keywords": 4,
+          "avgPosition": 17,
+          "visibility": 0.85,
+          "presence": 45.1,
+          "title": "Agence d’automatisation à Lyon | Sequance",
+          "strength": 45,
+          "referringDomains": 100
+        },
+        {
+          "domain": "volteyr.com",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 31,
+          "visibility": 2,
+          "presence": 43.8,
+          "title": "Volteyr - Experts en Automatisation IA pour Entreprises",
+          "strength": 19,
+          "referringDomains": 2152
+        },
+        {
+          "domain": "drakkar.io",
+          "type": "agency",
+          "keywords": 4,
+          "avgPosition": 23,
+          "visibility": 0.7,
+          "presence": 42.4,
+          "title": "Drakkar | Experts en Transformation Digitale",
+          "strength": 40,
+          "referringDomains": 337
+        },
+        {
+          "domain": "dity.fr",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 7,
+          "visibility": 1.2,
+          "presence": 40.6,
+          "title": "Agence digitale Lille : Stratégie web, Marketing digital | Dity",
+          "strength": 48,
+          "referringDomains": 174
+        },
+        {
+          "domain": "koino.fr",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 16,
+          "visibility": 1.3,
+          "presence": 39.8,
+          "title": "Cabinet de conseil en IA &amp; Data | Koïno",
+          "strength": 22,
+          "referringDomains": 234
+        },
+        {
+          "domain": "genflow.fr",
+          "type": "agency",
+          "keywords": 4,
+          "avgPosition": 16,
+          "visibility": 0.25,
+          "presence": 39.3,
+          "title": "Genflow - Agence IA : automatisations IA, formations IA &amp; audits",
+          "strength": 0,
+          "referringDomains": 118
+        },
+        {
+          "domain": "adimeo.com",
+          "type": "agency",
+          "keywords": 4,
+          "avgPosition": 25,
+          "visibility": 0.35,
+          "presence": 38.5,
+          "title": null,
+          "strength": 52,
+          "referringDomains": 3223
+        },
+        {
+          "domain": "mayasquad.com",
+          "type": "agency",
+          "keywords": 4,
+          "avgPosition": 42,
+          "visibility": 0,
+          "presence": 31.6,
+          "title": "Agence E-commerce : SEO, CRO &amp; Développement sur-mesure",
+          "strength": 41,
+          "referringDomains": 2521
+        },
+        {
+          "domain": "plateya.fr",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 13,
+          "visibility": 0.3,
+          "presence": 30.4,
+          "title": "Office managers et assistants administratifs en freelance - Plateya",
+          "strength": 36,
+          "referringDomains": 283
+        },
+        {
+          "domain": "hackceleration.com",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 27,
+          "visibility": 0.45,
+          "presence": 29.1,
+          "title": "Hack&#x27;celeration | The AI, Automation &amp; Growth Ecosystem",
+          "strength": 50,
+          "referringDomains": 2759
+        },
+        {
+          "domain": "keyweo.com",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 36,
+          "visibility": 0,
+          "presence": 22.8,
+          "title": "Keyweo : L&#039;agence marketing digital qui a la clé de votre réussite",
+          "strength": 44,
+          "referringDomains": 2848
+        },
+        {
+          "domain": "bastelia.com",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 39,
+          "visibility": 0,
+          "presence": 22.2,
+          "title": "AI &amp; Automation Solutions for Business",
+          "strength": 42,
+          "referringDomains": 2236
+        },
+        {
+          "domain": "webanalyste.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 24,
+          "visibility": 0.7,
+          "presence": 22.2,
+          "title": "Agence experte en Data, IA et Performance digitale",
+          "strength": 49,
+          "referringDomains": 2249
+        },
+        {
+          "domain": "agence-ia-paris.fr",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 41,
+          "visibility": 0,
+          "presence": 21.8,
+          "title": "Agence IA à Paris : chatbots, agents IA, automatisation",
+          "strength": 0,
+          "referringDomains": 1
+        },
+        {
+          "domain": "ipanemads.com",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 42,
+          "visibility": 0,
+          "presence": 21.6,
+          "title": "Cabinet de conseil IA - ipanemads",
+          "strength": 54,
+          "referringDomains": 2384
+        },
+        {
+          "domain": "staak.agency",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 23,
+          "visibility": 0.6,
+          "presence": 21.4,
+          "title": "Agence IA | Accompagnement IA pour entreprises",
+          "strength": 43,
+          "referringDomains": 72
+        },
+        {
+          "domain": "digitalunicorn.fr",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 13,
+          "visibility": 0.25,
+          "presence": 19.9,
+          "title": "Agence De Développement Web Sur Mesure | Digital Unicorn",
+          "strength": 51,
+          "referringDomains": 3267
+        }
+      ],
+      "directories": [
+        {
+          "domain": "codeur.com",
+          "type": "directory",
+          "keywords": 4,
+          "avgPosition": 4,
+          "visibility": 2.9,
+          "presence": 68.2
+        },
+        {
+          "domain": "sortlist.fr",
+          "type": "directory",
+          "keywords": 4,
+          "avgPosition": 11,
+          "visibility": 1.1,
+          "presence": 48.8
+        },
+        {
+          "domain": "lespepitestech.com",
+          "type": "directory",
+          "keywords": 3,
+          "avgPosition": 10,
+          "visibility": 0.95,
+          "presence": 37.5
+        },
+        {
+          "domain": "lafabriquedunet.fr",
+          "type": "directory",
+          "keywords": 4,
+          "avgPosition": 33,
+          "visibility": 0.05,
+          "presence": 33.9
+        },
+        {
+          "domain": "cloudlist.fr",
+          "type": "directory",
+          "keywords": 2,
+          "avgPosition": 7,
+          "visibility": 0.9,
+          "presence": 27.6
+        }
+      ],
+      "platforms": [
+        {
+          "domain": "youtube.com",
+          "type": "platform",
+          "keywords": 11,
+          "avgPosition": 18,
+          "visibility": 0.95,
+          "presence": 115.9
+        },
+        {
+          "domain": "fr.linkedin.com",
+          "type": "platform",
+          "keywords": 6,
+          "avgPosition": 28,
+          "visibility": 1.4,
+          "presence": 68.4
+        },
+        {
+          "domain": "facebook.com",
+          "type": "platform",
+          "keywords": 3,
+          "avgPosition": 30,
+          "visibility": 0.15,
+          "presence": 25.5
+        },
+        {
+          "domain": "reddit.com",
+          "type": "platform",
+          "keywords": 2,
+          "avgPosition": 9,
+          "visibility": 0.45,
+          "presence": 22.7
+        },
+        {
+          "domain": "instagram.com",
+          "type": "platform",
+          "keywords": 2,
+          "avgPosition": 39,
+          "visibility": 0.9,
+          "presence": 21.2
+        }
+      ],
+      "tools": [
+        "salesforce.com",
+        "blog.hubspot.fr",
+        "iaagence.fr",
+        "ringover.fr",
+        "lagrowthmachine.com",
+        "appvizer.fr",
+        "zendesk.fr"
+      ],
+      "media": [
+        "francenum.gouv.fr",
+        "impli.fr",
+        "seo.fr",
+        "lemagit.fr"
+      ]
+    },
+    "es": {
+      "updated": "2026-10-21",
+      "keywordsUsed": 10,
+      "agencies": [
+        {
+          "domain": "cyberclick.es",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 23,
+          "visibility": 1.2,
+          "presence": 37.4,
+          "title": "Cyberclick - Agencia de Marketing Digital, Ventas &amp; IA",
+          "strength": 50,
+          "referringDomains": 3380
+        },
+        {
+          "domain": "potenzzia.com",
+          "type": "agency",
+          "keywords": 3,
+          "avgPosition": 17,
+          "visibility": 0.15,
+          "presence": 28.1,
+          "title": "PotenzzIA - Desarrollo de soluciones y aplicaciones de Inteligencia Artificial para Empresas",
+          "strength": 19,
+          "referringDomains": 2275
+        },
+        {
+          "domain": "dobuss.es",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 7,
+          "visibility": 0.9,
+          "presence": 27.6,
+          "title": null,
+          "strength": 49,
+          "referringDomains": 752
+        },
+        {
+          "domain": "agenciaautomatiza.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 17,
+          "visibility": 0.8,
+          "presence": 24.6,
+          "title": "✨ Automatización con IA &gt; Agencia Automatiza",
+          "strength": 11,
+          "referringDomains": 2247
+        },
+        {
+          "domain": "bastidafarina.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 1,
+          "visibility": 1,
+          "presence": 19.8,
+          "title": "Agencia de Generación de Leads | Captación de leads cualificados",
+          "strength": 23,
+          "referringDomains": 2336
+        },
+        {
+          "domain": "agenciaia.ai",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 1,
+          "visibility": 1,
+          "presence": 19.8,
+          "title": "Agencia de Inteligencia Artificial - Agencia IA",
+          "strength": 11,
+          "referringDomains": 243
+        },
+        {
+          "domain": "connext.es",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 2,
+          "visibility": 0.9,
+          "presence": 18.6,
+          "title": "Connext | Agencia de marketing y ventas B2B",
+          "strength": 29,
+          "referringDomains": 405
+        },
+        {
+          "domain": "automaxia.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 2,
+          "visibility": 0.9,
+          "presence": 18.6,
+          "title": "Agencia de Inteligencia Artificial ✔️ Automatización IA",
+          "strength": 32,
+          "referringDomains": 2372
+        },
+        {
+          "domain": "themediapower.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 4,
+          "visibility": 0.7,
+          "presence": 16.2,
+          "title": null,
+          "strength": 29,
+          "referringDomains": 2261
+        },
+        {
+          "domain": "aihispania.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 30,
+          "visibility": 0,
+          "presence": 14,
+          "title": "Agencia n8n | Automatizaciones con IA para Empresas",
+          "strength": 0,
+          "referringDomains": 2220
+        },
+        {
+          "domain": "chatbot.dbf.es",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 7,
+          "visibility": 0.4,
+          "presence": 12.6,
+          "title": null,
+          "strength": 0,
+          "referringDomains": 1
+        },
+        {
+          "domain": "hiberus.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 7,
+          "visibility": 0.4,
+          "presence": 12.6,
+          "title": "hiberus, consultora tecnológica líder a nivel global. &#039;TOP3&#039; de España",
+          "strength": 48,
+          "referringDomains": 4256
+        },
+        {
+          "domain": "webpositer.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 7,
+          "visibility": 0.4,
+          "presence": 12.6,
+          "title": "Agencia para Crecimiento de Marcas Online | WEBPOSITER AGENCY",
+          "strength": 48,
+          "referringDomains": 2774
+        },
+        {
+          "domain": "agenciaiasolutions.com",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 40,
+          "visibility": 0.05,
+          "presence": 12.5,
+          "title": "Agencia IA: agencia de inteligencia artificial | IA Solutions",
+          "strength": 13,
+          "referringDomains": 2345
+        },
+        {
+          "domain": "cronuts.digital",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 44,
+          "visibility": 0,
+          "presence": 11.2,
+          "title": "CRONUTS · Consultora de Marketing Digital B2B · Productized Growth",
+          "strength": 57,
+          "referringDomains": 606
+        },
+        {
+          "domain": "tuagenciaia.net",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 47,
+          "visibility": 0,
+          "presence": 10.6,
+          "title": "Tu Agencia IA ▷ Agencia de Inteligencia Artificial",
+          "strength": 0,
+          "referringDomains": 21
+        },
+        {
+          "domain": "toowappo.es",
+          "type": "agency",
+          "keywords": 2,
+          "avgPosition": 47,
+          "visibility": 0,
+          "presence": 10.6,
+          "title": "Agencia IA | Automatización e Inteligencia Artificial - Toowappo Agency",
+          "strength": 4,
+          "referringDomains": 21
+        }
+      ],
+      "directories": [],
+      "platforms": [
+        {
+          "domain": "youtube.com",
+          "type": "platform",
+          "keywords": 7,
+          "avgPosition": 21,
+          "visibility": 0.2,
+          "presence": 67.8
+        },
+        {
+          "domain": "es.linkedin.com",
+          "type": "platform",
+          "keywords": 2,
+          "avgPosition": 26,
+          "visibility": 0.05,
+          "presence": 15.3
+        }
+      ],
+      "tools": [
+        "botpress.com",
+        "cm.com",
+        "crisp.chat",
+        "kommo.com",
+        "tidio.com",
+        "jotform.com",
+        "hubspot.es",
+        "chatbotwhatsapp.com",
+        "respond.io",
+        "aunoa.ai"
+      ],
+      "media": [
+        "escuelaeuropeadeempresa.eu",
+        "senpaiacademy.com"
+      ]
+    },
+    "mx": {
+      "updated": "2026-10-21",
+      "keywordsUsed": 10,
+      "agencies": [
+        {
+          "domain": "arsys.es",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 28,
+          "visibility": 0,
+          "presence": 4.4,
+          "title": null,
+          "strength": 64,
+          "referringDomains": 3219
+        },
+        {
+          "domain": "mediasource.mx",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 50,
+          "visibility": 0,
+          "presence": 0,
+          "title": "Agencia HubSpot en México | Elite Partner | Media Source by Cebra",
+          "strength": 46,
+          "referringDomains": 905
+        },
+        {
+          "domain": "automatizacion.waibot.io",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 58,
+          "visibility": 0,
+          "presence": -1.6,
+          "title": "waibot automatización con inteligencia artificial | Expertos en Inteligencia Artificial para incrementar la productividad de las empresas",
+          "strength": 26,
+          "referringDomains": 3
+        },
+        {
+          "domain": "creamosia.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 60,
+          "visibility": 0,
+          "presence": -2,
+          "title": "Creamos IA | Agencia IA experta",
+          "strength": 39,
+          "referringDomains": 2241
+        },
+        {
+          "domain": "marianocabrera.com",
+          "type": "agency",
+          "keywords": 1,
+          "avgPosition": 66,
+          "visibility": 0,
+          "presence": -3.2,
+          "title": null,
+          "strength": 35,
+          "referringDomains": 3166
+        }
+      ],
+      "directories": [],
+      "platforms": [
+        {
+          "domain": "youtube.com",
+          "type": "platform",
+          "keywords": 1,
+          "avgPosition": 16,
+          "visibility": 0.05,
+          "presence": 7.3
+        }
+      ],
+      "tools": [
+        "kommo.com",
+        "whatsapp.com",
+        "zendesk.com.mx",
+        "crisp.chat",
+        "chatbotwhatsapp.com",
+        "cm.com",
+        "respond.io",
+        "jotform.com",
+        "botpress.com",
+        "botmaker.com"
+      ],
+      "media": [
+        "aprendamosmarketing.com",
+        "blog.elipse.ai",
+        "blog.numia.co",
+        "blog.chotam.io"
+      ]
+    }
+  },
+  "updated": "2026-10-21"
+}

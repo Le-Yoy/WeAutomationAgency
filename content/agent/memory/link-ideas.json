@@ -1,0 +1,1551 @@
+{
+  "fr": {
+    "updated": "2026-10-21",
+    "from": [
+      "ia.agency",
+      "sparkyflow.com",
+      "noxcod.com",
+      "sequance.fr",
+      "volteyr.com",
+      "drakkar.io",
+      "dity.fr",
+      "koino.fr",
+      "genflow.fr",
+      "adimeo.com"
+    ],
+    "ideas": [
+      {
+        "domain": "airagent.fr",
+        "linksTo": [
+          "ia.agency",
+          "noxcod.com",
+          "sequance.fr",
+          "drakkar.io",
+          "dity.fr",
+          "koino.fr",
+          "adimeo.com"
+        ],
+        "count": 7,
+        "rank": 8,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "topya.fr",
+        "linksTo": [
+          "ia.agency",
+          "sparkyflow.com",
+          "noxcod.com",
+          "sequance.fr",
+          "volteyr.com",
+          "koino.fr",
+          "adimeo.com"
+        ],
+        "count": 7,
+        "rank": 6,
+        "spamScore": 0,
+        "nofollowShare": 0.09
+      },
+      {
+        "domain": "seo-hero.ninja",
+        "linksTo": [
+          "ia.agency",
+          "noxcod.com",
+          "drakkar.io",
+          "dity.fr",
+          "koino.fr",
+          "genflow.fr",
+          "adimeo.com"
+        ],
+        "count": 7,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "mankova-consulting.com",
+        "linksTo": [
+          "ia.agency",
+          "noxcod.com",
+          "sequance.fr",
+          "drakkar.io",
+          "koino.fr",
+          "genflow.fr"
+        ],
+        "count": 6,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "propulslead.com",
+        "linksTo": [
+          "ia.agency",
+          "noxcod.com",
+          "drakkar.io",
+          "dity.fr",
+          "adimeo.com"
+        ],
+        "count": 5,
+        "rank": 3,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "jesuisnumerique.fr",
+        "linksTo": [
+          "ia.agency",
+          "sparkyflow.com",
+          "dity.fr"
+        ],
+        "count": 3,
+        "rank": 12,
+        "spamScore": 12,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "lonestone.io",
+        "linksTo": [
+          "ia.agency",
+          "drakkar.io",
+          "koino.fr"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "jedha.co",
+        "linksTo": [
+          "ia.agency",
+          "koino.fr"
+        ],
+        "count": 2,
+        "rank": 5,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "intelligence-artificielle.com",
+        "linksTo": [
+          "ia.agency",
+          "genflow.fr"
+        ],
+        "count": 2,
+        "rank": 3,
+        "spamScore": 17,
+        "nofollowShare": 0.09
+      },
+      {
+        "domain": "docaufutur.fr",
+        "linksTo": [
+          "ia.agency",
+          "adimeo.com"
+        ],
+        "count": 2,
+        "rank": 1,
+        "spamScore": 5,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "desgeeksetdeslettres.com",
+        "linksTo": [
+          "ia.agency",
+          "dity.fr"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 15,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "iagenie.com",
+        "linksTo": [
+          "ia.agency",
+          "koino.fr"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "developr.fr",
+        "linksTo": [
+          "ia.agency",
+          "adimeo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "majoli.io",
+        "linksTo": [
+          "ia.agency",
+          "adimeo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "blog-ia.com",
+        "linksTo": [
+          "ia.agency",
+          "koino.fr"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      }
+    ]
+  },
+  "us": {
+    "updated": "2026-10-21",
+    "from": [
+      "automaly.io",
+      "theaiautomationagency.ai",
+      "appinventiv.com",
+      "percepture.com",
+      "leewayhertz.com",
+      "greenbananaseo.com",
+      "sovyn.com",
+      "axeautomation.co",
+      "chetu.com",
+      "ai.tekrevol.com"
+    ],
+    "ideas": [
+      {
+        "domain": "peekwire.com",
+        "linksTo": [
+          "automaly.io",
+          "theaiautomationagency.ai",
+          "appinventiv.com",
+          "percepture.com",
+          "leewayhertz.com",
+          "sovyn.com",
+          "axeautomation.co",
+          "chetu.com",
+          "ai.tekrevol.com"
+        ],
+        "count": 9,
+        "rank": 23,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "aiqlabs.ai",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com",
+          "percepture.com",
+          "leewayhertz.com",
+          "greenbananaseo.com",
+          "sovyn.com",
+          "axeautomation.co",
+          "chetu.com"
+        ],
+        "count": 8,
+        "rank": 20,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "oppalerts.com",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com",
+          "percepture.com",
+          "leewayhertz.com",
+          "greenbananaseo.com",
+          "sovyn.com",
+          "axeautomation.co",
+          "chetu.com"
+        ],
+        "count": 8,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "goodfirms.co",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com",
+          "leewayhertz.com",
+          "greenbananaseo.com",
+          "chetu.com",
+          "ai.tekrevol.com"
+        ],
+        "count": 6,
+        "rank": 5,
+        "spamScore": 11,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "revenuebase.ai",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com",
+          "percepture.com",
+          "leewayhertz.com",
+          "chetu.com"
+        ],
+        "count": 5,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "neverbounce.com",
+        "linksTo": [
+          "automaly.io",
+          "leewayhertz.com",
+          "greenbananaseo.com",
+          "chetu.com"
+        ],
+        "count": 4,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "essentras.com",
+        "linksTo": [
+          "automaly.io",
+          "leewayhertz.com",
+          "sovyn.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 2,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "3ammarketer.com",
+        "linksTo": [
+          "automaly.io",
+          "percepture.com",
+          "chetu.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 5,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "theexpertroster.com",
+        "linksTo": [
+          "automaly.io",
+          "leewayhertz.com",
+          "axeautomation.co"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "dreamlaunch.studio",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com",
+          "leewayhertz.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "cognautic.com",
+        "linksTo": [
+          "automaly.io",
+          "theaiautomationagency.ai",
+          "axeautomation.co"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "atoms.dev",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com",
+          "leewayhertz.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 19,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "sixtysixten.com",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com",
+          "leewayhertz.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "whatarethebest.com",
+        "linksTo": [
+          "automaly.io",
+          "leewayhertz.com",
+          "chetu.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "techpeak.co",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "annettethompson.com",
+        "linksTo": [
+          "automaly.io",
+          "axeautomation.co"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "wearepresta.com",
+        "linksTo": [
+          "automaly.io",
+          "appinventiv.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "sohoinchina.com",
+        "linksTo": [
+          "automaly.io",
+          "greenbananaseo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      }
+    ]
+  },
+  "es": {
+    "updated": "2026-10-21",
+    "from": [
+      "cyberclick.es",
+      "potenzzia.com",
+      "dobuss.es",
+      "agenciaautomatiza.com",
+      "bastidafarina.com",
+      "agenciaia.ai",
+      "connext.es",
+      "automaxia.com",
+      "themediapower.com",
+      "aihispania.com"
+    ],
+    "ideas": [
+      {
+        "domain": "ecosistemastartup.com",
+        "linksTo": [
+          "cyberclick.es",
+          "agenciaautomatiza.com",
+          "themediapower.com"
+        ],
+        "count": 3,
+        "rank": 11,
+        "spamScore": 0,
+        "nofollowShare": 0.05
+      },
+      {
+        "domain": "webdemarketing.net",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es",
+          "connext.es"
+        ],
+        "count": 3,
+        "rank": 10,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "bing.com",
+        "linksTo": [
+          "cyberclick.es",
+          "potenzzia.com",
+          "dobuss.es"
+        ],
+        "count": 3,
+        "rank": 7,
+        "spamScore": 19,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "emprendedores.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es",
+          "themediapower.com"
+        ],
+        "count": 3,
+        "rank": 6,
+        "spamScore": 0,
+        "nofollowShare": 0.43
+      },
+      {
+        "domain": "merca2.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es",
+          "themediapower.com"
+        ],
+        "count": 3,
+        "rank": 6,
+        "spamScore": 5,
+        "nofollowShare": 0.57
+      },
+      {
+        "domain": "majadahondamagazin.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es",
+          "connext.es"
+        ],
+        "count": 3,
+        "rank": 3,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "fotosub.org",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es",
+          "automaxia.com"
+        ],
+        "count": 3,
+        "rank": 2,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "periodicopublicidad.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es",
+          "themediapower.com"
+        ],
+        "count": 3,
+        "rank": 1,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "inabaweb.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 15,
+        "spamScore": 16,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "hellomrlead.com",
+        "linksTo": [
+          "cyberclick.es",
+          "bastidafarina.com"
+        ],
+        "count": 2,
+        "rank": 14,
+        "spamScore": 0,
+        "nofollowShare": 0.22
+      },
+      {
+        "domain": "asociacionmkt.es",
+        "linksTo": [
+          "cyberclick.es",
+          "themediapower.com"
+        ],
+        "count": 2,
+        "rank": 14,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "directivosygerentes.es",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 12,
+        "spamScore": 0,
+        "nofollowShare": 0.1
+      },
+      {
+        "domain": "ipmark.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 12,
+        "spamScore": 0,
+        "nofollowShare": 0.05
+      },
+      {
+        "domain": "quees.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 11,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "iebschool.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 11,
+        "spamScore": 0,
+        "nofollowShare": 0.14
+      },
+      {
+        "domain": "hechosdehoy.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 11,
+        "spamScore": 0,
+        "nofollowShare": 0.74
+      },
+      {
+        "domain": "branchenbuch.ch",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 9,
+        "spamScore": 4,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "socialancer.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 9,
+        "spamScore": 0,
+        "nofollowShare": 0.17
+      },
+      {
+        "domain": "blucactus.com.ve",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 8,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "kedin.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 8,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "plataplam.es",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 8,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "niixer.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 8,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "selectionbook.com.mx",
+        "linksTo": [
+          "cyberclick.es",
+          "bastidafarina.com"
+        ],
+        "count": 2,
+        "rank": 8,
+        "spamScore": 24,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "diariodevalladolid.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 8,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "honeyhat.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 7,
+        "spamScore": 12,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "empowertalent.com",
+        "linksTo": [
+          "cyberclick.es",
+          "potenzzia.com"
+        ],
+        "count": 2,
+        "rank": 7,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "apodaca.es",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 7,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "larepublica.es",
+        "linksTo": [
+          "cyberclick.es",
+          "agenciaia.ai"
+        ],
+        "count": 2,
+        "rank": 7,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "vertigomkt.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 6,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "aprendermarketing.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 6,
+        "spamScore": 0,
+        "nofollowShare": 0.13
+      },
+      {
+        "domain": "bsbusiness.es",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 5,
+        "spamScore": 5,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "comosevende.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 5,
+        "spamScore": 0,
+        "nofollowShare": 0.2
+      },
+      {
+        "domain": "camaravalencia.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 5,
+        "spamScore": 7,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "esan.edu.pe",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 5,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "hubspot.es",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 5,
+        "spamScore": 10,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "fragileoasis.org",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "intentwire.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "cambramallorca.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 15,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "marketinginsiderreview.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "economiadehoy.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0.69
+      },
+      {
+        "domain": "seowiki.pro",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "comunicae.es",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0.13
+      },
+      {
+        "domain": "prnoticias.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "donweb.com",
+        "linksTo": [
+          "cyberclick.es",
+          "agenciaautomatiza.com"
+        ],
+        "count": 2,
+        "rank": 3,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "upbe.ai",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 3,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "brandmanic.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 3,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "systeme.io",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 3,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "esciem.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 2,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "growwer.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 2,
+        "spamScore": 5,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "vidiv.com",
+        "linksTo": [
+          "cyberclick.es",
+          "potenzzia.com"
+        ],
+        "count": 2,
+        "rank": 1,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "vallebro.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 1,
+        "spamScore": 1,
+        "nofollowShare": 0.05
+      },
+      {
+        "domain": "netbangers.com",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 1,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "tree.com.py",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "1euroseo.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 5,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "marketingdirecto.com",
+        "linksTo": [
+          "cyberclick.es",
+          "dobuss.es"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0.71
+      },
+      {
+        "domain": "gtm.quest",
+        "linksTo": [
+          "cyberclick.es",
+          "connext.es"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "marketing4ecommerce.mx",
+        "linksTo": [
+          "cyberclick.es",
+          "bastidafarina.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0.9
+      }
+    ]
+  },
+  "uk": {
+    "updated": "2026-10-21",
+    "from": [
+      "elevateai.co.uk",
+      "automaly.io",
+      "theaiautomationagency.ai",
+      "ronins.co.uk",
+      "found.co.uk",
+      "core.co.uk",
+      "footprintdigital.co.uk",
+      "opscaling.co.uk",
+      "vayro.co.uk",
+      "moxo.com"
+    ],
+    "ideas": [
+      {
+        "domain": "oppalerts.com",
+        "linksTo": [
+          "automaly.io",
+          "ronins.co.uk",
+          "found.co.uk",
+          "core.co.uk",
+          "footprintdigital.co.uk",
+          "moxo.com"
+        ],
+        "count": 6,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "revenuebase.ai",
+        "linksTo": [
+          "automaly.io",
+          "found.co.uk",
+          "core.co.uk",
+          "footprintdigital.co.uk",
+          "moxo.com"
+        ],
+        "count": 5,
+        "rank": 0,
+        "spamScore": 3,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "goodfirms.co",
+        "linksTo": [
+          "automaly.io",
+          "ronins.co.uk",
+          "found.co.uk",
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 5,
+        "rank": 0,
+        "spamScore": 3,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "peekwire.com",
+        "linksTo": [
+          "automaly.io",
+          "theaiautomationagency.ai",
+          "found.co.uk",
+          "moxo.com"
+        ],
+        "count": 4,
+        "rank": 17,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "provenexpert.com",
+        "linksTo": [
+          "elevateai.co.uk",
+          "ronins.co.uk",
+          "found.co.uk",
+          "core.co.uk"
+        ],
+        "count": 4,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "areza.digital",
+        "linksTo": [
+          "elevateai.co.uk",
+          "automaly.io",
+          "ronins.co.uk",
+          "found.co.uk"
+        ],
+        "count": 4,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "lisnic.com",
+        "linksTo": [
+          "ronins.co.uk",
+          "found.co.uk",
+          "core.co.uk",
+          "footprintdigital.co.uk"
+        ],
+        "count": 4,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "intently.co",
+        "linksTo": [
+          "ronins.co.uk",
+          "found.co.uk",
+          "footprintdigital.co.uk"
+        ],
+        "count": 3,
+        "rank": 10,
+        "spamScore": 0,
+        "nofollowShare": 0.09
+      },
+      {
+        "domain": "partnerbase.com",
+        "linksTo": [
+          "core.co.uk",
+          "footprintdigital.co.uk",
+          "moxo.com"
+        ],
+        "count": 3,
+        "rank": 3,
+        "spamScore": 2,
+        "nofollowShare": 0.84
+      },
+      {
+        "domain": "zumvu.com",
+        "linksTo": [
+          "elevateai.co.uk",
+          "theaiautomationagency.ai",
+          "footprintdigital.co.uk"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 10,
+        "nofollowShare": 0.33
+      },
+      {
+        "domain": "ukmapguide.co.uk",
+        "linksTo": [
+          "elevateai.co.uk",
+          "ronins.co.uk",
+          "core.co.uk"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "heroagencies.com",
+        "linksTo": [
+          "found.co.uk",
+          "core.co.uk",
+          "footprintdigital.co.uk"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "leadiq.com",
+        "linksTo": [
+          "found.co.uk",
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 8,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "growjo.com",
+        "linksTo": [
+          "found.co.uk",
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "lusha.com",
+        "linksTo": [
+          "automaly.io",
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "prospeo.io",
+        "linksTo": [
+          "found.co.uk",
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 3,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0.88
+      },
+      {
+        "domain": "local-biz.directory",
+        "linksTo": [
+          "theaiautomationagency.ai",
+          "core.co.uk"
+        ],
+        "count": 2,
+        "rank": 8,
+        "spamScore": 10,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "honeyhat.com",
+        "linksTo": [
+          "found.co.uk",
+          "footprintdigital.co.uk"
+        ],
+        "count": 2,
+        "rank": 7,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "intentwire.com",
+        "linksTo": [
+          "found.co.uk",
+          "core.co.uk"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "linkcentre.com",
+        "linksTo": [
+          "found.co.uk",
+          "core.co.uk"
+        ],
+        "count": 2,
+        "rank": 4,
+        "spamScore": 2,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "huldra.pages.dev",
+        "linksTo": [
+          "ronins.co.uk",
+          "core.co.uk"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 25,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "icicec.com",
+        "linksTo": [
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 25,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "information-age.com",
+        "linksTo": [
+          "found.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "insightsforprofessionals.com",
+        "linksTo": [
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 20,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "jetdigitalpro.com",
+        "linksTo": [
+          "found.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "kefihub.co.uk",
+        "linksTo": [
+          "ronins.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0.5
+      },
+      {
+        "domain": "kitsunez.pages.dev",
+        "linksTo": [
+          "ronins.co.uk",
+          "footprintdigital.co.uk"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 25,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "libril.com",
+        "linksTo": [
+          "automaly.io",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "linkcenter.com",
+        "linksTo": [
+          "found.co.uk",
+          "core.co.uk"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 10,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "ratingsplus.co.uk",
+        "linksTo": [
+          "ronins.co.uk",
+          "footprintdigital.co.uk"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 0.5
+      },
+      {
+        "domain": "loginslink.com",
+        "linksTo": [
+          "core.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "reverbico.com",
+        "linksTo": [
+          "ronins.co.uk",
+          "found.co.uk"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 0,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "parsers.vc",
+        "linksTo": [
+          "found.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 10,
+        "nofollowShare": 0.5
+      },
+      {
+        "domain": "play-store-indir.vercel.app",
+        "linksTo": [
+          "found.co.uk",
+          "footprintdigital.co.uk"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 25,
+        "nofollowShare": 0
+      },
+      {
+        "domain": "qilins.pages.dev",
+        "linksTo": [
+          "found.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 25,
+        "nofollowShare": 1
+      },
+      {
+        "domain": "prnewswire.com",
+        "linksTo": [
+          "found.co.uk",
+          "moxo.com"
+        ],
+        "count": 2,
+        "rank": 0,
+        "spamScore": 20,
+        "nofollowShare": 0.9
+      }
+    ]
+  }
+}

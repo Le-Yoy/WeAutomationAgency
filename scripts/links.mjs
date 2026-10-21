@@ -1,6 +1,7 @@
 // Link mission queue in Redis (`dash:links`), shown on /dashboard.
 // npm run links -- load <file.json>   replace the queue (array of {name,url,type,why,steps}); keeps history,
 //                                     skips targets already done/skipped, sets today's mission if empty
+// npm run links -- add <file.json>    append targets to the queue (skips any name already queued, done or today)
 // npm run links -- show               print today's mission, queue size and history
 import { readFileSync, existsSync } from 'node:fs';
 
@@ -15,7 +16,7 @@ const R_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_
 const redis = async (commands) =>
   (await (await fetch(`${R_URL}/pipeline`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${R_TOKEN}`, 'Content-Type': 'application/json' },
+    headers: { ...(R_TOKEN ? { Authorization: `Bearer ${R_TOKEN}` } : {}), 'Content-Type': 'application/json' },
     body: JSON.stringify(commands),
   })).json()).map((r) => r.result);
 
@@ -29,6 +30,14 @@ if (cmd === 'load') {
   links.queue = JSON.parse(readFileSync(file, 'utf8')).filter((t) => !seen.has(t.name));
   if (!links.today && links.queue.length) links.today = { ...links.queue.shift(), date: new Date().toISOString().slice(0, 10) };
   await redis([['SET', 'dash:links', JSON.stringify(links)]]);
+}
+if (cmd === 'add') {
+  const seen = new Set([...(links.done || []).map((d) => d.name), ...(links.queue || []).map((q) => q.name), links.today?.name].filter(Boolean));
+  const fresh = JSON.parse(readFileSync(file, 'utf8')).filter((t) => !seen.has(t.name));
+  links.queue = [...(links.queue || []), ...fresh];
+  if (!links.today && links.queue.length) links.today = { ...links.queue.shift(), date: new Date().toISOString().slice(0, 10) };
+  await redis([['SET', 'dash:links', JSON.stringify(links)]]);
+  console.log(`added ${fresh.length} targets`);
 }
 console.log('Today:', links.today ? `${links.today.name} (${links.today.type}) ${links.today.url}` : 'none');
 console.log('Queue:', (links.queue || []).length, 'targets');
