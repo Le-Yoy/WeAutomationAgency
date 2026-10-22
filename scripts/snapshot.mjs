@@ -155,7 +155,7 @@ async function bing() {
 // ---------- AI bots (logged by middleware.ts) ----------
 // live = a real person's question right now; index = AI search index; training; search = Google/Bing.
 const GROUP = (bot) =>
-  /live, user/.test(bot) ? 'live' : /\(index\)/.test(bot) ? 'index' : /training|Common Crawl|ByteDance/.test(bot) ? 'training' : /^(Google|Bing)/.test(bot) ? 'search' : 'other';
+  /live, user|AI agent/.test(bot) ? 'live' : /\(index\)/.test(bot) ? 'index' : /training|Common Crawl|ByteDance/.test(bot) ? 'training' : /^(Google|Bing)/.test(bot) ? 'search' : 'other';
 async function aiBots() {
   const days = Array.from({ length: 30 }, (_, i) => day(i));
   const results = await redis(days.map((d) => ['HGETALL', `ai-bots:${d}`]));

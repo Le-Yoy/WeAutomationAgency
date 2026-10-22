@@ -16,6 +16,7 @@ const AI_BOTS: [string, string][] = [
   ['DuckAssistBot', 'DuckDuckGo AI'],
   ['Applebot', 'Apple (Siri / Apple Intelligence)'],
   ['Meta-ExternalAgent', 'Meta AI'],
+  ['meta-webindexer', 'Meta AI (agent / index)'],
   ['Amazonbot', 'Amazon (Alexa)'],
   ['Bytespider', 'ByteDance'],
   ['CCBot', 'Common Crawl'],
@@ -107,6 +108,10 @@ function dashboardAuth(req: NextRequest) {
   });
 }
 
+// Files only machines read (Quentin Yacoub's method, 2026-10-22): AI agents often browse with a normal
+// Chrome user agent, so any non-bot hit on these is logged as a probable AI agent.
+const AGENT_FILES = /^\/(llms\.txt|llms-full\.txt|.*\.md|.*\.json)$/;
+
 export function middleware(req: NextRequest, event: NextFetchEvent) {
   if (req.nextUrl.pathname.startsWith('/dashboard')) {
     return dashboardAuth(req) || NextResponse.next({ headers: { 'X-Robots-Tag': 'noindex' } });
@@ -114,6 +119,11 @@ export function middleware(req: NextRequest, event: NextFetchEvent) {
 
   const bot = detectAiBot(req.headers.get('user-agent') || '');
   if (bot) event.waitUntil(recordAiHit(bot, req.nextUrl.pathname));
+  else if (AGENT_FILES.test(req.nextUrl.pathname)) {
+    // ChatGPT Agent and others sign requests (Web Bot Auth) → name them when we can.
+    const signed = req.headers.get('signature-agent');
+    event.waitUntil(recordAiHit(signed ? `AI agent (signed: ${signed.slice(0, 40)})` : 'Probable AI agent (browser UA)', req.nextUrl.pathname));
+  }
 
   // Bots keep the plain English root (no redirect, no cookie).
   if (req.nextUrl.pathname === '/' && !bot) return localeRedirect(req);
