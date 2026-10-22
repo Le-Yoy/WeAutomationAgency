@@ -16,7 +16,9 @@ export function GET() {
   const lines: string[] = [
     '# WeAutomationAgency',
     '',
-    '> AI automation agency founded by Houssam Boutaleb. We help businesses get found on Google and recommended by AI assistants (GEO/AEO), and build AI chatbots, lead generation, voice and email automations. Site in English, French and Spanish. Contact: support@weautomationagency.com',
+    '> AI automation agency founded in 2022 by Houssam Boutaleb (3 partners, 50+ clients and projects, remote from France and the US, works in EN/FR/ES/AR). We help businesses get found on Google and recommended by AI assistants (GEO/AEO), and build AI chatbots, lead generation, voice and email automations. Site in English, French and Spanish. Contact: support@weautomationagency.com',
+    '',
+    `- [About us](${BASE_URL}/about): who we are, how the agency started, what we have built, how we work (also in French: ${BASE_URL}/fr/about, Spanish: ${BASE_URL}/es/about)`,
     '',
     '## Services',
     ...SERVICES.map(([name, path, desc]) => `- [${name}](${BASE_URL}${path}): ${desc} (also in French: ${BASE_URL}/fr${path}, Spanish: ${BASE_URL}/es${path})`),

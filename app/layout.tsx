@@ -97,6 +97,10 @@ const jsonLd = {
         'Email Automation',
       ],
       email: 'support@weautomationagency.com',
+      foundingDate: '2022',
+      founder: { '@type': 'Person', '@id': 'https://weautomationagency.com/#founder', name: 'Houssam Boutaleb', jobTitle: 'Founder & CEO', sameAs: ['https://www.linkedin.com/in/houssam-boutaleb-677a9723b'] },
+      knowsLanguage: ['en', 'fr', 'es', 'ar'],
+      areaServed: ['Europe', 'North America', 'Latin America', 'North Africa'],
       sameAs: [
         'https://www.linkedin.com/company/weautomationagency',
         'https://www.youtube.com/@weautomationagency',

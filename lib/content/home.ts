@@ -29,6 +29,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
       ],
       actionLinks: [
         { name: 'Portfolio', href: '/portfolio' },
+        { name: 'About us', href: '/about' },
         { name: 'Get A Demo', href: '/#contact' },
         { name: 'Contact Us', href: '/#contact' },
       ],
@@ -86,6 +87,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
         { name: 'Call Center', href: '/services/call-center' },
         { name: 'Email Automation', href: '/services/email-automation' },
         { name: 'Portfolio', href: '/portfolio' },
+        { name: 'About us', href: '/about' },
       ],
       legalLinks: [
         { name: 'Privacy Policy', href: '/privacy' },
@@ -117,6 +119,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
       ],
       actionLinks: [
         { name: 'Portfolio', href: '/portfolio' },
+        { name: 'À propos', href: '/fr/about' },
         { name: 'Demander une démo', href: '/#contact' },
         { name: 'Nous contacter', href: '/#contact' },
       ],
@@ -174,6 +177,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
         { name: 'Centre d’appels', href: '/services/call-center' },
         { name: 'Automatisation d’e-mails', href: '/services/email-automation' },
         { name: 'Portfolio', href: '/portfolio' },
+        { name: 'À propos', href: '/about' },
       ],
       legalLinks: [
         { name: 'Politique de confidentialité', href: '/privacy' },
@@ -205,6 +209,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
       ],
       actionLinks: [
         { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Sobre nosotros', href: '/es/about' },
         { name: 'Pedir una demo', href: '/#contact' },
         { name: 'Contáctanos', href: '/#contact' },
       ],
@@ -262,6 +267,7 @@ export const HOME: Record<SiteLocale, HomeDict> = {
         { name: 'Centro de llamadas', href: '/services/call-center' },
         { name: 'Automatización de e-mails', href: '/services/email-automation' },
         { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Sobre nosotros', href: '/about' },
       ],
       legalLinks: [
         { name: 'Política de privacidad', href: '/privacy' },
