@@ -60,7 +60,7 @@ export const ABOUT: Record<SiteLocale, AboutDict> = {
       {
         title: 'Our own lead generation machine',
         text: 'Built on Make for our own prospecting first: LinkedIn Sales Navigator targeting, verified work emails, an opening line written by AI for each prospect, sequences and tracking. Up to 2,000 people contacted a day with a reply rate around 5.5%, when the B2B average sits around 2–3.5%.',
-        link: { label: 'How the pipeline works', href: '/blog/ai-lead-generation' },
+        link: { label: 'Read the full case study', href: '/blog/cold-email-automation-case-study' },
       },
       {
         title: 'The same machine, for clients',
@@ -129,7 +129,7 @@ export const ABOUT: Record<SiteLocale, AboutDict> = {
       {
         title: 'Notre propre machine de prospection',
         text: "Construite sur Make pour notre propre prospection d'abord : ciblage LinkedIn Sales Navigator, e-mails pro vérifiés, une phrase d'accroche écrite par l'IA pour chaque prospect, séquences et suivi. Jusqu'à 2 000 personnes contactées par jour avec environ 5,5 % de réponses, quand la moyenne B2B tourne autour de 2 à 3,5 %.",
-        link: { label: 'Comment fonctionne le pipeline', href: '/blog/ai-lead-generation' },
+        link: { label: "Lire l'étude de cas complète", href: '/blog/cold-email-automation-case-study' },
       },
       {
         title: 'La même machine, pour nos clients',
@@ -198,7 +198,7 @@ export const ABOUT: Record<SiteLocale, AboutDict> = {
       {
         title: 'Nuestra propia máquina de captación',
         text: 'Construida en Make primero para nuestra propia prospección: segmentación con LinkedIn Sales Navigator, e-mails profesionales verificados, una frase de apertura escrita por IA para cada prospecto, secuencias y seguimiento. Hasta 2.000 personas contactadas al día con una tasa de respuesta de alrededor del 5,5 %, cuando la media B2B ronda el 2–3,5 %.',
-        link: { label: 'Cómo funciona el sistema', href: '/blog/ai-lead-generation' },
+        link: { label: 'Leer el caso completo', href: '/blog/cold-email-automation-case-study' },
       },
       {
         title: 'La misma máquina, para clientes',

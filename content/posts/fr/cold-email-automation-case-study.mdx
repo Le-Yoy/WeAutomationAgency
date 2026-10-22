@@ -1,0 +1,90 @@
+---
+title: "Cold email automatisé : le pipeline Make + Instantly derrière 2 000 e-mails par jour"
+description: "Notre vrai cold email automatisé sur Make : tri par fournisseur e-mail, vérification NeverBounce, accroches IA et Instantly. Jusqu'à 2 000 envois/jour, ~5,5 %."
+excerpt: "Une vraie étude de cas : le scénario Make qui vérifiait, personnalisait et envoyait jusqu'à 2 000 cold emails par jour, étape par étape, et ce qu'on changerait aujourd'hui."
+date: "2026-10-22"
+dateLabel: "22 octobre 2026"
+seoTitle: "Cold email automatisé : notre étude de cas Make + Instantly"
+category: "Prospection"
+author: "Houssam Boutaleb"
+authorRole: "Fondateur & CEO, WeAutomationAgency"
+keywords: ["cold email", "cold email automatisé", "délivrabilité cold email", "make cold email", "instantly make", "vérification e-mail prospection"]
+type: howto
+toc: true
+---
+
+> **La réponse courte :** notre machine de cold email, c'était un scénario Make entre notre source de leads et Instantly. Chaque lead était trié selon son fournisseur e-mail, vérifié avec NeverBounce, recevait une phrase d'accroche écrite par l'IA, puis partait dans Instantly, qui envoyait depuis des boîtes déjà « chauffées ». Résultat : **jusqu'à 2 000 personnes contactées par jour** avec **environ 5,5 % de réponses**. L'IA, c'était la partie facile. Le vrai travail, c'était la délivrabilité.
+
+Je l'ai d'abord construit pour notre propre prospection, puis déployé pour un client qui vend des produits digitaux. Voici le vrai scénario, module par module, et ce que chaque étape protégeait.
+
+## À quoi ressemblait le pipeline complet ?
+
+Trois étapes, chacune indépendante :
+
+1. **Trouver les bonnes personnes.** Une recherche précise sur LinkedIn Sales Navigator (poste, secteur, taille d'entreprise, pays), puis un outil de recherche d'e-mails (on utilisait Anymailfinder) pour obtenir l'adresse pro de chaque personne.
+2. **Nettoyer et préparer chaque lead.** C'est le scénario Make ci-dessous. Il décide si on peut écrire à ce lead sans risque, rédige la phrase personnalisée et l'envoie à l'outil d'envoi.
+3. **Envoyer et relancer.** Instantly envoyait les séquences depuis plusieurs boîtes chauffées et récupérait les réponses.
+
+L'essentiel du résultat venait de l'étape 2. Un excellent e-mail envoyé à une mauvaise adresse ne sert à rien, et quelques centaines de rebonds suffisent à griller un domaine d'envoi pour des mois.
+
+## Comment fonctionne le scénario Make, étape par étape ?
+
+**1. Un webhook reçoit le lead.** Chaque nouveau contact arrive dans Make avec son nom, son poste, son entreprise et son e-mail. Un filtre ne le laisse passer que si l'étape précédente a réussi.
+
+**2. On regarde qui héberge l'adresse.** Un appel HTTP vérifie si l'adresse tourne sur Google Workspace, Microsoft 365 ou un autre fournisseur. C'est important pour la délivrabilité : un e-mail envoyé d'une boîte Google vers une adresse Google, et d'Outlook vers Outlook, arrive plus souvent en boîte de réception. Chaque lead était donc associé à des boîtes d'envoi du même fournisseur.
+
+**3. Un routeur répartit les leads sur trois chemins.**
+
+- **Chemin 1 : vérifier, puis personnaliser.** L'adresse passe par **NeverBounce**. Seules les adresses valides continuent. OpenAI rédige ensuite la phrase d'accroche, un module JSON nettoie la réponse, et un appel HTTP ajoute le lead dans la bonne campagne Instantly.
+- **Chemin 2 : personnaliser directement.** Les leads déjà vérifiés sautent la deuxième vérification (inutile de payer deux fois) et partent directement vers l'accroche IA et Instantly.
+- **Chemin 3 : noter pour vérification.** Tout ce qui ne rentre pas dans les cases, comme un fournisseur inconnu, part dans un Google Sheet. Aucun cas douteux ne reçoit d'e-mail.
+
+**4. Instantly prend le relais.** Instantly envoie la séquence, alterne entre les boîtes pour qu'aucune n'envoie trop, et les garde chauffées en arrière-plan.
+
+## Pourquoi vérifier chaque e-mail avant l'envoi ?
+
+Parce que les rebonds sont le moyen le plus rapide de perdre un domaine. Le milieu du cold email considère **un taux de rebond sous 2 %** comme la limite à ne pas dépasser ([Hunter](https://hunter.io/cold-email-guide/email-bounce-rate)). Et les listes B2B vieillissent vite : Instantly mesure une dégradation moyenne d'environ **2,1 % par mois**, donc une liste perd une bonne partie de ses adresses valides en un an ([Instantly](https://instantly.ai/blog/b2b-email-list-decay-freshness/)).
+
+Les listes récupérées et enrichies sont les pires. Sans vérification, une liste normale vous ferait dépasser largement les 2 % de rebonds. Avec NeverBounce au milieu, seules les adresses confirmées arrivaient dans Instantly, et c'est ce qui a gardé nos domaines en bonne santé à ce volume.
+
+## Comment l'IA personnalisait 2 000 e-mails par jour sans faire exploser les coûts ?
+
+On ne demandait pas à l'IA d'écrire des e-mails entiers. Le message était un modèle fixe avec des variables (prénom, entreprise, poste). L'IA écrivait **une seule chose : la phrase d'accroche**, à partir du profil de la personne.
+
+Deux raisons :
+- **Le coût.** Une phrase courte par lead consomme très peu de tokens. À 2 000 leads par jour, ça change tout.
+- **Le contrôle.** Un modèle testé garde le message, l'offre et la mention de désinscription identiques pour tout le monde. Seule la première phrase change, et c'est elle qui donne envie de lire la suite.
+
+Le module JSON après OpenAI impose une sortie propre et prévisible : une réponse bizarre du modèle ne casse jamais un envoi.
+
+## Quels ont été les résultats ?
+
+- **Jusqu'à 2 000 personnes contactées par jour.**
+- **Environ 5,5 % de réponses**, quand la moyenne du cold email B2B tourne autour de 2 à 3,5 % ([lemlist](https://lemlist.com/blog/cold-email-response-rate), [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)). Ceux qui font de la prospection savent que c'est un très bon taux.
+- **Plus de clients signés** qu'avec la prospection manuelle classique, d'abord pour notre agence, puis pour le client.
+
+## Qu'est-ce qu'on changerait si on le construisait aujourd'hui ?
+
+<Callout>
+Le cœur reste le même : vérifier avant d'envoyer, associer les fournisseurs e-mail, limiter l'IA à une phrase. Ce qui change, c'est tout autour.
+</Callout>
+
+- **Gérer les réponses automatiquement.** On relierait la détection des réponses d'Instantly à Make : une réponse « intéressé » reçoit un lien de prise de rendez-vous et arrive dans le CRM, un « pas maintenant » est relancé dans trois mois, une désinscription est supprimée partout.
+- **Utiliser un modèle moins cher pour le tri.** Les petits modèles de classification coûtent aujourd'hui une fraction de centime par lead. On peut donc noter chaque profil avant même de le vérifier, et trier les réponses.
+- **Passer la version lourde sur n8n.** Quand le volume ou le nombre d'étapes augmente, n8n facture par exécution et non par étape. On a reconstruit ce pipeline comme ça pour un projet à plus gros volume ([n8n vs Make](/fr/blog/n8n-vs-make)).
+- **Respecter les règles de chaque marché.** Une désinscription simple dans chaque e-mail, et les règles B2B de chaque pays (CNIL en France, PECR au Royaume-Uni, CAN-SPAM aux États-Unis). La checklist complète est dans notre [guide de la prospection automatisée par IA](/fr/blog/ai-lead-generation).
+
+<KeyTakeaways title="À retenir">
+- Vérifiez chaque adresse avant qu'elle n'arrive dans l'outil d'envoi ; restez sous 2 % de rebonds.
+- Associez la boîte d'envoi au fournisseur e-mail du prospect.
+- Limitez l'IA à une phrase d'accroche sur un modèle fixe : pas cher et maîtrisé.
+- Notez les cas douteux au lieu de leur écrire.
+- Les 2 000 e-mails par jour à ~5,5 % de réponses venaient de la délivrabilité, pas d'un texte génial.
+</KeyTakeaways>
+
+C'est le système qu'on construit pour nos clients : notre [service de prospection automatisée](/fr/services/lead-generation), avec l'[automatisation des e-mails](/fr/services/email-automation) qui gère les séquences et les réponses. Si vous en voulez un pour votre entreprise, [parlez-moi de votre offre](/start) et je vous dirai honnêtement si la prospection sortante vous convient.
+
+## À lire ensuite
+- [Prospection automatisée par IA : le pipeline complet et les règles](/fr/blog/ai-lead-generation)
+- [n8n vs Make : lequel choisir pour un pipeline comme celui-ci](/fr/blog/n8n-vs-make)
+- [Chatbots IA pour les entreprises : le côté entrant du tunnel](/fr/blog/ai-chatbots-for-business)

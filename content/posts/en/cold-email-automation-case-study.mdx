@@ -1,0 +1,90 @@
+---
+title: "Cold Email Automation: The Make + Instantly Pipeline Behind 2,000 Emails a Day"
+description: "Our real cold email automation on Make: email host routing, NeverBounce checks, AI lines and Instantly, up to 2,000 a day at ~5.5% replies."
+excerpt: "A real case study: the Make scenario that verified, personalized and sent up to 2,000 cold emails a day, step by step, with what we would change today."
+date: "2026-10-22"
+dateLabel: "October 22, 2026"
+seoTitle: "Cold Email Automation: Our Make + Instantly Case Study"
+category: "Lead Generation"
+author: "Houssam Boutaleb"
+authorRole: "Founder & CEO, WeAutomationAgency"
+keywords: ["cold email automation", "cold email deliverability", "make cold email", "instantly make integration", "email verification cold email", "automated cold email"]
+type: howto
+toc: true
+---
+
+> **The short answer:** our cold email machine was one Make scenario between our lead source and Instantly. Every lead was checked for its email provider, verified with NeverBounce, given an AI-written opening line, then pushed to Instantly, which sent from warmed-up inboxes. It contacted **up to 2,000 people a day** with a **reply rate around 5.5%**. The AI was the cheap part. Deliverability was the real work.
+
+I built this first for our own prospecting, then deployed it for a client selling digital products. Here is the actual scenario, module by module, and what each part was there to protect.
+
+## What did the full pipeline look like?
+
+Three stages, each one a separate piece:
+
+1. **Find the people.** A precise LinkedIn Sales Navigator search (job title, industry, company size, country), then an email finder (we used Anymailfinder) to get each person's work address.
+2. **Clean and prepare each lead.** This is the Make scenario below. It decides whether a lead is safe to email, writes the personal line and hands it to the sending tool.
+3. **Send and follow up.** Instantly sent the sequences from several warmed-up inboxes and caught the replies.
+
+Most of the result came from stage 2. A great email sent to a bad address does nothing, and a few hundred bounces can burn a sending domain for months.
+
+## How does the Make scenario work, step by step?
+
+**1. A webhook receives the lead.** Each new contact from stage 1 arrives in Make with its name, role, company and email. A filter lets it through only if the previous step succeeded.
+
+**2. We look up who hosts the email.** An HTTP call checks whether the address runs on Google Workspace, Microsoft 365 or another provider. That matters for deliverability: emails sent from a Google inbox to a Google address, and from Outlook to Outlook, tend to land in the inbox more often. So each lead was later matched with inboxes on the same provider.
+
+**3. A router splits the leads into three paths.**
+
+- **Path 1: verify, then personalize.** The address goes through **NeverBounce**. Only addresses marked valid continue. OpenAI then writes the opening line, a JSON module cleans the output, and an HTTP call adds the lead to the right Instantly campaign.
+- **Path 2: personalize directly.** Leads that were already verified skip the second check (no point paying twice) and go straight to the AI line and Instantly.
+- **Path 3: log for review.** Anything that doesn't fit, like an unknown host, goes into a Google Sheet. Nothing uncertain gets emailed.
+
+**4. Instantly takes over.** Instantly sends the sequence, rotates between inboxes so no single one sends too much, and keeps the inboxes warm in the background.
+
+## Why verify every email before sending?
+
+Because bounces are the fastest way to lose a domain. The cold email industry treats **a bounce rate under 2%** as the line not to cross ([Hunter](https://hunter.io/cold-email-guide/email-bounce-rate)). Meanwhile B2B lists go stale fast: Instantly measured an average decay of about **2.1% per month**, so a list loses a big share of its valid addresses within a year ([Instantly](https://instantly.ai/blog/b2b-email-list-decay-freshness/)).
+
+Scraped and enriched lists are the worst offenders. Without a verification step, a normal list would push you well above 2% bounces. With NeverBounce in the middle, only addresses confirmed as real ever reached Instantly, which is what kept our domains healthy at this volume.
+
+## How did the AI personalize 2,000 emails a day without the cost exploding?
+
+We did not ask the AI to write whole emails. The email itself was a fixed template with variables (first name, company, role). The AI wrote **one thing: the opening line**, from the person's profile.
+
+Two reasons:
+- **Cost.** One short line per lead uses a tiny number of tokens. At 2,000 leads a day, that difference is everything.
+- **Control.** A tested template keeps the message, the offer and the legal footer identical for everyone. Only the first sentence changes, and that is the sentence that makes people keep reading.
+
+The JSON step after OpenAI forces a clean, predictable output, so a strange answer from the model never breaks a send.
+
+## What were the results?
+
+- **Up to 2,000 people contacted per day.**
+- **A reply rate around 5.5%**, when B2B cold email averages sit around 2–3.5% ([lemlist](https://lemlist.com/blog/cold-email-response-rate), [Apollo](https://www.apollo.io/insights/what-is-a-good-benchmark-for-reply-rates-in-cold-outreach)). Anyone who runs outbound knows that's a very good rate.
+- **More clients signed** than classic manual prospecting brought us, first for our own agency, then for the client.
+
+## What would we change if we built it today?
+
+<Callout>
+The core stays: verify before sending, match email providers, keep the AI on one line. What changes is everything around it.
+</Callout>
+
+- **Handle replies automatically.** We'd connect Instantly's reply detection back to Make: an "interested" reply gets a booking link and lands in the CRM, a "not now" gets a reminder in three months, an unsubscribe is removed everywhere.
+- **Use a cheaper model for scoring.** Small classification models now cost a fraction of a cent per lead. That makes it affordable to score every profile before it's even verified, and to sort replies.
+- **Move the heavy version to n8n.** When volume or the number of steps grows, n8n bills per run instead of per step. We rebuilt this pipeline that way for a higher-volume project ([n8n vs Make](/blog/n8n-vs-make)).
+- **Respect each market's rules.** Easy opt-out in every email, and the B2B rules of each country (CNIL in France, PECR in the UK, CAN-SPAM in the US). The full checklist is in our [AI lead generation guide](/blog/ai-lead-generation).
+
+<KeyTakeaways title="Key takeaways">
+- Verify every address before it reaches the sending tool; stay under 2% bounces.
+- Match the sending inbox to the prospect's email provider.
+- Let the AI write one opening line on a fixed template: cheap and controlled.
+- Log anything uncertain instead of emailing it.
+- Up to 2,000 emails a day at ~5.5% replies came from deliverability, not from clever copy.
+</KeyTakeaways>
+
+This is the system we build for clients: our [automated lead generation service](/services/lead-generation), with the [email automation](/services/email-automation) that handles the sequences and replies. If you want one for your business, [tell me about your offer](/start) and I'll tell you honestly if outbound fits.
+
+## Keep reading
+- [AI lead generation: the full pipeline and the rules](/blog/ai-lead-generation)
+- [n8n vs Make: which one for a pipeline like this](/blog/n8n-vs-make)
+- [AI chatbots for business: the inbound side of the funnel](/blog/ai-chatbots-for-business)
