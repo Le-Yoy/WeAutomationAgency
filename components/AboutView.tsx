@@ -56,7 +56,16 @@ export default function AboutView({ locale = 'en' }: { locale?: SiteLocale }) {
           <Link href={localizedPath(locale, '/')} className="text-accent text-sm hover:text-darker-orange">← WeAutomationAgency</Link>
           <p className="text-accent text-sm font-semibold uppercase tracking-wide mt-8 mb-4">{t.eyebrow}</p>
           <h1 className="text-[clamp(2.2rem,5vw,3.6rem)] font-bold leading-tight mb-8">{t.h1}</h1>
-          <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed border-l-4 border-accent pl-5">{t.answer}</p>
+          <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed border-l-4 border-accent pl-5">
+            {t.answer.split(t.founderName).map((part, i, arr) => (
+              <span key={i}>
+                {part}
+                {i < arr.length - 1 && (
+                  <a href={t.founderLinkedin} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{t.founderName}</a>
+                )}
+              </span>
+            ))}
+          </p>
         </div>
       </section>
 
@@ -86,9 +95,10 @@ export default function AboutView({ locale = 'en' }: { locale?: SiteLocale }) {
               <div className="w-[72px] h-[72px] rounded-full bg-accent/10 text-accent flex items-center justify-center text-xl font-bold">HB</div>
             )}
             <div>
-              <div className="font-semibold">{t.founderName}</div>
+              <a href={t.founderLinkedin} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-accent hover:underline">
+                {t.founderName}
+              </a>
               <div className="text-sm text-neutral-500">{t.founderRole}, WeAutomationAgency</div>
-              <a href={t.founderLinkedin} target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:underline">LinkedIn</a>
             </div>
           </div>
         </div>
