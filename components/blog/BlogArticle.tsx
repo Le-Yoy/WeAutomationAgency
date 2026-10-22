@@ -26,6 +26,8 @@ const UI: Record<
     auditH: string;
     auditP: string;
     auditCta: string;
+    preferred: string;
+    preferredHint: string;
   }
 > = {
   en: {
@@ -35,6 +37,8 @@ const UI: Record<
     auditH: 'Not sure if your content is helping or hurting you?',
     auditP: "Get a free content & SEO audit. We'll tell you exactly where you stand — no jargon, no fear-mongering.",
     auditCta: 'Get my free audit',
+    preferred: 'Add us to your Google preferred sources',
+    preferredHint: 'See our new articles first in Google Search and AI Mode.',
   },
   fr: {
     back: 'Retour au blog',
@@ -43,6 +47,8 @@ const UI: Record<
     auditH: 'Vous ne savez pas si votre contenu vous aide ou vous dessert ?',
     auditP: 'Obtenez un audit de contenu et SEO gratuit. Nous vous dirons exactement où vous en êtes — sans jargon, sans alarmisme.',
     auditCta: 'Obtenir mon audit gratuit',
+    preferred: 'Ajoutez-nous à vos sources préférées Google',
+    preferredHint: 'Retrouvez nos nouveaux articles en priorité dans Google et le mode IA.',
   },
   es: {
     back: 'Volver al blog',
@@ -51,6 +57,8 @@ const UI: Record<
     auditH: '¿No sabes si tu contenido te ayuda o te perjudica?',
     auditP: 'Consigue una auditoría de contenido y SEO gratuita. Te diremos exactamente en qué punto estás — sin tecnicismos ni alarmismo.',
     auditCta: 'Consigue mi auditoría gratis',
+    preferred: 'Añádenos a tus fuentes preferidas de Google',
+    preferredHint: 'Ve nuestros nuevos artículos primero en Google y en el modo IA.',
   },
 };
 
@@ -186,6 +194,27 @@ export default function BlogArticle({
 
         {/* Body */}
         <div className="max-w-2xl mx-auto">{children}</div>
+
+        {/* Google Preferred Sources (site confirmed eligible, 2026-10-22) */}
+        <div className="max-w-2xl mx-auto mt-12">
+          <a
+            href="https://www.google.com/preferences/source?q=weautomationagency.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 rounded-xl border border-neutral-200 bg-white p-4 hover:border-accent transition-colors"
+          >
+            <svg className="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" />
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" />
+              <path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.07H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.93l3.66-2.83z" />
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A10.97 10.97 0 0 0 12 1 11 11 0 0 0 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z" />
+            </svg>
+            <span>
+              <span className="block font-semibold text-neutral-900">{t.preferred}</span>
+              <span className="block text-sm text-neutral-500">{t.preferredHint}</span>
+            </span>
+          </a>
+        </div>
 
         {/* CTA */}
         <div className="max-w-2xl mx-auto my-16">
