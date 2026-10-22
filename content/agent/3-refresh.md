@@ -24,3 +24,8 @@ If a page is on page 1 (avg position ≤ 10) with ≥30 impressions and its CTR 
 
 ## Translations stay in sync
 Every real change is applied to EN, FR and ES (localized, not translated word for word).
+
+## Question queries (Paul Vengeons' regex, added 2026-10-22)
+Every run, pull GSC queries (last 90 days, dimensions query+page) filtered with this regex (3 languages):
+`^(how|what|why|which|when|where|who|is|are|can|does|do|should|best|comment|pourquoi|quel|quelle|quels|quelles|combien|est-ce|faut-il|peut-on|qu.est-ce|como|cómo|que|qué|cual|cuál|cuanto|cuánto|por que|por qué)\b`
+For questions with impressions at **positions 1–20**: make sure the page that ranks has the exact question in its seoTitle or an H2, and answers it in the first sentence after that heading. Beyond position 20 the fix is authority (links, supporting posts), not the title. Baseline 2026-10-22: 44 question queries; biggest = "how much does a chatbot cost" family (~450 impressions, position ~56, /blog/ai-chatbot-cost, already well targeted → authority problem).
