@@ -28,6 +28,7 @@ const MARKETS = {
   fr: { location_code: 2250, language_code: 'fr' },
   es: { location_code: 2724, language_code: 'es' },
   ma: { location_code: 2504, language_code: 'fr' },
+  mx: { location_code: 2484, language_code: 'es' },
 };
 
 async function api(path, body) {

@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/fr/services/ai-search-visibility', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/es/services/ai-search-visibility', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/fr/agence-automatisation-ia', priority: 0.9, changeFrequency: 'monthly' },
+    { path: '/es/agencia-ia', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/about', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/fr/about', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/es/about', priority: 0.7, changeFrequency: 'monthly' },

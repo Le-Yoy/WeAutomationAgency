@@ -90,14 +90,14 @@ export default function Page({ params }: { params: { locale: string } }) {
             Agence d&apos;automatisation IA : on automatise ce qui vous fait perdre du temps
           </h1>
           <blockquote className="border-l-4 border-accent pl-5 my-8 text-neutral-800 text-lg leading-relaxed">
-            <strong>En bref :</strong> WeAutomationAgency est une agence d&apos;automatisation IA. On connecte vos outils
+            <strong>En bref :</strong> WeAutomationAgency est une agence d&apos;automatisation IA fondée en 2022, avec plus de 50 clients et projets. On connecte vos outils
             (boutique, WhatsApp, CRM, e-mail, agenda) et on y ajoute de l&apos;IA pour que les tâches répétitives se
             fassent toutes seules : répondre aux clients, confirmer les commandes, relancer les prospects, prendre les
             appels. On construit, on teste et on maintient. Premier échange et devis gratuits.
           </blockquote>
 
           <p className={P}>
-            Je suis Houssam Boutaleb, fondateur de WeAutomationAgency. La plupart des entreprises qu&apos;on accompagne
+            Je suis <Link className={A} href="/fr/about">Houssam Boutaleb</Link>, fondateur de WeAutomationAgency. La plupart des entreprises qu&apos;on accompagne
             n&apos;ont pas besoin d&apos;un « projet IA ». Elles ont besoin que les messages WhatsApp reçoivent une réponse
             le soir et le week-end, que chaque commande soit confirmée, que les prospects soient relancés sans que
             quelqu&apos;un y pense. C&apos;est exactement ce qu&apos;on automatise.
@@ -153,7 +153,7 @@ export default function Page({ params }: { params: { locale: string } }) {
             réponses, quand la moyenne du marché tourne autour de 2 à 3,5 %. On a aussi construit une version sur n8n pour un autre projet, plus poussée :
             plusieurs sources de données, personnalisation à partir du site et des posts du prospect, multicanal et prise
             de rendez-vous automatique.{' '}
-            <Link className={A} href="/fr/services/lead-generation">Voir la génération de leads automatisée</Link>.
+            <Link className={A} href="/fr/blog/cold-email-automation-case-study">Lire l&apos;étude de cas complète</Link>.
           </p>
 
           <h2 className={H2}>Comment se passe un projet avec nous ?</h2>
