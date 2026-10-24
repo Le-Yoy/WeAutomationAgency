@@ -74,6 +74,7 @@ const html = `
 
   ${targets.length ? `<h3>Keyword targets</h3><ul>${targets.map((t) => `<li style="margin-bottom:4px">${targetLine(t)}</li>`).join('')}</ul>` : ''}
 
+  ${s.engine?.aiVisibility ? `<h3>💬 ChatGPT citations</h3><p>Cited for <b>${s.engine.aiVisibility.cited} of ${s.engine.aiVisibility.total}</b> target keywords (${s.engine.aiVisibility.date})${s.engine.aiVisibility.previous ? `, was ${s.engine.aiVisibility.previous.cited} on ${s.engine.aiVisibility.previous.date}` : ''}.</p>` : ''}
   ${s.engine?.lastRun ? `<h3>Content engine this week</h3><pre style="white-space:pre-wrap;font-family:inherit;font-size:13px;color:#444">${s.engine.lastRun.split('\n').slice(0, 12).join('\n').replace(/</g, '&lt;')}</pre>` : ''}
   ${(s.engine?.opportunities?.items || []).filter((o) => /New|discuss/.test(o.status)).length ? `<h3>💰 Opportunities waiting for your decision</h3><ul>${s.engine.opportunities.items.filter((o) => /New|discuss/.test(o.status)).map((o) => `<li>${o.name}${o.volume ? ` (${o.volume}/mo)` : ''}: ${o.next || ''}</li>`).join('')}</ul><p style="color:#666">Decide in Notion → 💰 Opportunities (✅ Go / ❌ No).</p>` : ''}
 

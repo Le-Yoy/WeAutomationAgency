@@ -22,6 +22,7 @@ Read, in this order:
 - [ ] `content/real-experiences.md` — the only experiences you may use.
 - [ ] The newest Notion page "Weekly Briefing — YYYY-MM-DD" (Intelligence Hub): opportunities, blog ideas, **Facts that changed**.
 - [ ] `npm run gsc:cached -- --json` — this morning's Search Console snapshot (pages, queries, query→page, **targets** with per-country positions).
+- [ ] `npm run dfs -- ai-check` (~$0.05) — asks ChatGPT every active target keyword, saves who it cites in `memory/ai-visibility.json` (shown on the dashboard). Compare with last week's entry: any new ✅ cited / 👀 seen goes in the report.
 - [ ] `content/agent/memory/competitors.json` → if `updated` is older than 28 days, run the monthly competitor refresh + link ideas → read `8-competitors-backlinks.md` §Refresh.
 
 ## Step 1 — Follow up on existing targets FIRST → read `1-keywords.md` §A
@@ -30,6 +31,7 @@ Read, in this order:
 ## Step 2 — Choose this week's 2 keywords → read `1-keywords.md` §B–§F
 - [ ] Shortlist 4–6 topics from: briefing, GSC gaps, competitor gaps (next 2 agencies from `competitors.json`, see `8-competitors-backlinks.md`), our services.
 - [ ] Score every shortlisted topic with the winnability tool (cheap pass), then the 2 finalists in full.
+- [ ] For the 2 finalists: `npm run dfs -- ai-answer <market> "<question>"` (~$0.004). Its **fan-out queries** = sub-questions the article must answer (H2s); its **cited sources** = what we must beat (and what's missing).
 - [ ] Check cannibalization (no second page for a keyword we already cover).
 - [ ] Pick: **1 ATTACK NOW** (money article preferred) + **1 ATTACK NOW or INVEST**. Best keyword **per market**.
 - [ ] Log every "wrong intent" cluster as an opportunity → `7-opportunities.md`.

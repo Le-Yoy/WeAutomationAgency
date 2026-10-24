@@ -209,6 +209,7 @@ const readJson = (f) => (existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : n
 const comp = readJson('content/agent/memory/competitors.json');
 const ideas = readJson('content/agent/memory/link-ideas.json');
 const opps = readJson('content/agent/memory/opportunities.json');
+const aiVis = readJson('content/agent/memory/ai-visibility.json');
 snapshot.engine = {
   lastRun: existsSync('content/agent/memory/last-run.md') ? readFileSync('content/agent/memory/last-run.md', 'utf8').slice(0, 3000) : null,
   competitors: comp ? {
@@ -220,6 +221,14 @@ snapshot.engine = {
   } : null,
   linkIdeas: ideas ? Object.fromEntries(Object.entries(ideas).map(([m, d]) => [m, { updated: d.updated, total: d.ideas.length, top: d.ideas.slice(0, 5).map((i) => ({ domain: i.domain, competitors: i.count, rank: i.rank })) }])) : null,
   opportunities: opps,
+  // Weekly ChatGPT check (npm run dfs -- ai-check): are we cited for our target keywords?
+  aiVisibility: aiVis?.length ? {
+    date: aiVis[0].date,
+    cited: aiVis[0].rows.filter((r) => r.cited).length,
+    total: aiVis[0].rows.length,
+    previous: aiVis[1] ? { date: aiVis[1].date, cited: aiVis[1].rows.filter((r) => r.cited).length } : null,
+    rows: aiVis[0].rows.map((r) => ({ keyword: r.keyword, market: r.market, cited: r.cited, retrieved: r.retrieved, top: r.sources.slice(0, 3) })),
+  } : null,
 };
 
 // First position ever seen per target (baseline when startPosition is unknown).

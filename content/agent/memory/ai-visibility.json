@@ -1,0 +1,167 @@
+[
+  {
+    "date": "2026-10-24",
+    "rows": [
+      {
+        "id": "ai-lead-generation-us",
+        "keyword": "ai lead generation",
+        "market": "us",
+        "cited": false,
+        "retrieved": false,
+        "sources": [
+          "technologyadvice.com",
+          "zapier.com",
+          "www.apollo.io",
+          "www.clay.com",
+          "instantly.ai",
+          "www.hubspot.com",
+          "www.zoominfo.com",
+          "www.cleanlist.ai"
+        ],
+        "brands": [
+          "Apollo.io",
+          "B2B data enrichment and sales automation platform",
+          "Instantly.ai",
+          "HubSpot",
+          "ZoomInfo"
+        ],
+        "fanOut": [
+          "AI lead generation tools platforms comparison 2026"
+        ]
+      },
+      {
+        "id": "ai-lead-generation-fr",
+        "keyword": "lead generation",
+        "market": "fr",
+        "cited": false,
+        "retrieved": false,
+        "sources": [
+          "www.francenum.gouv.fr",
+          "hacquisition.fr",
+          "www.cognism.com",
+          "www.hntic.fr"
+        ],
+        "brands": [
+          "LinkedIn Sales Navigator",
+          "INSEE",
+          "Apollo.io",
+          "Dropcontact",
+          "HubSpot",
+          "Lemlist"
+        ],
+        "fanOut": [
+          "lead generation B2B méthodes outils France 2026 prospection commerciale",
+          "outils lead generation B2B France LinkedIn Sales Navigator Apollo HubSpot conformité RGPD CNIL"
+        ]
+      },
+      {
+        "id": "ai-lead-generation-es",
+        "keyword": "captación de leads",
+        "market": "es",
+        "cited": false,
+        "retrieved": false,
+        "sources": [
+          "mail.appyweb.es",
+          "youtrust.com",
+          "www.e-xprimenet.com",
+          "www.esic.edu",
+          "blog.hubspot.es",
+          "www.cronuts.digital"
+        ],
+        "brands": [],
+        "fanOut": [
+          "captación de leads estrategias herramientas mejores prácticas España 2026",
+          "guía captación de leads inbound marketing landing pages formularios CRM RGPD España"
+        ]
+      },
+      {
+        "id": "chatgpt-watermark-us",
+        "keyword": "chatgpt watermark",
+        "market": "us",
+        "cited": false,
+        "retrieved": false,
+        "sources": [
+          "help.openai.com",
+          "openai.com",
+          "developers.openai.com"
+        ],
+        "brands": [],
+        "fanOut": [
+          "ChatGPT watermark meaning remove watermark generated images OpenAI"
+        ]
+      },
+      {
+        "id": "home-ai-automation-services-us",
+        "keyword": "ai automation services",
+        "market": "us",
+        "cited": false,
+        "retrieved": false,
+        "sources": [
+          "cofounderbase.com",
+          "www.cloudmotiv.ai",
+          "www.aimakers.co",
+          "zapier.com",
+          "www.make.com",
+          "n8n.io",
+          "www.microsoft.com"
+        ],
+        "brands": [
+          "LeapGen Ai",
+          "DMV AI Automation",
+          "Tech Tammina LLC",
+          "Macedon Technologies",
+          "workflow automation software",
+          "visual workflow automation platform",
+          "workflow automation platform",
+          "business workflow automation software"
+        ],
+        "fanOut": [
+          "AI automation services companies for businesses 2026"
+        ]
+      },
+      {
+        "id": "seo-geo-fr",
+        "keyword": "seo geo",
+        "market": "fr",
+        "cited": false,
+        "retrieved": false,
+        "sources": [
+          "developers.google.com",
+          "ccn.web.tr",
+          "searchengineland.com",
+          "www.semrush.com"
+        ],
+        "brands": [],
+        "fanOut": [
+          "SEO vs GEO Generative Engine Optimization best practices 2026",
+          "Google Search Central AI features SEO guidance AI Overviews GEO"
+        ]
+      },
+      {
+        "id": "seo-geo-es",
+        "keyword": "seo geo",
+        "market": "es",
+        "cited": false,
+        "retrieved": false,
+        "sources": [
+          "www.searchenginejournal.com",
+          "searchengineland.com"
+        ],
+        "brands": [],
+        "fanOut": [
+          "SEO GEO Generative Engine Optimization buenas prácticas 2026"
+        ]
+      },
+      {
+        "id": "seo-geo-mx",
+        "keyword": "seo geo",
+        "market": "mx",
+        "cited": false,
+        "retrieved": false,
+        "sources": [],
+        "brands": [],
+        "fanOut": []
+      }
+    ]
+  }
+]

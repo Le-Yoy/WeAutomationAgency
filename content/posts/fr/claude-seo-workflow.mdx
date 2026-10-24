@@ -1,0 +1,126 @@
+---
+title: "Claude SEO : le vrai workflow qu'on fait tourner chaque semaine (Claude Code + DataForSEO)"
+description: "Claude SEO en vrai : le système Claude Code + DataForSEO qui choisit les mots-clés, vérifie ChatGPT, rédige et publie. Coût réel : 0,44 $ par article."
+excerpt: "Pas une liste de prompts : le vrai système Claude Code + DataForSEO derrière notre blog, du score des mots-clés aux vérifications ChatGPT, avec le coût de chaque étape."
+date: "2026-10-24"
+dateLabel: "24 octobre 2026"
+seoTitle: "Claude SEO : notre vrai workflow Claude Code + DataForSEO"
+category: "IA & SEO"
+author: "Houssam Boutaleb"
+authorRole: "Fondateur & CEO, WeAutomationAgency"
+keywords: ["claude seo", "claude code seo", "seo avec claude", "dataforseo claude", "workflow seo ia", "seo ia"]
+type: guide
+toc: true
+---
+
+> **La réponse courte :** Claude est excellent en SEO quand on lui donne **de vraies données**, et faible quand on lui donne seulement des prompts. Notre système : Claude Code lance des scripts qui récupèrent les données mots-clés, Google et ChatGPT via l'API DataForSEO et notre propre Google Search Console, calcule les mots-clés qu'on peut vraiment gagner, rédige l'article en trois langues et le publie. Toute la recherche derrière cet article a coûté **0,44 $**.
+
+La plupart des contenus « Claude SEO » sont des listes de prompts. Demandez des mots-clés à Claude, demandez-lui un plan, demandez-lui d'écrire. Le problème : Claude ne connaît ni les volumes de recherche, ni qui est classé aujourd'hui, ni ce que répond ChatGPT. Il devine, et il devine avec beaucoup d'assurance.
+
+On a donc arrêté de lui demander de deviner. Voici le système exact qui fait tourner notre propre blog, étape par étape, y compris ce qui n'a pas marché et le coût de chaque appel.
+
+## Claude SEO, ça veut dire quoi concrètement ?
+
+C'est utiliser Claude (le plus souvent **Claude Code**, l'agent d'Anthropic qui travaille dans votre terminal et vos fichiers) pour le travail SEO : recherche de mots-clés, analyse des concurrents, rédaction, maillage interne et vérifications techniques.
+
+Il y a deux façons de faire :
+
+| | Prompts seuls | Claude + données |
+|---|---|---|
+| **Mots-clés** | Claude invente une liste | Vrais volumes, difficulté et CPC par pays |
+| **Concurrence** | Claude suppose | Le vrai top 10 Google d'aujourd'hui |
+| **Recherche IA (GEO)** | Absente | Ce que ChatGPT répond vraiment, et qui il cite |
+| **Votre site** | Claude ne le voit pas | Positions, clics et CTR par page dans la Search Console |
+| **Résultat** | Des articles génériques | Des articles visant des mots-clés gagnables |
+
+La deuxième colonne demande une source de données. On utilise l'**API DataForSEO**, payée à l'appel, sans abonnement ([tarifs DataForSEO](https://dataforseo.com/pricing)). Si vous ne voulez pas toucher au code, DataForSEO propose aussi un [serveur MCP officiel](https://github.com/dataforseo/mcp-server-typescript) qui se branche directement sur Claude. Nous, on appelle l'API depuis de petits scripts : chaque étape est reproductible et tourne toute seule à heure fixe.
+
+## Étape 1 : comment trouver les mots-clés qu'on peut vraiment gagner ?
+
+Claude part d'un sujet, puis récupère les mots-clés associés avec le volume, la difficulté, le CPC et l'intention pour chaque marché (France, États-Unis, Royaume-Uni, Espagne, Mexique). Ensuite, un script donne à chaque mot-clé un **score de « gagnabilité »** :
+
+- **La valeur :** volume, intention d'achat, CPC, et le fait qu'il mène ou non à un de nos services. Un AI Overview sur la page la fait baisser, parce que moins de gens cliquent.
+- **La gagnabilité :** l'écart entre la difficulté du mot-clé et ce que l'autorité de notre site peut encaisser, plus le nombre de résultats faibles dans le top 10 (forums, Reddit, pages sans aucun lien).
+
+Le résultat : un verdict par mot-clé, **attaquer maintenant, investir ou plus tard**. Cet article en est la preuve. « claude seo », c'est environ **480 recherches par mois en France**, 590 aux États-Unis et 170 en Espagne, une difficulté de 8, et le top 10 actuel contient Reddit, LinkedIn, Substack et YouTube. Une première page faible : feu vert.
+
+<Callout>
+En France, beaucoup de mots-clés se cherchent directement en anglais. « claude seo » fait 480 recherches par mois, « seo avec claude » à peine 10. Vérifiez toujours le terme anglais avant de traduire.
+</Callout>
+
+## Étape 2 : comment vérifier ce que répond ChatGPT ?
+
+C'est l'étape que la plupart des workflows SEO oublient, et celle qui compte pour le GEO (être cité dans les réponses de l'IA).
+
+Pour chaque mot-clé, un script pose la question à ChatGPT via l'API AI Optimization de DataForSEO et enregistre :
+
+- **les sources que ChatGPT cite** dans sa réponse,
+- **les marques qu'il mentionne**,
+- **les recherches qu'il lance en coulisses** (les requêtes « fan-out »), qui montrent les sous-questions qu'un article doit couvrir,
+- **si notre site est cité**, ou au moins consulté.
+
+Ça coûte environ **0,004 $ par question**. La première fois que je l'ai lancé sur nos 8 mots-clés suivis, le résultat m'a remis à ma place : **ChatGPT ne nous citait sur aucun**. C'est maintenant notre point de départ, enregistré chaque semaine, pour voir le jour où ça change.
+
+Ça m'a aussi dit quoi écrire ici. Sur « comment utiliser Claude pour le SEO », ChatGPT donne une réponse générique et ne cite que l'aide d'Anthropic et les consignes de Google. Personne ne montre un vrai système avec de vrais coûts. Ce manque, c'est cet article.
+
+## Étape 3 : comment Claude rédige sans sonner « IA » ?
+
+Claude rédige à partir d'un fichier de règles, pas d'un prompt d'une ligne. Les règles couvrent :
+
+- **Le ton :** première personne, phrases courtes, une idée par paragraphe, une liste de mots interdits.
+- **La structure pour les réponses IA :** une réponse courte de 2 à 4 phrases sous le titre, des H2 écrits comme les vraies questions que les gens tapent, des tableaux pour tout ce qui se compare.
+- **Les faits :** chaque chiffre vient d'une source citée ou de notre propre travail. Nos histoires viennent d'un fichier séparé d'expériences réelles : Claude ne peut pas inventer un client.
+- **Les langues :** l'anglais d'abord, puis une vraie réécriture en français et en espagnol, chacune sur le mot-clé de son marché. Jamais une traduction mot à mot.
+
+Ensuite, je relis. Claude publie directement, je revois l'article après coup et je corrige ce qui ne me ressemble pas.
+
+## Étape 4 : comment choisir les liens internes ?
+
+Pas au feeling. Un script compare chaque article avec tous les autres (mots en commun, mots-clés en commun, même catégorie) et propose les liens les plus pertinents. Chaque article doit avoir **3 à 6 liens sortants et au moins 3 liens entrants**, et le script signale toute page vers laquelle rien ne pointe.
+
+Le premier passage a trouvé des articles accessibles uniquement par le sitemap. Google les regardait à peine. La correction a pris quelques minutes.
+
+## Étape 5 : comment savoir si ça marche ?
+
+Chaque matin à 5 h 30 UTC, une tâche programmée récupère nos données Google Search Console et enregistre une photo : clics, positions, CTR de chaque page comparé au CTR normal pour sa position, et la position de chaque mot-clé cible dans son propre pays. Chaque lundi, un e-mail résume la semaine, et une routine Claude hebdomadaire lit les règles, choisit les prochains mots-clés et publie.
+
+Deux règles gardent le tout honnête :
+
+- **Pas de mise à jour sans nouveauté.** Un ancien article ne reçoit une nouvelle date que si quelque chose a vraiment changé (un prix, une fonctionnalité, un fait corrigé). Changer seulement la date, ce n'est pas une mise à jour.
+- **On juge après 28 jours.** Une nouvelle page a besoin de temps. On ne touche pas à une cible avant son premier point à 28 jours.
+
+## Combien ça coûte à faire tourner ?
+
+| Appel | Coût par appel |
+|---|---|
+| Volumes de recherche, 1 marché (jusqu'à 1 000 mots-clés) | ~0,09 $ |
+| Mots-clés associés avec difficulté | ~0,01 $ |
+| Top 10 Google pour un mot-clé | ~0,002 $ |
+| Une réponse ChatGPT avec ses sources | ~0,004 $ |
+| Qui cite un domaine dans les réponses IA | ~0,10 $ |
+
+Toute la recherche pour cet article (les volumes d'une douzaine de sujets dans 3 pays, les idées de mots-clés, le top 10, dix réponses ChatGPT et la vérification de qui cite notre domaine) a coûté **0,44 $**. Claude Code fonctionne avec un abonnement Claude classique. La Google Search Console est gratuite.
+
+Le vrai coût, c'est de le construire la première fois : les scripts, les fichiers de règles et les vérifications. Ça nous a pris quelques jours de travail. Le faire tourner prend maintenant quelques minutes par semaine.
+
+## Qu'est-ce qui n'a pas marché ?
+
+- **Laisser Claude deviner les mots-clés.** Les listes avaient l'air intelligentes et n'avaient aucun volume.
+- **Écrire en anglais puis traduire.** Les versions française et espagnole visaient des mots que personne ne cherche dans ces pays. Chaque marché a besoin de sa propre recherche de mots-clés.
+- **Publier sans contrôle.** Un build et une vérification SEO (titres, descriptions, liens cassés, un seul H1) tournent maintenant avant chaque publication.
+- **Se fier à la position seule.** Une page peut être bien classée et recevoir peu de clics. Comparer son CTR au CTR normal de sa position montre quels titres retravailler.
+
+<KeyTakeaways title="À retenir">
+- Claude ne vaut que les données que vous lui donnez : branchez-le sur de vraies données mots-clés, Google et Search Console.
+- Notez les mots-clés selon leur gagnabilité, pas seulement leur volume. Un top 10 faible vaut mieux qu'un gros chiffre.
+- Vérifiez ce que ChatGPT répond et cite pour chaque mot-clé : ça montre les manques et vous donne un point de départ GEO.
+- Utilisez des fichiers de règles pour le ton, la structure et les faits, et gardez une relecture humaine.
+- La recherche coûte quelques centimes. Le travail, c'est de construire le système une fois.
+</KeyTakeaways>
+
+Si vous voulez le même système sur votre site, avec le SEO et la visibilité IA suivis chaque semaine, c'est notre [service de visibilité dans la recherche IA](/fr/services/ai-search-visibility). Les termes vous sont nouveaux ? Commencez par [SEO GEO : ce que ces mots veulent vraiment dire](/fr/blog/seo-vs-geo-vs-aeo-ai-visibility). Ou [parlez-moi de votre site](/start) et je vous dirai honnêtement quels mots-clés vous pouvez gagner en premier.
+
+## À lire ensuite
+- [Visibilité dans la recherche IA (GEO) : se faire citer par ChatGPT et Google](/fr/blog/ai-search-visibility-geo)
+- [SEO GEO : SEO, GEO, AEO, ce que ces mots veulent vraiment dire](/fr/blog/seo-vs-geo-vs-aeo-ai-visibility)
+- [Faut-il vérifier les contenus IA avant de publier ?](/fr/blog/google-fact-check-ai-content-before-publishing)

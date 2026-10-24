@@ -8,8 +8,12 @@
 //   npm run dfs -- gap fr nocodefactory.fr [100]                            keywords a competitor ranks for (top 20) and we don't
 //   npm run dfs -- ranked us [100]                                          keywords we rank for
 //   npm run dfs -- serp fr "agence automatisation ia"                       top 10 + whether an AI Overview shows
+//   npm run dfs -- ai-answer us "best ai automation agency"                 ChatGPT's real answer: cited sources, brands, fan-out queries, are we cited?
+//   npm run dfs -- ai-volume us "ai lead generation" "chatgpt watermark"   AI search volume (how often people ask AI chats)
+//   npm run dfs -- ai-mentions us [domain]                                  questions where ChatGPT / AI Overviews cite a domain (default: ours)
+//   npm run dfs -- ai-check                                                 ai-answer for every active keyword target → content/agent/memory/ai-visibility.json
 // Add --json for raw-ish JSON output.
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 if (existsSync('.env.local')) {
   for (const line of readFileSync('.env.local', 'utf8').split('\n')) {
@@ -101,6 +105,65 @@ if (cmd === 'balance') {
   const aiOverview = items.some((i) => i.type === 'ai_overview');
   console.log(`AI Overview: ${aiOverview ? 'YES' : 'no'} · features: ${[...new Set(items.map((i) => i.type))].join(', ')}`);
   out(items.filter((i) => i.type === 'organic').map((i) => ({ pos: i.rank_group, domain: i.domain, title: i.title?.slice(0, 70) })), cost);
+} else if (cmd === 'ai-answer' || cmd === 'ai-check') {
+  // ChatGPT answer via DataForSEO LLM Scraper (~$0.004 per question).
+  const ask = async (m, keyword) => {
+    const { result, cost } = await api('ai_optimization/chat_gpt/llm_scraper/live/advanced', { ...MARKETS[m], keyword, force_web_search: true });
+    const r = result?.[0] || {};
+    const sources = (r.sources || []).map((x) => x.domain);
+    const brands = (r.brand_entities || []).map((b) => b.title);
+    const all = [...sources, ...(r.search_results || []).map((x) => x.domain)];
+    return {
+      keyword, market: m, cost,
+      cited: sources.some((d) => d?.includes(OUR_DOMAIN)),
+      retrieved: all.some((d) => d?.includes(OUR_DOMAIN)),
+      sources: [...new Set(sources)].slice(0, 10),
+      brands: brands.slice(0, 10),
+      fanOut: r.fan_out_queries || [],
+      answer: r.markdown || '',
+    };
+  };
+  if (cmd === 'ai-answer') {
+    need();
+    const a = await ask(marketKey, rest[0]);
+    if (asJson) console.log(JSON.stringify(a, null, 2));
+    else {
+      console.log(`cited: ${a.cited ? 'YES' : 'no'} · retrieved (seen, not cited): ${a.retrieved ? 'YES' : 'no'}`);
+      console.log(`sources: ${a.sources.join(', ') || '-'}\nbrands: ${a.brands.join(', ') || '-'}\nfan-out: ${a.fanOut.join(' | ') || '-'}\n\n${a.answer.slice(0, 1500)}`);
+    }
+    console.error(`cost $${a.cost}`);
+  } else {
+    const targets = JSON.parse(readFileSync('content/agent/memory/keyword-targets.json', 'utf8')).filter((t) => t.status === 'active');
+    const file = 'content/agent/memory/ai-visibility.json';
+    const history = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : [];
+    const date = new Date().toISOString().slice(0, 10);
+    let cost = 0;
+    const rows = [];
+    for (const t of targets) {
+      try {
+        const a = await ask(t.market, t.keyword);
+        cost += a.cost || 0;
+        rows.push({ id: t.id, keyword: t.keyword, market: t.market, cited: a.cited, retrieved: a.retrieved, sources: a.sources, brands: a.brands, fanOut: a.fanOut });
+      } catch (e) { console.error(`${t.id}: ${e.message}`); }
+    }
+    writeFileSync(file, JSON.stringify([{ date, rows }, ...history.filter((h) => h.date !== date)].slice(0, 26), null, 2) + '\n');
+    out(rows.map((r) => ({ keyword: r.keyword, market: r.market, cited: r.cited, retrieved: r.retrieved, top: r.sources.slice(0, 3).join(', ') })), cost);
+  }
+} else if (cmd === 'ai-volume') {
+  need();
+  const { result, cost } = await api('ai_optimization/ai_keyword_data/keywords_search_volume/live', { ...market, keywords: rest });
+  out((result?.[0]?.items || []).map((i) => ({ keyword: i.keyword, aiVolume: i.ai_search_volume })), cost);
+} else if (cmd === 'ai-mentions') {
+  // ChatGPT data is US/English only; Google AI Overviews follow the market.
+  need();
+  const domain = rest[0] || OUR_DOMAIN;
+  const { result, cost } = await api('ai_optimization/llm_mentions/search_mentions/live', {
+    location_code: market.location_code, language_code: market.language_code,
+    target: [{ domain, search_scope: ['sources'] }], limit: 20, order_by: ['ai_search_volume,desc'],
+  });
+  const items = result?.[0]?.items || [];
+  console.log(`total questions citing ${domain}: ${result?.[0]?.total_count ?? 0}`);
+  out(items.map((i) => ({ platform: i.platform, question: i.question?.slice(0, 80), aiVolume: i.ai_search_volume })), cost);
 } else {
-  console.log(readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(0, 12).join('\n'));
+  console.log(readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(0, 16).join('\n'));
 }

@@ -1,0 +1,126 @@
+---
+title: "Claude SEO: The Real Workflow We Run Every Week (Claude Code + DataForSEO)"
+description: "Claude SEO done for real: the Claude Code + DataForSEO system that picks keywords, checks ChatGPT, writes and publishes. Real costs: $0.44 per article."
+excerpt: "Not a list of prompts: the actual Claude Code + DataForSEO system behind our blog, from keyword scoring to ChatGPT checks, with what each step costs."
+date: "2026-10-24"
+dateLabel: "October 24, 2026"
+seoTitle: "Claude SEO: Our Real Claude Code + DataForSEO Workflow"
+category: "AI & SEO"
+author: "Houssam Boutaleb"
+authorRole: "Founder & CEO, WeAutomationAgency"
+keywords: ["claude seo", "claude code seo", "dataforseo claude", "claude seo workflow", "ai seo workflow", "chatgpt seo"]
+type: guide
+toc: true
+---
+
+> **The short answer:** Claude is great at SEO when you give it **real data**, and weak when you only give it prompts. Our setup: Claude Code runs scripts that pull keyword, SERP and ChatGPT data from the DataForSEO API and our own Google Search Console, scores which keyword we can actually win, writes the article in three languages and publishes it. The full research behind this article cost **$0.44**.
+
+Most "Claude SEO" content is a list of prompts. Ask Claude for keywords, ask Claude for an outline, ask Claude to write. The problem: Claude doesn't know search volumes, who ranks today, or what ChatGPT answers. It guesses, and it guesses with confidence.
+
+So we stopped asking it to guess. Below is the exact system that runs our own blog, step by step, including the parts that didn't work and what every call costs.
+
+## What does "Claude SEO" actually mean?
+
+It means using Claude (usually **Claude Code**, Anthropic's coding agent that works in your terminal and your files) to do SEO work: keyword research, competitor checks, writing, internal links and technical checks.
+
+There are two ways to do it:
+
+| | Prompts only | Claude + data |
+|---|---|---|
+| **Keywords** | Claude invents a list | Real volumes, difficulty and CPC per country |
+| **Competition** | Claude assumes | The actual top 10 on Google today |
+| **AI search (GEO)** | Not covered | What ChatGPT really answers, and who it cites |
+| **Your own site** | Claude can't see it | Search Console positions, clicks, CTR per page |
+| **Result** | Generic articles | Articles aimed at keywords you can win |
+
+The second column needs a data source. We use the **DataForSEO API**, paid per call, no subscription ([DataForSEO pricing](https://dataforseo.com/pricing)). If you prefer not to touch code, DataForSEO also has an [official MCP server](https://github.com/dataforseo/mcp-server-typescript) that plugs straight into Claude. We call the API from small scripts instead, so every step is repeatable and runs on a schedule.
+
+## Step 1: How do we find keywords we can actually win?
+
+Claude starts with a topic, then pulls related keywords with volume, difficulty, CPC and intent for each market (US, UK, France, Spain, Mexico). Then a script gives every keyword a **winnability score**:
+
+- **Value:** volume, buyer intent, CPC, and whether it leads to one of our services. An AI Overview on the page lowers it, because fewer people click.
+- **Winnability:** how far the keyword difficulty is above what our site's authority can take, plus how many weak results sit in the top 10 (forums, Reddit, pages with zero links).
+
+The output is a verdict per keyword: **attack now, invest, or later**. This article is the proof. "claude seo" has about **590 searches a month in the US, 480 in France and 170 in Spain**, a difficulty of 8, and the current top 10 includes Reddit, LinkedIn, Substack and YouTube. That is a weak page one, so it got the green light.
+
+<Callout>
+English keywords are often searched as is in other countries. "claude seo" gets more searches in France than any French version of it. Always check the English term in every market before translating.
+</Callout>
+
+## Step 2: How do we check what ChatGPT answers?
+
+This is the step most SEO workflows skip, and the one that matters for GEO (getting cited in AI answers).
+
+For each keyword, a script asks ChatGPT the question through DataForSEO's AI Optimization API and records:
+
+- **the sources ChatGPT cites** in its answer,
+- **the brands it mentions**,
+- **the follow-up searches it runs** behind the scenes (the "fan-out" queries), which show the sub-questions an article must cover,
+- **whether our site is cited**, or at least retrieved.
+
+It costs about **$0.004 per question**. When I ran it on our 8 tracked keywords for the first time, the result was humbling: **ChatGPT cited us for none of them**. It's now our baseline, saved every week, so we'll see the day it changes.
+
+It also told me what to write here. For "how to use Claude for SEO", ChatGPT gives a generic answer and cites only Anthropic's help pages and Google's guidelines. Nobody shows a real system with real costs. That gap is this article.
+
+## Step 3: How does Claude write without sounding like AI?
+
+Claude writes from a rules file, not from a one-line prompt. The rules cover:
+
+- **Voice:** first person, short sentences, one idea per paragraph, a banned-words list ("unlock", "leverage", "game-changer"...).
+- **Structure for AI answers:** a 2–4 sentence short answer under the title, H2s written as the real questions people type, tables for anything comparable.
+- **Facts:** every number comes from a linked source or from our own work. Our own stories come from a separate file of real experiences, so Claude can't invent a client.
+- **Languages:** English first, then a native rewrite in French and Spanish, each aimed at that market's keyword. Never a literal translation.
+
+Then I read it. Claude publishes directly, and I review afterwards and fix what doesn't sound like me.
+
+## Step 4: How are internal links chosen?
+
+Not by feel. A script compares every post with every other one (shared words, shared keywords, same category) and suggests the strongest links. Each post needs **3 to 6 links out and at least 3 links in**, and the script flags any page nothing links to.
+
+The first run found posts that were only reachable through the sitemap. Google barely looked at them. Fixing that took minutes.
+
+## Step 5: How do we know if it works?
+
+Every morning at 05:30 UTC, a scheduled job pulls our Google Search Console data and stores a snapshot: clicks, positions, CTR per page compared with the normal CTR for that position, and the position of each target keyword in its own country. Every Monday, an email summarizes the week, and a weekly Claude routine reads the rules, picks the next keywords and publishes.
+
+Two rules keep it honest:
+
+- **No refresh without news.** An old post only gets a new date if something actually changed (a new price, a new feature, a corrected fact). Changing the date alone is not an update.
+- **Judge after 28 days.** New pages need time. We don't touch a target before its first 28-day checkpoint.
+
+## What does it cost to run?
+
+| Call | Cost per call |
+|---|---|
+| Search volume, 1 market (up to 1,000 keywords) | ~$0.09 |
+| Related keywords with difficulty | ~$0.01 |
+| Google top 10 for one keyword | ~$0.002 |
+| One ChatGPT answer with sources | ~$0.004 |
+| Who cites a domain in AI answers | ~$0.10 |
+
+All the research for this article (volumes for a dozen candidate topics in 3 countries, keyword ideas, the top 10, ten ChatGPT answers and a check of who cites our domain) cost **$0.44**. Claude Code runs on a regular Claude subscription. Google Search Console is free.
+
+The real cost is building it the first time: the scripts, the rules files and the checks. That took us a few days of work. Running it now takes minutes a week.
+
+## What didn't work?
+
+- **Letting Claude guess keywords.** The lists looked smart and had no search volume.
+- **Writing in English and translating.** The French and Spanish versions targeted words nobody searches in those countries. Each market needs its own keyword research.
+- **Publishing without a check.** A build and an SEO check (titles, descriptions, broken links, one H1) now run before every publish.
+- **Trusting position alone.** A page can rank and still get few clicks. Comparing its CTR with the normal CTR for that position shows which titles need work.
+
+<KeyTakeaways title="Key takeaways">
+- Claude is only as good as the data you give it: connect it to real keyword, SERP and Search Console data.
+- Score keywords for winnability, not just volume. A weak top 10 beats a big number.
+- Check what ChatGPT answers and cites for each keyword; it shows the gaps and gives you a GEO baseline.
+- Use rules files for voice, structure and facts, and keep a human review.
+- The research costs cents. The work is building the system once.
+</KeyTakeaways>
+
+If you want the same system on your site, with SEO and AI visibility tracked every week, that's our [AI search visibility service](/services/ai-search-visibility). New to the terms? Start with [SEO vs GEO vs AEO](/blog/seo-vs-geo-vs-aeo-ai-visibility). Or [tell me about your site](/start) and I'll tell you honestly which keywords you can win first.
+
+## Keep reading
+- [AI search visibility (GEO): how to get cited by ChatGPT and Google AI](/blog/ai-search-visibility-geo)
+- [SEO vs GEO vs AEO: what these words actually mean](/blog/seo-vs-geo-vs-aeo-ai-visibility)
+- [Should you fact-check AI content before publishing?](/blog/google-fact-check-ai-content-before-publishing)

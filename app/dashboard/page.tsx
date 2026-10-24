@@ -41,6 +41,10 @@ type Snapshot = {
       markets: Record<string, { agencies: { domain: string; keywords: number; avgPosition: number; strength: number | null }[]; directories: string[] }>;
     };
     linkIdeas: null | Record<string, { updated: string; total: number; top: { domain: string; competitors: number; rank: number }[] }>;
+    aiVisibility?: null | {
+      date: string; cited: number; total: number; previous: null | { date: string; cited: number };
+      rows: { keyword: string; market: string; cited: boolean; retrieved: boolean; top: string[] }[];
+    };
     opportunities: null | { updated: string; items: { name: string; status: string; volume?: number; kd?: number; markets?: string[]; sell?: string[]; next?: string }[] };
   };
 };
@@ -163,7 +167,7 @@ export default async function Dashboard() {
         </p>
       </div>
       <nav className="mt-6 flex flex-wrap gap-2 text-sm">
-        {[['#links', '🔗 Link mission'], ['#targets', '🎯 Targets'], ['#engine', '🧠 This week'], ['#opportunities', '💰 Opportunities'], ['#competitors', '🥊 Competitors'], ['#google', '📈 Google'], ['#ai', '🤖 AI visits']].map(([href, label]) => (
+        {[['#links', '🔗 Link mission'], ['#targets', '🎯 Targets'], ['#engine', '🧠 This week'], ['#opportunities', '💰 Opportunities'], ['#chatgpt', '💬 ChatGPT'], ['#competitors', '🥊 Competitors'], ['#google', '📈 Google'], ['#ai', '🤖 AI visits']].map(([href, label]) => (
           <a key={href} href={href} className="rounded-full border border-darker-grey px-3 py-1 text-grey hover:border-accent hover:text-secondary">{label}</a>
         ))}
       </nav>
@@ -301,6 +305,21 @@ export default async function Dashboard() {
                 {o.next && <p className="mt-2 text-sm text-grey">Next: {o.next}</p>}
               </div>
             ))}
+          </div>
+        </Section>
+      )}
+
+      {snap.engine?.aiVisibility && (
+        <Section id="chatgpt" title={`💬 ChatGPT citations: ${snap.engine.aiVisibility.cited} / ${snap.engine.aiVisibility.total}`} hint={`Each Monday we ask ChatGPT our target keywords (DataForSEO) and check if it cites us. Last check ${snap.engine.aiVisibility.date}${snap.engine.aiVisibility.previous ? `, previous ${snap.engine.aiVisibility.previous.date}: ${snap.engine.aiVisibility.previous.cited} cited` : ''}. "Seen" = ChatGPT read our page but didn't cite it.`}>
+          <div className="rounded-2xl border border-darker-grey bg-[#0d0d0d] p-5">
+            <ul className="space-y-2 text-sm">
+              {snap.engine.aiVisibility.rows.map((r) => (
+                <li key={`${r.keyword}-${r.market}`} className="flex flex-wrap justify-between gap-2">
+                  <span>{r.cited ? '✅' : r.retrieved ? '👀' : '·'} {r.keyword} <span className="uppercase text-grey">{r.market}</span></span>
+                  <span className="text-xs text-grey">cites: {r.top.join(', ') || '–'}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </Section>
       )}

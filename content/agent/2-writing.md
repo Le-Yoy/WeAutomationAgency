@@ -49,6 +49,7 @@ Match the archetype to what ranks in the top 10 for the keyword (intent match).
 - A **short-answer `> blockquote`** right under the H1 (2–4 sentences, the direct answer with the key number).
 - **H2s = the exact questions people type** (use GSC queries and the market keyword), each answered in its first 1–2 sentences.
 - Sourced facts with in-text links to primary sources (official docs, studies); dates on time-sensitive facts.
+- Cover the **fan-out queries** ChatGPT runs for the keyword (`npm run dfs -- ai-answer`), and add what its cited sources miss.
 - Our own data/experience = originality (the strongest signal; e.g. our pipeline numbers).
 - Tables for comparisons/prices (easy to extract). FAQ-style H2s for common follow-ups.
 - Consistent entity info (name, founder, services) as on the site and profiles.

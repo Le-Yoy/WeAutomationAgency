@@ -8,7 +8,7 @@
 | `npm run weekly-report` | Monday email: results, targets, this week's content, opportunities waiting, to-do | Monday (GitHub Actions) |
 | `npm run links` | Link mission queue (Done/Skip buttons on the dashboard; `add` appends) | daily (Houssam) |
 | `npm run score` | Winnability score per keyword per market | Monday agent |
-| `npm run dfs` | Raw DataForSEO: volumes, ideas, competitor gaps, SERP | Monday agent |
+| `npm run dfs` | Raw DataForSEO: volumes, ideas, competitor gaps, SERP, ChatGPT answers (`ai-answer`), AI search volume (`ai-volume`), who AI cites (`ai-mentions`), weekly citation check (`ai-check` → `memory/ai-visibility.json` → dashboard 💬 + Monday email) | Monday agent |
 | `npm run competitors` | Top 20 agencies per market + link ideas | monthly (Monday agent) |
 | `npm run links:internal` | Internal-link audit + suggestions | Monday agent |
 | `npm run gsc` / `gsc:cached` | Search Console live (key) / from the snapshot (cloud) | anytime |
