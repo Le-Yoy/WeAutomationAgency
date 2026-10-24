@@ -18,7 +18,8 @@
     "dfs": "NODE_USE_ENV_PROXY=1 node scripts/dfs.mjs",
     "gsc:cached": "NODE_USE_ENV_PROXY=1 node scripts/gsc-cached.mjs",
     "score": "NODE_USE_ENV_PROXY=1 node scripts/score.mjs",
-    "competitors": "NODE_USE_ENV_PROXY=1 node scripts/competitors.mjs"
+    "competitors": "NODE_USE_ENV_PROXY=1 node scripts/competitors.mjs",
+    "links:slots": "node scripts/link-slots.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -43,8 +43,10 @@ Read, in this order:
 - [ ] Fact-check all posts against "Facts that changed" + quick web checks. Real change → edit 3 locales + `updated`. No real change → no date change.
 - [ ] Add relevant briefing news where it belongs; strengthen striking-distance queries; apply the CTR rule.
 
-## Step 5 — Internal links → read `4-links.md` (subagent, model "sonnet")
-- [ ] `npm run links:internal -- --new <slug>` for each new post, then `npm run links:internal` for the site. Apply in context, all 3 locales. Re-run until clean.
+## Step 5 — Internal links → read `4-links.md` (YOU judge relevance; a "sonnet" subagent may only run the scripts and collect sentences)
+- [ ] For each new post: add its concepts to `memory/concepts.json` → fill its slots (`npm run links:slots -- <slug>`: basics in the intro, depth in the middle, next step if earned) → reverse links from ≥3 older posts **in the body** (`npm run links:slots -- --new <slug>`). All 3 locales, relevance test for every link.
+- [ ] First run of the month: monthly sweep (`npm run links:slots`, fix ✗ intro/middle, max 6 posts, most impressions first).
+- [ ] `npm run links:internal` → clean (no orphan, FR/ES parity, prefixes). Links/bridge sentences alone don't change `updated`.
 
 ## Step 6 — Check & publish → read `5-publish.md`
 - [ ] Pre-publish gate answered (8 questions) for every new/changed page.
@@ -76,7 +78,7 @@ Read, in this order:
 | `1-keywords.md` | where to attack: sources of gaps, winnability tool, verdicts, markets, cannibalization, follow-up rules |
 | `2-writing.md` | how a post looks and sounds: frontmatter, archetypes, voice, AEO/AI Overview, images, localization |
 | `3-refresh.md` | when/how to update old posts, CTR rule, striking distance |
-| `4-links.md` | internal linking rules + algorithm |
+| `4-links.md` | contextual links: 3 in-body slots (basics / depth / next step), relevance test, concept map, monthly sweep |
 | `5-publish.md` | technical SEO checklist, pre-publish gate, benchmarks, build/deploy/index |
 | `6-report.md` | report template |
 | `7-opportunities.md` | other revenue: how to log, Notion database, playbooks |

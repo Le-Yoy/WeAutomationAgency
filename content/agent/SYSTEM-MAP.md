@@ -11,6 +11,7 @@
 | `npm run dfs` | Raw DataForSEO: volumes, ideas, competitor gaps, SERP, ChatGPT answers (`ai-answer`), AI search volume (`ai-volume`), who AI cites (`ai-mentions`), weekly citation check (`ai-check` → `memory/ai-visibility.json` → dashboard 💬 + Monday email) | Monday agent |
 | `npm run competitors` | Top 20 agencies per market + link ideas | monthly (Monday agent) |
 | `npm run links:internal` | Internal-link audit + suggestions | Monday agent |
+| `npm run links:slots` | Contextual links: intro/middle/late slot audit, term candidates per post (`-- <slug>`), reverse links for a new post (`-- --new <slug>`), from `memory/concepts.json` | Monday agent (Step 5) + monthly sweep |
 | `npm run gsc` / `gsc:cached` | Search Console live (key) / from the snapshot (cloud) | anytime |
 | `npm run seo:check` | Crawl + SEO checks before any push | every push |
 | `npm run indexnow` | Submit sitemap URLs to Bing/IndexNow | after publishing |

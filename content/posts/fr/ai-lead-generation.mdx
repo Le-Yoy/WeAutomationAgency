@@ -29,7 +29,7 @@ Voici la version qu'on fait tourner sur Make. Six étapes, et chaque contact pas
 
 1. **Cibler dans LinkedIn Sales Navigator.** Une recherche serrée : poste, secteur, taille d'entreprise, pays. Une liste étroite vaut mieux qu'une grosse liste.
 2. **Récupérer les profils dans l'automatisation.** Les résultats de la recherche arrivent dans Make, un contact à la fois.
-3. **Enrichir et vérifier.** Une étape trouve l'e-mail pro de chaque personne et ne garde que les adresses valides. Sauter la vérification, c'est le moyen le plus rapide de griller un domaine d'envoi.
+3. **Enrichir et vérifier.** Une étape trouve l'e-mail pro de chaque personne et ne garde que les adresses valides. Sauter la vérification, c'est le moyen le plus rapide de griller un domaine d'envoi. Notre [étude de cas cold email](/fr/blog/cold-email-automation-case-study) détaille nos étapes exactes de vérification et de tri.
 4. **Personnaliser avec l'IA.** L'API d'OpenAI écrit la première phrase de chaque e-mail à partir du profil : poste, entreprise, secteur. Une phrase, sur eux, pas sur nous.
 5. **Envoyer l'e-mail et les relances.** Une séquence courte, envoyée directement depuis l'automatisation.
 6. **Suivre chaque étape.** Quelques chiffres à chaque niveau montrent où les contacts décrochent et quels messages obtiennent des réponses.
@@ -66,7 +66,7 @@ Les plateformes tout-en-un regroupent une partie de ces briques. Très bien pour
 
 ## Comment éviter les spams (et rester dans les règles) ?
 
-C'est là que les pipelines meurent. Du volume sans délivrabilité, c'est juste une façon plus rapide de se faire bloquer. (On détaille nos étapes exactes de vérification et de tri dans notre [étude de cas cold email automatisé](/fr/blog/cold-email-automation-case-study).)
+C'est là que les pipelines meurent. Du volume sans délivrabilité, c'est juste une façon plus rapide de se faire bloquer.
 
 <Callout>
 Depuis février 2024, Google impose à quiconque envoie plus de 5 000 messages par jour vers des comptes Gmail d'authentifier ses envois (SPF, DKIM et DMARC), de proposer la désinscription en un clic et de garder le taux de spam mesuré dans Postmaster Tools sous 0,3 % ([consignes de Google pour les expéditeurs](https://support.google.com/a/answer/81126?hl=fr)). Considérez-le comme un minimum, même sous les 5 000.

@@ -17,6 +17,8 @@ toc: true
 
 Je l'ai d'abord construit pour notre propre prospection, puis déployé pour un client qui vend des produits digitaux. Voici le vrai scénario, module par module, et ce que chaque étape protégeait.
 
+Si la prospection automatisée est nouvelle pour vous, [notre guide de la prospection automatisée par IA](/fr/blog/ai-lead-generation) explique d'abord tout le pipeline, de la recherche des contacts au tri des réponses. Revenez ensuite : cet article zoome sur la partie e-mail.
+
 ## À quoi ressemblait le pipeline complet ?
 
 Trois étapes, chacune indépendante :
@@ -72,7 +74,7 @@ Le cœur reste le même : vérifier avant d'envoyer, associer les fournisseurs e
 - **Gérer les réponses automatiquement.** On relierait la détection des réponses d'Instantly à Make : une réponse « intéressé » reçoit un lien de prise de rendez-vous et arrive dans le CRM, un « pas maintenant » est relancé dans trois mois, une désinscription est supprimée partout.
 - **Utiliser un modèle moins cher pour le tri.** Les petits modèles de classification coûtent aujourd'hui une fraction de centime par lead. On peut donc noter chaque profil avant même de le vérifier, et trier les réponses.
 - **Passer la version lourde sur n8n.** Quand le volume ou le nombre d'étapes augmente, n8n facture par exécution et non par étape. On a reconstruit ce pipeline comme ça pour un projet à plus gros volume ([n8n vs Make](/fr/blog/n8n-vs-make)).
-- **Respecter les règles de chaque marché.** Une désinscription simple dans chaque e-mail, et les règles B2B de chaque pays (CNIL en France, PECR au Royaume-Uni, CAN-SPAM aux États-Unis). La checklist complète est dans notre [guide de la prospection automatisée par IA](/fr/blog/ai-lead-generation).
+- **Respecter les règles de chaque marché.** Une désinscription simple dans chaque e-mail, et les règles B2B de chaque pays (CNIL en France, PECR au Royaume-Uni, CAN-SPAM aux États-Unis). La checklist complète est dans le guide de la prospection automatisée par IA cité en haut de cet article.
 
 <KeyTakeaways title="À retenir">
 - Vérifiez chaque adresse avant qu'elle n'arrive dans l'outil d'envoi ; restez sous 2 % de rebonds.

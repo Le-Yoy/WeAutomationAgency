@@ -64,6 +64,7 @@ Fresh per post, never the previous post's choice: archetype · intro variant · 
 Write EN first, then **rewrite** FR (professional "vous") and ES (direct "tú", neutral for Spain + LatAm). Each locale uses **its market's keyword** in seoTitle, description, short answer and the first H2. Localize title/description/excerpt/dateLabel/category/authorRole/heroAlt/heroCredit and the "Keep reading / À lire ensuite / Sigue leyendo" heading. Country-specific facts: FR → CNIL/France; ES → Spain AND Mexico. Never add an "AI-translated" notice.
 
 ## Every post must have
+- The 3 in-body link slots from `4-links.md`: a **basics link in the first paragraphs** (a guided detour if the prerequisite matters), a depth link in the middle, a next-step link if it earns it.
 - ≥2 links to other posts + 1 to the matching service page + /start (locale-correct paths), see `4-links.md`.
 - 1–3 authoritative external sources, no competitor links.
 - A clear CTA to /start in the founder's voice.

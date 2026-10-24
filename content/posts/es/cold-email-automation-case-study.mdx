@@ -17,6 +17,8 @@ toc: true
 
 Primero lo construí para nuestra propia prospección y después lo implementé para un cliente que vende productos digitales. Este es el escenario real, módulo por módulo, y lo que protegía cada paso.
 
+Si la prospección automatizada es nueva para ti, [nuestra guía de captación de leads con IA](/es/blog/ai-lead-generation) explica primero todo el sistema, desde encontrar contactos hasta clasificar respuestas. Luego vuelve: este artículo se centra en la parte del e-mail.
+
 ## ¿Cómo era el sistema completo?
 
 Tres etapas, cada una independiente:
@@ -72,7 +74,7 @@ El núcleo se mantiene: verificar antes de enviar, emparejar proveedores de e-ma
 - **Gestionar las respuestas de forma automática.** Conectaríamos la detección de respuestas de Instantly con Make: un "me interesa" recibe un enlace para agendar y entra en el CRM, un "ahora no" se vuelve a contactar en tres meses y una baja se elimina en todas partes.
 - **Usar un modelo más barato para clasificar.** Los modelos pequeños de clasificación cuestan hoy una fracción de céntimo por lead. Así se puede puntuar cada perfil antes incluso de verificarlo y clasificar las respuestas.
 - **Pasar la versión pesada a n8n.** Cuando crece el volumen o el número de pasos, n8n cobra por ejecución y no por paso. Reconstruimos este sistema así para un proyecto de mayor volumen ([n8n vs Make](/es/blog/n8n-vs-make)).
-- **Respetar las reglas de cada mercado.** Una baja fácil en cada e-mail y las normas B2B de cada país (LSSI/AEPD en España, LFPDPPP en México, CAN-SPAM en EE. UU.). La lista completa está en nuestra [guía de captación de leads con IA](/es/blog/ai-lead-generation).
+- **Respetar las reglas de cada mercado.** Una baja fácil en cada e-mail y las normas B2B de cada país (LSSI/AEPD en España, LFPDPPP en México, CAN-SPAM en EE. UU.). La lista completa está en la guía de captación de leads con IA enlazada al principio de este artículo.
 
 <KeyTakeaways title="Lo esencial">
 - Verifica cada dirección antes de que llegue a la herramienta de envío; mantente por debajo del 2 % de rebotes.

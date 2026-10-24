@@ -12,8 +12,7 @@
 //  - a new post gets links FROM its 3 most related posts (those get refreshed anyway) and links TO 3
 //  - balance: sources with many links out and targets that already have many links in rank lower
 //  - slugs are shared across en/fr/es, so one plan applies to all three (with the /fr, /es prefix)
-import { readFileSync, readdirSync } from 'node:fs';
-import matter from 'gray-matter';
+import { loadPosts, relevance } from './lib/relevance.mjs';
 
 const MIN_SCORE = 0.15;
 const OUT_MIN = 3, OUT_MAX = 6, IN_MIN = 3;
@@ -30,50 +29,23 @@ const args = process.argv.slice(2);
 const newSlug = args.includes('--new') ? args[args.indexOf('--new') + 1] : null;
 const asJson = args.includes('--json');
 
-const STOP = new Set('the a an and or of to in on for with is are be it this that you your we our as at by from can how what why when which will not do does more than into about their they them its was were has have had but if so all also just like get use using one two any most such each other only over very new may'.split(' '));
-const tokens = (s) => s.toLowerCase().replace(/[`*_>#|\[\]()]/g, ' ').match(/[a-z0-9][a-z0-9-]{2,}/g)?.filter((t) => !STOP.has(t)) || [];
-
 function load(locale) {
-  const dir = `content/posts/${locale}`;
-  return readdirSync(dir).filter((f) => f.endsWith('.mdx')).map((f) => {
-    const { data, content } = matter(readFileSync(`${dir}/${f}`, 'utf8'));
-    const slug = f.replace(/\.mdx$/, '');
-    const prefix = locale === 'en' ? '' : `/${locale}`;
+  const prefix = locale === 'en' ? '' : `/${locale}`;
+  return loadPosts(locale).map((p) => {
+    const { slug, content } = p;
     const outPosts = new Set([...content.matchAll(new RegExp(`\\]\\(${prefix}/blog/([a-z0-9-]+)`, 'g'))].map((m) => m[1]).filter((s) => s !== slug));
     const outServices = new Set([...content.matchAll(new RegExp(`\\]\\(${prefix}(/services/[a-z0-9-]+)`, 'g'))].map((m) => m[1]));
     // Links that forgot the locale prefix in fr/es files (point to the EN page by mistake).
     const wrongLocale = locale === 'en' ? [] : [...content.matchAll(/\]\((\/(?:blog|services)\/[a-z0-9-]+)/g)].map((m) => m[1]);
-    return { slug, locale, title: data.title, keywords: data.keywords || [], category: data.category, date: data.date, updated: data.updated, content, outPosts, outServices, wrongLocale };
+    return { ...p, date: p.data.date, updated: p.data.updated, outPosts, outServices, wrongLocale };
   });
 }
 
 const byLocale = Object.fromEntries(LOCALES.map((l) => [l, load(l)]));
 const posts = byLocale.en;
 const N = posts.length;
-
-// TF-IDF on EN text (title + keywords weighted x3).
-const docs = posts.map((p) => tokens(`${p.title} ${p.keywords.join(' ')} `.repeat(3) + p.content));
-const df = new Map();
-docs.forEach((d) => new Set(d).forEach((t) => df.set(t, (df.get(t) || 0) + 1)));
-const vectors = docs.map((d) => {
-  const tf = new Map();
-  d.forEach((t) => tf.set(t, (tf.get(t) || 0) + 1));
-  const v = new Map();
-  let norm = 0;
-  tf.forEach((n, t) => { const w = (n / d.length) * Math.log(1 + N / df.get(t)); v.set(t, w); norm += w * w; });
-  norm = Math.sqrt(norm) || 1;
-  v.forEach((w, t) => v.set(t, w / norm));
-  return v;
-});
-const cosine = (a, b) => { let s = 0; for (const [t, w] of a) if (b.has(t)) s += w * b.get(t); return s; };
-const kwSet = (p) => new Set(p.keywords.flatMap((k) => tokens(k)));
-const jaccard = (a, b) => { const i = [...a].filter((x) => b.has(x)).length; return i / (new Set([...a, ...b]).size || 1); };
-
-const score = Array.from({ length: N }, () => Array(N).fill(0));
-for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
-  const s = 0.55 * cosine(vectors[i], vectors[j]) + 0.3 * jaccard(kwSet(posts[i]), kwSet(posts[j])) + 0.15 * (posts[i].category === posts[j].category ? 1 : 0);
-  score[i][j] = score[j][i] = Math.round(s * 100) / 100;
-}
+const rel = relevance(posts);
+const score = posts.map((a) => posts.map((b) => rel(a.slug, b.slug)));
 
 const idx = new Map(posts.map((p, i) => [p.slug, i]));
 const inCount = new Map(posts.map((p) => [p.slug, 0]));

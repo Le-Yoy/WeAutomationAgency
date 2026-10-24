@@ -17,6 +17,8 @@ toc: true
 
 I built this first for our own prospecting, then deployed it for a client selling digital products. Here is the actual scenario, module by module, and what each part was there to protect.
 
+If automated prospecting is new to you, [our AI lead generation guide](/blog/ai-lead-generation) explains the whole pipeline first, from finding contacts to sorting replies. Then come back: this post zooms in on the email part.
+
 ## What did the full pipeline look like?
 
 Three stages, each one a separate piece:
@@ -72,7 +74,7 @@ The core stays: verify before sending, match email providers, keep the AI on one
 - **Handle replies automatically.** We'd connect Instantly's reply detection back to Make: an "interested" reply gets a booking link and lands in the CRM, a "not now" gets a reminder in three months, an unsubscribe is removed everywhere.
 - **Use a cheaper model for scoring.** Small classification models now cost a fraction of a cent per lead. That makes it affordable to score every profile before it's even verified, and to sort replies.
 - **Move the heavy version to n8n.** When volume or the number of steps grows, n8n bills per run instead of per step. We rebuilt this pipeline that way for a higher-volume project ([n8n vs Make](/blog/n8n-vs-make)).
-- **Respect each market's rules.** Easy opt-out in every email, and the B2B rules of each country (CNIL in France, PECR in the UK, CAN-SPAM in the US). The full checklist is in our [AI lead generation guide](/blog/ai-lead-generation).
+- **Respect each market's rules.** Easy opt-out in every email, and the B2B rules of each country (CNIL in France, PECR in the UK, CAN-SPAM in the US). The full checklist is in the AI lead generation guide linked at the top of this post.
 
 <KeyTakeaways title="Key takeaways">
 - Verify every address before it reaches the sending tool; stay under 2% bounces.
